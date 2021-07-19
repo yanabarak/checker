@@ -804,6 +804,29 @@ a.preview .fas {
     z-index: 3;
     width: 200px;
 }
+button.filter-btn {
+    border-radius: 6px;
+    line-height: 40px;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 0 65px 0 25px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23007BFF' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23007BFF' stroke-width='2'/%3e%3c/svg%3e ");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 38px auto;
+    transition: all 0.3s linear;
+}
+button.filter-btn.active,
+button.filter-btn:hover {
+    color: #fff;
+    background-color: var(--second-brand-color) !important;
+    box-shadow: 0px 0px 0px 2px var(--second-brand-color) inset !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23fff' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e ");
+}
+.myjob-title {
+
+    width: calc(50% + 10px);
+}
 .myjobcard {
     position: absolute;
     width: 190px;
@@ -858,7 +881,7 @@ a.preview .fas {
     box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
 }
-.modal.show .modal-dialog {
+.modal.show#pick-date-modal .modal-dialog {
     max-width: 575px;
 }
 .modal button.btn.btn-lg.fs-18 {
@@ -1137,6 +1160,9 @@ button.start-test:disabled {
     #widget-money p.fw-light.my-0.lh-sm {
         font-size: 28px !important;
     }
+    .myjob-title {
+        width: 100%
+    }
     div#accordionFormJob {
         background-color: #fff;
         padding: 15px 15px;
@@ -1160,9 +1186,6 @@ button.start-test:disabled {
     #accordionFormJob h4.accordion-button {
         padding-left: 5px !important;
         padding-right: 5px !important;
-    }
-    #accordionFormJob h4.accordion-button:after {
-        display: inline-block;
     }
     #map .listWrap {
         height: 100px;
@@ -1266,7 +1289,11 @@ button.start-test:disabled {
         right: 25px;
         filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
     }
-
+    button.filter-btn {
+        background-position: center;
+        font-size: 0px;
+        padding-left: 0px;
+    }
     .modal .block>.cardnew {
         padding: 0 17px !important;
     }
