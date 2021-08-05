@@ -990,6 +990,13 @@ button.navbar-toggler+a {
 .toggleCer.accordion-button::after {
     filter: grayscale(1);
 }
+select#lang {
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-color: #AEAEAE;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23AEAEAE' stroke-width='1.5'/%3e%3c/svg%3e ");
+    background-size: auto;
+}
 @media (max-width: 1024.5px) {
     .pr-100 {
         padding-right: 48px !important;
@@ -1348,6 +1355,10 @@ button.navbar-toggler+a {
     }
     .cert-elem>.cert-elem {
         padding: 5px;
+    }
+    .m-0.pb-3.pt-3.user-menu.border-bottom {
+        overflow: auto;
+        max-height: calc(100vh - 260px);
     }
 }
 
