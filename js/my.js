@@ -164,8 +164,8 @@ jQuery(document).ready(function($) {
 
     function hideInfoJob() {
 
-        $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145);
-        $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145);
+        $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+        // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
         document.querySelector('#hideshow').addEventListener('click', function() {
             if ($('#hideshow').hasClass("hide")) {
                 $("#infoJob").attr("style", "padding: 0px !important;height: 0px;");
@@ -173,8 +173,8 @@ jQuery(document).ready(function($) {
                 $('#hideshow').html('<i class="fas fa-chevron-down d-none d-md-inline-block"></i> Show')
             } else {
                 $("#infoJob").attr("style", "");
-                $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145);
-                $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145);
+                $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+                // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
                 $('#hideshow').html('<i class="fas fa-chevron-up d-none d-md-inline-block"></i> Hide')
             }
 

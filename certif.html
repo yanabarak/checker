@@ -38,9 +38,12 @@
         <div class="wrapper d-flex align-items-stretch flex-column flex-md-row">
             <aside class="sticky-md-top">
                 <div class="sticky-top sidebar left asidebar">
-                    <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                        <div class="animated-hamburger open"><span></span><span></span><span></span></div>
-                    </button>
+                    <div class="d-none d-md-flex  align-items-center">
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span></div>
+                        </button>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                    </div>
                     <div class="logo-container">
                         <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
                     </div>
@@ -130,69 +133,94 @@
                         </div>
                     </div>
                     <h4 class="fw-light black-color p-0 py-md-2">Select the CheckerTificate program you wish to take:</h4>
-                    <div class="row bg-white rounded-pill cert-elem d-flex align-items-center mb-2">
-                        <div class="col-auto status rounded-circle"><i class="fas fa-check-circle sec-color"></i></div>
-                        <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
-                            <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">MS Certificate sdfa fgz</div>
-                            <div class="col-auto p-0 ms-0 ms-lg-auto">
-                                <div class="color-lgrey">Attempts</div>
-                                <div class="fs-18">1 of 3</div>
+                    <div class="row bg-grey cert-elem d-flex align-items-center m-0 mb-2 p-0 w-100">
+                        <div class="row bg-white cert-elem d-flex align-items-center m-0">
+                            <div class="col-auto status rounded-circle"><i class="fas fa-check-circle sec-color"></i></div>
+                            <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
+                                <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">MS Certificate sdfa fgz</div>
+                                <div class="col-auto p-0 ms-0 ms-lg-auto">
+                                    <div class="color-lgrey">Attempts</div>
+                                    <div class="fs-18">1 of 3</div>
+                                </div>
+                                <div class="col-auto p-0 ms-auto me-0 me-lg-5">
+                                    <div class="color-lgrey">Previous Attempts</div>
+                                    <div class="fs-18">13.05.2021</div>
+                                </div>
                             </div>
-                            <div class="col-auto p-0 ms-auto me-0 me-lg-5">
-                                <div class="color-lgrey">Previous Attempts</div>
-                                <div class="fs-18">13.05.2021</div>
-                            </div>
-                        </div>
-                        <div class="result round-diagram col-auto p-0 ms-auto bd-highlight position-relative invisible">
-                            <p class="result-text">
-                            </p>
-                            <svg width="66px" height="66px" viewBox="0 0 42 42" class="donut" data-work="85">
-                                <circle class=" donut-ring" cx="21" cy="21" r="19" stroke="#EEEEEE" fill="transparent" stroke-width="4"></circle>
-                                <circle class="donut-ring-main" stroke-linecap="round" cx="21" cy="21" r="19" fill="transparent" stroke-width="4" stroke-dasharray=""></circle>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="row bg-white rounded-pill cert-elem d-flex align-items-center mb-2">
-                        <div class="col-auto status rounded-circle"><i class="fas fa-check-circle sec-color"></i></div>
-                        <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
-                            <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Test Certificate</div>
-                            <div class="col-auto p-0 ms-0 ms-lg-auto">
-                                <div class="color-lgrey">Attempts</div>
-                                <div class="fs-18">1 of 1</div>
-                            </div>
-                            <div class="col-auto p-0 ms-auto me-0 me-lg-5">
-                                <div class="color-lgrey">Previous Attempts</div>
-                                <div class="fs-18">13.05.2021</div>
+                            <div class="col-auto p-0 pe-4 d-none d-sm-block"><button class="outline-0 border-0 bg-transparent p-0 h-100 color-grey toggleCer accordion-button collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCer1" aria-expanded="false" aria-controls="collapseCer1">
+                                </button></div>
+                            <div class="result round-diagram col-auto p-0 ms-auto bd-highlight position-relative invisible">
+                                <p class="result-text">
+                                </p>
+                                <svg width="66px" height="66px" viewBox="0 0 42 42" class="donut" data-work="85">
+                                    <circle class=" donut-ring" cx="21" cy="21" r="19" stroke="#EEEEEE" fill="transparent" stroke-width="4"></circle>
+                                    <circle class="donut-ring-main" stroke-linecap="round" cx="21" cy="21" r="19" fill="transparent" stroke-width="4" stroke-dasharray=""></circle>
+                                </svg>
                             </div>
                         </div>
-                        <div class="result round-diagram col-auto p-0 ms-auto bd-highlight position-relative invisible">
-                            <p class="result-text">
-                            </p>
-                            <svg width="66px" height="66px" viewBox="0 0 42 42" class="donut" data-work="100">
-                                <circle class=" donut-ring" cx="21" cy="21" r="19" stroke="#EEEEEE" fill="transparent" stroke-width="4"></circle>
-                                <circle class="donut-ring-main" stroke-linecap="round" cx="21" cy="21" r="19" fill="transparent" stroke-width="4" stroke-dasharray=""></circle>
-                            </svg>
+                        <div class="row m-0 cer-elem-inf collapse" id="collapseCer1">
+                            <div class="black-color fs-18 ps-lg-2 fw-bold pt-4">Mystery Shopper Certificate </div>
+                            <div class="fs-18 ps-lg-2 pb-4">Make sure you read this description ake sure you go tMake sure you go t Make sure yoyou go tMake sure you go t.</div>
                         </div>
                     </div>
-                    <div class="row bg-white rounded-pill cert-elem d-flex align-items-center mb-2">
-                        <div class="col-auto status rounded-circle"><i class="fas fa-lock-open sec-color"></i></div>
-                        <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
-                            <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Testing Umer Certif</div>
-                            <button class="btn btn-input btn-md btn-outline-main main-color start-test ms-0 ms-lg-auto bg-transparent fw-bold fs-5" type="button">Start</button>
+                    <div class="row bg-grey cert-elem d-flex align-items-center m-0 mb-2 p-0 w-100">
+                        <div class="row bg-white cert-elem d-flex align-items-center m-0">
+                            <div class="col-auto status rounded-circle"><i class="fas fa-check-circle sec-color"></i></div>
+                            <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
+                                <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Test Certificate</div>
+                                <div class="col-auto p-0 ms-0 ms-lg-auto">
+                                    <div class="color-lgrey">Attempts</div>
+                                    <div class="fs-18">1 of 1</div>
+                                </div>
+                                <div class="col-auto p-0 ms-auto me-0 me-lg-5">
+                                    <div class="color-lgrey">Previous Attempts</div>
+                                    <div class="fs-18">13.05.2021</div>
+                                </div>
+                            </div>
+                            <div class="col-auto p-0 pe-4 d-none d-sm-block"><button class="outline-0 border-0 bg-transparent p-0 h-100 color-grey toggleCer accordion-button collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCer2" aria-expanded="false" aria-controls="collapseCer2">
+                                </button></div>
+                            <div class="result round-diagram col-auto p-0 ms-auto bd-highlight position-relative invisible">
+                                <p class="result-text">
+                                </p>
+                                <svg width="66px" height="66px" viewBox="0 0 42 42" class="donut" data-work="100">
+                                    <circle class=" donut-ring" cx="21" cy="21" r="19" stroke="#EEEEEE" fill="transparent" stroke-width="4"></circle>
+                                    <circle class="donut-ring-main" stroke-linecap="round" cx="21" cy="21" r="19" fill="transparent" stroke-width="4" stroke-dasharray=""></circle>
+                                </svg>
+                            </div>
+                            <div class="row m-0 cer-elem-inf collapse" id="collapseCer2">
+                                <div class="black-color fs-18 ps-lg-2 fw-bold pt-4">Mystery Shopper Certificate </div>
+                                <div class="fs-18 ps-lg-2 pb-4">Make sure you read this description ake sure you go tMake sure you go t Make sure yoyou go tMake sure you go t.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row bg-white rounded-pill cert-elem d-flex align-items-center mb-2">
-                        <div class="col-auto status rounded-circle"><i class="fas fa-lock-open sec-color"></i></div>
-                        <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
-                            <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Testing Umer Certif</div>
-                            <button class="btn btn-input btn-md btn-outline-main main-color start-test ms-0 ms-lg-auto bg-transparent fw-bold fs-5" type="button">Start</button>
+                    <div class="row bg-grey cert-elem d-flex align-items-center m-0 mb-2 p-0 w-100">
+                        <div class="row bg-white cert-elem d-flex align-items-center m-0">
+                            <div class="col-auto status rounded-circle"><i class="fas fa-lock-open sec-color"></i></div>
+                            <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
+                                <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Testing Umer Certif</div>
+                                <div class="col-auto p-0 pe-4 d-none d-sm-block ms-auto"><button class="outline-0 border-0 bg-transparent p-0 h-100 color-grey toggleCer accordion-button collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCer3" aria-expanded="false" aria-controls="collapseCer3">
+                                    </button></div>
+                                <button class="btn btn-input btn-md btn-outline-main main-color start-test ms-0 bg-transparent fw-bold fs-5" type="button">Start</button>
+                            </div>
+                        </div>
+                        <div class="row m-0 cer-elem-inf collapse" id="collapseCer3">
+                            <div class="black-color fs-18 ps-lg-2 fw-bold pt-4">Mystery Shopper Certificate </div>
+                            <div class="fs-18 ps-lg-2 pb-4">Make sure you read this description ake sure you go tMake sure you go t Make sure yoyou go tMake sure you go t.</div>
                         </div>
                     </div>
-                    <div class="row bg-white rounded-pill cert-elem d-flex align-items-center mb-2">
-                        <div class="col-auto status rounded-circle"><i class="fas fa-lock white-color"></i></div>
-                        <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
-                            <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Shoppers agreement</div>
-                            <button class="btn btn-input btn-md btn-outline-main main-color start-test ms-0 ms-lg-auto bg-transparent fw-bold fs-5" type="button" disabled>Start</button>
+                    <div class="row bg-grey cert-elem d-flex align-items-center m-0 mb-2 p-0 w-100">
+                        <div class="row bg-white cert-elem d-flex align-items-center m-0">
+                            <div class="col-auto status rounded-circle"><i class="fas fa-lock white-color"></i></div>
+                            <div class="row m-0 p-0 col d-flex align-items-center mx-3 mx-lg-0">
+                                <div class="col-12 col-lg-3 sec-color title fw-bold fs-18 p-0 ms-0 ms-lg-5">Shoppers agreement</div>
+                                <div class="col-auto p-0 pe-4 d-none d-sm-block ms-auto"><button class="outline-0 border-0 bg-transparent p-0 h-100 color-grey toggleCer accordion-button collapsed ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCer4" aria-expanded="false" aria-controls="collapseCer4">
+                                    </button></div>
+                                <button class="btn btn-input btn-md btn-outline-main main-color start-test ms-0 bg-transparent fw-bold fs-5" type="button" disabled>Start</button>
+                            </div>
+                        </div>
+                        <div class="row m-0 cer-elem-inf collapse" id="collapseCer4">
+                            <div class="black-color fs-18 ps-lg-2 fw-bold pt-4">Mystery Shopper Certificate </div>
+                            <div class="fs-18 ps-lg-2 pb-4">Make sure you read this description ake sure you go tMake sure you go t Make sure yoyou go tMake sure you go t.</div>
                         </div>
                     </div>
                 </div>
