@@ -7,6 +7,19 @@ jQuery(document).ready(function($) {
         touch: false,
         wrap: false
     })
+
+
+    if ($(window).width() < 768) {
+        (function init100vh() {
+            function setHeight() {
+                var vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            setHeight();
+            window.addEventListener('resize', setHeight);
+        })();
+    };
+
     //switch off preloader
     function spinerOff() {
         $("#spinerWrap").addClass("d-none").removeClass("d-flex");
@@ -164,22 +177,31 @@ jQuery(document).ready(function($) {
 
     function hideInfoJob() {
 
-        $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
-        // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
-        document.querySelector('#hideshow').addEventListener('click', function() {
-            if ($('#hideshow').hasClass("hide")) {
-                $("#infoJob").attr("style", "padding: 0px !important;height: 0px;");
-                $("#map iframe").attr("height", $(window).height());
-                $('#hideshow').html('<i class="fas fa-chevron-down d-none d-md-inline-block"></i> Show')
-            } else {
-                $("#infoJob").attr("style", "");
-                $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
-                // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
-                $('#hideshow').html('<i class="fas fa-chevron-up d-none d-md-inline-block"></i> Hide')
+        var scrollPos = 0;
+        $(window).scroll(function() {
+            var st = $(this).scrollTop();
+            if (st > scrollPos) {
+                $('#infoJob').addClass('mini-menu')
             }
+            scrollPos = st;
 
-            $('#hideshow').toggleClass("show hide");
         });
+        // $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+        // // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+        // document.querySelector('#hideshow').addEventListener('click', function() {
+        //     if ($('#hideshow').hasClass("hide")) {
+        //         $("#infoJob").attr("style", "padding: 0px !important;height: 0px;");
+        //         $("#map iframe").attr("height", $(window).height());
+        //         $('#hideshow').html('<i class="fas fa-chevron-down d-none d-md-inline-block"></i> Show')
+        //     } else {
+        //         $("#infoJob").attr("style", "");
+        //         $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+        //         // $("#map").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");
+        //         $('#hideshow').html('<i class="fas fa-chevron-up d-none d-md-inline-block"></i> Hide')
+        //     }
+
+        //     $('#hideshow').toggleClass("show hide");
+        // });
     }
 
 
