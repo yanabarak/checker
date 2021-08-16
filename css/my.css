@@ -390,6 +390,9 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     color: #AEAEAE;
 
 }
+.color-lgrey2 {
+    color: #797979;
+}
 .main-bg {
     background-color: var(--main-brand-color);
 }
@@ -556,6 +559,7 @@ select.form-select {
 }
 .form-control.pick-date,
 input[type="text"],
+input[type="password"],
 #pick-branch-modal select {
     font-size: 16px;
     border-color: #dadada;
@@ -565,6 +569,7 @@ input[type="text"],
 
 }
 .form-control.pick-date::placeholder,
+input[type="password"]::placeholder,
 input[type="text"]::placeholder {
     font-size: 16px;
     color: #AEAEAE;
@@ -718,6 +723,9 @@ button#navbarSideCollapse {
 
 .fs-18 {
     font-size: 18px !important;
+}
+.fs-16 {
+    font-size: 16px !important;
 }
 .form-check-input {
     width: 20px;
@@ -1484,7 +1492,107 @@ div#infoJob.mini-menu {
 div#infoJob.mini-menu+div#map {
     overflow: auto;
 }
+/*login page*/
 
+div#login-form {
+    box-sizing: border-box;
+    box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    max-width: 1100px;
+}
+div#login-form h2 {
+    min-width: 400px;
+}
+div#login-form>div {
+    padding: 36px 76px 20px;
+}
+div#login-form>.sec-bg {
+    border-radius: 6px 0px 0px 6px;
+    background-image: url('../img/login_bg.png');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+div#login-form img.logo {
+    max-width: 170px;
+}
+div#login-form .btn-outline {
+    background-color: #FFFFFF;
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: #797979;
+    padding: 12px 20px 12px 50px;
+    white-space: nowrap;
+    min-height: 40px;
+    width: 196px;
+    transition: all 0.3s linear;
+}
+button.btn[data-title="Microsoft"] {
+    background-image: url('../img/icon/Microsoft.svg');
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+    background-size: 24px;
+}
+button.btn[data-title="Google"] {
+    background-image: url('../img/icon/Google.svg');
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+    background-size: 24px;
+}
+button.btn[data-title="Facebook"] {
+    background-image: url('../img/icon/Facebook.svg');
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+    background-size: 24px;
+}
+button.btn[data-title="Twitter"] {
+    background-image: url('../img/icon/Twitter.svg');
+    background-repeat: no-repeat;
+    background-position: left 13px center;
+    background-size: 24px;
+}
+button.btn[data-title="Microsoft"]:hover {
+    background-image: url('../img/icon/Microsoft_w.svg');
+}
+button.btn[data-title="Google"]:hover {
+    background-image: url('../img/icon/Google_w.svg');
+}
+button.btn[data-title="Facebook"]:hover {
+    background-image: url('../img/icon/Facebook_w.svg');
+}
+button.btn[data-title="Twitter"]:hover {
+    background-image: url('../img/icon/Twitter_w.svg');
+}
+div#login-form .btn-outline[data-title]:hover {
+    box-shadow: none;
+    background-color: var(--second-brand-color);
+    color: #fff !important;
+    transition: all 0.3s linear;
+}
+#login-form p.title {
+    border-bottom: 1px solid #AEAEAE;
+    line-height: 0.1em;
+}
+div#login-form input {
+    min-height: 40px;
+    color: #000;
+}
+
+div#login-form select#lang {
+    background-color: var(--second-brand-color);
+    font-size: inherit;
+    border-color: #fff;
+    color: #fff;
+    padding: 3px 15px 3px 10px;
+    box-shadow: none;
+    background-position: right 7px center;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23ffffff' stroke-width='1.5'/%3e%3c/svg%3e ");
+}
 @media (max-width: 1024.5px) {
     .pr-100 {
         padding-right: 48px !important;
