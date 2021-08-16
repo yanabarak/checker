@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Register Page</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,18 +14,18 @@
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
 </head>
 
-<body class="overflow-hidden">
+<body class="overflow-hidden" id="register">
     <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
         <div class="spinner-border mx-auto sec-color" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
     </div>
     <div class="container-fluid d-flex align-items-center" id="content">
-        <div class="row p-0 bg-white m-auto" id="login-form">
+        <div class="row p-0 bg-white m-auto" id="register-form">
             <div class="col sec-bg">
                 <div class="row"><img src="img/checker_logo_white.svg" alt="Checker logo" class="logo"></div>
                 <div class="row mt-3">
-                    <h2 class="white-color fw-bold">Shoppers Login</h2>
+                    <h2 class="white-color fw-bold">Shoppers Registration</h2>
                 </div>
                 <div class="row">
                     <div class="col-auto"><select class="form-select mt-2" id="lang">
@@ -34,10 +34,21 @@
                             <option value="2">Hebrew</option>
                         </select></div>
                 </div>
+                <div class="row">
+                    <div class="col white-color mt-4">
+                        <p>Hello, and welcome to the Checker Inc. shopper registration page.
+                            Please enter your details below, and we will contact you as soon as a new recruiting cycle is started.
+                        </p>
+                        <p class="mb-0">
+                            Important !<br>
+                            Please use a user name and password that you can remember.</p>
+                        <p class="opacity-50">Last modification date: 24-06-2021</p>
+                    </div>
+                </div>
             </div>
             <div class="col row m-0">
                 <div class="row">
-                    <h2 class="black-color fw-bold p-0">Please log in here</h2>
+                    <h2 class="black-color fw-bold p-0">Please register here</h2>
                 </div>
                 <div class="row p-0 m-0 mt-2">
                     <button type="button" class="btn btn-outline col-6 me-2" data-title="Microsoft">Login with Microsoft</button>
@@ -58,17 +69,26 @@
                     <label for="Password" class="form-label p-0 black-color">Password</label>
                     <input type="password" class="form-control" id="Password" placeholder="Password">
                 </div>
-                <div class="row w-100 m-0 p-0 mt-1">
-                    <a href="#" class="text-end color-lgrey p-0" onclick="javascript:alert('Try to relax and recall your password');return false">Forgot your password?</a>
+                <div class="row w-100 m-0 p-0 mt-2">
+                    <label for="RetypePassword" class="form-label p-0 black-color">Retype Password</label>
+                    <input type="password" class="form-control" id="RetypePassword" placeholder="RetypePassword">
                 </div>
-                <div class="row w-100 m-0 p-0 mt-2" id="recaptcha">
+                <div class="row w-100 m-0 p-0 mt-2">
+                    <label for="RetypeEmail" class="form-label p-0 black-color">Retype Email</label>
+                    <input type="email" class="form-control" id="RetypeEmail" placeholder="test@test.com">
+                </div>
+                <div class="row w-100 m-0 p-0 mt-2">
+                    <label for="Email" class="form-label p-0 black-color">Email</label>
+                    <input type="email" class="form-control" id="Email" placeholder="test@test.com">
+                </div>
+                <div class="row w-100 m-0 p-0 mt-4" id="recaptcha">
                     <img src="img/tmp_recaptcha.png" alt="Tmp file" class="mw-100 p-0">
                 </div>
                 <div class="row w-100 m-0 p-0 mt-2">
-                    <button type="submit" class="btn btn-primary sec-bg border-0 w-100 fs-18">Login</button>
+                    <button type="submit" class="btn btn-primary sec-bg border-0 w-100 fs-18">Register</button>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
-                    <p class="color-lgrey p-0 text-center m-0">Don’t have an account yet? <a href="#" class="black-color">Register</a></p>
+                    <p class="color-lgrey p-0 text-center m-0">Already have an account? <a href="#" class="black-color">Login here</a></p>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
                     <p class="color-lgrey p-0 text-center footer m-0">Checker System LTD PREPRODUCTION system), B Camin27 Phone +972 1599444-555 Email checker.testing@grnail.com </p>

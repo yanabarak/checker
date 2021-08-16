@@ -1494,29 +1494,40 @@ div#infoJob.mini-menu+div#map {
 }
 /*login page*/
 
-div#login-form {
+div#login-form,
+div#register-form {
     box-sizing: border-box;
     box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     max-width: 1100px;
 }
-div#login-form h2 {
+div#login-form h2,
+div#register-form h2 {
     min-width: 400px;
 }
-div#login-form>div {
+div#login-form>div,
+div#register-form>div {
     padding: 36px 76px 20px;
 }
-div#login-form>.sec-bg {
+div#login-form>.sec-bg,
+div#register-form>.sec-bg {
     border-radius: 6px 0px 0px 6px;
     background-image: url('../img/login_bg.png');
     background-position: left bottom;
     background-repeat: no-repeat;
     background-size: auto;
 }
-div#login-form img.logo {
+
+div#register-form>.sec-bg,
+div#register-form>.sec-bg select#lang {
+    background-color: #143D53;
+}
+div#login-form img.logo,
+div#register-form img.logo {
     max-width: 170px;
 }
-div#login-form .btn-outline {
+div#login-form .btn-outline,
+div#register-form .btn-outline {
     background-color: #FFFFFF;
     border: 1px solid #DADADA;
     box-sizing: border-box;
@@ -1568,22 +1579,26 @@ button.btn[data-title="Facebook"]:hover {
 button.btn[data-title="Twitter"]:hover {
     background-image: url('../img/icon/Twitter_w.svg');
 }
-div#login-form .btn-outline[data-title]:hover {
+div#login-form .btn-outline[data-title]:hover,
+div#register-form .btn-outline[data-title]:hover {
     box-shadow: none;
     background-color: var(--second-brand-color);
     color: #fff !important;
     transition: all 0.3s linear;
 }
-#login-form p.title {
+#login-form p.title,
+#register-form p.title {
     border-bottom: 1px solid #AEAEAE;
     line-height: 0.1em;
 }
-div#login-form input {
+div#login-form input,
+div#register-form input {
     min-height: 40px;
     color: #000;
 }
 
-div#login-form select#lang {
+div#login-form select#lang,
+div#register-form select#lang {
     background-color: var(--second-brand-color);
     font-size: inherit;
     border-color: #fff;
@@ -1592,6 +1607,14 @@ div#login-form select#lang {
     box-shadow: none;
     background-position: right 7px center;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23ffffff' stroke-width='1.5'/%3e%3c/svg%3e ");
+}
+body#register div#content {
+    padding-top: 49px;
+    padding-bottom: 49px;
+}
+div#login-form label,
+div#register-form label {
+    margin-top: 4px;
 }
 @media (max-width: 1024.5px) {
     .pr-100 {
