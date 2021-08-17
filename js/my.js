@@ -274,19 +274,11 @@ jQuery(document).ready(function($) {
         $("#infoJob .cert-elem svg").each(function() {
             let datawork = $(this).attr("data-work");
             if (datawork == 100) {
-                $(this).find(".donut-ring-main").attr("stroke-dasharray", `
-                            $ { datawork } 0 `).attr("stroke-dashoffset", `
-                            $ { datawork / 2 }
-                            `);
+                $(this).find(".donut-ring-main").attr("stroke-dasharray", `${ datawork } 0`).attr("stroke-dashoffset", `${ datawork / 2 }`);
             } else if (datawork < 10) {
-                $(this).find(".donut-ring-main").attr("stroke-dasharray", `
-                            $ { datawork } 120 `).attr("stroke-dashoffset", `
-                            32 `);
+                $(this).find(".donut-ring-main").attr("stroke-dasharray", ` ${ datawork } 120 `).attr("stroke-dashoffset", `32 `);
             } else {
-                $(this).find(".donut-ring-main").attr("stroke-dasharray", `
-                            $ { datawork } $ { 110 - datawork }
-                            `).attr("stroke-dashoffset", `
-                            20 `);
+                $(this).find(".donut-ring-main").attr("stroke-dasharray", `${ datawork } ${ 110 - datawork }`).attr("stroke-dashoffset", `20`);
             }
             $(this).closest('.result').find('.result-text').append(datawork);
             $(this).closest('.result').removeClass("invisible");

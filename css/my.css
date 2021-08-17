@@ -452,7 +452,9 @@ form .btn {
     width: 176px;
     height: 48px;
 }
-
+div[id^=widget] {
+    min-width: 250px;
+}
 
 /*#donut1 svg {
     transform: scaleX(-1) rotate(-90deg);
@@ -1077,6 +1079,10 @@ button.start-test:disabled {
 .tel-elem-info {
     padding: 9px;
 }
+.tel-elem-info>.col-12~.col-auto:last-child {
+    min-width: 150px;
+    margin-right: 3rem !important;
+}
 .toggleTel {
     color: var(--second-brand-color) !important;
     padding: 0px 18px !important;
@@ -1356,7 +1362,7 @@ select#lang {
 .card-list-job .form-floating {
     padding-right: 32px;
 }
-button.btn.btn-primary {
+body.myjobs button.btn.btn-primary {
     padding: 13px 30px;
 }
 .form-applied {
@@ -1405,13 +1411,14 @@ div#infoJob.mini-menu+div button#navbarSideCollapse.navbar-toggler.button-open {
     margin-top: 110px;
     margin-left: 120px;
 }
-div#infoJob>div {
+body.myjobs div#infoJob>div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
 div#infoJob>div>.block {
     grid-row-start: 2;
+
 }
 
 div#infoJob>div>.block:nth-child(3) {
@@ -1896,6 +1903,15 @@ div#register-form label {
         line-height: 150% !important;
         border: 0px solid !important;
         padding: 5.5px 32px !important;
+    }
+    .tel-elem-info>.col-12~.col-auto:last-child {
+        min-width: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .tel-elem-info>.col-12~.col-auto:nth-child(2):last-child,
+    .tel-elem-info>.col-12~.col-auto:nth-child(2):not(:last-child) {
+        margin-left: 0px !important;
     }
     #map button i {
         font-size: 19px;
