@@ -1081,7 +1081,21 @@ button.start-test:disabled {
 }
 .tel-elem-info>.col-12~.col-auto:last-child {
     min-width: 150px;
-    margin-right: 3rem !important;
+    margin-right: 2rem !important;
+}
+.tel-elem-info>.col-auto .fs-18 {
+    overflow: hidden;
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
+    max-width: 25%;
+    margin-left: 2rem !important;
+}
+.tel-elem-info>.col-auto:last-child .fs-18 {
+    max-width: 150px;
 }
 .toggleTel {
     color: var(--second-brand-color) !important;
@@ -1624,6 +1638,12 @@ div#register-form label {
     margin-top: 4px;
 }
 @media (max-width: 1024.5px) {
+
+    .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
+
+        max-width: 30%;
+        margin-left: 0rem !important;
+    }
     .pr-100 {
         padding-right: 48px !important;
     }
@@ -1840,6 +1860,27 @@ div#register-form label {
     }
     div[id*="widget"] .cardnew {
         flex-direction: column-reverse !important;
+
+    }
+    .tel-elem-info>.col-auto .fs-18 {
+        overflow: hidden;
+        max-width: 90%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .tel-elem-info>.col-auto:nth-child(2) {
+
+        max-width: 110px;
+
+    }
+    .tel-elem-info>.col-auto:nth-child(2):last-child {
+        max-width: 200px;
+
+    }
+    .tel-elem-info>.col-auto:nth-child(3):last-child {
+        margin-left: 30px !important;
+        max-width: 130px;
+
 
     }
     .cardnew.bg-grey p.fs-2 {
