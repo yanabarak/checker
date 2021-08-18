@@ -221,7 +221,11 @@ jQuery(document).ready(function($) {
         var heightBlock2;
 
         var scrolld = true;
-        $(window).scroll(function() {
+        $(window).scroll(function() {// var st = $(this).scrollTop();
+// if (st > scrollPos) {
+//     $('#infoJob').addClass('mini-menu')
+// }
+// scrollPos = st;
             var top = $window.scrollTop();
             if (lastScrollTop > top) {
                 if (top == 0) {

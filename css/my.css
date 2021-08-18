@@ -794,7 +794,7 @@ a.accept.d-grey:hover {
 
 }
 button.accept.disabled:hover,
-button.start-test:disabled:hover {
+a.start-test.disabled:hover {
     box-shadow: 0px 0px 0px 50px #aeaeae inset !important;
 
 }
@@ -855,7 +855,7 @@ button.start-test:disabled:hover {
     color: #fff;
 }
 #map button.accept:hover,
-button.start-test:disabled:hover {
+a.start-test.disabled:hover {
     color: #fff !important;
 }
 .accordion-item {
@@ -1060,17 +1060,30 @@ button.filter-btn:hover {
     flex-direction: column;
     justify-content: center;
 }
-button.start-test {
+a.start-test {
     border: 0px;
     box-shadow: 0px 0px 0px 4px var(--main-brand-color) inset;
     min-height: 66px;
     min-width: 237px;
 }
-button.start-test:disabled {
+a.start-test:hover {
+    color: #fff !important;
+    box-shadow: 0px 0px 0px 50px var(--main-brand-color) inset;
+}
+a.start-test.disabled {
     box-shadow: 0px 0px 0px 4px #DADADA inset;
     color: #DADADA;
     opacity: 1;
+    pointer-events: none;
 
+}
+a.start-test {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    border-radius: 60px;
+    justify-content: center;
+    flex-direction: column;
 }
 .tel-elem {
     border-radius: 6px;
@@ -1353,6 +1366,7 @@ button.navbar-toggler+a i.far.fa-bell.badge-notificatios:hover {
 }
 .toggleCer.accordion-button::after {
     filter: grayscale(1);
+    content: none;
 }
 select#lang {
     box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
@@ -1492,8 +1506,8 @@ div.mini-menu#infoJob {
     overflow: hidden;
     position: fixed;
 }
-div#infoJob {
-    position: relative !important;
+body.myjobs div#infoJob {
+    /*   position: relative !important;*/
     z-index: 1;
     right: 0px;
     top: 0px;
@@ -1504,9 +1518,10 @@ div#infoJob {
 }
 div#infoJob.mini-menu {
     width: 100%;
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    z-index: 100;
+    /*    position: -webkit-sticky !important;
+    position: sticky !important;*/
+
+    z-index: 100 !important;
     right: 0px;
     top: 0px;
 }
@@ -1663,7 +1678,7 @@ div#register-form label {
         left: 16px;
         position: absolute;
     }
-    button.start-test.btn-md {
+    a.start-test.btn-md {
         min-height: 32px;
         min-width: 149px;
         font-size: 19px;
@@ -1671,7 +1686,7 @@ div#register-form label {
         box-shadow: 0px 0px 0px 2px var(--main-brand-color) inset;
     }
 
-    button.start-test:disabled {
+    a.start-test.disabled {
         box-shadow: 0px 0px 0px 2px #DADADA inset;
 
     }
