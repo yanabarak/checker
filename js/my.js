@@ -215,13 +215,31 @@ jQuery(document).ready(function($) {
     }
 
     function hideInfoJob() {
-        var scrollPos = 0;
+        var lastScrollTop = 0;
+        var $window = $(window);
+        var heightBlock = $("#infoJob").innerHeight();
+        var heightBlock2;
+
+        var scrolld = true;
         $(window).scroll(function() {
-            var st = $(this).scrollTop();
-            if (st > scrollPos) {
-                $('#infoJob').addClass('mini-menu')
+            var top = $window.scrollTop();
+            if (lastScrollTop > top) {
+                if (top == 0) {
+                    console.log("rem - " + top);
+                    $('#infoJob').removeClass('mini-menu');
+                    scrolld = false;
+                }
+            } else if (lastScrollTop < top && lastScrollTop >= 20) {
+                if (top <= $("#infoJob").innerHeight() && top >= 10) {
+                    console.log("add - " + top);
+                    $('#infoJob').addClass('mini-menu');
+                    $(window).scrollTop(top + 25);
+                }
+                scrolld = true;
+
             }
-            scrollPos = st;
+            lastScrollTop = top;
+
 
         });
         // $("#map iframe").attr("height", $("#navbarsExampleDefault>div").length * 145 + "px");

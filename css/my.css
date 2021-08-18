@@ -1493,18 +1493,19 @@ div.mini-menu#infoJob {
     position: fixed;
 }
 div#infoJob {
-    position: sticky;
+    position: relative !important;
     z-index: 1;
     right: 0px;
     top: 0px;
     background-color: #E9F6FE;
-    background-image: url(img/Mainpage.jpg);
+    background-image: url("../img/Mainpage.jpg");
     background-position: bottom;
     transition: all 0.5s linear;
 }
 div#infoJob.mini-menu {
     width: 100%;
-    position: sticky;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     z-index: 100;
     right: 0px;
     top: 0px;
