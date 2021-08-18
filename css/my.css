@@ -340,6 +340,15 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 /*main content*/
 #content {
     min-height: 100vh;
+    background-color: transparent;
+    /*background-image: url(../img/Mainpage.jpg);*/
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    /*    background-blend-mode: darken;*/
+    background-size: auto;
+    background-attachment: fixed;
+}
+.wrapper {
     background-color: #E9F6FE;
     background-image: url(../img/Mainpage.jpg);
     background-position: right bottom;
@@ -347,6 +356,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     /*    background-blend-mode: darken;*/
     background-size: auto;
     background-attachment: fixed;
+
 }
 .pr-100 {
     padding-right: 100px !important;

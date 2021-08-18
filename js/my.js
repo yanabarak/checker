@@ -221,11 +221,11 @@ jQuery(document).ready(function($) {
         var heightBlock2;
 
         var scrolld = true;
-        $(window).scroll(function() {// var st = $(this).scrollTop();
-// if (st > scrollPos) {
-//     $('#infoJob').addClass('mini-menu')
-// }
-// scrollPos = st;
+        $(window).scroll(function() { // var st = $(this).scrollTop();
+            // if (st > scrollPos) {
+            //     $('#infoJob').addClass('mini-menu')
+            // }
+            // scrollPos = st;
             var top = $window.scrollTop();
             if (lastScrollTop > top) {
                 if (top == 0) {
@@ -237,7 +237,7 @@ jQuery(document).ready(function($) {
                 if (top <= $("#infoJob").innerHeight() && top >= 10) {
                     console.log("add - " + top);
                     $('#infoJob').addClass('mini-menu');
-                    $(window).scrollTop(top + 25);
+                    // $(window).scrollTop(top + 25);
                 }
                 scrolld = true;
 
