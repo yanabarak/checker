@@ -783,7 +783,7 @@ a.accept {
 
 }
 .card-list-job.bg-white .accept {
-    width: 127px;
+    min-width: 127px;
 }
 button.start-job,
 a.start-job {
@@ -824,9 +824,35 @@ a.accept.d-grey:hover {
     box-shadow: 0px 0px 0px 50px #666666 inset !important;
 
 }
-#map .navbar-collapse.open-w100 div.action, #map .navbar-collapse.open-w100 div.action.flex-column .col-12 {
-    width: 275px;
+body.myjobs #map .navbar-collapse.open-w100 div.action {
     justify-content: space-evenly !important;
+    margin-right: 0px;
+}
+
+.col-auto.pb-3.hidd.d-none.desc-block:nth-child(3) {
+    margin-left: 150px;
+}
+
+
+.col.col-md-1.pb-3.hidd.d-none {
+    width: 150px;
+}
+button#back {
+    right: 20px;
+}
+
+button#back i {
+    color: var(--main-brand-color);
+    font-size: 25px;
+    transition: all o.5s linear;
+}
+button#back:hover i {
+    color: var(--second-brand-color);
+    transition: all o.5s linear;
+}
+
+button#back:hover {
+    background-color: transparent;
 }
 button.accept.disabled:hover,
 a.start-test.disabled:hover {
@@ -916,14 +942,17 @@ a.start-test.disabled:hover {
     box-shadow: none;
     color: inherit;
 }
-#map p.desc {
-    overflow: hidden;
-    max-width: 95%;
+#map p.desc {    overflow: hidden;
+    max-width: calc(100vw - 1500px);
     text-overflow: ellipsis;
     white-space: nowrap;
+    min-width: 350px;
 }
-#map div.action {
+body.myjobs #map div.action {
     min-width: 220px;
+}
+body.openjobs #map div.action {
+    min-width: 150px;
 }
 .hidd {
     opacity: 0;
@@ -937,6 +966,8 @@ a.start-test.disabled:hover {
     width: auto;
     height: auto;
     transition: all 1s linear 1s;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 a.preview .fas {
     display: inline-block;
@@ -1439,7 +1470,14 @@ select#lang {
 .card-list-job .form-floating {
     padding-right: 32px;
 }
-body.myjobs button.btn.btn-primary {
+.card-list-job.need-cert a.pick-branch-modal, .card-list-job.show-pack a.pick-branch-modal {
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+body.myjobs button.btn.btn-primary,body.openjobs button.btn.btn-primary  {
     padding: 13px 30px;
 }
 .form-applied {
@@ -1458,6 +1496,9 @@ body.myjobs button.btn.btn-primary {
 }
 body.openjobs #map .listWrap {
     padding-bottom: 116px !important;
+}
+body.myjobs #map .listWrap {
+    padding-bottom: 75px !important;
 }
 div#map.emptyList,
 div#map.emptyList .listWrap {
@@ -1498,7 +1539,7 @@ div#infoJob.mini-menu+div button#navbarSideCollapse.navbar-toggler.button-open {
     z-index: 2;
 
 }
-body.myjobs div#infoJob>div {
+body.myjobs div#infoJob>div,body.openjobs div#infoJob>div  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -1572,7 +1613,7 @@ div.mini-menu#infoJob {
     overflow: hidden;
     position: fixed;
 }
-body.myjobs div#infoJob {
+body.myjobs div#infoJob,body.openjobs div#infoJob  {
     /*   position: relative !important;*/
     z-index: 2;
     right: 0px;
@@ -1601,8 +1642,11 @@ div#infoJob.mini-menu+div#map {
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-7:nth-child(2) {
     max-width: 150px;
 }
-.col-auto.pb-3.hidd.d-none.ms-auto+.ms-auto {
+/*.col-auto.pb-3.hidd.d-none.ms-auto+.ms-auto {
     margin-left: 0px !important;
+}*/
+body.openjobs .action {
+    margin-right: 20px !important;
 }
 .myjobcard .myjobcard-footer>a:last-child {
     width: 100px;
@@ -1612,10 +1656,10 @@ div#infoJob.mini-menu+div#map {
 }
 .myjobcard .myjobcard-footer>a:nth-child(2):last-child {
     width: 120px;
-    min-height: 40.4px;
+    min-height: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;padding: 0px !important;
 }
 .myjobcard .btn-group.accept.start-lang.start-job>a:first-child {
     min-width: 40.4px;
@@ -1648,6 +1692,17 @@ div#infoJob.mini-menu+div#map {
 }
 .myjobcard .btn-group.accept.start-lang.start-job {
     padding-right: 0px !important;
+}
+#navbarsListJob.show-pack-list{
+    transform: translateX(-100%) !important;
+}
+div#navbarsListJobPack {
+    background-color: transparent !important;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+div#navbarsListJobPack.show-job-pack{
+    opacity: 1;
 }
 /*login page*/
 
@@ -1814,7 +1869,7 @@ div#register-form label {
     body.openjobs #map .offcanvas-collapse.open {
         padding-bottom: 115px !important;
     }
-    body.myjobs div#infoJob>div {
+    body.myjobs div#infoJob>div,body.openjobs div#infoJob>div {
         grid-template-columns: repeat(2, 1fr);
     }
     div.mini-menu#infoJob>div {
@@ -2069,7 +2124,7 @@ div#register-form label {
         border-radius: 6px;
         min-height: calc((var(--vh, 1vh) * 100) - 230px);
     }
-    div#navbarsExampleDefault {
+    div#navbarsListJob {
         background: transparent;
     }
     .card-list-job.bg-white {
@@ -2077,7 +2132,7 @@ div#register-form label {
         border: 1px solid #dadada;
         border-radius: 6px;
     }
-    #map .navbar-collapse.open-w100 div.action, #map .navbar-collapse.open-w100 div.action.flex-column .col-12{
+    body.myjobs #map .navbar-collapse.open-w100 div.action,body.myjobs  #map .navbar-collapse.open-w100 div.action.flex-column .col-12{
         width: auto;
     }
     .card-list-job.bg-white .col-12>.accept {
@@ -2150,7 +2205,9 @@ div#register-form label {
     #hideshow {
         display: none;
     }
-
+button.accept.d-grey, a.accept.d-grey {
+    min-height: 35px;
+}
     .modal button.btn.btn-lg.fs-18 {
         font-size: 18px !important;
         min-height: 48px;
@@ -2296,10 +2353,20 @@ div#register-form label {
     #content>#map.list .open-w100 {
         width: 100%;
     }
-    body.myjobs #content>#map.list .open-w100 {
+    body.myjobs #content>#map.list .form-applied {
         padding-bottom: 50px !important;
     }
-
+    .card-list-job.show-pack a[type="button"] {
+    width: auto !important;
+    min-width: auto;
+}
+body.myjobs #content>#map.list .form-applied>div>div:last-child {
+    width: 100% !important;
+    justify-content: space-between !important;
+}
+    .form-applied .fs-18,.form-applied button.accept {
+        font-size: inherit !important;
+    }
     .btn-group.accept.start-lang.start-job>a:first-child {
         min-width: 40.4px;
         height: 40.4px;
