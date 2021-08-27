@@ -1636,6 +1636,9 @@ div#infoJobMenu.mini-menu {
 div#infoJobMenu.mini-menu+div#map {
     overflow: auto;
 }
+body.myjobs #infoJob{
+    padding: 0px !important;
+}
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-5:first-child {
     max-width: 120px;
 }
