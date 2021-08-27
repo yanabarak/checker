@@ -1539,52 +1539,58 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapse.navbar-toggler.button-op
     z-index: 2;
 
 }
-body.myjobs div#infoJobMenu>div,body.openjobs div#infoJobMenu>div  {
+body.myjobs div#infoJobMenu,body.openjobs div#infoJobMenu  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+body.myjobs div#infoJobMenu{
+    padding: 3rem !important;
+    padding-bottom: 0.5rem !important;
 
-div#infoJob div>.block {
+    padding-right: 100px !important;
+    padding-bottom: 1.5rem !important;
+}
+div#infoJob .block {
     grid-row-start: 2;
 
 }
 
-div#infoJob div>.block:nth-child(3) {
+div#infoJob .block:nth-child(3) {
     margin-left: 0px !important;
 }
 
-div.mini-menu#infoJobMenu>div>.block:nth-child(3) {
+div.mini-menu#infoJobMenu .block:nth-child(3) {
     grid-row-start: 1;
     grid-column-start: 2;
 }
 
-div.mini-menu#infoJobMenu>div>.block:nth-child(4) {
+div.mini-menu#infoJobMenu .block:nth-child(4) {
     grid-row-start: 1;
     grid-column-start: 3;
 }
-div.mini-menu#infoJobMenu>div>.block .fs-90 {
+div.mini-menu#infoJobMenu .block .fs-90 {
     font-size: 40px;
     line-height: 1 !important;
 }
-div.mini-menu#infoJobMenu>div>.block {
+div.mini-menu#infoJobMenu .block {
     padding: 10px !important;
     margin-bottom: 0px !important;
 }
-div.mini-menu#infoJobMenu>div {
+div.mini-menu#infoJobMenu {
     align-items: center !important;
 }
 div#infoJobMenu.mini-menu h1 {
     margin-bottom: 0px !important;
 }
 
-div.mini-menu#infoJobMenu>div {
+div.mini-menu#infoJobMenu {
     align-items: center !important;
     grid-template-columns: repeat(5, 1fr);
 }
 div#infoJobMenu.mini-menu button.filter-btn {
     grid-column-start: 5;
 }
-div.mini-menu#infoJobMenu {
+body.myjobs div.mini-menu#infoJobMenu {
     padding: 19px 36px 12px !important;
 }
 #map .offcanvas-collapse.open {
@@ -1872,22 +1878,22 @@ div#register-form label {
     body.openjobs #map .offcanvas-collapse.open {
         padding-bottom: 115px !important;
     }
-    body.myjobs div#infoJobMenu>div,body.openjobs div#infoJobMenu>div {
-        grid-template-columns: repeat(2, 1fr);
+    body.myjobs div#infoJobMenu,body.openjobs div#infoJobMenu {
+        grid-template-columns: repeat(2, 1fr);    padding: 1.5rem !important;
     }
-    div.mini-menu#infoJobMenu>div {
-        grid-template-columns: repeat(2, 1fr) !important;
+    div.mini-menu#infoJobMenu {
+        grid-template-columns: repeat(2, 1fr) !important;    padding: 19px 36px 12px !important;
     }
 
     div#infoJobMenu.mini-menu button.filter-btn {
         grid-column-start: 2;
     }
-    div.mini-menu#infoJobMenu>div>.block:nth-child(3) {
+    div.mini-menu#infoJobMenu .block:nth-child(3) {
         grid-row-start: 2;
         grid-column-start: 1;
     }
 
-    div.mini-menu#infoJobMenu>div>.block:nth-child(4) {
+    div.mini-menu#infoJobMenu .block:nth-child(4) {
         grid-row-start: 2;
         grid-column-start: 2;
     }
@@ -2324,7 +2330,17 @@ button.accept.d-grey, a.accept.d-grey {
     #maptoggler.show {
         top: calc(100% - 55px);
     }
-    div#infoJobMenu.mini-menu {
+
+    body.myjobs div#infoJobMenu,  body.openjobs div#infoJobMenu{
+        padding: 1.5rem !important;
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
+    }
+    div#infoJobMenu>h1, div#infoJobMenu>button:nth-child(2) {
+    margin-top: 3rem !important;
+}
+    body.myjobs div#infoJobMenu.mini-menu,
+    body.openobs div#infoJobMenu.mini-menu  {
         padding: 1.5rem !important;
         padding-bottom: 8px !important;
     }
