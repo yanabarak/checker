@@ -286,7 +286,7 @@ jQuery(document).ready(function($) {
                     scrolld = false;
                 }
             } else if (lastScrollTop < top && lastScrollTop >= 20) {
-                if (top <= $("#infoJob").innerHeight() && top >= 10) {
+                if ((top <= $("#infoJob").innerHeight() && top >= 10)&&(document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
                     $('#infoJob').addClass('mini-menu');
                     // $(window).scrollTop(top + 25);
                 }
