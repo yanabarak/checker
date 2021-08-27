@@ -106,946 +106,945 @@
             </aside>
             <div class="p-0 w-100" id="content">
                 <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob">
-               <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100 position-sticky header-wrapper" id="infoJobMenu" style="">
-                  <div class="row m-0 mt-5 mt-md-0">
-                     <h1 class="fs-2 fw-bold p-0 mb-4 sec-color d-inline-lock col-auto"><i class="fas fa-briefcase sec-color align-middle fs-50 me-4"></i><span>My Jobs</span></h1>
-                     <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
-                     <div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color">
-                        <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
-                           <p class="fs-90 fw-light my-0 lh-sm ">
-                              5
-                           </p>
-                           <a class="mb-0 text-decoration-none stretched-link" href="#1">
-                           <span>Awaiting for acceptance</span>
-                           </a>
-                        </div>
-                     </div>
-                     <div class="col main-bg block border rounded-3 row m-0 mb-2 white-color">
-                        <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
-                           <p class="fs-90 fw-light my-0 lh-sm ">
-                              3
-                           </p>
-                           <a class="mb-0 text-decoration-none stretched-link" href="#1">
-                           <span>Ready for execution</span>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
 
-                <div class="content-wrapper m-0 p-0">
-               <div class="row m-0 p-0 position-relative" id="map">
-                  <div class="listWrap position-relative">
-                     <!-- 
-                        <button class="navbar-toggler" type="button" id="SelectAll">
-                            <i class="far fa-hand-pointer"></i> Select all
-                        </button> -->
-                     <button class="navbar-toggler" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-                     <i class="fas fa-chevron-right d-none d-md-inline-block"></i> Show List <i class="fas fa-list-ul d-md-none d-inline-block"></i>
-                     </button>
-                     <button class="navbar-toggler d-none d-lg-block visually-hidden" type="button" id="navbarSideCollapseClose" aria-label="Toggle navigation">
-                     <i class="fas fa-chevron-left d-none d-md-inline-block"></i>
-                     </button>
-                     <div class="navbar-collapse offcanvas-collapse p-0" id="navbarsListJob">
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <button class="accept">Accept</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading1">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <a href="#" type="button" class="accept text-decoration-none">Apply</a>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <button class="accept start-job">Start</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading2">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <div class="btn-group accept start-lang start-job">
-                                       <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                       <span class="visually-hidden">Lang Dropdown</span>
-                                       </button>
-                                       <button class="btn btn-secondary btn-lg" type="button">
-                                       Start
-                                       </button>
-                                       <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                          <li>English</li>
-                                          <li>Hebrew</li>
-                                          <li>Russian</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading3">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <div class="btn-group accept start-lang start-job">
-                                                <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="visually-hidden">Lang Dropdown</span>
-                                                </a>
-                                                <a class="btn btn-secondary btn-lg" type="button">
-                                                Start
-                                                </a>
-                                                <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                                   <li>English</li>
-                                                   <li>Hebrew</li>
-                                                   <li>Russian</li>
-                                                </ul>
-                                             </div>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2 need-cert">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-2 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <button class="accept disabled" disabled>Need Certificate</button>
-                                    <a href="#" class="color-lgrey fs-18 px-2" >Reject</a>
-                                    <button class="accept start-job">Start</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading4">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between flex-column mb-2 text-center">
-                                             <div class="col-12 mb-2">
-                                                <a href="#" class="black-color text-decoration-none">Need Certificate</a>
-                                             </div>
-                                             <div class="col-12">
-                                                <a href="#" class="black-color text-decoration-none">Reject</a>
-                                                <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                                             </div>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 col-md-6 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 col-md-6 border-bottom pb-2 pt-2 pt-md-0">
-                                             <div class="color-lgrey">Certification Required</div>
-                                             <div class="fs-18">
-                                                <a href="#" class="color-grey">Checkertificate shoppers pro</a>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job show-pack bg-white mb-2">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-2 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <button class="accept d-grey show-pack" data-show="1">Show Package</button>
-                                    <button class="accept start-job ms-2">Start</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0 title"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading5">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" type="button" class="accept text-decoration-none d-grey show-pack" data-show="1">Show Package
-                                             </a>
-                                             <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <!-- end -->
-                     </div>
-                     <div class="navbar-collapse offcanvas-collapse p-0 visually-hidden" id="navbarsListJobPack">
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <button class="accept">Accept</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading1">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <a href="#" type="button" class="accept text-decoration-none">Apply</a>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <button class="accept start-job">Start</button>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading2">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <div class="btn-group accept start-lang start-job">
-                                       <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                       <span class="visually-hidden">Lang Dropdown</span>
-                                       </button>
-                                       <button class="btn btn-secondary btn-lg" type="button">
-                                       Start
-                                       </button>
-                                       <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                          <li>English</li>
-                                          <li>Hebrew</li>
-                                          <li>Russian</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading3">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <div class="btn-group accept start-lang start-job">
-                                                <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="visually-hidden">Lang Dropdown</span>
-                                                </a>
-                                                <a class="btn btn-secondary btn-lg" type="button">
-                                                Start
-                                                </a>
-                                                <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                                   <li>English</li>
-                                                   <li>Hebrew</li>
-                                                   <li>Russian</li>
-                                                </ul>
-                                             </div>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="2">
-                           <div class="col-auto px-2 px-md-3">
-                              <input class="form-check-input mt-4" type="checkbox" value="">
-                           </div>
-                           <div class="d-flex flex-column col p-0">
-                              <div class="col row m-0 p-0">
-                                 <div class="col-5 col-md-2 px-0 pb-3">
-                                    <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
-                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                 </div>
-                                 <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
-                                    <div class="color-lgrey">Start at 08:00</div>
-                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                 </div>
-                                 <div class="col col-md-1 pb-3 hidd d-none">
-                                    <div class="color-lgrey">Briefing</div>
-                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                 </div>
-                                 <div class="col-auto pb-3 hidd d-none desc-block">
-                                    <div class="color-lgrey">Client Description</div>
-                                    <div class="fs-18">
-                                       <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                    <a href="#" class="color-lgrey fs-18">Reject</a>
-                                    <div class="btn-group accept start-lang start-job">
-                                       <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                       <span class="visually-hidden">Lang Dropdown</span>
-                                       </button>
-                                       <button class="btn btn-secondary btn-lg" type="button">
-                                       Start
-                                       </button>
-                                       <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                          <li>English</li>
-                                          <li>Hebrew</li>
-                                          <li>Russian</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                    <div>
-                                       <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="d-flex flex-column col-12 p-0">
-                              <div class="col">
-                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="heading3">
-                                       <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                          <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
-                                          <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                          <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                             <a href="#" class="black-color text-decoration-none">Reject</a>
-                                             <div class="btn-group accept start-lang start-job">
-                                                <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="visually-hidden">Lang Dropdown</span>
-                                                </a>
-                                                <a class="btn btn-secondary btn-lg" type="button">
-                                                Start
-                                                </a>
-                                                <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                                   <li>English</li>
-                                                   <li>Hebrew</li>
-                                                   <li>Russian</li>
-                                                </ul>
-                                             </div>
-                                          </div>
-                                       </button>
-                                    </h2>
-                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
-                                       <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                          <div class="col-12 border-bottom pb-2">
-                                             <div class="color-lgrey">Client Description</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-12 border-bottom py-2">
-                                             <div class="color-lgrey">Branch Address</div>
-                                             <div class="fs-18">
-                                                <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                             </div>
-                                          </div>
-                                          <div class="col-6 col-md py-2">
-                                             <div class="color-lgrey">Order Number</div>
-                                             <div class="fs-18 ">284622</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Order Count</div>
-                                             <div class="fs-18 ">2</div>
-                                          </div>
-                                          <div class="col-6 col-md  py-2">
-                                             <div class="color-lgrey">Briefing</div>
-                                             <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="row bt-1 m-0 p-0 pb-3 p-md-3 border-bottom border-top card-list-job form-applied bg-white mb-2 mb-md-0 pt-4">
-                        <div class="col-12 p-0 row m-0 d-flex justify-content-between show-main">
-                           <div class="col-auto p-0 d-flex align-items-center">
-                              <input type="checkbox" class="form-check-input mt-0" id="SelectAll">
-                              <label class="form-check-label fs-18 black-color ms-3" for="SelectAll">Select All</label>
-                           </div>
-                           <div class="col-auto p-0 d-flex justify-content-end align-items-center">
-                              <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
-                              <button class="accept">Accept Selected</button>
-                           </div>
-                        </div>
-                        <div class="col-auto p-0 d-flex justify-content-center align-items-center visually-hidden show-pack position-relative">
-                           <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
-                           <button class="accept">Accept Selected</button><button class="border-0 position-absolute" id="back"><i class="fas fa-chevron-circle-left"></i></button>
-                        </div>
-                     </div>
-                  </div>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2798966798!2d-74.25986987516099!3d40.69767006672104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1624539873686!5m2!1sru!2sua" width="100%" height="400px" style="border:0;padding: 0px;" allowfullscreen=""></iframe>
-                  <div class="myjobcard p-0 ">
-                     <div class="m-0 scroll-y">
-                        <div class="row m-0">
-                           <div class="col-6 text-start p-0 fs-smaller color-lgrey"><span>26.05.2021</span></div>
-                           <div class="col-6 text-end p-0 fs-smaller color-lgrey"><span>Start at 08:00</span></div>
-                        </div>
-                        <div class="row m-0">
-                           <div class="black-color col-12 p-0">H&M</div>
-                           <div class="col-12 p-0">H&M 5th Avenue</div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="row m-0">
-                           <div class="col-12 p-0">SOS Simple Questionnaire 15-01-2021 [Shoppers]</div>
-                        </div>
-                        <div class="row m-0">
-                           <textarea class="form-control p-1 px-0 border-0 border-top  border-bottom rounded-0" placeholder="Write your message here before applying"></textarea>
-                        </div>
-                        <div class="row m-0">
-                           <div class="col-12 p-0">
-                              <div class="color-lgrey">Order Number</div>
-                              <div class="">284622</div>
-                           </div>
-                           <div class="col-12 p-0">
-                              <div class="color-lgrey">Order Count</div>
-                              <div class="">2</div>
-                           </div>
-                           <div class="col-12 p-0">
-                              <div class="color-lgrey">Briefing</div>
-                              <div class=""><a href="#" class="color-grey">Show brief</a></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
-                        <a href="#" class="preview"><i class="fas fa-eye"></i></a>
-                        <a href="#" class="text-decoration-none black-color">Reject</a>
-                        <a href="#" type="button" class="accept text-decoration-none">Accept</a>
-                     </div>
-                     <!-- different buttons -->
-                     <!-- <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
-                        <a href="#" class="preview"><i class="fas fa-eye"></i></a>
-                        <a href="#" class="text-decoration-none black-color">Reject</a>
-                        <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                        </div>
-                        <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
-                        <a href="#" class="preview"><i class="fas fa-eye"></i></a>
-                        <a href="#" class="text-decoration-none black-color">Reject</a>
-                        <div class="btn-group accept start-lang start-job">
-                            <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="visually-hidden">Lang Dropdown</span>
-                            </a>
-                            <a class="btn btn-secondary btn-lg" type="button">
-                                Start
-                            </a>
-                            <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                <li>English</li>
-                                <li>Hebrew</li>
-                                <li>Russian</li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
-                        <a href="#" class="preview"><i class="fas fa-eye"></i></a>
-                        <a href="#" type="button" class="accept text-decoration-none disabled" disabled>Need Certificate</a>
-                        </div>
-                        <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
-                        <a href="#" class="preview"><i class="fas fa-eye"></i></a>
-                        <a href="#" type="button" class="accept text-decoration-none d-grey">Show Package</a>
-                        </div> -->
-                  </div>
-               </div>
-               <button id="maptoggler">Map <i class="fas fa-map"></i></button>
-           </div>
+                    <div class="row m-0 mt-5 mt-md-0 header-wrapper position-sticky header-wrapper" id="infoJobMenu" style="">
+                         <h1 class="fs-2 fw-bold p-0 mb-4 sec-color d-inline-lock col-auto"><i class="fas fa-briefcase sec-color align-middle fs-50 me-4"></i><span>My Jobs</span></h1>
+                         <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
+                         <div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color">
+                            <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
+                               <p class="fs-90 fw-light my-0 lh-sm ">
+                                  5
+                               </p>
+                               <a class="mb-0 text-decoration-none stretched-link" href="#1">
+                               <span>Awaiting for acceptance</span>
+                               </a>
+                            </div>
+                         </div>
+                         <div class="col main-bg block border rounded-3 row m-0 mb-2 white-color">
+                            <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
+                               <p class="fs-90 fw-light my-0 lh-sm ">
+                                  3
+                               </p>
+                               <a class="mb-0 text-decoration-none stretched-link" href="#1">
+                               <span>Ready for execution</span>
+                               </a>
+                            </div>
+                         </div>
+                   </div>
+
+                    <div class="content-wrapper m-0 p-0">
+                       <div class="row m-0 p-0 position-relative" id="map">
+                          <div class="listWrap position-relative">
+                             <!-- 
+                                <button class="navbar-toggler" type="button" id="SelectAll">
+                                    <i class="far fa-hand-pointer"></i> Select all
+                                </button> -->
+                             <button class="navbar-toggler" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                             <i class="fas fa-chevron-right d-none d-md-inline-block"></i> Show List <i class="fas fa-list-ul d-md-none d-inline-block"></i>
+                             </button>
+                             <button class="navbar-toggler d-none d-lg-block visually-hidden" type="button" id="navbarSideCollapseClose" aria-label="Toggle navigation">
+                             <i class="fas fa-chevron-left d-none d-md-inline-block"></i>
+                             </button>
+                             <div class="navbar-collapse offcanvas-collapse p-0" id="navbarsListJob">
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <button class="accept">Accept</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading1">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <a href="#" type="button" class="accept text-decoration-none">Apply</a>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <button class="accept start-job">Start</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading2">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <div class="btn-group accept start-lang start-job">
+                                               <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                               <span class="visually-hidden">Lang Dropdown</span>
+                                               </button>
+                                               <button class="btn btn-secondary btn-lg" type="button">
+                                               Start
+                                               </button>
+                                               <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                  <li>English</li>
+                                                  <li>Hebrew</li>
+                                                  <li>Russian</li>
+                                               </ul>
+                                            </div>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading3">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <div class="btn-group accept start-lang start-job">
+                                                        <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="visually-hidden">Lang Dropdown</span>
+                                                        </a>
+                                                        <a class="btn btn-secondary btn-lg" type="button">
+                                                        Start
+                                                        </a>
+                                                        <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                           <li>English</li>
+                                                           <li>Hebrew</li>
+                                                           <li>Russian</li>
+                                                        </ul>
+                                                     </div>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2 need-cert">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-2 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <button class="accept disabled" disabled>Need Certificate</button>
+                                            <a href="#" class="color-lgrey fs-18 px-2" >Reject</a>
+                                            <button class="accept start-job">Start</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading4">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between flex-column mb-2 text-center">
+                                                     <div class="col-12 mb-2">
+                                                        <a href="#" class="black-color text-decoration-none">Need Certificate</a>
+                                                     </div>
+                                                     <div class="col-12">
+                                                        <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                        <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                                     </div>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 col-md-6 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 col-md-6 border-bottom pb-2 pt-2 pt-md-0">
+                                                     <div class="color-lgrey">Certification Required</div>
+                                                     <div class="fs-18">
+                                                        <a href="#" class="color-grey">Checkertificate shoppers pro</a>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job show-pack bg-white mb-2">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-2 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <button class="accept d-grey show-pack" data-show="1">Show Package</button>
+                                            <button class="accept start-job ms-2">Start</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0 title"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading5">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" type="button" class="accept text-decoration-none d-grey show-pack" data-show="1">Show Package
+                                                     </a>
+                                                     <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <!-- end -->
+                             </div>
+                             <div class="navbar-collapse offcanvas-collapse p-0 visually-hidden" id="navbarsListJobPack">
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <button class="accept">Accept</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading1">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <a href="#" type="button" class="accept text-decoration-none">Apply</a>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse1" class="collapse" aria-labelledby="heading1" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <button class="accept start-job">Start</button>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading2">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="1">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <div class="btn-group accept start-lang start-job">
+                                               <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                               <span class="visually-hidden">Lang Dropdown</span>
+                                               </button>
+                                               <button class="btn btn-secondary btn-lg" type="button">
+                                               Start
+                                               </button>
+                                               <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                  <li>English</li>
+                                                  <li>Hebrew</li>
+                                                  <li>Russian</li>
+                                               </ul>
+                                            </div>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading3">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <div class="btn-group accept start-lang start-job">
+                                                        <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="visually-hidden">Lang Dropdown</span>
+                                                        </a>
+                                                        <a class="btn btn-secondary btn-lg" type="button">
+                                                        Start
+                                                        </a>
+                                                        <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                           <li>English</li>
+                                                           <li>Hebrew</li>
+                                                           <li>Russian</li>
+                                                        </ul>
+                                                     </div>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                                <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2" data-show="2">
+                                   <div class="col-auto px-2 px-md-3">
+                                      <input class="form-check-input mt-4" type="checkbox" value="">
+                                   </div>
+                                   <div class="d-flex flex-column col p-0">
+                                      <div class="col row m-0 p-0">
+                                         <div class="col-5 col-md-2 px-0 pb-3">
+                                            <div><a href="#" class="pick-date-modal color-lgrey text-danger">26.05.2021</a></div>
+                                            <div class="black-color fs-18 text-wrap">H&M</div>
+                                         </div>
+                                         <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                            <div class="color-lgrey">Start at 08:00</div>
+                                            <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                         </div>
+                                         <div class="col col-md-1 pb-3 hidd d-none">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                         </div>
+                                         <div class="col-auto pb-3 hidd d-none desc-block">
+                                            <div class="color-lgrey">Client Description</div>
+                                            <div class="fs-18">
+                                               <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                            </div>
+                                         </div>
+                                         <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                            <a href="#" class="color-lgrey fs-18">Reject</a>
+                                            <div class="btn-group accept start-lang start-job">
+                                               <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                               <span class="visually-hidden">Lang Dropdown</span>
+                                               </button>
+                                               <button class="btn btn-secondary btn-lg" type="button">
+                                               Start
+                                               </button>
+                                               <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                  <li>English</li>
+                                                  <li>Hebrew</li>
+                                                  <li>Russian</li>
+                                               </ul>
+                                            </div>
+                                         </div>
+                                         <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                            <div>
+                                               <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                   <div class="d-flex flex-column col-12 p-0">
+                                      <div class="col">
+                                         <div class="accordion-item">
+                                            <h2 class="accordion-header" id="heading3">
+                                               <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                                  <a href="#" class="preview me-3"><i class="fas fa-eye"></i></a>
+                                                  <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                  <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                     <a href="#" class="black-color text-decoration-none">Reject</a>
+                                                     <div class="btn-group accept start-lang start-job">
+                                                        <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="visually-hidden">Lang Dropdown</span>
+                                                        </a>
+                                                        <a class="btn btn-secondary btn-lg" type="button">
+                                                        Start
+                                                        </a>
+                                                        <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                                           <li>English</li>
+                                                           <li>Hebrew</li>
+                                                           <li>Russian</li>
+                                                        </ul>
+                                                     </div>
+                                                  </div>
+                                               </button>
+                                            </h2>
+                                            <div id="collapse3" class="collapse" aria-labelledby="heading3" data-bs-parent="#navbarsListJob">
+                                               <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                  <div class="col-12 border-bottom pb-2">
+                                                     <div class="color-lgrey">Client Description</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-12 border-bottom py-2">
+                                                     <div class="color-lgrey">Branch Address</div>
+                                                     <div class="fs-18">
+                                                        <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                     </div>
+                                                  </div>
+                                                  <div class="col-6 col-md py-2">
+                                                     <div class="color-lgrey">Order Number</div>
+                                                     <div class="fs-18 ">284622</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Order Count</div>
+                                                     <div class="fs-18 ">2</div>
+                                                  </div>
+                                                  <div class="col-6 col-md  py-2">
+                                                     <div class="color-lgrey">Briefing</div>
+                                                     <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                  </div>
+                                               </div>
+                                            </div>
+                                         </div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="row bt-1 m-0 p-0 pb-3 p-md-3 border-bottom border-top card-list-job form-applied bg-white mb-2 mb-md-0 pt-4">
+                                <div class="col-12 p-0 row m-0 d-flex justify-content-between show-main">
+                                   <div class="col-auto p-0 d-flex align-items-center">
+                                      <input type="checkbox" class="form-check-input mt-0" id="SelectAll">
+                                      <label class="form-check-label fs-18 black-color ms-3" for="SelectAll">Select All</label>
+                                   </div>
+                                   <div class="col-auto p-0 d-flex justify-content-end align-items-center">
+                                      <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
+                                      <button class="accept">Accept Selected</button>
+                                   </div>
+                                </div>
+                                <div class="col-auto p-0 d-flex justify-content-center align-items-center visually-hidden show-pack position-relative">
+                                   <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
+                                   <button class="accept">Accept Selected</button><button class="border-0 position-absolute" id="back"><i class="fas fa-chevron-circle-left"></i></button>
+                                </div>
+                             </div>
+                          </div>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2798966798!2d-74.25986987516099!3d40.69767006672104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2sua!4v1624539873686!5m2!1sru!2sua" width="100%" height="400px" style="border:0;padding: 0px;" allowfullscreen=""></iframe>
+                          <div class="myjobcard p-0 ">
+                             <div class="m-0 scroll-y">
+                                <div class="row m-0">
+                                   <div class="col-6 text-start p-0 fs-smaller color-lgrey"><span>26.05.2021</span></div>
+                                   <div class="col-6 text-end p-0 fs-smaller color-lgrey"><span>Start at 08:00</span></div>
+                                </div>
+                                <div class="row m-0">
+                                   <div class="black-color col-12 p-0">H&M</div>
+                                   <div class="col-12 p-0">H&M 5th Avenue</div>
+                                </div>
+                                <hr class="my-1">
+                                <div class="row m-0">
+                                   <div class="col-12 p-0">SOS Simple Questionnaire 15-01-2021 [Shoppers]</div>
+                                </div>
+                                <div class="row m-0">
+                                   <textarea class="form-control p-1 px-0 border-0 border-top  border-bottom rounded-0" placeholder="Write your message here before applying"></textarea>
+                                </div>
+                                <div class="row m-0">
+                                   <div class="col-12 p-0">
+                                      <div class="color-lgrey">Order Number</div>
+                                      <div class="">284622</div>
+                                   </div>
+                                   <div class="col-12 p-0">
+                                      <div class="color-lgrey">Order Count</div>
+                                      <div class="">2</div>
+                                   </div>
+                                   <div class="col-12 p-0">
+                                      <div class="color-lgrey">Briefing</div>
+                                      <div class=""><a href="#" class="color-grey">Show brief</a></div>
+                                   </div>
+                                </div>
+                             </div>
+                             <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="text-decoration-none black-color">Reject</a>
+                                <a href="#" type="button" class="accept text-decoration-none">Accept</a>
+                             </div>
+                             <!-- different buttons -->
+                             <!-- <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="text-decoration-none black-color">Reject</a>
+                                <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="text-decoration-none black-color">Reject</a>
+                                <div class="btn-group accept start-lang start-job">
+                                    <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Lang Dropdown</span>
+                                    </a>
+                                    <a class="btn btn-secondary btn-lg" type="button">
+                                        Start
+                                    </a>
+                                    <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                        <li>English</li>
+                                        <li>Hebrew</li>
+                                        <li>Russian</li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" type="button" class="accept text-decoration-none disabled" disabled>Need Certificate</a>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" type="button" class="accept text-decoration-none d-grey">Show Package</a>
+                                </div> -->
+                          </div>
+                       </div>
+                       <button id="maptoggler">Map <i class="fas fa-map"></i></button>
+                   </div>
            </div>
             </div>
          </div>
