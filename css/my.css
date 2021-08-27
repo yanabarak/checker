@@ -365,7 +365,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 .pr-100 {
     padding-right: 100px !important;
 }
-#content>#map {
+#content #map {
     padding-right: 0px !important;
 }
 #map iframe {
@@ -719,10 +719,10 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     margin-left: 120px;
 }
 
-.mini-menu+#map #navbarSideCollapseClose {
+.mini-menu+.content-wrapper>#map #navbarSideCollapseClose {
     left: calc(50% + 19px);
 }
-.mini-menu+#map button#navbarSideCollapse.button-open {
+.mini-menu+.content-wrapper>#map button#navbarSideCollapse.button-open {
     left: calc(50% + 35px);
 }
 #maptoggler {
@@ -1520,10 +1520,10 @@ div#map.emptyList .listWrap .offcanvas-collapse {
     background-color: #fff;
     padding-top: 20px !important;
 }
-#infoJobMenu.mini-menu+div#map.emptyList .listWrap .offcanvas-collapse {
+#infoJobMenu.mini-menu+.content-wrapper>div#map.emptyList .listWrap .offcanvas-collapse {
     justify-content: center;
 }
-#infoJobMenu.mini-menu+div#map.emptyList+#maptoggler.show {
+#infoJobMenu.mini-menu+.content-wrapper>div#map.emptyList+#maptoggler.show {
     top: calc(100% - 75px) !important;
 }
 div#map.emptyList .listWrap .offcanvas-collapse h1 {
@@ -1633,7 +1633,7 @@ div#infoJobMenu.mini-menu {
     top: 0px;
 }
 
-div#infoJobMenu.mini-menu+div#map {
+div#infoJobMenu.mini-menu+.content-wrapper>div#map {
     overflow: auto;
 }
 body.myjobs #infoJob{
@@ -1841,7 +1841,7 @@ div#register-form label {
     .pr-100 {
         padding-right: 48px !important;
     }
-    #content>#map {
+    #content #map {
         padding-right: 0px !important;
         overflow: scroll;
     }
@@ -2313,7 +2313,7 @@ button.accept.d-grey, a.accept.d-grey {
         max-width: 100%;
         max-height: 30vh;
     }
-    div#infoJobMenu.mini-menu+div#map.emptyList {
+    div#infoJobMenu.mini-menu+.content-wrapper>div#map.emptyList {
         height: 100% !important;
         padding-bottom: 0px !important;
     }
@@ -2337,14 +2337,14 @@ button.accept.d-grey, a.accept.d-grey {
     div#infoJobMenu.mini-menu .cardnew span {
         font-size: 12px;
     }
-    div#infoJobMenu.mini-menu+#map {
+    div#infoJobMenu.mini-menu+.content-wrapper>#map {
         padding-top: 5px !important;
     }
     div.mini-menu#infoJobMenu>div>.block:nth-child(4) {
         box-sizing: border-box;
         max-width: 97% !important;
     }
-    #content>#map {
+    #content #map {
         padding: 0px !important;
         position: relative !important;
         min-height: 200px;
