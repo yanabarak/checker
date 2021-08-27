@@ -1615,7 +1615,7 @@ div.mini-menu#infoJob {
 }
 body.myjobs div#infoJob,body.openjobs div#infoJob  {
     /*   position: relative !important;*/
-    z-index: 2;
+    z-index: 4;
     right: 0px;
     top: 0px;
     background-color: #E9F6FE;
