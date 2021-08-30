@@ -239,6 +239,7 @@ jQuery(document).ready(function($) {
         }
 
     }
+
     function hideInfoJob() {
         var lastScrollTop = 0;
         var $window = $(window);
@@ -269,7 +270,7 @@ jQuery(document).ready(function($) {
 
 
         // });
-        $(document.body).on('touchmove', onScrollMob);// for mobile
+        $(document.body).on('touchmove', onScrollMob); // for mobile
         $(window).on('scroll', onScroll);
 
         // callback
@@ -286,7 +287,7 @@ jQuery(document).ready(function($) {
                     scrolld = false;
                 }
             } else if (lastScrollTop < top && lastScrollTop >= 20) {
-                if ((top <= $("#infoJobMenu").innerHeight() && top >= 10)&&(document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
+                if ((top <= $("#infoJobMenu").innerHeight() && top >= 10) && (document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
                     $('#infoJobMenu').addClass('mini-menu');
                     // $(window).scrollTop(top + 25);
                 }
@@ -339,17 +340,16 @@ jQuery(document).ready(function($) {
     }
 
     // select all on myjob page
-    function selectAll(){
-            $('#SelectAll').on('click', function() {
-                if($('#SelectAll').is(':checked')){
-                    $(".listWrap input[type='checkbox']").prop('checked', true);
+    function selectAll() {
+        $('#SelectAll').on('click', function() {
+            if ($('#SelectAll').is(':checked')) {
+                $(".listWrap input[type='checkbox']").prop('checked', true);
 
-                }
-                else{
-                    $(".listWrap input[type='checkbox']").prop('checked', false);
+            } else {
+                $(".listWrap input[type='checkbox']").prop('checked', false);
 
-                }
-            });
+            }
+        });
     }
     // added design and necessary classes if job list is empty
     function checkJob() {
@@ -364,26 +364,27 @@ jQuery(document).ready(function($) {
     // click on "Show Package button"
     function showPack() {
         let titledef = $('h1.fs-2 span').text();
-        $(".d-grey.show-pack").on( "click", function() {
+        $(".d-grey.show-pack").on("click", function() {
             let datashow = ($(this).attr('data-show'));
             let title = ($(this).closest('.card-list-job.show-pack').find('p.title').text());
-            $('#navbarsListJobPack .card-list-job').each(function( index ) {
-  $( this ).attr('data-show') != datashow ? $(this).addClass('d-none'):$(this).removeClass('d-none');
-});
-            $('#navbarsListJob').addClass("show-pack-list");            
-            setTimeout(function(){
-            $('#navbarsListJob').addClass("d-none");
+            $('#navbarsListJobPack .card-list-job').each(function(index) {
+                $(this).attr('data-show') != datashow ? $(this).addClass('d-none') : $(this).removeClass('d-none');
+            });
+            $('#navbarsListJob').addClass("show-pack-list");
+            setTimeout(function() {
+                $('#navbarsListJob').addClass("d-none");
             }, 500);
             $('h1.fs-2 span').text(title);
-            $('div#infoJobMenu > div').addClass('d-flex')
+            $('div#infoJobMenu').addClass('d-flex')
             $('#infoJobMenu .block.rounded-3').addClass('visually-hidden')
-            if ($(window).innerWidth()>767) {
-            $('#navbarsListJobPack').attr("style", `height:${$('#navbarsListJob').innerHeight()}px`);
-            if ($(window).scrollTop()>10) {
-            $(window).scrollTop('11');}}
-            else{
+            if ($(window).innerWidth() > 767) {
+                $('#navbarsListJobPack').attr("style", `height:${$('#navbarsListJob').innerHeight()}px`);
+                if ($(window).scrollTop() > 10) {
+                    $(window).scrollTop('11');
+                }
+            } else {
 
-            $('#map').scrollTop('1');
+                $('#map').scrollTop('1');
             }
 
             $('#navbarsListJobPack').addClass("show-job-pack");
@@ -391,27 +392,28 @@ jQuery(document).ready(function($) {
 
             $('.form-applied .show-main').addClass("visually-hidden");
             $('.form-applied .show-pack').removeClass("visually-hidden");
-            
+
             // $('#navbarsListJobPack').attr("style", `transform:translateY(-${(($('#navbarsListJob').innerHeight()-$(window).scrollTop())/$('#navbarsListJobPack').innerHeight())*100}%)`);
         });
 
-        $(".form-applied .show-pack #back").on( "click", function() {
+        $(".form-applied .show-pack #back").on("click", function() {
             let scroll = $(window).scrollTop();
-            $('#navbarsListJob').removeClass("show-pack-list");            
-            setTimeout(function(){
-            $('#navbarsListJob').removeClass("d-none");
+            $('#navbarsListJob').removeClass("show-pack-list");
+            setTimeout(function() {
+                $('#navbarsListJob').removeClass("d-none");
             }, 500);
             $('#navbarsListJobPack').attr("style", ``);
 
             $('#navbarsListJobPack').removeClass("show-job-pack");
             $('#navbarsListJobPack').addClass("visually-hidden");
             $('h1.fs-2 span').text(titledef);
-            $('div#infoJobMenu > div').removeClass('d-flex')
+            $('div#infoJobMenu').removeClass('d-flex')
             $('#infoJobMenu .block.rounded-3').removeClass('visually-hidden')
             $(window).scrollTop(scroll);
 
             $('.form-applied .show-main').removeClass("visually-hidden");
-            $('.form-applied .show-pack').addClass("visually-hidden");});
+            $('.form-applied .show-pack').addClass("visually-hidden");
+        });
     }
 
     //changing date on modal window 

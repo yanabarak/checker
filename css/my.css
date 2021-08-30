@@ -176,7 +176,7 @@ aside .logo {
 .user-panel {
     width: 100%;
 }
-.menu-links.list-group{
+.menu-links.list-group {
     max-height: calc(100vh - 300px);
     overflow: auto;
 }
@@ -942,7 +942,8 @@ a.start-test.disabled:hover {
     box-shadow: none;
     color: inherit;
 }
-#map p.desc {    overflow: hidden;
+#map p.desc {
+    overflow: hidden;
     max-width: calc(100vw - 1500px);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1470,14 +1471,16 @@ select#lang {
 .card-list-job .form-floating {
     padding-right: 32px;
 }
-.card-list-job.need-cert a.pick-branch-modal, .card-list-job.show-pack a.pick-branch-modal {
+.card-list-job.need-cert a.pick-branch-modal,
+.card-list-job.show-pack a.pick-branch-modal {
     max-width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: inline-block;
 }
-body.myjobs button.btn.btn-primary,body.openjobs button.btn.btn-primary  {
+body.myjobs button.btn.btn-primary,
+body.openjobs button.btn.btn-primary {
     padding: 13px 30px;
 }
 .form-applied {
@@ -1497,7 +1500,8 @@ body.myjobs button.btn.btn-primary,body.openjobs button.btn.btn-primary  {
 body.openjobs #map .listWrap {
     padding-bottom: 116px !important;
 }
-body.myjobs #map .listWrap {
+body.myjobs #map .listWrap,
+body.openjobs #map .listWrap {
     padding-bottom: 75px !important;
 }
 div#map.emptyList,
@@ -1539,11 +1543,13 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapse.navbar-toggler.button-op
     z-index: 2;
 
 }
-body.myjobs div#infoJobMenu,body.openjobs div#infoJobMenu  {
+body.myjobs div#infoJobMenu,
+body.openjobs div#infoJobMenu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
-body.myjobs div#infoJobMenu{
+body.myjobs div#infoJobMenu,
+body.openjobs div#infoJobMenu {
     padding: 3rem !important;
     padding-bottom: 0.5rem !important;
 
@@ -1590,7 +1596,8 @@ div.mini-menu#infoJobMenu {
 div#infoJobMenu.mini-menu button.filter-btn {
     grid-column-start: 5;
 }
-body.myjobs div.mini-menu#infoJobMenu {
+body.myjobs div.mini-menu#infoJobMenu,
+body.openjobs div.mini-menu#infoJobMenu {
     padding: 19px 36px 12px !important;
 }
 #map .offcanvas-collapse.open {
@@ -1598,6 +1605,10 @@ body.myjobs div.mini-menu#infoJobMenu {
     position: unset;
     transform: translateX(0%);
     background-color: #E9F6FE;
+}
+body.openjobs #map .offcanvas-collapse.open {
+    background-color: transparent;
+
 }
 .card-list-job.bg-white {
     box-shadow: 4px 4px 25px rgb(0 0 0 / 10%);
@@ -1619,7 +1630,8 @@ body.myjobs div.mini-menu#infoJobMenu {
     overflow: hidden;
     position: fixed;
 }
-body.myjobs div#infoJobMenu,body.openjobs div#infoJobMenu  {
+body.myjobs div#infoJobMenu,
+body.openjobs div#infoJobMenu {
     /*   position: relative !important;*/
     z-index: 4;
     right: 0px;
@@ -1642,7 +1654,8 @@ div#infoJobMenu.mini-menu {
 div#infoJobMenu.mini-menu+.content-wrapper>div#map {
     overflow: auto;
 }
-body.myjobs #infoJob{
+body.myjobs #infoJob,
+body.openjobs div#infoJob {
     padding: 0px !important;
 }
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-5:first-child {
@@ -1668,7 +1681,8 @@ body.openjobs .action {
     min-height: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;padding: 0px !important;
+    justify-content: center;
+    padding: 0px !important;
 }
 .myjobcard .btn-group.accept.start-lang.start-job>a:first-child {
     min-width: 40.4px;
@@ -1702,7 +1716,7 @@ body.openjobs .action {
 .myjobcard .btn-group.accept.start-lang.start-job {
     padding-right: 0px !important;
 }
-#navbarsListJob.show-pack-list{
+#navbarsListJob.show-pack-list {
     transform: translateX(-100%) !important;
 }
 div#navbarsListJobPack {
@@ -1710,8 +1724,11 @@ div#navbarsListJobPack {
     opacity: 0;
     transition: all 0.5s linear;
 }
-div#navbarsListJobPack.show-job-pack{
+div#navbarsListJobPack.show-job-pack {
     opacity: 1;
+}
+body.openjobs #map .offcanvas-collapse.open {
+    padding-bottom: 50px !important;
 }
 /*login page*/
 
@@ -1878,11 +1895,14 @@ div#register-form label {
     body.openjobs #map .offcanvas-collapse.open {
         padding-bottom: 115px !important;
     }
-    body.myjobs div#infoJobMenu,body.openjobs div#infoJobMenu {
-        grid-template-columns: repeat(2, 1fr);    padding: 1.5rem !important;
+    body.myjobs div#infoJobMenu,
+    body.openjobs div#infoJobMenu {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem !important;
     }
     div.mini-menu#infoJobMenu {
-        grid-template-columns: repeat(2, 1fr) !important;    padding: 19px 36px 12px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 19px 36px 12px !important;
     }
 
     div#infoJobMenu.mini-menu button.filter-btn {
@@ -2126,8 +2146,8 @@ div#register-form label {
         z-index: 1;
     }
     div#map.list>.listWrap>.button-open:first-child {
-    display: none;
-}
+        display: none;
+    }
     #map button.accordion-button>div {
         justify-content: space-evenly !important;
         min-width: 200px;
@@ -2144,13 +2164,16 @@ div#register-form label {
         border: 1px solid #dadada;
         border-radius: 6px;
     }
-    body.myjobs #map .navbar-collapse.open-w100 div.action,body.myjobs  #map .navbar-collapse.open-w100 div.action.flex-column .col-12{
+    body.myjobs #map .navbar-collapse.open-w100 div.action,
+    body.myjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12,
+    body.openjobs #map .navbar-collapse.open-w100 div.action,
+    body.openjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12 {
         width: auto;
     }
     .card-list-job.bg-white .col-12>.accept {
-    min-width: 127px !important;
-    display: inline-block;
-}
+        min-width: 127px !important;
+        display: inline-block;
+    }
     #map button.navbar-toggler.button-open {
         bottom: 40px;
         top: auto !important;
@@ -2217,9 +2240,10 @@ div#register-form label {
     #hideshow {
         display: none;
     }
-button.accept.d-grey, a.accept.d-grey {
-    min-height: 35px;
-}
+    button.accept.d-grey,
+    a.accept.d-grey {
+        min-height: 35px;
+    }
     .modal button.btn.btn-lg.fs-18 {
         font-size: 18px !important;
         min-height: 48px;
@@ -2331,16 +2355,19 @@ button.accept.d-grey, a.accept.d-grey {
         top: calc(100% - 55px);
     }
 
-    body.myjobs div#infoJobMenu,  body.openjobs div#infoJobMenu{
+    body.myjobs div#infoJobMenu,
+    body.openjobs div#infoJobMenu {
         padding: 1.5rem !important;
-    margin-top: 0px !important;
-    padding-bottom: 0px !important;
+        margin-top: 0px !important;
+        padding-bottom: 0px !important;
     }
-    div#infoJobMenu>h1, div#infoJobMenu>button:nth-child(2) {
-    margin-top: 3rem !important;
-}
-    body.myjobs div#infoJobMenu.mini-menu,
-    body.openobs div#infoJobMenu.mini-menu  {
+    div#infoJobMenu>h1,
+    div#infoJobMenu>button:nth-child(2) {
+        margin-top: 3rem !important;
+    }
+
+    body.myjobs div.mini-menu#infoJobMenu,
+    body.openjobs div.mini-menu#infoJobMenu {
         padding: 1.5rem !important;
         padding-bottom: 8px !important;
     }
@@ -2376,18 +2403,20 @@ button.accept.d-grey, a.accept.d-grey {
     #content #map.list .open-w100 {
         width: 100%;
     }
-    body.myjobs #content #map.list .form-applied {
+    body.myjobs #content #map.list .form-applied,
+    body.openjobs #content #map.list .form-applied {
         padding-bottom: 50px !important;
     }
     .card-list-job.show-pack a[type="button"] {
-    width: auto !important;
-    min-width: auto;
-}
-body.myjobs #content #map.list .form-applied>div>div:last-child {
-    width: 100% !important;
-    justify-content: space-between !important;
-}
-    .form-applied .fs-18,.form-applied button.accept {
+        width: auto !important;
+        min-width: auto;
+    }
+    body.myjobs #content #map.list .form-applied>div>div:last-child {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+    .form-applied .fs-18,
+    .form-applied button.accept {
         font-size: inherit !important;
     }
     .btn-group.accept.start-lang.start-job>a:first-child {
