@@ -180,6 +180,9 @@ aside .logo {
     max-height: calc(100vh - 300px);
     overflow: auto;
 }
+.fliph .menu-links.list-group {
+    overflow: hidden;
+}
 ul.menu-links.list-group li {
     border-radius: 0px 15px 15px 0px;
 }
@@ -1606,10 +1609,7 @@ body.openjobs div.mini-menu#infoJobMenu {
     transform: translateX(0%);
     background-color: #E9F6FE;
 }
-body.openjobs #map .offcanvas-collapse.open {
-    background-color: transparent;
 
-}
 .card-list-job.bg-white {
     box-shadow: 4px 4px 25px rgb(0 0 0 / 10%);
 }
@@ -1727,8 +1727,11 @@ div#navbarsListJobPack {
 div#navbarsListJobPack.show-job-pack {
     opacity: 1;
 }
-body.openjobs #map .offcanvas-collapse.open {
+body.openjobs #map.emptyList .offcanvas-collapse.open {
     padding-bottom: 50px !important;
+}
+body.openjobs #map:not([class*=emptyList]) .offcanvas-collapse.open {
+    margin-bottom: 50px !important;
 }
 /*login page*/
 
@@ -2169,6 +2172,15 @@ div#register-form label {
     body.openjobs #map .navbar-collapse.open-w100 div.action,
     body.openjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12 {
         width: auto;
+        margin: 0 auto !important;
+    }
+    body.openjobs #map .offcanvas-collapse.open {
+
+        padding-bottom: 0px !important;
+
+    }
+    div#infoJobMenu.d-flex>button:nth-child(2) {
+        margin-top: 0px !important;
     }
     .card-list-job.bg-white .col-12>.accept {
         min-width: 127px !important;

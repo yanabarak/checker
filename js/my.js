@@ -343,10 +343,20 @@ jQuery(document).ready(function($) {
     function selectAll() {
         $('#SelectAll').on('click', function() {
             if ($('#SelectAll').is(':checked')) {
-                $(".listWrap input[type='checkbox']").prop('checked', true);
+                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', true);
 
             } else {
-                $(".listWrap input[type='checkbox']").prop('checked', false);
+                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', false);
+
+            }
+        });
+
+        $('#SelectAll2').on('click', function() {
+            if ($('#SelectAll2').is(':checked')) {
+                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', true);
+
+            } else {
+                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', false);
 
             }
         });
@@ -354,7 +364,7 @@ jQuery(document).ready(function($) {
     // added design and necessary classes if job list is empty
     function checkJob() {
 
-        if ($('#map .offcanvas-collapse div').length == 0) {
+        if ($('#map #navbarsListJob div').length == 0) {
             $('#map').addClass('emptyList');
             $('body').addClass('overflow-hidden');
             // $("#map").attr('style', `max-height: ${ $(window).innerHeight() - ($("#infoJob").innerHeight())}px`);
