@@ -540,7 +540,8 @@ jQuery(document).ready(function($) {
         if ($("#donut1").length) { drawDonut1() };
         if ($("#donut2").length) { drawDonut2() };
         if ($(".pick-date").length) {
-            $('.pick-date').pickadate();
+            let DateSet = window.SETTINGS ? JSON.parse(window.SETTINGS) : {};
+            $('.pick-date').pickadate(DateSet);
             pickDate2();
             pickBranch();
         };
