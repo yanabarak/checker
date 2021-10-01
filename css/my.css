@@ -2,7 +2,6 @@
     --main-brand-color: #BDD82F;
     --second-brand-color: #007BFF;
 }
-
 body {
     color: #666666;
 }
@@ -177,7 +176,7 @@ aside .logo {
     width: 100%;
 }
 .menu-links.list-group {
-    max-height: calc(100vh - 300px);
+    max-height: calc(100vh - 320px);
     overflow: auto;
 }
 .fliph .menu-links.list-group {
@@ -193,7 +192,6 @@ ul.menu-links.list-group a {
     display: inline-block;
     padding: 4px 4px 4px 19px;
 }
-
 ul.menu-links.list-group li.active:hover a,
 ul.menu-links.list-group li:hover a {
     color: #666;
@@ -217,7 +215,6 @@ ul.menu-links.list-group li.active a {
 .badge-notificatios {
     position: relative;
 }
-
 .badge-notificatios:after {
     content: "";
     position: absolute;
@@ -251,13 +248,10 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 .sidebar.fliph ul.menu-links.list-group li.active {
     background: var(--main-brand-color);
 }
-
 .sidebar.fliph ul.menu-links.list-group li.back i {
     opacity: 1 !important;
-
 }
 .sidebar.fliph ul.menu-links.list-group li.back {
-
     border-width: 1px 1px 1px !important;
 }
 .sidebar.fliph .user-panel>.image {
@@ -288,18 +282,15 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     width: 38px;
     height: 38px;
 }
-
 .sidebar.fliph .user-panel h6.long,
 .sidebar.fliph .user-menu h5.title,
 .sidebar.fliph ul.menu-links.list-group span,
 .sidebar.fliph .user-panel>.image i {
-
     font-size: 0px;
 }
 .sidebar.fliph .user-panel h6.short {
     font-size: inherit;
 }
-
 .sidebar.fliph ul.menu-links.list-group a,
 .sidebar.fliph ul.menu-links.list-group li.active a {
     padding: 0px;
@@ -321,7 +312,6 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     width: 40px;
     height: 40px;
     line-height: 40px;
-
 }
 .sidebar.fliph .headings {
     margin-bottom: 0px !important;
@@ -338,12 +328,10 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     text-decoration: none;
     transition: color 0.25s linear;
 }
-
 .user-panel>a.image:hover h6 {
     width: calc(100% - 50px);
     color: var(--main-brand-color);
 }
-
 /*main content*/
 #content {
     min-height: 100vh;
@@ -363,7 +351,6 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     /*    background-blend-mode: darken;*/
     background-size: auto;
     background-attachment: fixed;
-
 }
 .pr-100 {
     padding-right: 100px !important;
@@ -382,7 +369,6 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 #content .block:not(:last-child) {
     margin-right: 5px !important;
 }
-
 #content .block:not(:first-child) {
     margin-left: 5px !important;
 }
@@ -397,15 +383,12 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 }
 .white-color {
     color: #fff;
-
 }
 .color-grey {
     color: #666;
-
 }
 .color-lgrey {
     color: #AEAEAE;
-
 }
 .color-lgrey2 {
     color: #797979;
@@ -416,7 +399,6 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 .sec-bg {
     background-color: var(--second-brand-color);
 }
-
 .bg-grey {
     background-color: #F7F7F7;
 }
@@ -436,34 +418,42 @@ h5.title i {
     margin-right: 8px;
 }
 button.btn,
-button.btn-md {
+button.btn-md,
+[type="button"].btn,
+[type="button"].btn-md {
     font-weight: bold;
     font-size: 15px;
     padding: 3px 0px;
     line-height: 1.5;
     border-radius: 6px;
     transition: all 0.25s linear;
-
 }
-button.btn-md {
+button.btn-md,
+[type="button"].btn-md {
     max-width: 158px;
     border-radius: 36px;
     box-shadow: 0px 0px 0px 0px var(--main-brand-color) inset;
 }
-button.btn-outline-sec {
+[type="button"] {
+    text-decoration: none;
+}
+button.btn-outline-sec,
+[type="button"].btn-outline-sec {
     color: var(--second-brand-color);
     box-shadow: 0px 0px 0px 2px var(--second-brand-color) inset;
-
 }
 button.btn.btn-outline-sec:hover,
-button.btn.btn-outline-main:hover {
+button.btn.btn-outline-main:hover,
+[type="button"].btn.btn-outline-sec:hover,
+[type="button"].btn.btn-outline-main:hover {
     color: #fff !important;
     box-shadow: 0px 0px 0px 50px var(--main-brand-color) inset;
 }
-
-button:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover {
+button:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover,
+[type="button"]:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover {
     box-shadow: 0px 0px 0px 50px var(--main-brand-color) inset;
     background-color: var(--main-brand-color);
+    color: #fff;
 }
 form .btn {
     width: 176px;
@@ -472,7 +462,6 @@ form .btn {
 div[id^=widget] {
     min-width: 250px;
 }
-
 /*#donut1 svg {
     transform: scaleX(-1) rotate(-90deg);
 }*/
@@ -482,7 +471,6 @@ div[id^=widget] {
 .donut-segment-jobs {
     stroke: var(--second-brand-color);
 }
-
 #donut1 .donut-segment-jobs,
 #donut2 .donut-segment-jobs,
 #donut1 .donut-segment-white,
@@ -506,7 +494,6 @@ hr[size="3"] {
     margin-left: 10% !important;
     margin-top: 2% !important;
 }
-
 .opacity-100 {
     opacity: 0%;
 }
@@ -516,7 +503,6 @@ hr[size="3"] {
 .opacity-1 {
     opacity: 1;
 }
-
 li.back {
     border: solid #dadada;
     border-width: 1px 1px 1px 0px;
@@ -585,7 +571,6 @@ input[type="password"],
     background-color: #fff;
     color: #AEAEAE;
     min-height: 48px;
-
 }
 .form-control.pick-date::placeholder,
 input[type="password"]::placeholder,
@@ -593,7 +578,6 @@ input[type="text"]::placeholder {
     font-size: 16px;
     color: #AEAEAE;
 }
-
 .pick-date,
 #pick-date-to,
 #pick-date-from {
@@ -603,7 +587,6 @@ input[type="text"]::placeholder {
     padding-right: 36px;
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
-
 }
 div#pick-branch-modal .btn-close {
     right: 0px;
@@ -623,7 +606,6 @@ form.row .col-auto,
 form.row .col-12 {
     padding: 0px 3.5px;
 }
-
 #accordionFormJob h4.accordion-button {
     color: black;
     background-color: transparent;
@@ -637,7 +619,6 @@ form.row .col-12 {
     min-height: 400px;
     overflow: hidden;
 }
-
 .sidebar2 {
     height: 100%;
     width: 0;
@@ -650,7 +631,7 @@ form.row .col-12 {
     padding-top: 60px;
 }
 a[type="button"] {
-    -webkit-appearance: none;
+    -webkit-appearance: none;text-decoration: none;
 }
 .offcanvas-collapse {
     z-index: 0;
@@ -721,7 +702,6 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     margin-top: 91.5px;
     margin-left: 120px;
 }
-
 .mini-menu+.content-wrapper>#map #navbarSideCollapseClose {
     left: calc(50% + 19px);
 }
@@ -754,9 +734,7 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     bottom: auto;
     position: fixed;
     transition: transform .3s ease-in-out, top .3s ease-in-out;
-
 }
-
 .fs-18 {
     font-size: 18px !important;
 }
@@ -772,7 +750,7 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     border-color: var(--second-brand-color);
 }
 button.accept,
-a.accept {
+[type="button"].accept {
     border-radius: 46px;
     box-shadow: 0px 0px 0px 4px var(--main-brand-color) inset;
     border: 0px solid;
@@ -783,23 +761,23 @@ a.accept {
     transition: all 0.25s linear;
     font-weight: bold;
     text-align: center;
-
 }
 .card-list-job.bg-white .accept {
     min-width: 127px;
 }
 button.start-job,
-a.start-job {
+[type="button"].start-job {
     box-shadow: 0px 0px 0px 4px var(--second-brand-color) inset;
     color: var(--second-brand-color);
 }
-button.accept.disabled {
+button.accept.disabled,
+[type="button"].accept.disabled {
     min-height: 40.4px;
     max-width: none;
     padding: 7px 12px !important;
 }
 button.disabled,
-a.disabled {
+[type="button"].disabled {
     font-size: 13px;
     color: #AEAEAE;
     box-shadow: 0px 0px 0px 4px #aeaeae inset;
@@ -808,7 +786,7 @@ a.disabled {
     line-height: 1;
 }
 button.accept.d-grey,
-a.accept.d-grey {
+[type="button"].accept.d-grey {
     font-size: 13px;
     color: #666666;
     box-shadow: 0px 0px 0px 4px #666666 inset;
@@ -823,27 +801,22 @@ a.accept.d-grey {
     align-items: center !important;
 }
 button.accept.d-grey:hover,
-a.accept.d-grey:hover {
+[type="button"].accept.d-grey:hover {
     box-shadow: 0px 0px 0px 50px #666666 inset !important;
-
 }
 body.myjobs #map .navbar-collapse.open-w100 div.action {
     justify-content: space-evenly !important;
     margin-right: 0px;
 }
-
 .col-auto.pb-3.hidd.d-none.desc-block:nth-child(3) {
     margin-left: 150px;
 }
-
-
 .col.col-md-1.pb-3.hidd.d-none {
     width: 150px;
 }
 button#back {
     right: 20px;
 }
-
 button#back i {
     color: var(--main-brand-color);
     font-size: 25px;
@@ -853,23 +826,21 @@ button#back:hover i {
     color: var(--second-brand-color);
     transition: all o.5s linear;
 }
-
 button#back:hover {
     background-color: transparent;
 }
 button.accept.disabled:hover,
-a.start-test.disabled:hover {
+[type="button"].start-test.disabled:hover {
     box-shadow: 0px 0px 0px 50px #aeaeae inset !important;
-
 }
-.btn-group.accept.start-lang.start-job button {
+.btn-group.accept.start-lang.start-job button,
+.btn-group.accept.start-lang.start-job [type="button"] {
     color: inherit !important;
     border: 0px solid !important;
     box-shadow: none !important;
     padding: 0px !important;
     font-size: inherit !important;
 }
-
 .btn-group.accept.start-lang.start-job {
     border-radius: 46px;
     border: 0px solid;
@@ -882,12 +853,13 @@ a.start-test.disabled:hover {
     box-shadow: 0px 0px 0px 4px var(--second-brand-color) inset;
     color: var(--second-brand-color);
 }
-.btn-group.accept.start-lang.start-job>button:not(:first-child) {
+.btn-group.accept.start-lang.start-job>button:not(:first-child),
+.btn-group.accept.start-lang.start-job>[type="button"]:not(:first-child) {
     background-color: transparent !important;
     padding-left: 12px !important;
 }
-
-.btn-group.accept.start-lang.start-job>button:first-child {
+.btn-group.accept.start-lang.start-job>button:first-child,
+.btn-group.accept.start-lang.start-job>[type="button"]:first-child {
     color: #fff !important;
     background-color: var(--second-brand-color) !important;
     min-width: 40.4px;
@@ -901,7 +873,6 @@ a.start-test.disabled:hover {
     color: #fff !important;
     border-radius: 56px !important;
 }
-
 .btn-group.accept.start-lang.start-job button.btn:not(:first-child) {
     background-color: transparent !important;
     padding-left: 14px !important;
@@ -919,7 +890,7 @@ a.start-test.disabled:hover {
     color: #fff;
 }
 #map button.accept:hover,
-a.start-test.disabled:hover {
+[type="button"].start-test.disabled:hover {
     color: #fff !important;
 }
 .accordion-item {
@@ -936,7 +907,6 @@ a.start-test.disabled:hover {
     background-position: right;
     padding-left: 52px !important;
 }
-
 #map .accordion-body {
     background-color: #f7f7f7;
 }
@@ -1009,7 +979,6 @@ button.filter-btn:hover {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23fff' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e ");
 }
 .myjob-title {
-
     width: calc(50% + 10px);
 }
 .myjobcard {
@@ -1037,14 +1006,12 @@ button.filter-btn:hover {
 .myjobcard .fas {
     padding: 8px 7px !important;
 }
-
 .myjobcard a.accept {
     font-size: 14px;
     padding: 6px 15px;
 }
 .myjobcard>div {
     padding: 7px;
-
 }
 .myjobcard .scroll-y {
     max-height: 130px;
@@ -1063,7 +1030,6 @@ button.filter-btn:hover {
     background-color: #fff;
     border-radius: 20px;
     border: 1px solid #C4C4C4;
-
 }
 .scroll-y::-webkit-scrollbar-thumb {
     background-color: #C4C4C4;
@@ -1082,7 +1048,8 @@ button.filter-btn:hover {
 .modal.show#pick-date-modal .modal-dialog {
     max-width: 575px;
 }
-.modal button.btn.btn-lg.fs-18 {
+.modal button.btn.btn-lg.fs-18,
+.modal [type="button"].btn.btn-lg.fs-18 {
     width: calc(50% - 24px);
     font-size: 18px !important;
     min-height: 48px;
@@ -1110,7 +1077,6 @@ button.filter-btn:hover {
 }
 .cert-elem>.cert-elem {
     box-shadow: none;
-
 }
 .cert-elem .status i {
     font-size: 56px;
@@ -1129,7 +1095,6 @@ button.filter-btn:hover {
     flex-direction: column;
     justify-content: center;
 }
-
 .result .result-text {
     font-weight: 900;
     font-size: 24px;
@@ -1159,7 +1124,6 @@ a.start-test.disabled {
     color: #DADADA;
     opacity: 1;
     pointer-events: none;
-
 }
 a.start-test {
     display: -webkit-flex;
@@ -1186,7 +1150,6 @@ a.start-test {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
     max-width: 25%;
     margin-left: 2rem !important;
@@ -1205,7 +1168,6 @@ button.navbar-toggler+a {
     color: black;
     padding-top: 5px;
 }
-
 @-webkit-keyframes ring {
     0% {
         -webkit-transform: rotateZ(0);
@@ -1273,7 +1235,6 @@ button.navbar-toggler+a {
     41% {
         -webkit-transform: rotateZ(1deg);
     }
-
     43% {
         -webkit-transform: rotateZ(0);
     }
@@ -1281,7 +1242,6 @@ button.navbar-toggler+a {
         -webkit-transform: rotateZ(0);
     }
 }
-
 @-moz-keyframes ring {
     0% {
         -moz-transform: rotate(0);
@@ -1349,7 +1309,6 @@ button.navbar-toggler+a {
     41% {
         -moz-transform: rotate(1deg);
     }
-
     43% {
         -moz-transform: rotate(0);
     }
@@ -1357,7 +1316,6 @@ button.navbar-toggler+a {
         -moz-transform: rotate(0);
     }
 }
-
 @keyframes ring {
     0% {
         transform: rotate(0);
@@ -1425,7 +1383,6 @@ button.navbar-toggler+a {
     41% {
         transform: rotate(1deg);
     }
-
     43% {
         transform: rotate(0);
     }
@@ -1433,7 +1390,6 @@ button.navbar-toggler+a {
         transform: rotate(0);
     }
 }
-
 button.navbar-toggler+a i.far.fa-bell.badge-notificatios:hover {
     -webkit-animation: ring 4s .1s ease-in-out infinite;
     -webkit-transform-origin: 50% 4px;
@@ -1483,19 +1439,18 @@ select#lang {
     display: inline-block;
 }
 body.myjobs button.btn.btn-primary,
-body.openjobs button.btn.btn-primary {
+body.openjobs button.btn.btn-primary,
+body.myjobs [type="button"].btn.btn-primary,
+body.openjobs [type="button"].btn.btn-primary {
     padding: 13px 30px;
 }
 .form-applied {
     position: fixed;
     bottom: 0px;
 }
-
-
 .form-applied {
     display: none;
 }
-
 .open+.form-applied {
     display: block;
     transition: all 0.3s linear;
@@ -1509,7 +1464,6 @@ body.openjobs #map .listWrap {
 }
 div#map.emptyList,
 div#map.emptyList .listWrap {
-
     height: 100%;
 }
 div#map.emptyList .listWrap {
@@ -1544,7 +1498,6 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapse.navbar-toggler.button-op
     margin-top: 110px;
     margin-left: 150px;
     z-index: 2;
-
 }
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
@@ -1555,24 +1508,19 @@ body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
     padding: 3rem !important;
     padding-bottom: 0.5rem !important;
-
     padding-right: 100px !important;
     padding-bottom: 1.5rem !important;
 }
 div#infoJob .block {
     grid-row-start: 2;
-
 }
-
 div#infoJob .block:nth-child(3) {
     margin-left: 0px !important;
 }
-
 div.mini-menu#infoJobMenu .block:nth-child(3) {
     grid-row-start: 1;
     grid-column-start: 2;
 }
-
 div.mini-menu#infoJobMenu .block:nth-child(4) {
     grid-row-start: 1;
     grid-column-start: 3;
@@ -1591,7 +1539,6 @@ div.mini-menu#infoJobMenu {
 div#infoJobMenu.mini-menu h1 {
     margin-bottom: 0px !important;
 }
-
 div.mini-menu#infoJobMenu {
     align-items: center !important;
     grid-template-columns: repeat(5, 1fr);
@@ -1609,7 +1556,6 @@ body.openjobs div.mini-menu#infoJobMenu {
     transform: translateX(0%);
     background-color: #E9F6FE;
 }
-
 .card-list-job.bg-white {
     box-shadow: 4px 4px 25px rgb(0 0 0 / 10%);
 }
@@ -1625,7 +1571,6 @@ body.openjobs div.mini-menu#infoJobMenu {
     height: fit-content;
     position: unset;
 }
-
 #map iframe {
     overflow: hidden;
     position: fixed;
@@ -1645,12 +1590,10 @@ div#infoJobMenu.mini-menu {
     width: 100%;
     /*    position: -webkit-sticky !important;
     position: sticky !important;*/
-
     z-index: 100 !important;
     right: 0px;
     top: 0px;
 }
-
 div#infoJobMenu.mini-menu+.content-wrapper>div#map {
     overflow: auto;
 }
@@ -1692,14 +1635,12 @@ body.openjobs .action {
     border-radius: 56px !important;
     border: 0px solid;
     padding-right: 0px;
-
 }
 .myjobcard .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
     margin-top: 0px;
     display: flex;
 }
 .myjobcard .btn-group.accept.start-lang.start-job>a:nth-child(2) {
-
     background-color: transparent !important;
     padding-left: 8px !important;
     padding-right: 21px !important;
@@ -1734,7 +1675,6 @@ body.openjobs #map:not([class*=emptyList]) .offcanvas-collapse.open {
     margin-bottom: 50px !important;
 }
 /*login page*/
-
 div#login-form,
 div#register-form {
     box-sizing: border-box;
@@ -1758,7 +1698,6 @@ div#register-form>.sec-bg {
     background-repeat: no-repeat;
     background-size: auto;
 }
-
 div#register-form>.sec-bg,
 div#register-form>.sec-bg select#lang {
     background-color: #143D53;
@@ -1837,7 +1776,6 @@ div#register-form input {
     min-height: 40px;
     color: #000;
 }
-
 div#login-form select#lang,
 div#register-form select#lang {
     background-color: var(--second-brand-color);
@@ -1858,9 +1796,7 @@ div#register-form label {
     margin-top: 4px;
 }
 @media (max-width: 1024.5px) {
-
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
-
         max-width: 30%;
         margin-left: 0rem !important;
     }
@@ -1873,7 +1809,6 @@ div#register-form label {
     }
     #map button.accordion-button {
         padding-left: 16px !important;
-
     }
     .open-w100 .hidd {
         display: none !important;
@@ -1890,10 +1825,8 @@ div#register-form label {
         margin-top: 8px;
         box-shadow: 0px 0px 0px 2px var(--main-brand-color) inset;
     }
-
     a.start-test.disabled {
         box-shadow: 0px 0px 0px 2px #DADADA inset;
-
     }
     body.openjobs #map .offcanvas-collapse.open {
         padding-bottom: 115px !important;
@@ -1907,7 +1840,6 @@ div#register-form label {
         grid-template-columns: repeat(2, 1fr) !important;
         padding: 19px 36px 12px !important;
     }
-
     div#infoJobMenu.mini-menu button.filter-btn {
         grid-column-start: 2;
     }
@@ -1915,18 +1847,15 @@ div#register-form label {
         grid-row-start: 2;
         grid-column-start: 1;
     }
-
     div.mini-menu#infoJobMenu .block:nth-child(4) {
         grid-row-start: 2;
         grid-column-start: 2;
     }
-
 }
 @media (max-width: 767.5px) {
     aside .user-panel:last-child {
         bottom: 20px;
         position: absolute;
-
     }
     .user-menu.border-bottom.overflow-auto {
         max-height: calc(100vh - 240px);
@@ -1959,7 +1888,6 @@ div#register-form label {
     aside>div.sidebar {
         max-height: calc(100vh - 55px);
         max-height: calc((var(--vh, 1vh) * 100) - 55px);
-
     }
     aside .user-panel:last-child {
         bottom: 20px;
@@ -1988,7 +1916,8 @@ div#register-form label {
     h5.title i {
         font-size: 24px !important;
     }
-    button.btn-md {
+    button.btn-md,
+    [type="button"].btn-md {
         font-size: 12px;
         min-width: 123px;
         margin: 0 auto;
@@ -1998,7 +1927,6 @@ div#register-form label {
         width: 10px;
         margin-right: 5px;
     }
-
     span.small {
         font-size: 9px;
     }
@@ -2045,7 +1973,6 @@ div#register-form label {
         top: calc(50% - 20px);
         color: #fff;
         font-weight: 600;
-
     }
     div#widget-history:before {
         font-weight: 600;
@@ -2066,7 +1993,6 @@ div#register-form label {
         top: calc(50% - 20px);
         color: #fff;
     }
-
     #content .block.col-12 {
         margin-left: 0px !important;
         margin-right: 0px !important;
@@ -2084,7 +2010,6 @@ div#register-form label {
     }
     div[id*="widget"] .cardnew {
         flex-direction: column-reverse !important;
-
     }
     .tel-elem-info>.col-auto .fs-18 {
         overflow: hidden;
@@ -2093,19 +2018,14 @@ div#register-form label {
         white-space: nowrap;
     }
     .tel-elem-info>.col-auto:nth-child(2) {
-
         max-width: 110px;
-
     }
     .tel-elem-info>.col-auto:nth-child(2):last-child {
         max-width: 200px;
-
     }
     .tel-elem-info>.col-auto:nth-child(3):last-child {
         margin-left: 30px !important;
         max-width: 130px;
-
-
     }
     .cardnew.bg-grey p.fs-2 {
         font-size: 50px !important;
@@ -2122,12 +2042,10 @@ div#register-form label {
         padding: 15px 15px;
         border-radius: 6px;
         box-shadow: 4px 4px 25px 0px #0000001A;
-
     }
     div#accordionFormJob form label {
         display: none;
     }
-
     div#accordionFormJob form>div {
         padding-bottom: 6px;
     }
@@ -2175,9 +2093,7 @@ div#register-form label {
         margin: 0 auto !important;
     }
     body.openjobs #map .offcanvas-collapse.open {
-
         padding-bottom: 0px !important;
-
     }
     div#infoJobMenu.d-flex>button:nth-child(2) {
         margin-top: 0px !important;
@@ -2204,7 +2120,6 @@ div#register-form label {
         min-width: 0px !important;
         margin-right: 0px !important;
     }
-
     .tel-elem-info>.col-12~.col-auto:nth-child(2):last-child,
     .tel-elem-info>.col-12~.col-auto:nth-child(2):not(:last-child) {
         margin-left: 0px !important;
@@ -2212,7 +2127,6 @@ div#register-form label {
     #map button i {
         font-size: 19px;
         margin-left: 5px;
-
     }
     .form-applied {
         position: unset !important;
@@ -2237,7 +2151,6 @@ div#register-form label {
     #content #map.list {
         padding: 24px !important;
     }
-
     #content #map.list iframe,
     #content #map.list .myjobcard {
         display: none;
@@ -2245,7 +2158,6 @@ div#register-form label {
     #content #map.list .open-w100 {
         width: calc(100% - 48px);
     }
-
     #map .offcanvas-collapse.open {
         padding-bottom: 0px !important;
     }
@@ -2253,10 +2165,11 @@ div#register-form label {
         display: none;
     }
     button.accept.d-grey,
-    a.accept.d-grey {
+    [type="button"].accept.d-grey {
         min-height: 35px;
     }
-    .modal button.btn.btn-lg.fs-18 {
+    .modal button.btn.btn-lg.fs-18,
+    [type="button"].btn.btn-lg.fs-18 {
         font-size: 18px !important;
         min-height: 48px;
         text-align: center;
@@ -2269,32 +2182,26 @@ div#register-form label {
         min-height: 140px;
         padding: 0 17px !important;
         justify-content: space-around;
-
     }
     #pick-date-modal .modal-content {
         border-radius: 5px;
         border: 0px;
     }
-
     #pick-date-modal .modal-body .main-bg {
         border-radius: 5px !important;
         border: 0px solid !important;
     }
-
     #pick-date-modal.modal.show .modal-dialog {
         max-width: 310px;
         margin: 0 auto;
     }
-
     #pick-date-modal .modal-body .main-bg .cardnew {
         padding: 25px 0 !important;
     }
-
     #pick-date-modal .modal-body .main-bg .cardnew p.fs-1,
     #pick-date-modal .modal-body .main-bg .cardnew i {
         font-size: 40px !important;
     }
-
     #pick-date-modal button.btn-close {
         top: 25px;
         display: block !important;
@@ -2366,7 +2273,6 @@ div#register-form label {
     #maptoggler.show {
         top: calc(100% - 55px);
     }
-
     body.myjobs div#infoJobMenu,
     body.openjobs div#infoJobMenu {
         padding: 1.5rem !important;
@@ -2377,7 +2283,6 @@ div#register-form label {
     div#infoJobMenu>button:nth-child(2) {
         margin-top: 3rem !important;
     }
-
     body.myjobs div.mini-menu#infoJobMenu,
     body.openjobs div.mini-menu#infoJobMenu {
         padding: 1.5rem !important;
@@ -2405,13 +2310,10 @@ div#register-form label {
         min-height: 200px;
         z-index: 0;
     }
-
     div#map {
         POSITION: unset !important;
         overflow: scroll;
     }
-
-
     #content #map.list .open-w100 {
         width: 100%;
     }
@@ -2438,14 +2340,12 @@ div#register-form label {
         color: #fff !important;
         border-radius: 56px !important;
         border: 0px solid;
-
     }
     .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
         margin-top: 0px;
         display: flex;
     }
     .btn-group.accept.start-lang.start-job>a:nth-child(2) {
-
         background-color: transparent !important;
         padding-left: 14px !important;
         line-height: 1;
@@ -2459,14 +2359,12 @@ div#register-form label {
         justify-content: center;
     }
 }
-
 @media (max-width: 347.5px) {
     #content .block.bg-white {
         margin-right: 0px !important;
         margin-left: 0px !important;
     }
     #widget-money p.fw-light.my-0.lh-sm {
-
         font-size: 20px !important;
     }
 }
