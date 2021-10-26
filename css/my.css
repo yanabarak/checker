@@ -28,6 +28,12 @@ header {
 aside button.navbar-toggler.navbar-toggler-button {
     padding: 19px 19px 16px 19px;
 }
+.sticky-top.sidebar.left.asidebar>.d-none.d-md-flex.align-items-center:first-child {
+    flex-direction: row-reverse;
+}
+.sticky-top.sidebar.left.asidebar.fliph>.d-none.d-md-flex.align-items-center:first-child {
+    flex-direction: row;
+}
 /*animted button menu*/
 .animated-hamburger {
     width: 20px !important;
@@ -94,7 +100,8 @@ aside button.navbar-toggler.navbar-toggler-button {
     top: 0px !important;
     left: 0px !important;
 }
-.animated-hamburger.open span:nth-child(2) {
+.animated-hamburger.open span:nth-child(2),
+.animated-hamburger.open span:nth-child(4) {
     width: 0% !important;
     opacity: 0 !important;
 }
@@ -165,19 +172,25 @@ aside .logo {
 .user-panel>.image i {
     font-size: 11px;
     margin-top: 3px;
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 5.5px);
 }
 .user-panel>.image h6.long {
     display: flex;
     padding-left: 14px;
     width: calc(100% - 30px);
     justify-content: space-between;
+    position: relative;
+    padding-right: 30px;
 }
 .user-panel {
     width: 100%;
 }
 .menu-links.list-group {
-    max-height: calc(100vh - 320px);
+    max-height: calc(100vh - 330px);
     overflow: auto;
+    border-radius: 0px;
 }
 .fliph .menu-links.list-group {
     overflow: hidden;
@@ -202,6 +215,7 @@ ul.menu-links.list-group i {
     height: auto;
     text-align: center;
     font-size: 19px;
+    vertical-align: top;
 }
 ul.menu-links.list-group li.active {
     background: var(--main-brand-color);
@@ -329,8 +343,10 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
     transition: color 0.25s linear;
 }
 .user-panel>a.image:hover h6 {
-    width: calc(100% - 50px);
     color: var(--main-brand-color);
+}
+.user-panel>a.image:hover h6 i {
+    right: 10px;
 }
 /*main content*/
 #content {
@@ -450,7 +466,7 @@ button.btn.btn-outline-main:hover,
     box-shadow: 0px 0px 0px 50px var(--main-brand-color) inset;
 }
 button:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover,
-[type="button"]:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover {
+[type="button"].btn:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hover {
     box-shadow: 0px 0px 0px 50px var(--main-brand-color) inset;
     background-color: var(--main-brand-color);
     color: #fff;
@@ -512,10 +528,19 @@ div#content1,
 .carousel-inner {
     height: 100% !important;
 }
-aside .user-panel:last-child {
+#carouselMenu .carousel-item.active {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 110px) !important;
+}
+.fliph #carouselMenu .carousel-item.active {
+    height: calc(100% - 50px) !important;
+}
+/*aside .user-panel:last-child {
     bottom: 100px;
     position: absolute;
-}
+}*/
 aside .fliph .user-panel:last-child {
     bottom: 50px;
 }
@@ -555,12 +580,54 @@ form.row label {
     margin-bottom: 6px;
     font-size: 16px;
 }
-select.form-select {
+select.form-select,
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
     color: #AEAEAE;
     font-size: 16px;
     border-color: #dadada;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.949707 0.872359L7.98695 7.12769L15.0242 0.872359' stroke='%23007BFF' stroke-width='2'/%3e%3c/svg%3e ");
     background-size: 14px 6px;
+}
+.dropdown.bootstrap-select.show-tick.form-select {
+    border: 0px;
+    padding: 0px;
+    background-image: none !important;
+}
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
+    background-repeat: no-repeat;
+    display: block;
+    color: #AEAEAE;
+    font-size: 16px;
+    font-weight: normal;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.dropdown.bootstrap-select.show-tick.form-select {
+    border: 0px;
+    padding: 0px;
+    background-image: none !important;
+}
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
+    background-color: transparent;
+    height: auto;
+    outline: none !important;
+}
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle:after {
+    content: none;
+}
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle:hover,
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle:active {
+    color: inherit !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 .form-control.pick-date,
 input[type="text"],
@@ -588,16 +655,28 @@ input[type="text"]::placeholder {
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
 }
+.position-relative>input[name="filter[to]"].form-control.pick-date+div {
+    left: 100%;
+    top: -100px;
+}
+.position-relative>input[name="filter[from]"].form-control.pick-date+div {
+    right: 100%;
+    top: -100px;
+}
 div#pick-branch-modal .btn-close {
     right: 0px;
     top: 0px;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
+div#reject-modal .btn-close {
+    right: 0px;
+    }
 #pick-branch-modal .main-bg {
     border-radius: 12px 12px 0 0 !important;
 }
 form.row input[type="text"],
-form.row select.form-select {
+form.row select.form-select,
+form.row .dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
     padding-top: 11px;
     padding-bottom: 11px;
 }
@@ -631,7 +710,8 @@ form.row .col-12 {
     padding-top: 60px;
 }
 a[type="button"] {
-    -webkit-appearance: none;text-decoration: none;
+    -webkit-appearance: none;
+    text-decoration: none;
 }
 .offcanvas-collapse {
     z-index: 0;
@@ -1019,6 +1099,8 @@ button.filter-btn:hover {
     padding: 0px;
     padding-right: 5px;
     margin: 5px !important;
+    scrollbar-width: thin;
+    scrollbar-color: #C4C4C4 #f1f1f1;
 }
 .myjobcard .scroll-y {
     max-height: 110px;
@@ -1167,6 +1249,7 @@ a.start-test {
 button.navbar-toggler+a {
     color: black;
     padding-top: 5px;
+    transition: color 0.1s;
 }
 @-webkit-keyframes ring {
     0% {
@@ -1403,6 +1486,7 @@ button.navbar-toggler+a i.far.fa-bell.badge-notificatios:hover {
     right: 12px;
     margin-top: -4px;
     pointer-events: none;
+    transition: color 0.1s;
 }
 .toggleCer.accordion-button::after {
     filter: grayscale(1);
@@ -1414,9 +1498,13 @@ select#lang {
     border-color: #AEAEAE;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23AEAEAE' stroke-width='1.5'/%3e%3c/svg%3e ");
     background-size: auto;
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .form-floating>.form-control {
-    height: 52px !important;
+    /*    height: 52px !important;*/
     min-height: 36px !important;
     font-size: 18px;
     box-sizing: border-box;
@@ -1429,6 +1517,9 @@ select#lang {
 }
 .card-list-job .form-floating {
     padding-right: 32px;
+}
+#map textarea.form-control {
+    min-height: 100%;
 }
 .card-list-job.need-cert a.pick-branch-modal,
 .card-list-job.show-pack a.pick-branch-modal {
@@ -1543,8 +1634,22 @@ div.mini-menu#infoJobMenu {
     align-items: center !important;
     grid-template-columns: repeat(5, 1fr);
 }
+body.myjobs div#infoJobMenu .col-auto.ms-auto.lang-row,
+body.openjobs div#infoJobMenu .col-auto.ms-auto.lang-row {
+    grid-column-start: 4;
+    padding-right: 0px;
+}
 div#infoJobMenu.mini-menu button.filter-btn {
+    grid-column-start: 4;
+}
+body.myjobs div#infoJobMenu.mini-menu .col-auto.ms-auto.lang-row,
+body.openjobs div#infoJobMenu.mini-menu .col-auto.ms-auto.lang-row {
     grid-column-start: 5;
+    padding-right: 0px;
+}
+body.myjobs div#infoJobMenu.mini-menu .col-auto.ms-auto.lang-row>select,
+body.openjobs div#infoJobMenu.mini-menu .col-auto.ms-auto.lang-row>select {
+    margin: 0px !important;
 }
 body.myjobs div.mini-menu#infoJobMenu,
 body.openjobs div.mini-menu#infoJobMenu {
@@ -1614,10 +1719,11 @@ body.openjobs .action {
     margin-right: 20px !important;
 }
 .myjobcard .myjobcard-footer>a:last-child {
-    width: 100px;
+    width: auto !important;
     box-sizing: border-box;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    min-width: 80px;
 }
 .myjobcard .myjobcard-footer>a:nth-child(2):last-child {
     width: 120px;
@@ -1795,6 +1901,12 @@ div#login-form label,
 div#register-form label {
     margin-top: 4px;
 }
+.mw-75 {
+    max-width: 75%;
+}
+.container-fluid {
+    padding: 0px;
+}
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
         max-width: 30%;
@@ -1852,7 +1964,51 @@ div#register-form label {
         grid-column-start: 2;
     }
 }
+@media (min-width: 767.6px) {
+    button.navbar-toggler:hover .animated-hamburger.open span:nth-child(3) {
+        transform: rotate(40deg) translateX(-10px) translateY(0px) !important;
+        width: 13px !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger.open span:nth-child(1) {
+        transform: rotate(-40deg) translateX(-11px) translateY(2px) !important;
+        width: 15px !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger.open span:nth-child(2) {
+        transform: rotate(-40deg) translateX(-1px) translateY(4px) !important;
+        width: 14px !important;
+        opacity: 1 !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger.open span:nth-child(4) {
+        transform: rotate(40deg) translateX(8px) translateY(9px) !important;
+        width: 14px !important;
+        opacity: 1 !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger span:nth-child(3) {
+        transform: rotate(-220deg) translateX(-10px) translateY(-2px) !important;
+        width: 13px !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger span:nth-child(1) {
+        transform: rotate(220deg) translateX(-10px) translateY(2px) !important;
+        width: 13px !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger span:nth-child(2) {
+        transform: rotate(220deg) translateX(-13px) translateY(11px) !important;
+        width: 14px !important;
+        opacity: 1 !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger span:nth-child(4) {
+        transform: rotate(-220deg) translateX(2px) translateY(-10px) !important;
+        width: 14px !important;
+        opacity: 1 !important;
+    }
+    button.navbar-toggler:hover .animated-hamburger span {
+        background-color: #666 !important;
+    }
+}
 @media (max-width: 767.5px) {
+    #carouselMenu .carousel-item.active {
+        display: block !important;
+    }
     aside .user-panel:last-child {
         bottom: 20px;
         position: absolute;
@@ -2027,12 +2183,26 @@ div#register-form label {
         margin-left: 30px !important;
         max-width: 130px;
     }
+    .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
+        max-width: 130px;
+    }
+    .tel-elem-info>.col-auto:nth-child(3):last-child {
+        margin-left: 10px !important;
+        max-width: 41%;
+    }
+    .tel-elem-info>.col-auto .color-lgrey {
+        font-size: 11px;
+    }
+    .row.m-0.tel-elem-info>div:first-child>a {
+        word-wrap: anywhere;
+    }
     .cardnew.bg-grey p.fs-2 {
         font-size: 50px !important;
         color: var(--main-brand-color);
     }
     #widget-money p.fw-light.my-0.lh-sm {
-        font-size: 28px !important;
+        font-size: 24px !important;
+        word-wrap: anywhere;
     }
     .myjob-title {
         width: 100%
@@ -2084,6 +2254,13 @@ div#register-form label {
         box-shadow: none;
         border: 1px solid #dadada;
         border-radius: 6px;
+    }
+    body.myjobs div#infoJobMenu .col-auto.ms-auto.lang-row,
+    body.openjobs div#infoJobMenu .col-auto.ms-auto.lang-row {
+        position: absolute;
+        right: 0px;
+        padding-right: 1.5rem !important;
+        top: 20px !important;
     }
     body.myjobs #map .navbar-collapse.open-w100 div.action,
     body.myjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12,
@@ -2276,12 +2453,18 @@ div#register-form label {
     body.myjobs div#infoJobMenu,
     body.openjobs div#infoJobMenu {
         padding: 1.5rem !important;
-        margin-top: 0px !important;
+        margin-top: 50px !important;
         padding-bottom: 0px !important;
     }
     div#infoJobMenu>h1,
     div#infoJobMenu>button:nth-child(2) {
         margin-top: 3rem !important;
+    }
+    div#infoJob .fs-50 {
+        margin-right: 10px !important;
+    }
+    .header-wrapper>.col-auto.ms-auto:last-child {
+        padding-right: 0px;
     }
     body.myjobs div.mini-menu#infoJobMenu,
     body.openjobs div.mini-menu#infoJobMenu {

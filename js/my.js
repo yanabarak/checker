@@ -27,18 +27,30 @@ jQuery(document).ready(function($) {
     }
     // initial for toggle menu
     function drawStuff() {
+        const cookieName = "MenuStyle";
+        var cookieValue = "";
+        const daysToExpire = new Date(2147483647 * 1000).toUTCString();
+        (!getCookie(cookieName)) ? cookieValue = getCookie(cookieName): cookieValue = getCookie(cookieName);
         if ($(window).width() < 768) {
             $('.asidebar').addClass('collapse').removeClass('fliph left sidebar');
             $('.asidebar').attr('id', 'navigation');
             $('.animated-hamburger').removeClass('open');
         } else if ($(window).width() >= 768) {
             $('.asidebar').removeClass('collapse');
-            $('.asidebar').removeClass('fliph');
+            if (cookieValue == "off") {
+                $('.asidebar').addClass('fliph');
+                $('.animated-hamburger').removeClass('open');
+            } else {
+                $('.asidebar').removeClass('fliph');
+                $('.animated-hamburger').addClass('open');
+            }
             $('.asidebar').addClass('sidebar left');
             $('.asidebar').attr('id', '');
         }
         $('.navbar-toggler-button').on('click', function() {
             if ($(window).width() >= 768) {
+                $('.asidebar.fliph').length ? cookieValue = "on" : cookieValue = "off";
+                document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
                 $('.asidebar').toggleClass('fliph');
             }
             $('.animated-hamburger').toggleClass('open');
@@ -50,6 +62,13 @@ jQuery(document).ready(function($) {
                 }, 500);
             }
         });
+    }
+
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
     }
 
     function mobileAccordion() {
@@ -429,16 +448,17 @@ jQuery(document).ready(function($) {
     //changing date on modal window 
     function formatDate(date) {
         if (date != "") {
-            let d = new Date(date),
-                month = '' + (d.getMonth() + 1),
-                day = '' + d.getDate(),
-                year = d.getFullYear();
-            if (month.length < 2)
-                month = '0' + month;
-            if (day.length < 2)
-                day = '0' + day;
+            return date.replace(new RegExp('-', 'g'), '.');
+            // let d = new Date(date),
+            //     month = '' + (d.getMonth() + 1),
+            //     day = '' + d.getDate(),
+            //     year = d.getFullYear();
+            // if (month.length < 2)
+            //     month = '0' + month;
+            // if (day.length < 2)
+            //     day = '0' + day;
 
-            return [day, month, year].join('.');
+            // return [day, month, year].join('.');
         } else {
             return date;
         }
@@ -493,11 +513,26 @@ jQuery(document).ready(function($) {
     function pickDate2() {
         var target;
         $('.pick-date-modal').on('click', function(e) {
-            $('#pick-date-modal').modal('show')
-            console.log(e.target);
             target = $(this);
             let newDate = $(this).html();
             $(".showdatefrom").html(newDate);
+            let order_id = target.closest('form').find('input[name="order_id"]').val();
+            $('input[name="change_date_order_id"]').val(order_id);
+            $.ajax({
+                url: "?Controller=Jobs&Action=ajaxGetAvailableDays",
+                method: "POST",
+                data: { order_id: order_id },
+                success: function(response) {
+                    let data = JSON.parse(response);
+                    if (typeof data.errors !== "undefined" && data.errors.length == 0) {
+                        let DateSet = window.SETTINGS ? window.SETTINGS : {};
+                        data.dates.unshift(true);
+                        DateSet.disable = data.dates;
+                        $('.pick-date-disabled').pickadate(DateSet);
+                        $('#pick-date-modal').modal('show');
+                    }
+                }
+            });
         });
         document.querySelector('#savedatefrom').addEventListener('click', function() {
             let newDate = formatDate($("#pick-date-modal .pick-date").val());
@@ -506,7 +541,6 @@ jQuery(document).ready(function($) {
             }
             $('#pick-date-modal').modal('hide')
         });
-
     }
 
     function pickBranch() {
@@ -527,6 +561,10 @@ jQuery(document).ready(function($) {
 
     }
 
+    $(function() {
+        $('.selectpicker').selectpicker();
+    });
+
     //initial all function on load page
     $(window).resize(function() {
         drawStuff();
@@ -540,7 +578,8 @@ jQuery(document).ready(function($) {
         if ($("#donut1").length) { drawDonut1() };
         if ($("#donut2").length) { drawDonut2() };
         if ($(".pick-date").length) {
-            let DateSet = window.SETTINGS ? JSON.parse(window.SETTINGS) : {};
+            let DateSet = window.SETTINGS ? window.SETTINGS : { "formatSubmit": "yyyy-mm-dd" }
+            console.log(DateSet)
             $('.pick-date').pickadate(DateSet);
             pickDate2();
             pickBranch();

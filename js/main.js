@@ -1,5 +1,0 @@
-$(function() {
-
-   $('#pick-date').pickadate();
-
-});

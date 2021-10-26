@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
 </head>
@@ -40,7 +41,7 @@
                 <div class="sticky-top sidebar left asidebar">
                     <div class="d-none d-md-flex  align-items-center">
                         <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                            <div class="animated-hamburger open"><span></span><span></span><span></span></div>
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span></div>
                         </button>
                         <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
                     </div>
@@ -56,7 +57,7 @@
                                         <li><a href="#"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
                                     </ul>
                                 </div>
-                                <div class="m-0 pb-3 pt-3 user-menu border-bottom">
+                                <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
                                         <li class="active"><a href="#"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
@@ -71,19 +72,18 @@
                                         <li><a href="#"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
                                     </ul>
                                 </div>
-                                <div class="m-0 pt-3 user-menu">
+                                <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
-                                <div class="user-panel py-4 mt-auto">
+                                <div class="user-panel py-3 mb-0">
                                     <a class="image d-flex align-items-center me-4" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
                                         <div class="box image rounded-circle">
                                             <img src="https://picsum.photos/640/360" alt="User Image">
                                         </div>
                                         <h6 class="text-center mb-0 long">Larysa Chernenko
-                                            <i class="fas fa-chevron-right"></i>
-                                        </h6>
+                                            <i class="fas fa-chevron-right"></i></h6>
                                     </a>
                                 </div>
                             </div>
@@ -131,6 +131,12 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="col-auto ms-auto lang-row">
+                        <select class="form-select mb-4" id="lang">
+                            <option selected="">English</option>
+                            <option value="1">Ukrainian</option>
+                            <option value="2">Hebrew</option>
+                        </select></div>
                     </div>
                     <div class="content-wrapper m-0 p-0">
                         <div class="row m-0 p-0 position-relative" id="map">
@@ -802,7 +808,7 @@
                                             <label class="form-check-label fs-18 black-color ms-3" for="SelectAll">Select All</label>
                                         </div>
                                         <div class="col-12 col-md-6 p-0 ps-md-3">
-                                            <textarea class="form-control w-100 h-100" rows="3"></textarea></div>
+                                            <textarea class="form-control w-100" rows="3"></textarea></div>
                                         <div class="col-12 col-md d-md-grid gap-2 p-0 me-auto d-flex justify-content-between mt-2 mt-md-0 ps-md-3 align-items-center">
                                             <button type="submit" class="btn btn-primary sec-bg border-0 me-auto fs-18">Apply</button>
                                             <a href="#" class="black-color fs-18">Remove Application</a>
@@ -835,7 +841,7 @@
                                         <div class="col-12 p-0">SOS Simple Questionnaire 15-01-2021 [Shoppers]</div>
                                     </div>
                                     <div class="row m-0">
-                                        <textarea class="form-control p-1 px-0 border-0 border-top  border-bottom rounded-0" placeholder="Write your message here before applying"></textarea>
+                                        <textarea class="form-control p-1 px-0 border-0 border-top border-bottom rounded-0" placeholder="Write your message here before applying"></textarea>
                                     </div>
                                     <div class="row m-0">
                                         <div class="col-12 p-0">
@@ -940,6 +946,7 @@
             </div>
         </div>
     </div>
+    
     <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-0 py-0 p-md-3 py-md-4">
@@ -953,17 +960,17 @@
                             <form class="row">
                                 <div class="col-12 my-0">
                                     <label for="staticClient" class="black-color">Client</label>
-                                    <select class="form-select" aria-label="Client" id="Client">
-                                        <option selected>Choose client</option>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Client" id="Client" title="Choose client">
+                                        <option value="0">Choose client</option>
                                         <option value="1">Choose client1</option>
                                         <option value="2">Choose client2</option>
                                         <option value="3">Choose client3</option>
+                                        <option value="1">Choose client1</option>
                                     </select>
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticJobType" class="black-color">Job type</label>
-                                    <select class="form-select" aria-label="JobType" id="JobType">
-                                        <option>Choose job type</option>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="JobType" id="JobType" title="Choose job type">
                                         <option value="1">Choose job type1</option>
                                         <option value="2">Choose job type2</option>
                                         <option value="3">Choose job type3</option>
@@ -971,8 +978,7 @@
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticRegion" class="black-color">Region</label>
-                                    <select class="form-select" aria-label="Region" id="Region">
-                                        <option selected>Choose Region</option>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Region" id="Region" title="Choose Region">
                                         <option value="1">Choose Region1</option>
                                         <option value="2">Choose Region2</option>
                                         <option value="3">Choose Region3</option>
@@ -988,7 +994,7 @@
                                 </div>
                                 <div class="col-12 my-0 my-0 position-relative col-md-6 mt-2">
                                     <label for="pick-date-to" class="black-color">Date end</label>
-                                    <input type="text" class="form-control pick-date" placeholder="To">
+                                    <input type="text" class="form-control pick-date" data-value="04/14/2020">
                                 </div>
                                 <div class="col-12 d-flex flex-column justify-content-end mt-2">
                                     <button type="submit" class="btn btn-primary sec-bg border-0 w-100">Display</button>
@@ -1005,6 +1011,7 @@
     <script async src="js/picker.js"></script>
     <script async src="js/picker.date.js"></script>
     <script async src="js/popper.min.js"></script>
+    <script async src="js/bootstrap-select.js"></script>
     <script src="js/my.js"></script>
 </body>
 
