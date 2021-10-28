@@ -134,8 +134,6 @@ jQuery(document).ready(function($) {
 
     }
 
-
-
     // toggle map and list on My Jobs Page
     function togglerMap() {
         if (($(window).width() < 1025)) {

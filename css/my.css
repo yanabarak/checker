@@ -1912,6 +1912,9 @@ div#register-form label {
     white-space: break-spaces;
     font-size: 16px;
 }
+.bootstrap-select .dropdown-menu li a span {
+    height: auto !important;
+}
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
         max-width: 30%;
