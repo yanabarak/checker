@@ -588,12 +588,12 @@ select.form-select,
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.949707 0.872359L7.98695 7.12769L15.0242 0.872359' stroke='%23007BFF' stroke-width='2'/%3e%3c/svg%3e ");
     background-size: 14px 6px;
 }
-.dropdown.bootstrap-select.show-tick.form-select {
+.dropdown.bootstrap-select.form-select {
     border: 0px;
     padding: 0px;
     background-image: none !important;
 }
-.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle{
     background-repeat: no-repeat;
     display: block;
     color: #AEAEAE;
@@ -676,7 +676,8 @@ div#reject-modal .btn-close {
 }
 form.row input[type="text"],
 form.row select.form-select,
-form.row .dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
+form.row .dropdown.bootstrap-select.form-select button.btn.dropdown-toggle,
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
     padding-top: 11px;
     padding-bottom: 11px;
 }
@@ -1906,6 +1907,10 @@ div#register-form label {
 }
 .container-fluid {
     padding: 0px;
+}
+.bootstrap-select .dropdown-menu li a {
+    white-space: break-spaces;
+    font-size: 16px;
 }
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {

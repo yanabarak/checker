@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
 
         } else {
             if (datawork[0] == 0) {
-                justify - content - center
+                
                 $("#donut2 .donut-segment-white").addClass("d-none");
                 $("#donut2 .donut-segment-jobs").addClass("d-none");
             } else {
@@ -534,32 +534,40 @@ jQuery(document).ready(function($) {
                 }
             });
         });
-        document.querySelector('#savedatefrom').addEventListener('click', function() {
-            let newDate = formatDate($("#pick-date-modal .pick-date").val());
-            if (newDate != "") {
-                target.html(newDate);
-            }
-            $('#pick-date-modal').modal('hide')
-        });
+        // document.querySelector('#savedatefrom').addEventListener('click', function() {
+        //     let newDate = formatDate($("#pick-date-modal .pick-date").val());
+        //     if (newDate != "") {
+        //         target.html(newDate);
+        //     }
+        //     $('#pick-date-modal').modal('hide')
+        // });
     }
 
-    function pickBranch() {
-        var target;
-        $('.pick-branch-modal').on('click', function(e) {
-            $('#pick-branch-modal').modal('show')
-            target = $(this);
-            let newBranch = $(this).html();
-            $(".showBranchfrom").html(newBranch);
-        });
-        document.querySelector('#savebranchfrom').addEventListener('click', function() {
-            let newBranch = $("div#pick-branch-modal select.form-select").val();
-            if (newBranch != "") {
-                target.html(newBranch);
-            }
-            $('#pick-branch-modal').modal('hide')
-        });
-
-    }
+   function pickBranch() {
+    var target;
+    $( '.pick-branch-modal' ).on( 'click', function( e ) {
+      target = $( this );
+      let order_id = target.closest( 'form' ).find( 'input[name="order_id"]' ).val();
+      $.ajax( {
+                url    : '?Controller=Jobs&Action=ajaxGetAlternativeOrders',
+                method : 'POST',
+                data   : { order_id: order_id },
+                success: function( response ) {
+                  let data = JSON.parse( response );
+                  if ( typeof data.errors !== 'undefined' && data.errors.length === 0 ) {
+                    $( 'select[name="orderBranchChange"]' ).empty();
+                    for ( const [ id, order ] of Object.entries( data.altOrders ) ) {
+                      $( 'select[name="orderBranchChange"]' ).append('<option value="'+id+'">' + order + '</option>');
+                    }
+                    $( 'input[name="change_branch_order_id"]' ).val( order_id );
+                    $( '#pick-branch-modal' ).modal( 'show' );
+                  }
+                },
+              } );
+      let newBranch = $( this ).html();
+      $( '.showBranchfrom' ).html( newBranch );
+    } );
+  }
 
     $(function() {
         $('.selectpicker').selectpicker();
