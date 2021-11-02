@@ -475,6 +475,10 @@ form .btn {
     width: 176px;
     height: 48px;
 }
+form .btn-group.accept .btn, form .btn-group.accept a {
+    width: auto !important;
+    min-width: auto !important;
+}
 div[id^=widget] {
     min-width: 250px;
 }
