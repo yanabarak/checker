@@ -7,6 +7,7 @@
     <title>Main</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -108,10 +109,12 @@
                 <div class="row m-0 mt-5 mt-md-0 header-wrapper">
                     <h1 class="fs-3 fw-light p-0 mb-2 mb-md-4 col-auto">Welcome Back, Checker User :)</h1>
                     <div class="col-auto ms-auto">
-                        <select class="form-select mb-4" id="lang">
+                        <select class="form-select mb-4 selectpicker" id="lang">
                             <option selected>English</option>
                             <option value="1">Ukrainian</option>
                             <option value="2">Hebrew</option>
+                            <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
+                            <option value="4">HebrewHebrew</option>
                         </select></div>
                 </div>
                 <div class="content-wrapper m-0 p-0">
@@ -172,7 +175,7 @@
                             <div class="col-12 col-lg-7 p-0 d-flex invisible order-1 order-lg-1 position-relative" id="donut2">
                                 <h5 class="justify-content-between m-0 fs-2 main-color"><span class="sec-color"></span><span> </span>
                                 </h5>
-                                <svg width="90%" height="100%" viewBox="0 0 42 42" class="donut" data-work="0,0">
+                                <svg width="90%" height="100%" viewBox="0 0 42 42" class="donut" data-work="5,0">
                                     <circle class="donut-ring" cx="50%" cy="94%" r="14" fill="transparent" stroke="#F7F7F7" stroke-width="28" stroke-dasharray="18.5 80.5" stroke-dashoffset="101%"></circle>
                                     <circle class="donut-ring" stroke-linecap="round" cx="50%" cy="96.5%" r="11" fill="transparent" stroke="#fff" stroke-width="1" stroke-dasharray="15 85" stroke-dashoffset="-105%"></circle>
                                     <circle class="donut-ring" stroke-linecap="round" cx="50%" cy="96.5%" r="28" fill="transparent" stroke="#fff" stroke-width="7" stroke-dasharray="30 70" stroke-dashoffset="-40%"></circle>
@@ -309,6 +312,8 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
     <script src="js/my.js"></script>
 </body>
 

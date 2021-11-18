@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-    // initial for menu 
+    // initial for swaping menu 
     var myCarousel = document.querySelector('#carouselMenu')
     var carousel = new bootstrap.Carousel(myCarousel, {
         interval: false,
@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
         wrap: false
     })
 
-
+    // add vh for mobile (needs for responsive, when bar with url hidding)
     if ($(window).width() < 768) {
         (function init100vh() {
             function setHeight() {
@@ -20,11 +20,13 @@ jQuery(document).ready(function($) {
         })();
     };
 
+
     //switch off preloader
     function spinerOff() {
         $("#spinerWrap").addClass("d-none").removeClass("d-flex");
         $(document.body).removeClass("overflow-hidden");
     }
+
     // initial for toggle menu
     function drawStuff() {
         const cookieName = "MenuStyle";
@@ -38,8 +40,11 @@ jQuery(document).ready(function($) {
         } else if ($(window).width() >= 768) {
             $('.asidebar').removeClass('collapse');
             if (cookieValue == "off") {
+                $('.asidebar').addClass("no-anim");
                 $('.asidebar').addClass('fliph');
                 $('.animated-hamburger').removeClass('open');
+                setTimeout(() => $('.asidebar').removeClass("no-anim"), 500);
+
             } else {
                 $('.asidebar').removeClass('fliph');
                 $('.animated-hamburger').addClass('open');
@@ -120,10 +125,13 @@ jQuery(document).ready(function($) {
                 $("#donut2 .donut-segment-white").addClass("d-none");
                 $("#donut2 .donut-segment-jobs").addClass("d-none");
             } else {
-                datawork[1] == 0 ? $("#donut2 .donut-segment-white").addClass("d-none") : false;
                 let valuework = 29.5 / (Number.parseInt(datawork[0]) + Number.parseInt(datawork[1])) * datawork[0];
                 $("#donut2 .donut-segment-white").attr("stroke-dasharray", `${valuework} ${100-valuework}`);
                 $("#donut2 .donut-segment-jobs").attr("stroke-dasharray", `${valuework} ${100-valuework}`);
+
+                if(datawork[1] == 0) {$("#donut2 .donut-segment-white").addClass("d-none");
+                $("#donut2 .donut-ring-main").addClass("d-none");
+                $("#donut2 .donut-segment-jobs").attr("stroke-dasharray", `30 70`);}
             }
 
             let legend = $("#donut2 h5 span");
@@ -385,7 +393,7 @@ jQuery(document).ready(function($) {
             $('#map').addClass('emptyList');
             $('body').addClass('overflow-hidden');
             // $("#map").attr('style', `max-height: ${ $(window).innerHeight() - ($("#infoJob").innerHeight())}px`);
-            $('#map .offcanvas-collapse').html('<img src="img/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>')
+            $('#map .offcanvas-collapse').html('<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>')
         }
     }
     // click on "Show Package button"
@@ -568,9 +576,35 @@ jQuery(document).ready(function($) {
   }
 
     $(function() {
+        if ($(".selectpicker").length) {
         $('.selectpicker').selectpicker();
+    }
     });
 
+     $(function() {
+        if ($(".start-lang.start-job").length) {
+             $(".dropdown-menu li span").click(function(){
+    let sel = $(this).attr("data-name");
+    $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").addClass("sel");
+
+    $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").attr("data-name", sel);
+    // $(".btn:first-child").text($(this).attr("data-name"));
+    //  $(".btn:first-child").val($(this).text());
+  });
+    }
+    });
+
+    // page telephon survey 
+    $(function() {
+
+        if ($("#switchTel").length) {
+    document.querySelector('#switchTel').addEventListener('click', function() {
+        let parentsWrap = $(this).closest('#widget-tel');
+        this.checked ? parentsWrap.removeClass('deactive') : parentsWrap.addClass('deactive')
+
+    }) 
+}
+});
     //initial all function on load page
     $(window).resize(function() {
         drawStuff();

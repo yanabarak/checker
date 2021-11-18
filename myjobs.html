@@ -348,10 +348,12 @@
                                                         <button class="btn btn-secondary btn-lg" type="button">
                                                             Start
                                                         </button>
-                                                        <ul class="dropdown-menu px-2 fw-normal color-grey">
-                                                            <li>English</li>
-                                                            <li>Hebrew</li>
-                                                            <li>Russian</li>
+                                                        <ul class="dropdown-menu px-2 fw-normal color-grey dropdown-menu-end">
+                                                            <li><h6 class="dropdown-header">Choose a language</h6></li>
+                                                            <li><span data-name="En">English</span></li>
+                                                            <li><span data-name="He">Hebrew</span></li>
+                                                            <li><span data-name="Ru">Russian</span></li>
+                                                            <li><span data-name="Ln">Really long name</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1175,7 +1177,34 @@
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticRegion" class="black-color">Region</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Region" id="staticRegion" title="Choose Region">
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Region" id="staticRegion" title="Choose Region" placeholder="Choose Region">
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
                                         <option value="1">Choose Region1</option>
                                         <option value="2">Choose Region2</option>
                                         <option value="3">Choose Region3</option>
@@ -1187,11 +1216,11 @@
                                 </div>
                                 <div class="col-12 my-0 my-0 position-relative col-md-6 mt-2">
                                     <label for="pick-date-from" class="black-color">Date start</label>
-                                    <input type="text" class="form-control pick-date" placeholder="From" id="pick-date-from">
+                                    <input type="text" class="form-control pick-date" name="filter[from]" placeholder="From" id="pick-date-from">
                                 </div>
                                 <div class="col-12 my-0 my-0 position-relative col-md-6 mt-2">
                                     <label for="pick-date-to" class="black-color">Date end</label>
-                                    <input type="text" class="form-control pick-date" data-value="04/14/2020" id="pick-date-to">
+                                    <input type="text" class="form-control pick-date" name="filter[to]" data-value="04/14/2020" placeholder="To" id="pick-date-to">
                                 </div>
                                 <div class="col-12 d-flex flex-column justify-content-end mt-2">
                                     <button type="submit" class="btn btn-primary sec-bg border-0 w-100">Display</button>
