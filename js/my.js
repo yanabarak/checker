@@ -368,20 +368,18 @@ jQuery(document).ready(function($) {
     function selectAll() {
         $('#SelectAll').on('click', function() {
             if ($('#SelectAll').is(':checked')) {
-                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', true);
-
+                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', true).trigger('change');
             } else {
-                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', false);
-
+                $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', false).trigger('change');
             }
         });
 
         $('#SelectAll2').on('click', function() {
             if ($('#SelectAll2').is(':checked')) {
-                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', true);
+                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', true).trigger('change');
 
             } else {
-                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', false);
+                $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', false).trigger('change');
 
             }
         });
