@@ -2149,6 +2149,9 @@ div.call-button.rounded-circle {
         stroke-dashoffset: 0;
     }
 }
+.mainpage #infoJobMenu {
+    position: unset !important;
+}
 body.telephonic-survey #content {
     height: 100vh !important;
     overflow: hidden;
@@ -2334,7 +2337,6 @@ body.telephonic-survey #content {
     background: #000;
     display: inline-block;
     width: auto;
-    ;
     margin-left: auto;
     margin-right: 25px;
 }
@@ -2342,6 +2344,76 @@ body.telephonic-survey #content {
     opacity: 1;
 }
 /*Telephonic Survey page*/
+
+/*create new job*/
+body.create-job #infoJob{
+  height: 100%;  
+  box-sizing: border-box !important;
+}
+body.create-job .content-wrapper {
+  height: calc(100% - 60px);  
+  box-sizing: border-box !important;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+#create-job-form {
+  width: 563px;
+  min-height: 200px;
+  padding: 78px 69px 69px 47px;
+}
+#create-job-form>.col-12:not(:first-child) {
+  margin-top: 23px !important;
+}
+#create-job-form .btn.btn-md {
+    min-width: 180px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#create-job-form > .col-12.inactive label,
+#create-job-form > .col-12.inactive .btn.dropdown-toggle.btn-light:not(.bs-placeholder) > .filter-option {
+  color: #B2B2B2;
+}
+#create-job-form > .col-12.inactive a{
+  color: #afafaf;
+  pointer-events: none;
+}
+#create-job-form > .col-12.inactive .btn.dropdown-toggle.btn-light{
+  background-color: #F7F7F7 !important;;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 6px;
+  pointer-events: none;
+}
+#create-job-form > .col-12.inactive .btn {
+  background-color: rgba(174, 174, 174, 0.87);
+  pointer-events: none;
+}
+.create-job #reject-modal .cardnew {
+  max-width: 370px;
+  padding: 0px !important;
+  margin: 0 auto;
+  padding-top: 10px !important;
+}
+ol.inline-list
+{
+  counter-reset: LIST-ITEMS;
+}
+
+ol.inline-list li
+{
+  display: inline-block;
+}
+
+ol.inline-list li:before
+{
+  content: counter( LIST-ITEMS ) ".";
+  counter-increment: LIST-ITEMS;
+  padding-right: 3px;
+}
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
         max-width: 30%;
