@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferred regions</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
+</head>
+
+<body class="overflow-hidden preffered-regions">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
+        <div class="spinner-border mx-auto sec-color" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+    </div>
+    <div class="container-fluid  d-block d-md-none">
+        <header class="d-flex align-items-center border-bottom py-2">
+            <div class="col-2 text-start">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-hamburger"><span></span><span></span><span></span></div>
+                </button>
+            </div>
+            <div class="logo col-8 justify-content-center mb-md-0">
+                <div class="col-md-6">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="wrapper d-flex align-items-stretch flex-column flex-md-row">
+            <aside class="sticky-md-top">
+                <div class="sticky-top sidebar left asidebar">
+                    <div class="d-none d-md-flex  align-items-center">
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span></div>
+                        </button>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                    </div>
+                    <div class="logo-container">
+                        <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
+                    </div>
+                    <div id="carouselMenu" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div id="content1" class="carousel-item active">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                                        <li><a href="#"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
+                                        <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
+                                        <li><a href="#"><i class="far fa-star"></i> <span>Create new job</span></a></li>
+                                        <li><a href="#"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
+                                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
+                                        <li><a href="#"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
+                                        <li><a href="#"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
+                                        <li><a href="#"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="user-panel py-3 mb-0">
+                                    <a class="image d-flex align-items-center me-4" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
+                                        <div class="box image rounded-circle">
+                                            <img src="https://picsum.photos/640/360" alt="User Image">
+                                        </div>
+                                        <h6 class="text-center mb-0 long">Larysa Chernenko
+                                            <i class="fas fa-chevron-right"></i></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="content2" class="carousel-item">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu" data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i> <span>Back</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu ">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="#"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
+                                        <li><a href="#"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
+                                        <li><a href="#"><i class="far fa-map"></i> <span>Preferred Clients</span></a></li>
+                                        <li><a href="#"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="p-0 w-100" id="content">
+                <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
+                    <div class="row m-0 mt-5 mt-md-0 header-wrapper">
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="fas fa-map-marker-alt sec-color fs-30 me-4"></i>Preferred regions</h1>
+                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
+                        <div class="col-auto ms-auto">
+                            <select class="form-select mb-4 selectpicker" id="lang">
+                                <option selected>English</option>
+                                <option value="1">Ukrainian</option>
+                                <option value="2">Hebrew</option>
+                                <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
+                                <option value="4">HebrewHebrew</option>
+                            </select></div>
+                    </div>
+                    <div class="content-wrapper m-0 p-0">
+                        <div id="pref-reg" class="my-auto row p-0 d-flex flex-column flex-lg-row align-items-center">
+                            <div id="all-reg" class="align-self-start">
+                                <h4 class="sec-color mb-6 mx-0 p-0 ">All regions</h4>
+                                <div class="bg-white p-0 pb-1">
+                                    <table data-toggle="table" class="classic mini-table table table-fixed" data-filter-control="true">
+                                        <thead>
+                                            <tr class="row m-0 p-0">
+                                                <th class="col-2" data-field="input"><input class="form-check-input ms-1 selAll" type="checkbox" data-select="#all-reg"></th>
+                                                <th class="col-4" data-sortable="true" data-field="name" data-filter-control="input" data-filter-control-placeholder="Select Region Name" data-field="region">Region Name</th>
+                                                <th class="col-6" data-sortable="true" data-field="count" data-filter-control="input" data-filter-control-placeholder="Select Country Name" data-field="country">Country Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="blue-grey-scroll">
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="0"></td>
+                                                <td class="col-4">Andrey1</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="1"></td>
+                                                <td class="col-4">Andrey2</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="2"></td>
+                                                <td class="col-4">Andrey3</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="3"></td>
+                                                <td class="col-4">Andrey4</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="4"></td>
+                                                <td class="col-4">Andrey5</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="5"></td>
+                                                <td class="col-4">Andrey6</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="6"></td>
+                                                <td class="col-4">Andrey7</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="7"></td>
+                                                <td class="col-4">Andrey8</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="8"></td>
+                                                <td class="col-4">Andrey9</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="9"></td>
+                                                <td class="col-4">Andrey10</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value="10"></td>
+                                                <td class="col-4">Andrey11</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="text-end fs-18 color-grey my-2"><span class="total">56</span> Regions</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row flex-lg-column p-0 m-0 justify-content-center w-auto">
+                                <button type="button" class="bg-white arrow-btn" id="add"><i class="fas fa-chevron-right fs-16"></i></button>
+                                <button type="button" class="bg-white arrow-btn" id="remove"><i class="fas fa-chevron-left fs-16"></i></button></div>
+                            <div id="pr-reg" class="align-self-start">
+                                <h4 class="sec-color mb-6 mx-0 p-0 ">Selected regions</h4>
+                                <div class="bg-white p-0 pb-1">
+                                    <table data-toggle="table" class="classic mini-table table table-fixed" data-filter-control="true">
+                                        <thead>
+                                            <tr class="row m-0 p-0">
+                                                <th class="col-2" data-field="input"><input class="form-check-input ms-1 selAll" type="checkbox" data-select="#pr-reg"></th>
+                                                <th class="col-4" data-sortable="true" data-field="name" data-filter-control="input" data-filter-control-placeholder="Select Region Name" data-field="region">Region Name</th>
+                                                <th class="col-6" data-sortable="true" data-field="count" data-filter-control="input" data-filter-control-placeholder="Select Country Name" data-field="country">Country Name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="blue-grey-scroll">
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">1Anedrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">2Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">3Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">4Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">5Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">6Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">7Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">8Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">9Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">10Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                            <tr class="row m-0 p-0">
+                                                <td class="col-2"><input class="form-check-input" type="checkbox" value=""></td>
+                                                <td class="col-4">11Andrey</td>
+                                                <td class="col-6">add an additioanal info</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-between ps-3 pt-1 align-items-center mt-2">
+                                        <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-3 mx-0">Update</button>
+                                        <p class="text-end fs-18 mb-0">
+                                            <span class="total">56</span> Regions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content p-0 py-0 px-md-2 py-md-3 rounded-6 pt-md-2">
+                <div class="modal-body row m-0 p-0">
+                    <div class="p-0 row m-0">
+                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div>
+                            <form class="row">
+                                <div class="col-12 my-0 mt-0">
+                                    <label for="staticCountry" class="black-color fs-18">Please, select</label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Country" id="staticCountry" title="Choose Country" placeholder="Choose Country">
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                        <option value="3">Choose Country3</option>
+                                        <option value="1">Choose Country1</option>
+                                        <option value="2">Choose Country2</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 d-flex flex-column justify-content-end mt-2">
+                                    <button type="submit" class="btn btn-primary sec-bg border-0 w-100">Display</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-filter-control.min.js"></script>
+    <script src="js/my.js"></script>
+
+   
+</body>
+
+</html>

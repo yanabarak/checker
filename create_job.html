@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new job</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+</head>
+
+<body class="overflow-hidden create-job">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
+        <div class="spinner-border mx-auto sec-color" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+    </div>
+    <div class="container-fluid  d-block d-md-none">
+        <header class="d-flex align-items-center border-bottom py-2">
+            <div class="col-2 text-start">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-hamburger"><span></span><span></span><span></span></div>
+                </button>
+            </div>
+            <div class="logo col-8 justify-content-center mb-md-0">
+                <div class="col-md-6">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="wrapper d-flex align-items-stretch flex-column flex-md-row">
+            <aside class="sticky-md-top">
+                <div class="sticky-top sidebar left asidebar">
+                    <div class="d-none d-md-flex  align-items-center">
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span></div>
+                        </button>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                    </div>
+                    <div class="logo-container">
+                        <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
+                    </div>
+                    <div id="carouselMenu" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div id="content1" class="carousel-item active">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                                        <li><a href="#"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
+                                        <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
+                                        <li class="active"><a href="#"><i class="far fa-star"></i> <span>Create new job</span></a></li>
+                                        <li><a href="#"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
+                                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
+                                        <li><a href="#"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
+                                        <li><a href="#"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
+                                        <li><a href="#"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
+                                        <li><a href="#"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="user-panel py-3 mb-0">
+                                    <a class="image d-flex align-items-center me-4" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
+                                        <div class="box image rounded-circle">
+                                            <img src="https://picsum.photos/640/360" alt="User Image">
+                                        </div>
+                                        <h6 class="text-center mb-0 long">Larysa Chernenko
+                                            <i class="fas fa-chevron-right"></i></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="content2" class="carousel-item">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu" data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i> <span>Back</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu ">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="#"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
+                                        <li><a href="#"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
+                                        <li><a href="#"><i class="far fa-map"></i> <span>Preferred Clients</span></a></li>
+                                        <li><a href="#"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="p-0 w-100" id="content">
+                <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
+                    <div class="row m-0 mt-5 mt-md-0 header-wrapper">
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="far fa-star sec-color fs-30 me-md-4 me-1"></i>Create new job</h1>
+                        <div class="col-auto ms-auto">
+                            <select class="form-select mb-4 selectpicker" id="lang">
+                                <option selected>English</option>
+                                <option value="1">Ukrainian</option>
+                                <option value="2">Hebrew</option>
+                                <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
+                                <option value="4">HebrewHebrew</option>
+                            </select></div>
+                    </div>
+                    <div class="content-wrapper m-0 p-0">
+                        <form id="create-job-form" class="mx-auto bg-white row my-auto">
+                            <div class="col-12 m-0 p-0">
+                                <label for="staticClient" class="black-color fs-18 mb-2">Choosing client *</label>
+                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Client" id="staticClient" title="Choose Client" placeholder="Please Select">
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                    <option value="1">Choose Client1</option>
+                                    <option value="2">Choose Client2</option>
+                                    <option value="3">Choose Client3</option>
+                                </select>
+                            </div>
+                            <div class="col-12 m-0 p-0 inactive mandatory">
+                                <label for="staticBranch" class="black-color fs-18 mb-2">Choosing branch *</label>
+                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Branch" id="staticBranch" title="Choose Branch" placeholder="Please Select">
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                    <option value="1">Choose Branch1</option>
+                                    <option value="2">Choose Branch2</option>
+                                    <option value="3">Choose Branch3</option>
+                                </select>
+                                <a href="#" class="color-grey pt-1 d-inline-block">Add new branch</a>
+                            </div>
+                            <div class="col-12 m-0 p-0 inactive mandatory">
+                                <label for="staticQuestionnaire" class="black-color fs-18 mb-2">Choose questionnaire *</label>
+                                <select class="form-select selectpicker  w-100" data-live-search="true" aria-label="Questionnaire" id="staticQuestionnaire" title="Choose Questionnaire" placeholder="Please Select">
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                    <option value="1">Choose Questionnaire1</option>
+                                    <option value="2">Choose Questionnaire2</option>
+                                    <option value="3">Choose Questionnaire3</option>
+                                </select>
+                            </div>
+                            <div class="col-12 m-0 p-0 inactive">
+                                <label for="staticLanguage" class="black-color fs-18 mb-2">Select language</label>
+                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Language" id="staticLanguage" title="Choose Language" placeholder="Please Select">
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                    <option value="1">Choose Language1</option>
+                                    <option value="2">Choose Language2</option>
+                                    <option value="3">Choose Language3</option>
+                                </select>
+                            </div>
+                            <div class="col-12 m-0 p-0 inactive">
+                                <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18">Create a new job</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="reject-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content p-0 py-0 border-0">
+                <div class="modal-body row m-0 p-0">
+                    <button type="button" class="btn-close opacity-1 align-self-start col-auto position-absolute p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="col-12 block row m-0 p-0 pt-md-4  ">
+                        <div class="cardnew position-relative col col-md-12 ps-0 px-md-4 text-left d-flex flex-column justify-content-end fs-16">
+                            <p class="my-0 black-color mb-4 fw-bold">No questionnaires found!
+                            </p>
+                            <p class="my-0 black-color pb-0 fw-bold">May be because :
+                            </p>
+                            <ol class="black-color pb-0 fw-bold ps-0 inline-list">
+                                <li>No questionnaires wese definded by the system manager.</li>
+                                <li>The chosen branch or you do not have access to any questionnaires.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="modal-footer p-3 p-md-2 px-md-4 pb-md-4 d-flex gap-3 flex-md-row border-0">
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-lg btn-primary sec-bg fs-18 mx-auto col-12 col-md-auto border-0">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/my.js"></script>
+
+</body>
+
+</html>

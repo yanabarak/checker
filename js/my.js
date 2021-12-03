@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+    
 
     // initial for swaping menu 
     var myCarousel = document.querySelector('#carouselMenu')
@@ -38,12 +39,11 @@ jQuery(document).ready(function($) {
             $('.asidebar').attr('id', 'navigation');
             $('.animated-hamburger').removeClass('open');
         } else if ($(window).width() >= 768) {
+                $('.asidebar').addClass("no-anim");
             $('.asidebar').removeClass('collapse');
             if (cookieValue == "off") {
-                $('.asidebar').addClass("no-anim");
                 $('.asidebar').addClass('fliph');
                 $('.animated-hamburger').removeClass('open');
-                setTimeout(() => $('.asidebar').removeClass("no-anim"), 500);
 
             } else {
                 $('.asidebar').removeClass('fliph');
@@ -51,6 +51,7 @@ jQuery(document).ready(function($) {
             }
             $('.asidebar').addClass('sidebar left');
             $('.asidebar').attr('id', '');
+                setTimeout(() => $('.asidebar').removeClass("no-anim"), 500);
         }
         $('.navbar-toggler-button').on('click', function() {
             if ($(window).width() >= 768) {
@@ -121,7 +122,7 @@ jQuery(document).ready(function($) {
 
         } else {
             if (datawork[0] == 0) {
-                
+
                 $("#donut2 .donut-segment-white").addClass("d-none");
                 $("#donut2 .donut-segment-jobs").addClass("d-none");
             } else {
@@ -129,9 +130,11 @@ jQuery(document).ready(function($) {
                 $("#donut2 .donut-segment-white").attr("stroke-dasharray", `${valuework} ${100-valuework}`);
                 $("#donut2 .donut-segment-jobs").attr("stroke-dasharray", `${valuework} ${100-valuework}`);
 
-                if(datawork[1] == 0) {$("#donut2 .donut-segment-white").addClass("d-none");
-                $("#donut2 .donut-ring-main").addClass("d-none");
-                $("#donut2 .donut-segment-jobs").attr("stroke-dasharray", `30 70`);}
+                if (datawork[1] == 0) {
+                    $("#donut2 .donut-segment-white").addClass("d-none");
+                    $("#donut2 .donut-ring-main").addClass("d-none");
+                    $("#donut2 .donut-segment-jobs").attr("stroke-dasharray", `30 70`);
+                }
             }
 
             let legend = $("#donut2 h5 span");
@@ -547,62 +550,255 @@ jQuery(document).ready(function($) {
         // });
     }
 
-   function pickBranch() {
-    var target;
-    $( '.pick-branch-modal' ).on( 'click', function( e ) {
-      target = $( this );
-      let order_id = target.closest( 'form' ).find( 'input[name="order_id"]' ).val();
-      $.ajax( {
-                url    : '?Controller=Jobs&Action=ajaxGetAlternativeOrders',
-                method : 'POST',
-                data   : { order_id: order_id },
-                success: function( response ) {
-                  let data = JSON.parse( response );
-                  if ( typeof data.errors !== 'undefined' && data.errors.length === 0 ) {
-                    $( 'select[name="orderBranchChange"]' ).empty();
-                    for ( const [ id, order ] of Object.entries( data.altOrders ) ) {
-                      $( 'select[name="orderBranchChange"]' ).append('<option value="'+id+'">' + order + '</option>');
+    function pickBranch() {
+        var target;
+        $('.pick-branch-modal').on('click', function(e) {
+            target = $(this);
+            let order_id = target.closest('form').find('input[name="order_id"]').val();
+            $.ajax({
+                url: '?Controller=Jobs&Action=ajaxGetAlternativeOrders',
+                method: 'POST',
+                data: { order_id: order_id },
+                success: function(response) {
+                    let data = JSON.parse(response);
+                    if (typeof data.errors !== 'undefined' && data.errors.length === 0) {
+                        $('select[name="orderBranchChange"]').empty();
+                        for (const [id, order] of Object.entries(data.altOrders)) {
+                            $('select[name="orderBranchChange"]').append('<option value="' + id + '">' + order + '</option>');
+                        }
+                        $('input[name="change_branch_order_id"]').val(order_id);
+                        $('#pick-branch-modal').modal('show');
                     }
-                    $( 'input[name="change_branch_order_id"]' ).val( order_id );
-                    $( '#pick-branch-modal' ).modal( 'show' );
-                  }
                 },
-              } );
-      let newBranch = $( this ).html();
-      $( '.showBranchfrom' ).html( newBranch );
-    } );
-  }
+            });
+            let newBranch = $(this).html();
+            $('.showBranchfrom').html(newBranch);
+        });
+    }
 
     $(function() {
         if ($(".selectpicker").length) {
-        $('.selectpicker').selectpicker();
-    }
+            $('.selectpicker').selectpicker();
+        }
     });
 
-     $(function() {
+    $(function() {
         if ($(".start-lang.start-job").length) {
-             $(".dropdown-menu li span").click(function(){
-    let sel = $(this).attr("data-name");
-    $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").addClass("sel");
+            $(".dropdown-menu li span").click(function() {
+                let sel = $(this).attr("data-name");
+                $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").addClass("sel");
 
-    $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").attr("data-name", sel);
-    // $(".btn:first-child").text($(this).attr("data-name"));
-    //  $(".btn:first-child").val($(this).text());
-  });
-    }
+                $(this).closest(".start-lang.start-job").find("button.dropdown-toggle").attr("data-name", sel);
+                // $(".btn:first-child").text($(this).attr("data-name"));
+                //  $(".btn:first-child").val($(this).text());
+            });
+        }
     });
 
     // page telephon survey 
     $(function() {
 
         if ($("#switchTel").length) {
-    document.querySelector('#switchTel').addEventListener('click', function() {
-        let parentsWrap = $(this).closest('#widget-tel');
-        this.checked ? parentsWrap.removeClass('deactive') : parentsWrap.addClass('deactive')
+            document.querySelector('#switchTel').addEventListener('click', function() {
+                let parentsWrap = $(this).closest('#widget-tel');
+                this.checked ? parentsWrap.removeClass('deactive') : parentsWrap.addClass('deactive')
 
-    }) 
+            })
+        }
+    });
+    // page "Add new job", function show next element after select previous
+    function showElem() {
+        $('#create-job-form .selectpicker').on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
+
+            let elem = e.target.closest(".col-12");
+            var index = $(elem).index() + 1;
+
+            if (isSelected) {
+                $(`#create-job-form>.col-12:nth-child(${index+1})`).addClass("active");
+                $(`#create-job-form>.col-12:nth-child(${index+1})`).removeClass("inactive");
+                while (index <= $(`#create-job-form>.col-12`).length) {
+                    if (!($(`#create-job-form>.col-12:nth-child(${index+1})`).hasClass("mandatory"))) {
+                        index = index + 1;
+
+                        $(`#create-job-form>.col-12:nth-child(${index+1})`).addClass("active");
+                        $(`#create-job-form>.col-12:nth-child(${index+1})`).removeClass("inactive");
+                    } else {
+                        break;
+                    }
+
+                }
+            } else {
+                if (($(elem).hasClass("mandatory"))) {
+                    for (var i = index + 1; i <= $(`#create-job-form>.col-12`).length; i++) {
+                        $(`#create-job-form>.col-12:nth-child(${i})`).removeClass("active");
+                        $(`#create-job-form>.col-12:nth-child(${i})`).addClass("inactive");
+                    }
+                }
+
+            }
+        });
+    }
+    // init popover
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+    // page files library, function open iner folders
+    function openInnF() {
+        $('table').on('all.bs.table', function() {
+            $('.open-folder').on('click', function(e) {
+                let parent = $(e.target).closest(".parent_tr");
+                parent.toggleClass("active");
+                parent.next().toggleClass("active")
+            })
+
+        })
+        setTimeout(
+            function() {
+                $('.open-folder').on('click', function(e) {
+                    let parent = $(e.target).closest(".parent_tr");
+                    parent.toggleClass("active");
+                    parent.next().toggleClass("active")
+                })
+            }, 500)
+    }
+
+    // Move from one table to another by checkbox
+    function MoveElem($tableFrom, $tableTo) {
+        let arrDel = [];
+        $tableFrom.find($('table.table tbody input[type="checkbox"]:checked')).each(function(i) {
+            let j = $(this).closest("tr").attr('data-index')
+            arrDel.push(Number(j))
+            let row = $tableFrom.bootstrapTable('getData')[j]
+            $tableTo.bootstrapTable('append', row)
+
+        })
+        $tableFrom.bootstrapTable('remove', {
+            field: '$index',
+            values: arrDel.reverse()
+        });
+        $tableFrom.find("input[type='checkbox']").prop('checked', false)
+    }
+
+    function Sel(){
+         $('table').on('all.bs.table', function() {
+
+        $(this).closest(".bg-white").find("span.total").html($(this).find("tbody>tr:not(.no-records-found)").length);
+
+
+        $('.selAll').on('click', function() {
+            let par = $(this).attr("data-select")
+            if ($(this).is(':checked')) {
+                $(par).find("input[type='checkbox']").prop('checked', true).trigger('change');
+            } else {
+                $(par).find("input[type='checkbox']").prop('checked', false).trigger('change');
+            }
+        });
+
+    })
+    }
+if ($(".pick-date").length) {
+
+       var $input = $('.datepicker_inline').pickadate({
+        closeOnSelect: false,
+        closeOnClear: false,
+        today: '',
+        clear: '',
+        close: ''
+    });
+    var picker = $input.pickadate('picker');
+    picker.close = function() {
+        return true;
+
+    }
+    picker.$node.addClass('picker__input--active picker__input--target');
+    picker.$node.attr('aria-expanded', 'true');
+    picker.$root.addClass('picker--focused picker--opened');
+    picker.$root.attr('aria-hidden', 'false');
+
+
+    var $input2 = $('.timepicker').pickatime({
+        editable: true,
+        format: 'HH:i',
+        clear: '',
+        interval: 15
+    })
+
+    var picker2 = $input2.pickatime('picker');
+
+    $("#setTime button").each(function(index) {
+        $(this).on("click", function() {
+            let currentDate = new Date();
+            picker.set('select', currentDate);
+            let min = $(this).attr('data-time');
+            let newDate = dateAdd(new Date(), 'minute', min)
+            console.log(newDate.getHours(), newDate.getMinutes());
+            $("#time-inline").val(`${newDate.getHours()}:${(newDate.getMinutes()<10?'0':'') + newDate.getMinutes()}`)
+            $(this).closest('#setTime').find(".active").each(function() { $(this).removeClass("active") })
+            $(this).addClass("active");
+            $('#modalDateTime').modal('hide')
+        });
+    });
 }
-});
+    $('#floatingSelect').on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
+        let newLabel = $(e.target[clickedIndex]).attr("aria-label");
+        console.log($(e.target[clickedIndex]).attr("aria-label"))
+        $('label[for="floatingSelect"]').html(newLabel)
+    });
+
+    function dateAdd(date, interval, units) {
+        if (!(date instanceof Date))
+            return undefined;
+        var ret = new Date(date); //don't change original date
+        var checkRollover = function() { if (ret.getDate() != date.getDate()) ret.setDate(0); };
+        switch (String(interval).toLowerCase()) {
+            case 'year':
+                ret.setFullYear(ret.getFullYear() + units);
+                checkRollover();
+                break;
+            case 'quarter':
+                ret.setMonth(ret.getMonth() + 3 * units);
+                checkRollover();
+                break;
+            case 'month':
+                ret.setMonth(ret.getMonth() + units);
+                checkRollover();
+                break;
+            case 'week':
+                ret.setDate(ret.getDate() + 7 * units);
+                break;
+            case 'day':
+                ret.setDate(ret.getDate() + units);
+                break;
+            case 'hour':
+                ret.setTime(ret.getTime() + units * 3600000);
+                break;
+            case 'minute':
+                ret.setTime(ret.getTime() + units * 60000);
+                break;
+            case 'second':
+                ret.setTime(ret.getTime() + units * 1000);
+                break;
+            default:
+                ret = undefined;
+                break;
+        }
+        return ret;
+    }
+
+
+    $("#person-info").click(function() {
+        let scrollW = $("#person-info").width() - $("#collapsePersInfo>div").width();
+        if (scrollW > 3) $("#collapsePersInfo>div").attr('style', `width:calc(100% + ${scrollW}px - 1.6px)`);
+    })
+    $('#sur-preview').attr("style", `height:${ $(window).innerHeight() - $("#widget-tel").innerHeight() -$(".header-wrapper").innerHeight() - 50}px`);
+    $("#toggle").click(function() {
+        setTimeout(function() {
+            $('#sur-preview').attr("style", `height:${ $(window).innerHeight()  - $("#widget-tel").innerHeight() -$(".header-wrapper").innerHeight() - 50}px`);
+        }, 500)
+
+    });
+
     //initial all function on load page
     $(window).resize(function() {
         drawStuff();
@@ -633,6 +829,13 @@ jQuery(document).ready(function($) {
             showPack();
         };
         if ($("#infoJob .cert-elem svg").length) { infoJobSvgDraw() }
+        if ($('#create-job-form .selectpicker').length) { showElem() }
+        if ($('a.open-folder').length) { openInnF() }
+        if ($("#pref-reg #all-reg").length) {
+            $('#add').on('click', MoveElem.bind(null, $('#all-reg table.mini-table'), $('#pr-reg table.mini-table')))
+            $('#remove').on('click', MoveElem.bind(null, $('#pr-reg table.mini-table'), $('#all-reg table.mini-table')))
+            Sel()
+        }
 
     });
 
