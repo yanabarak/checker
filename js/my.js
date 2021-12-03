@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-    
+
 
     // initial for swaping menu 
     var myCarousel = document.querySelector('#carouselMenu')
@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
             $('.asidebar').attr('id', 'navigation');
             $('.animated-hamburger').removeClass('open');
         } else if ($(window).width() >= 768) {
-                $('.asidebar').addClass("no-anim");
+            $('.asidebar').addClass("no-anim");
             $('.asidebar').removeClass('collapse');
             if (cookieValue == "off") {
                 $('.asidebar').addClass('fliph');
@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
             }
             $('.asidebar').addClass('sidebar left');
             $('.asidebar').attr('id', '');
-                setTimeout(() => $('.asidebar').removeClass("no-anim"), 500);
+            setTimeout(() => $('.asidebar').removeClass("no-anim"), 500);
         }
         $('.navbar-toggler-button').on('click', function() {
             if ($(window).width() >= 768) {
@@ -660,6 +660,10 @@ jQuery(document).ready(function($) {
                     parent.toggleClass("active");
                     parent.next().toggleClass("active")
                 })
+                   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
             }, 500)
     }
 
@@ -680,66 +684,73 @@ jQuery(document).ready(function($) {
         $tableFrom.find("input[type='checkbox']").prop('checked', false)
     }
 
-    function Sel(){
-         $('table').on('all.bs.table', function() {
+    function Sel() {
+        $('table').on('all.bs.table', function() {
 
-        $(this).closest(".bg-white").find("span.total").html($(this).find("tbody>tr:not(.no-records-found)").length);
+            $(this).closest(".bg-white").find("span.total").html($(this).find("tbody>tr:not(.no-records-found)").length);
 
 
-        $('.selAll').on('click', function() {
-            let par = $(this).attr("data-select")
-            if ($(this).is(':checked')) {
-                $(par).find("input[type='checkbox']").prop('checked', true).trigger('change');
-            } else {
-                $(par).find("input[type='checkbox']").prop('checked', false).trigger('change');
-            }
-        });
+            $('.selAll').on('click', function() {
+                let par = $(this).attr("data-select")
+                if ($(this).is(':checked')) {
+                    $(par).find("input[type='checkbox']").prop('checked', true).trigger('change');
+                } else {
+                    $(par).find("input[type='checkbox']").prop('checked', false).trigger('change');
+                }
+            });
 
-    })
+        })
     }
-if ($(".pick-date").length) {
+    if ($(".datepicker_inline").length) {
 
-       var $input = $('.datepicker_inline').pickadate({
-        closeOnSelect: false,
-        closeOnClear: false,
-        today: '',
-        clear: '',
-        close: ''
-    });
-    var picker = $input.pickadate('picker');
-    picker.close = function() {
-        return true;
-
-    }
-    picker.$node.addClass('picker__input--active picker__input--target');
-    picker.$node.attr('aria-expanded', 'true');
-    picker.$root.addClass('picker--focused picker--opened');
-    picker.$root.attr('aria-hidden', 'false');
-
-
-    var $input2 = $('.timepicker').pickatime({
-        editable: true,
-        format: 'HH:i',
-        clear: '',
-        interval: 15
-    })
-
-    var picker2 = $input2.pickatime('picker');
-
-    $("#setTime button").each(function(index) {
-        $(this).on("click", function() {
-            let currentDate = new Date();
-            picker.set('select', currentDate);
-            let min = $(this).attr('data-time');
-            let newDate = dateAdd(new Date(), 'minute', min)
-            console.log(newDate.getHours(), newDate.getMinutes());
-            $("#time-inline").val(`${newDate.getHours()}:${(newDate.getMinutes()<10?'0':'') + newDate.getMinutes()}`)
-            $(this).closest('#setTime').find(".active").each(function() { $(this).removeClass("active") })
-            $(this).addClass("active");
-            $('#modalDateTime').modal('hide')
+        var $input = $('.datepicker_inline').pickadate({
+            closeOnSelect: false,
+            closeOnClear: false,
+            today: '',
+            clear: '',
+            close: ''
         });
-    });
-}
+        var picker = $input.pickadate('picker');
+        picker.close = function() {
+            return true;
+
+        }
+        picker.$node.addClass('picker__input--active picker__input--target');
+        picker.$node.attr('aria-expanded', 'true');
+        picker.$root.addClass('picker--focused picker--opened');
+        picker.$root.attr('aria-hidden', 'false');
+
+
+        var $input2 = $('.timepicker').pickatime({
+            editable: true,
+            format: 'HH:i',
+            clear: '',
+            interval: 15
+        })
+
+        var picker2 = $input2.pickatime('picker');
+
+        $("#setTime button").each(function(index) {
+            $(this).on("click", function() {
+                let currentDate = new Date();
+                picker.set('select', currentDate);
+                let min = $(this).attr('data-time');
+                let newDate = dateAdd(new Date(), 'minute', min)
+                console.log(newDate.getHours(), newDate.getMinutes());
+                $("#time-inline").val(`${newDate.getHours()}:${(newDate.getMinutes()<10?'0':'') + newDate.getMinutes()}`)
+                $(this).closest('#setTime').find(".active").each(function() { $(this).removeClass("active") })
+                $(this).addClass("active");
+                $('#modalDateTime').modal('hide')
+            });
+        });
+        $("#datetime").click(function(){
+            let newDateTime = `${$("#date-inline").val()} ${$("#time-inline").val()}`;
+            $("#hidden-input-date").val(newDateTime);
+            if ($(".open-datetime").length) {
+            $(".open-datetime").html(newDateTime);
+            $(".open-datetime").addClass("sec-color")}
+        })
+    }
     $('#floatingSelect').on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
         let newLabel = $(e.target[clickedIndex]).attr("aria-label");
         console.log($(e.target[clickedIndex]).attr("aria-label"))
@@ -798,6 +809,18 @@ if ($(".pick-date").length) {
         }, 500)
 
     });
+
+
+    var myModalEl = document.querySelectorAll('.modal');
+    for (var i = 0; i < myModalEl.length; i++) {
+        var self = myModalEl[i];
+        self.addEventListener('shown.bs.modal', function(event) {
+            $("body").addClass("overflow-hidden")
+        })
+        self.addEventListener('hide.bs.modal', function(event) {
+            $("body").removeClass("overflow-hidden")
+        })
+    }
 
     //initial all function on load page
     $(window).resize(function() {

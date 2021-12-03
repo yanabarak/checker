@@ -12,7 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
+    <script type="text/javascript">
+    window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
+    </script>
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
 </head>
@@ -112,7 +116,7 @@
                 <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
                     <div class="row m-0 mt-5 mt-md-0 header-wrapper">
                         <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="far fa-money-bill-alt sec-color fs-30 me-4"></i>Add refund record</h1>
-                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
+                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal2" type="button">Filter</button>
                         <div class="col-auto ms-auto">
                             <select class="form-select mb-4 selectpicker" id="lang">
                                 <option selected>English</option>
@@ -123,7 +127,7 @@
                             </select></div>
                     </div>
                     <div class="content-wrapper m-0 p-0">
-                        <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-3 m-3 mt-4 col-auto mw-100">Add new record</button>
+                        <button data-bs-toggle="modal" data-bs-target="#formModal" type="button" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-3 m-3 mt-2 col-auto mw-100">Add new record</button>
                         <div class="m-0 p-0" id="rec-wrap">
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
@@ -159,23 +163,23 @@
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec1">
                                     <div class="row m-0 p-2 px-3">
-                                        <div class="col-3 p-0">
+                                        <div class="col-6 col-lg-3 p-0">
                                             <div class="color-lgrey">Added by User</div>
                                             <div class="fs-18 dd-grey">Natberry123@gmail.com</div>
                                         </div>
-                                        <div class="col-2 p-0 ms-3">
+                                        <div class="col-6 col-lg-2 p-0 ms-0 ms-lg-3">
                                             <div class="color-lgrey">Card Number</div>
                                             <div class="fs-18 dd-grey">3435 3456</div>
                                         </div>
-                                        <div class="col-2 p-0 ms-3">
+                                        <div class="col-6 col-lg-2 p-0 ms-0 ms-lg-3">
                                             <div class="color-lgrey">Linked Review</div>
                                             <div class="fs-18 dd-grey">256485</div>
                                         </div>
-                                        <div class="col-2 p-0 ms-3">
+                                        <div class="col-6 col-lg-2 p-0 ms-0 ms-lg-3">
                                             <div class="color-lgrey">Linked Client</div>
                                             <div class="fs-18 dd-grey">TelavivHospital</div>
                                         </div>
-                                        <div class="col-2 p-0 ms-3">
+                                        <div class="col-6 col-lg-2 p-0 ms-0 ms-lg-3">
                                             <div class="color-lgrey">linked Branch</div>
                                             <div class="fs-18 dd-grey">256855</div>
                                         </div>
@@ -412,10 +416,15 @@
                             </div>
                         </div>
                         <div class="m-0 p-0 d-flex flex-column justify-content-end pr-100" id="record-nav">
-                            <div class="nav-group col-auto ms-auto">
-                                Show records in page page 1 of 4356
+                            <div class="nav-group col-auto ms-auto row mb-3 me-0">
+                                <div class="set col-auto">Show <input class="form-control" type="number"> records in page</div>
+                                <div class="numb col-auto">Page <input class="form-control" type="number"> of <span class="total">4356</span></div>
+                                <div class="arrow col-auto p-0"><div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></button>
+  <button type="button" class="btn btn-primary"><i class="fas fa-chevron-right"></i></button>
+</div></div>
                             </div>
-                            <div class="btn-group col-auto ms-auto">
+                            <div class="btn-group col-auto ms-auto p-0">
                             <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-4 col-auto">Show</button>
                             </div>
                             
@@ -426,50 +435,180 @@
         </div>
     </div>
     </div>
+    
     <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content p-0 py-0 px-md-2 py-md-3 rounded-6 pt-md-2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-0 py-0 p-md-3 py-md-2 pb-md-3">
                 <div class="modal-body row m-0 p-0">
-                    <div class="p-0 row m-0">
+                    <div class=" row m-0">
                         <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div>
                             <form class="row">
-                                <div class="col-12 my-0 mt-0">
-                                    <label for="staticCountry" class="black-color fs-18">Please, select</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Country" id="staticCountry" title="Choose Country" placeholder="Choose Country">
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
-                                        <option value="3">Choose Country3</option>
-                                        <option value="1">Choose Country1</option>
-                                        <option value="2">Choose Country2</option>
+                                <div class="col-12 my-0">
+                                    <label for="staticvalue" class="dd-grey fs-12 mb-0">Value *</label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="value" id="staticvalue" title="Choose value">
+                                        <option value="0">Choose value</option>
+                                        <option value="1">Choose value1</option>
+                                        <option value="2">Choose value2</option>
+                                        <option value="3">Choose value3</option>
+                                        <option value="0">Choose value</option>
+                                        <option value="1">Choose value1</option>
+                                        <option value="2">Choose value2</option>
+                                        <option value="3">Choose value3</option>
                                     </select>
                                 </div>
-                                <div class="col-12 d-flex flex-column justify-content-end mt-2">
-                                    <button type="submit" class="btn btn-primary sec-bg border-0 w-100">Display</button>
+                                <div class="col-12 my-0 mt-2">
+                                    <label for="staticDescription" class="dd-grey fs-12 mb-0">Description *</label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Description" id="staticDescription" title="Choose job type">
+                                        <option value="1">Choose Description1</option>
+                                        <option value="2">Choose Description2</option>
+                                        <option value="3">Choose Description3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 my-0 mt-2">
+                                    <label for="staticInvoice" class="dd-grey fs-12 mb-0">Invoice number </label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Invoice number" id="staticInvoice" title="Choose Invoice number" placeholder="Choose Invoice number">
+                                        <option value="1">Choose Invoice number1</option>
+                                        <option value="2">Choose Invoice number2</option>
+                                        <option value="3">Choose Invoice number3</option>
+                                        <option value="1">Choose Invoice number1</option>
+                                        <option value="2">Choose Invoice number2</option>
+                                        <option value="3">Choose Invoice number3</option>
+                                        <option value="1">Choose Invoice number1</option>
+                                        <option value="2">Choose Invoice number2</option>
+                                        <option value="3">Choose Invoice number3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 my-0 mt-2">
+                                    <label for="staticFlow" class="dd-grey fs-12 mb-0">Flow Name * </label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Flow" id="staticFlow" title="Choose Flow" placeholder="Acquisition throught review">
+                                        <option value="1">Choose Flow Name1</option>
+                                        <option value="2">Choose Flow Name2</option>
+                                        <option value="3">Choose Flow Name3</option>
+                                    </select>
+                                </div>
+                                 <div class="col-12 my-0 mt-2">
+                                    <label for="staticCardNumber" class="dd-grey fs-12 mb-0">CardNumber *</label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="CardNumber" id="staticCardNumber" title="Choose CardNumber">
+                                        <option value="1">Choose CardNumber1</option>
+                                        <option value="2">Choose CardNumber2</option>
+                                        <option value="3">Choose CardNumber3</option>
+                                    </select>
+                                </div>
+                                 <div class="col-12 my-0 mt-2">
+                                    <label for="staticCardNumber" class="dd-grey fs-12 mb-0">Added at *</label>
+                                    <button class="form-select open-datetime" data-bs-target="#modalDateTime"  data-bs-dismiss="modal" data-bs-toggle="modal">DD/MM/YYYY</button>
+                                    <input type="hidden" id="hidden-input-date">
+                                </div>
+                                 <div class="col-12 my-0 mt-2">
+                                    <label for="staticLinkedReview" class="dd-grey fs-12 mb-0">Linked rewiew *</label>
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="LinkedReview" id="staticLinkedReview" title="Choose Linked Review">
+                                        <option value="1">Choose Linked Review1</option>
+                                        <option value="2">Choose Linked Review2</option>
+                                        <option value="3">Choose Linked Review3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 row m-0 mt-4">
+                                    <button type="submit" class="btn btn-primary sec-bg border-0 col-auto fs-18">Add</button>
+        <a data-bs-dismiss="modal" class="color-lgrey2 fs-18 col-auto align-self-center ms-4">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDateTime" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content p-0">
+                <div class="modal-header p-3">
+                    <h4 class="sec-color fw-bold m-0">Choose a Time</h4>
+                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row m-0 p-0">
+                    <div class="col-auto pt-3 pb-2 px-4 border border-1 border-top-0 border-bottom-0  border-start-0">
+                        <input type="text" class="form-control datepicker_inline d-none" id="date-inline">
+                    </div>
+                    <div class="col-auto py-3 px-4">
+                        <p class="fs-16 fw-bold black-color m-0 p-0 my-1">Time</p>
+                        <input type="text" class="form-control timepicker" id="time-inline" placeholder="Set Time">
+                    </div>
+                </div>
+                <div class="modal-footer p-2 px-3">
+                    <button type="button" class="btn btn-primary sec-bg border-0 btn-md" id="datetime"  data-bs-target="#formModal" data-bs-toggle="modal" data-bs-dismiss="modal">Set date &amp; time</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-0 py-0 p-md-3 py-md-2 pb-md-3">
+                <div class="modal-body row m-0 p-0">
+                    <div class=" row m-0">
+                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div>
+                            <form class="row">
+<div class="col-12 my-0 mt-2"><h4 class="fw-light black-color">Please, select</h4></div>
+                                <div class="col-12 my-0 mt-2">
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Client" id="staticClient" title="Choose client">
+                                        <option value="0">Choose client</option>
+                                        <option value="1">Choose client1</option>
+                                        <option value="2">Choose client2</option>
+                                        <option value="3">Choose client3</option>
+                                        <option value="1">Choose client1</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 my-0 mt-2">
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Region" id="staticRegion" title="Choose Region" placeholder="Choose Region">
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                        <option value="1">Choose Region1</option>
+                                        <option value="2">Choose Region2</option>
+                                        <option value="3">Choose Region3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 my-0 mt-2">
+                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Branch" id="staticInvoice" title="Choose Branch" placeholder="Choose Branch">
+                                        <option value="1">Choose Branch1</option>
+                                        <option value="2">Choose Branch2</option>
+                                        <option value="3">Choose Branch3</option>
+                                        <option value="1">Choose Branch1</option>
+                                        <option value="2">Choose Branch2</option>
+                                        <option value="3">Choose Branch3</option>
+                                        <option value="1">Choose Branch1</option>
+                                        <option value="2">Choose Branch2</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 row m-0 mt-4">
+                                    <button type="submit" class="btn btn-primary sec-bg border-0 w-100 fs-18">Display</button>
                                 </div>
                             </form>
                         </div>
@@ -480,9 +619,10 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="js/picker.js"></script>
     <script src="js/picker.date.js"></script>
+    <script src="js/picker.time.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/bootstrap-table-filter-control.min.js"></script>
