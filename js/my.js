@@ -660,10 +660,10 @@ jQuery(document).ready(function($) {
                     parent.toggleClass("active");
                     parent.next().toggleClass("active")
                 })
-                   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
-        return new bootstrap.Popover(popoverTriggerEl)
-    })
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+                var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                    return new bootstrap.Popover(popoverTriggerEl)
+                })
             }, 500)
     }
 
@@ -743,12 +743,13 @@ jQuery(document).ready(function($) {
                 $('#modalDateTime').modal('hide')
             });
         });
-        $("#datetime").click(function(){
+        $("#datetime").click(function() {
             let newDateTime = `${$("#date-inline").val()} ${$("#time-inline").val()}`;
             $("#hidden-input-date").val(newDateTime);
             if ($(".open-datetime").length) {
-            $(".open-datetime").html(newDateTime);
-            $(".open-datetime").addClass("sec-color")}
+                $(".open-datetime").html(newDateTime);
+                $(".open-datetime").addClass("sec-color")
+            }
         })
     }
     $('#floatingSelect').on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
@@ -821,6 +822,137 @@ jQuery(document).ready(function($) {
             $("body").removeClass("overflow-hidden")
         })
     }
+    // open on full screen support for all browsers
+
+
+    (function() {
+        var
+            fullScreenApi = {
+                supportsFullScreen: false,
+                isFullScreen: function() { return false; },
+                requestFullScreen: function() {},
+                cancelFullScreen: function() {},
+                fullScreenEventName: '',
+                prefix: ''
+            },
+            browserPrefixes = 'webkit moz o ms khtml'.split(' ');
+        // check for native support
+        if (typeof document.cancelFullScreen != 'undefined') {
+            fullScreenApi.supportsFullScreen = true;
+        } else {
+            // check for fullscreen support by vendor prefix
+            for (var i = 0, il = browserPrefixes.length; i < il; i++) {
+                fullScreenApi.prefix = browserPrefixes[i];
+                if (typeof document[fullScreenApi.prefix + 'CancelFullScreen'] != 'undefined') {
+                    fullScreenApi.supportsFullScreen = true;
+                    break;
+                }
+            }
+        }
+        // update methods to do something useful
+        if (fullScreenApi.supportsFullScreen) {
+            fullScreenApi.fullScreenEventName = fullScreenApi.prefix + 'fullscreenchange';
+            fullScreenApi.isFullScreen = function() {
+                switch (this.prefix) {
+                    case '':
+                        return document.fullScreen;
+                    case 'webkit':
+                        return document.webkitIsFullScreen;
+                    default:
+                        return document[this.prefix + 'FullScreen'];
+                }
+            }
+            fullScreenApi.requestFullScreen = function(el) {
+                return (this.prefix === '') ? el.requestFullScreen() : el[this.prefix + 'RequestFullScreen']();
+            }
+            fullScreenApi.cancelFullScreen = function(el) {
+                return (this.prefix === '') ? document.cancelFullScreen() : document[this.prefix + 'CancelFullScreen']();
+            }
+        }
+        // jQuery plugin
+        if (typeof jQuery != 'undefined') {
+            jQuery.fn.requestFullScreen = function() {
+                return this.each(function() {
+                    if (fullScreenApi.supportsFullScreen) {
+                        fullScreenApi.requestFullScreen(this);
+                    }
+                });
+            };
+        }
+        // export api
+        window.fullScreenApi = fullScreenApi;
+    })();
+
+    function setTab() {
+        var triggerTabList = [].slice.call(document.querySelectorAll('a.tab'))
+
+        triggerTabList.forEach(function(triggerEl) {
+            var tabTrigger = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', function(event) {
+
+                event.preventDefault()
+                var tab = $(this).data('next');
+
+                fsElement = document.getElementById(tab);
+                $(`#${tab}`).addClass("full-screen")
+                fullScreenApi.requestFullScreen(fsElement);
+                fsElement.addEventListener(fullScreenApi.fullScreenEventName, function() {
+                    if (fullScreenApi.isFullScreen()) {
+                        console.log('Whoa, you went fullscreen');
+                    } else {
+
+                        $(`#${tab}`).removeClass("full-screen")
+                    }
+                }, true);
+
+            })
+
+        })
+
+
+        var triggerTabListBack = [].slice.call(document.querySelectorAll(".backtotab"))
+
+
+        triggerTabListBack.forEach(function(triggerEl) {
+            var tabTriggerBack = new bootstrap.Tab(triggerEl)
+
+            triggerEl.addEventListener('click', function(event) {
+                var tab = $(this).data('next');
+                console.log(tab)
+                fsElement = document.getElementById(tab);
+
+                fullScreenApi.cancelFullScreen(fsElement);
+                $(`#${tab}`).removeClass("full-screen")
+            })
+
+        })
+
+    }
+    
+        function AutoResize() {
+            let allHeight = window.innerHeight;
+            let headerHeight = $(".header-wrapper").innerHeight();
+            let wrapper = $("#content>div").innerHeight();
+            let tabHeight = $("#tabReportContent").innerHeight();
+
+            let full = allHeight - headerHeight - 280;
+
+            let detailed = $("#detailed").innerHeight();
+            let summary = $("#summary").innerHeight();
+            let flowProject = $("#flowProject").innerHeight();
+            let flow = $("#flow").innerHeight();
+            let shoppers = $("#shoppers").innerHeight();
+
+            let heightEl = full / 3;
+
+            $("#detailed .report-body").attr("style", `max-height:${heightEl}px`)
+            $("#summary .report-body").attr("style", `max-height:${heightEl}px`)
+            $("#flowProject .report-body").attr("style", `max-height:${heightEl}px`)
+            $("#flow .report-body").attr("style", `max-height:${heightEl}px`)
+            $("#shoppers .report-body").attr("style", `max-height:${heightEl}px`)
+        }
+
 
     //initial all function on load page
     $(window).resize(function() {
@@ -858,6 +990,25 @@ jQuery(document).ready(function($) {
             $('#add').on('click', MoveElem.bind(null, $('#all-reg table.mini-table'), $('#pr-reg table.mini-table')))
             $('#remove').on('click', MoveElem.bind(null, $('#pr-reg table.mini-table'), $('#all-reg table.mini-table')))
             Sel()
+        }
+        if ($('#tabReportContent')) {
+            $(document).on('shown.bs.tab', '#reportTab a', function(e) {
+                var element = document.querySelector("#reportTab a.active");
+                element.scrollIntoView({ behavior: "smooth", inline: "center" });
+                $('body').scrollTop(0)
+                $('#content').scrollTop(0)
+            })
+            if ($(window).width() > 768) {
+                (function showTabs() {
+
+                    $('#tabAll').parent().addClass('active');
+                    $('.tab-pane').addClass('active in show');
+                    $('[data-toggle="tab"]').parent().removeClass('active');
+                })();
+
+                AutoResize();
+            };
+            setTab()
         }
 
     });
