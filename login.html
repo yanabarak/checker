@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login Page</title>   
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
 </head>
 
 <body class="overflow-hidden">
@@ -22,13 +24,13 @@
     </div>
     <div class="container-fluid d-flex align-items-center" id="content">
         <div class="row p-0 bg-white m-auto" id="login-form">
-            <div class="col sec-bg">
+            <div class="col sec-bg d-none d-md-block">
                 <div class="row"><img src="img/checker_logo_white.svg" alt="Checker logo" class="logo"></div>
                 <div class="row mt-3">
                     <h2 class="white-color fw-bold">Shoppers Login</h2>
                 </div>
                 <div class="row">
-                    <div class="col-auto"><select class="form-select mt-2" id="lang">
+                    <div class="col-auto"><select class="form-select mt-2 bootstrap-select selectpicker" id="lang">
                             <option selected="">English</option>
                             <option value="1">Ukrainian</option>
                             <option value="2">Hebrew</option>
@@ -36,6 +38,9 @@
                 </div>
             </div>
             <div class="col row m-0">
+                <div class="row d-flex d-md-none">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block w-auto mb-100">
+                </div>
                 <div class="row">
                     <h2 class="black-color fw-bold p-0">Please log in here</h2>
                 </div>
@@ -75,12 +80,16 @@
                 </div>
             </div>
         </div>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.js"></script>
-        <script src="js/my.js"></script>
-        <script async src="js/popper.min.js"></script>
-        <script async src="js/picker.js"></script>
-        <script async src="js/picker.date.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/picker.time.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-filter-control.min.js"></script>
+    <script src="js/my.js"></script>
 </body>
 
 </html>

@@ -649,7 +649,10 @@ jQuery(document).ready(function($) {
             $('.open-folder').on('click', function(e) {
                 let parent = $(e.target).closest(".parent_tr");
                 parent.toggleClass("active");
-                parent.next().toggleClass("active")
+                console.log(parent.siblings().length)
+                parent.siblings().each(function() {
+                $(this).toggleClass("active")
+                });
             })
 
         })
@@ -658,7 +661,9 @@ jQuery(document).ready(function($) {
                 $('.open-folder').on('click', function(e) {
                     let parent = $(e.target).closest(".parent_tr");
                     parent.toggleClass("active");
-                    parent.next().toggleClass("active")
+                parent.siblings().each(function() {
+                $(this).toggleClass("active")
+                });
                 })
                 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
                 var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {

@@ -622,6 +622,7 @@ select.form-select,
     border: 0px;
     padding: 0px;
     background-image: none !important;
+    margin-bottom: 0px !important;
 }
 .dropdown.bootstrap-select.form-select button.btn.dropdown-toggle {
     background-repeat: no-repeat;
@@ -815,6 +816,13 @@ button#navbarSideCollapseClose {
     font-size: 0px !important;
     height: 38px;
     transition: transform .3s ease-in-out, left .3s ease-in-out;
+}
+div#infoJobMenu h1 i {
+    font-size: 30px;
+    margin-right: 10px !important;
+    vertical-align: middle;
+    line-height: 30px;
+    height: 40px;
 }
 div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     position: fixed;
@@ -2010,15 +2018,21 @@ div#register-form input {
     color: #000;
 }
 div#login-form select#lang,
-div#register-form select#lang {
-    background-color: var(--second-brand-color);
+div#register-form select#lang,
+div#login-form select#lang + button,
+div#register-form select#lang + button {
+    background-color: var(--second-brand-color) !important;
     font-size: inherit;
     border-color: #fff;
     color: #fff;
-    padding: 3px 15px 3px 10px;
+    padding: 3px 25px 3px 10px !important;
     box-shadow: none;
     background-position: right 7px center;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23ffffff' stroke-width='1.5'/%3e%3c/svg%3e ");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23ffffff' stroke-width='1.5'/%3e%3c/svg%3e ") !important;
+}
+div#login-form select#lang + button .filter-option,
+div#register-form select#lang + button  .filter-option{
+    color: #fff !important;
 }
 body#register div#content {
     padding-top: 49px;
@@ -2477,10 +2491,13 @@ ol.inline-list li:before {
 #files-library .fa-file-alt::before {
     margin-left: -4px !important;
 }
-#files-library table.table>tbody>tr>td>table.childs>tbody>tr {
+#files-library table.table>tbody>tr>td table.childs .parent_tr {
     margin-left: 0px !important;
     width: 100% !important;
-    border-bottom: 0px;
+    border-bottom-width: 0px;
+}
+#files-library table.table>tbody>tr>td table.childs .parent_tr.active{
+    border-bottom-width: 1px;
 }
 #files-library table.table .col-6>span {
     display: inline;
@@ -3522,6 +3539,9 @@ body.locations .content-wrapper > div > .bg-white {
 }
 }
 @media (min-width: 767.6px) {
+    .survey_hist .header-wrapper .block {
+  max-width: 200px !important;
+}
     button.navbar-toggler:hover .animated-hamburger.open span:nth-child(3) {
         transform: rotate(40deg) translateX(-10px) translateY(0px) !important;
         width: 13px !important;
@@ -4359,8 +4379,12 @@ body.locations .bg-grey button:after{
     max-width: 120px;
     text-overflow: ellipsis;
 }
-.survey_hist .header-wrapper {
+/*.survey_hist .header-wrapper {
   margin-top: 0px !important;
+}*/
+.survey_hist .header-wrapper .lang-row:nth-child(3) {
+  position: absolute;
+  right: 0px !important;
 }
 .survey_hist #content .header-wrapper .row.m-0.p-0.col-12.col-lg-7 .block{
   margin-right: 5px !important;
@@ -4389,6 +4413,45 @@ body.locations .bg-grey button:after{
     max-height: fit-content;
     margin-right: 0px !important;
     padding-right: 0px !important;
+}
+
+div#login-form > div, div#register-form > div {
+  padding: 0px !important;
+}
+div#login-form, div#register-form {
+  border-radius: 0px;
+  box-shadow: none;
+  margin: 0 27px !important;
+  margin-top: 44px !important;
+  margin-bottom: auto !important;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+div#login-form h2, div#register-form h2 {
+  min-width: 0px !important;
+}
+div#login-form .btn-outline, div#register-form .btn-outline {
+  padding-right: 10px !important;
+  width: 155px !important;
+  font-size: 12px !important;
+  font-weight: normal;
+  background-size: 20px auto;
+  background-position: left 10px center;
+  padding-left: 40px;
+}
+div#login-form .btn.btn-primary,div#register-form  .btn.btn-primary {
+  height: 40px;
+  box-sizing: border-box;
+}
+div#login-form .footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 10px
+}
+.mb-100{
+    margin-bottom: 100px;
 }
 }
 @media (max-width: 347.5px) {
@@ -4461,6 +4524,9 @@ body.locations .bg-grey button:after{
     }
     #create-job-form>.col-12:not(:first-child) {
         margin-top: 10px !important;
+    }
+    .report-body.blue-grey-scroll{
+        max-height: auto !important;
     }
 }
 
