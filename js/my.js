@@ -651,7 +651,7 @@ jQuery(document).ready(function($) {
                 parent.toggleClass("active");
                 console.log(parent.siblings().length)
                 parent.siblings().each(function() {
-                $(this).toggleClass("active")
+                    $(this).toggleClass("active")
                 });
             })
 
@@ -661,9 +661,9 @@ jQuery(document).ready(function($) {
                 $('.open-folder').on('click', function(e) {
                     let parent = $(e.target).closest(".parent_tr");
                     parent.toggleClass("active");
-                parent.siblings().each(function() {
-                $(this).toggleClass("active")
-                });
+                    parent.siblings().each(function() {
+                        $(this).toggleClass("active")
+                    });
                 })
                 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
                 var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
@@ -691,16 +691,21 @@ jQuery(document).ready(function($) {
 
     function Sel() {
         $('table').on('all.bs.table', function() {
-
             $(this).closest(".bg-white").find("span.total").html($(this).find("tbody>tr:not(.no-records-found)").length);
 
+            $('input[type="checkbox"]').on('click', function() {
+                    $(this).closest(".bg-white").find("span.select").html($(this).closest("tbody").find('input[type="checkbox"]:checked').length);
+
+            })
 
             $('.selAll').on('click', function() {
                 let par = $(this).attr("data-select")
                 if ($(this).is(':checked')) {
                     $(par).find("input[type='checkbox']").prop('checked', true).trigger('change');
+                    $(this).closest(".bg-white").find("span.select").html($(this).closest(".bg-white").find("tbody>tr:not(.no-records-found)").length);
                 } else {
                     $(par).find("input[type='checkbox']").prop('checked', false).trigger('change');
+            $(this).closest(".bg-white").find("span.select").html("0");
                 }
             });
 
@@ -708,13 +713,15 @@ jQuery(document).ready(function($) {
     }
     if ($(".datepicker_inline").length) {
 
-        var $input = $('.datepicker_inline').pickadate({
-            closeOnSelect: false,
-            closeOnClear: false,
-            today: '',
-            clear: '',
-            close: ''
-        });
+        let DateSet = window.SETTINGS ? window.SETTINGS : { "formatSubmit": "yyyy-mm-dd", editable: true }
+        DateSet['editable'] = true;
+        DateSet['closeOnSelect'] = false;
+        DateSet['closeOnClear'] = false;
+        DateSet['today'] = '';
+        DateSet['clear'] = '';
+        DateSet['close'] = '';
+
+        var $input = $('.datepicker_inline').pickadate(DateSet);
         var picker = $input.pickadate('picker');
         picker.close = function() {
             return true;
@@ -741,10 +748,13 @@ jQuery(document).ready(function($) {
                 picker.set('select', currentDate);
                 let min = $(this).attr('data-time');
                 let newDate = dateAdd(new Date(), 'minute', min)
-                console.log(newDate.getHours(), newDate.getMinutes());
                 $("#time-inline").val(`${newDate.getHours()}:${(newDate.getMinutes()<10?'0':'') + newDate.getMinutes()}`)
                 $(this).closest('#setTime').find(".active").each(function() { $(this).removeClass("active") })
                 $(this).addClass("active");
+                if ($("#datetime").length) {
+
+                    $("#datetime").trigger('click');
+                }
                 $('#modalDateTime').modal('hide')
             });
         });
@@ -934,29 +944,29 @@ jQuery(document).ready(function($) {
         })
 
     }
-    
-        function AutoResize() {
-            let allHeight = window.innerHeight;
-            let headerHeight = $(".header-wrapper").innerHeight();
-            let wrapper = $("#content>div").innerHeight();
-            let tabHeight = $("#tabReportContent").innerHeight();
 
-            let full = allHeight - headerHeight - 280;
+    function AutoResize() {
+        let allHeight = window.innerHeight;
+        let headerHeight = $(".header-wrapper").innerHeight();
+        let wrapper = $("#content>div").innerHeight();
+        let tabHeight = $("#tabReportContent").innerHeight();
 
-            let detailed = $("#detailed").innerHeight();
-            let summary = $("#summary").innerHeight();
-            let flowProject = $("#flowProject").innerHeight();
-            let flow = $("#flow").innerHeight();
-            let shoppers = $("#shoppers").innerHeight();
+        let full = allHeight - headerHeight - 280;
 
-            let heightEl = full / 3;
+        let detailed = $("#detailed").innerHeight();
+        let summary = $("#summary").innerHeight();
+        let flowProject = $("#flowProject").innerHeight();
+        let flow = $("#flow").innerHeight();
+        let shoppers = $("#shoppers").innerHeight();
 
-            $("#detailed .report-body").attr("style", `max-height:${heightEl}px`)
-            $("#summary .report-body").attr("style", `max-height:${heightEl}px`)
-            $("#flowProject .report-body").attr("style", `max-height:${heightEl}px`)
-            $("#flow .report-body").attr("style", `max-height:${heightEl}px`)
-            $("#shoppers .report-body").attr("style", `max-height:${heightEl}px`)
-        }
+        let heightEl = full / 3;
+
+        $("#detailed .report-body").attr("style", `max-height:${heightEl}px`)
+        $("#summary .report-body").attr("style", `max-height:${heightEl}px`)
+        $("#flowProject .report-body").attr("style", `max-height:${heightEl}px`)
+        $("#flow .report-body").attr("style", `max-height:${heightEl}px`)
+        $("#shoppers .report-body").attr("style", `max-height:${heightEl}px`)
+    }
 
 
     //initial all function on load page
@@ -972,8 +982,9 @@ jQuery(document).ready(function($) {
         if ($("#donut1").length) { drawDonut1() };
         if ($("#donut2").length) { drawDonut2() };
         if ($(".pick-date").length) {
-            let DateSet = window.SETTINGS ? window.SETTINGS : { "formatSubmit": "yyyy-mm-dd" }
-            console.log(DateSet)
+            let DateSet = window.SETTINGS ? window.SETTINGS : { "formatSubmit": "yyyy-mm-dd", editable: true }
+            DateSet['editable'] = true;
+            DateSet['today'] = '';
             $('.pick-date').pickadate(DateSet);
             pickDate2();
             pickBranch();
@@ -990,13 +1001,31 @@ jQuery(document).ready(function($) {
         };
         if ($("#infoJob .cert-elem svg").length) { infoJobSvgDraw() }
         if ($('#create-job-form .selectpicker').length) { showElem() }
+        if ($('.fht-cell').length) { 
+            $('.fht-cell').each(function(index) {
+                let width =$(this).siblings().innerWidth()
+                console.log(width)
+                 $(this).attr("style", `width:${width-20}px`)
+
+            });
+        $('table').on('all.bs.table', function() {
+            $('.fht-cell').each(function(index) {
+                let width =$(this).siblings().innerWidth()
+                console.log(width)
+                 $(this).attr("style", `width:${width-20}px`)
+
+            });
+        })
+         }
         if ($('a.open-folder').length) { openInnF() }
         if ($("#pref-reg #all-reg").length) {
             $('#add').on('click', MoveElem.bind(null, $('#all-reg table.mini-table'), $('#pr-reg table.mini-table')))
             $('#remove').on('click', MoveElem.bind(null, $('#pr-reg table.mini-table'), $('#all-reg table.mini-table')))
-            Sel()
+            Sel();
+
+
         }
-        if ($('#tabReportContent')) {
+        if ($('#tabReportContent').length) {
             $(document).on('shown.bs.tab', '#reportTab a', function(e) {
                 var element = document.querySelector("#reportTab a.active");
                 element.scrollIntoView({ behavior: "smooth", inline: "center" });
@@ -1005,7 +1034,6 @@ jQuery(document).ready(function($) {
             })
             if ($(window).width() > 768) {
                 (function showTabs() {
-
                     $('#tabAll').parent().addClass('active');
                     $('.tab-pane').addClass('active in show');
                     $('[data-toggle="tab"]').parent().removeClass('active');
@@ -1014,6 +1042,10 @@ jQuery(document).ready(function($) {
                 AutoResize();
             };
             setTab()
+        }
+        if ($("tbody.blue-grey-scroll>tr").length) {
+            $("tbody.blue-grey-scroll>tr").closest('table').find("thead>tr").attr("style",`width:${$("tbody.blue-grey-scroll>tr").innerWidth()}px`)
+
         }
 
     });

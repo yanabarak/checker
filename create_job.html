@@ -54,27 +54,28 @@
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                                        <li><a href="#"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
-                                        <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
-                                        <li class="active"><a href="#"><i class="far fa-star"></i> <span>Create new job</span></a></li>
-                                        <li><a href="#"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
+                                        <li class="active"><a href="create_job.html"><i class="far fa-star"></i> <span>Create new job</span></a></li>
+                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
                                         <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
-                                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add refund record</span></a></li>
                                         <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
-                                        <li><a href="#"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
-                                        <li><a href="#"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
-                                        <li><a href="#"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
-                                        <li><a href="#"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
+                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
                                     </ul>
                                 </div>
                                 <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="user-panel py-3 mb-0">
@@ -95,10 +96,10 @@
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu ">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="#"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
-                                        <li><a href="#"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
-                                        <li><a href="#"><i class="far fa-map"></i> <span>Preferred Clients</span></a></li>
-                                        <li><a href="#"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -111,7 +112,7 @@
                     <div class="row m-0 mt-5 mt-md-0 header-wrapper">
                         <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="far fa-star sec-color fs-30 me-md-4 me-1"></i>Create new job</h1>
                         <div class="col-auto ms-auto">
-                            <select class="form-select mb-4 selectpicker" id="lang">
+                            <select class="form-select mb-4 selectpicker" data-live-search="true"  id="lang">
                                 <option selected>English</option>
                                 <option value="1">Ukrainian</option>
                                 <option value="2">Hebrew</option>
@@ -123,7 +124,7 @@
                         <form id="create-job-form" class="mx-auto bg-white row my-auto">
                             <div class="col-12 m-0 p-0">
                                 <label for="staticClient" class="black-color fs-18 mb-2">Choosing client *</label>
-                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Client" id="staticClient" title="Choose Client" placeholder="Please Select">
+                                <select class="form-select selectpicker w-100"  data-actions-box="true" data-live-search="true" aria-label="Client" id="staticClient" title="Choose Client" placeholder="Please Select">
                                     <option value="1">Choose Client1</option>
                                     <option value="2">Choose Client2</option>
                                     <option value="3">Choose Client3</option>
@@ -158,7 +159,7 @@
                             </div>
                             <div class="col-12 m-0 p-0 inactive mandatory">
                                 <label for="staticBranch" class="black-color fs-18 mb-2">Choosing branch *</label>
-                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Branch" id="staticBranch" title="Choose Branch" placeholder="Please Select">
+                                <select class="form-select selectpicker w-100"  data-actions-box="true" data-live-search="true" aria-label="Branch" id="staticBranch" title="Choose Branch" placeholder="Please Select">
                                     <option value="1">Choose Branch1</option>
                                     <option value="2">Choose Branch2</option>
                                     <option value="3">Choose Branch3</option>
@@ -229,7 +230,7 @@
                             </div>
                             <div class="col-12 m-0 p-0 inactive">
                                 <label for="staticLanguage" class="black-color fs-18 mb-2">Select language</label>
-                                <select class="form-select selectpicker w-100" multiple data-live-search="true" aria-label="Language" id="staticLanguage" title="Choose Language" placeholder="Please Select">
+                                <select class="form-select selectpicker w-100" multiple  data-actions-box="true" data-live-search="true" aria-label="Language" id="staticLanguage" title="Choose Language" placeholder="Please Select">
                                     <option value="1">Choose Language1</option>
                                     <option value="2">Choose Language2</option>
                                     <option value="3">Choose Language3</option>

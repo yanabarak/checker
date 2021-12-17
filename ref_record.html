@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
-    <script type="text/javascript">
+     <script type="text/javascript">
     window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
     </script>
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
@@ -60,27 +60,28 @@
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                                        <li><a href="#"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
-                                        <li><a href="#"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
-                                        <li><a href="#"><i class="far fa-star"></i> <span>Create new job</span></a></li>
-                                        <li><a href="#"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
+                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new job</span></a></li>
+                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
                                         <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
-                                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
+                                        <li class="active"><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add refund record</span></a></li>
                                         <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
-                                        <li><a href="#"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
-                                        <li><a href="#"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
-                                        <li><a href="#"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
-                                        <li><a href="#"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
+                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
                                     </ul>
                                 </div>
                                 <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="user-panel py-3 mb-0">
@@ -101,10 +102,10 @@
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu ">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="#"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
-                                        <li><a href="#"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
-                                        <li><a href="#"><i class="far fa-map"></i> <span>Preferred Clients</span></a></li>
-                                        <li><a href="#"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -499,44 +500,25 @@
                         <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div>
                             <form class="row">
+
+<div class="col-12 my-0"><h4 class="fw-light black-color">Please, select</h4></div>
                                 <div class="col-12 my-0">
                                     <label for="staticvalue" class="dd-grey fs-12 mb-0">Value *</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="value" id="staticvalue" title="Choose value">
-                                        <option value="0">Choose value</option>
-                                        <option value="1">Choose value1</option>
-                                        <option value="2">Choose value2</option>
-                                        <option value="3">Choose value3</option>
-                                        <option value="0">Choose value</option>
-                                        <option value="1">Choose value1</option>
-                                        <option value="2">Choose value2</option>
-                                        <option value="3">Choose value3</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="staticvalue" placeholder="Value">
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticDescription" class="dd-grey fs-12 mb-0">Description *</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Description" id="staticDescription" title="Choose job type">
-                                        <option value="1">Choose Description1</option>
-                                        <option value="2">Choose Description2</option>
-                                        <option value="3">Choose Description3</option>
-                                    </select>
+
+                                    <input type="text" class="form-control" id="staticDescription" placeholder="Description">
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticInvoice" class="dd-grey fs-12 mb-0">Invoice number </label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Invoice number" id="staticInvoice" title="Choose Invoice number" placeholder="Choose Invoice number">
-                                        <option value="1">Choose Invoice number1</option>
-                                        <option value="2">Choose Invoice number2</option>
-                                        <option value="3">Choose Invoice number3</option>
-                                        <option value="1">Choose Invoice number1</option>
-                                        <option value="2">Choose Invoice number2</option>
-                                        <option value="3">Choose Invoice number3</option>
-                                        <option value="1">Choose Invoice number1</option>
-                                        <option value="2">Choose Invoice number2</option>
-                                        <option value="3">Choose Invoice number3</option>
-                                    </select>
+
+                                    <input type="text" class="form-control" id="staticInvoice" placeholder="Invoice number">
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticFlow" class="dd-grey fs-12 mb-0">Flow Name * </label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Flow" id="staticFlow" title="Choose Flow" placeholder="Acquisition throught review">
+                                    <select class="form-select selectpicker"  data-actions-box="true" data-live-search="true" aria-label="Flow" id="staticFlow" title="Choose Flow" placeholder="Acquisition throught review">
                                         <option value="1">Choose Flow Name1</option>
                                         <option value="2">Choose Flow Name2</option>
                                         <option value="3">Choose Flow Name3</option>
@@ -544,7 +526,7 @@
                                 </div>
                                  <div class="col-12 my-0 mt-2">
                                     <label for="staticCardNumber" class="dd-grey fs-12 mb-0">CardNumber *</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="CardNumber" id="staticCardNumber" title="Choose CardNumber">
+                                    <select class="form-select selectpicker"  data-actions-box="true" data-live-search="true" aria-label="CardNumber" id="staticCardNumber" title="Choose CardNumber">
                                         <option value="1">Choose CardNumber1</option>
                                         <option value="2">Choose CardNumber2</option>
                                         <option value="3">Choose CardNumber3</option>
@@ -557,7 +539,7 @@
                                 </div>
                                  <div class="col-12 my-0 mt-2">
                                     <label for="staticLinkedReview" class="dd-grey fs-12 mb-0">Linked rewiew *</label>
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="LinkedReview" id="staticLinkedReview" title="Choose Linked Review">
+                                    <select class="form-select selectpicker"  data-actions-box="true" data-live-search="true" aria-label="LinkedReview" id="staticLinkedReview" title="Choose Linked Review">
                                         <option value="1">Choose Linked Review1</option>
                                         <option value="2">Choose Linked Review2</option>
                                         <option value="3">Choose Linked Review3</option>
@@ -592,7 +574,10 @@
                     </div>
                 </div>
                 <div class="modal-footer p-2 px-3">
-                    <button type="button" class="btn btn-primary sec-bg border-0 btn-md" id="datetime"  data-bs-target="#formModal" data-bs-toggle="modal" data-bs-dismiss="modal">Set date &amp; time</button>
+                    <div id="setTime" class="col-auto h-100">
+                        <button type="button" data-time="0" class="btn btn-primary main-bg border-0 btn-md h-100 fs-18 px-5 py-2">Now</button>
+                    </div>
+                    <button type="button" class="btn btn-primary sec-bg border-0 btn-md fs-18" id="datetime" data-bs-target="#formModal" data-bs-toggle="modal" data-bs-dismiss="modal">Set date &amp; time</button>
                 </div>
             </div>
         </div>
@@ -608,7 +593,7 @@
                             <form class="row">
 <div class="col-12 my-0 mt-2"><h4 class="fw-light black-color">Please, select</h4></div>
                                 <div class="col-12 my-0 mt-2">
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Client" id="staticClient" title="Choose client">
+                                    <select class="form-select selectpicker" multiple data-actions-box="true" data-live-search="true" aria-label="Client" id="staticClient" title="Choose client">
                                         <option value="0">Choose client</option>
                                         <option value="1">Choose client1</option>
                                         <option value="2">Choose client2</option>
@@ -617,7 +602,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12 my-0 mt-2">
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Region" id="staticRegion" title="Choose Region" placeholder="Choose Region">
+                                    <select class="form-select selectpicker" multiple data-actions-box="true" data-live-search="true" aria-label="Region" id="staticRegion" title="Choose Region" placeholder="Choose Region">
                                         <option value="1">Choose Region1</option>
                                         <option value="2">Choose Region2</option>
                                         <option value="3">Choose Region3</option>
@@ -651,7 +636,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12 my-0 mt-2">
-                                    <select class="form-select selectpicker" multiple data-live-search="true" aria-label="Branch" id="staticInvoice" title="Choose Branch" placeholder="Choose Branch">
+                                    <select class="form-select selectpicker" multiple data-actions-box="true" data-live-search="true" aria-label="Branch" id="staticInvoice" title="Choose Branch" placeholder="Choose Branch">
                                         <option value="1">Choose Branch1</option>
                                         <option value="2">Choose Branch2</option>
                                         <option value="3">Choose Branch3</option>

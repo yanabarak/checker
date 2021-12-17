@@ -22,7 +22,7 @@
     </div>
     <div class="container-fluid d-flex align-items-center" id="content">
         <div class="row p-0 bg-white m-auto" id="register-form">
-            <div class="col sec-bg">
+            <div class="col sec-bg d-none d-md-block">
                 <div class="row"><img src="img/checker_logo_white.svg" alt="Checker logo" class="logo"></div>
                 <div class="row mt-3">
                     <h2 class="white-color fw-bold">Shoppers Registration</h2>
@@ -47,14 +47,17 @@
                 </div>
             </div>
             <div class="col row m-0">
+                <div class="row d-flex d-md-none">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block w-auto mb-4">
+                </div>
                 <div class="row">
                     <h2 class="black-color fw-bold p-0">Please register here</h2>
                 </div>
-                <div class="row p-0 m-0 mt-2">
+                <div class="row p-0 m-0 mt-2 justify-content-center">
                     <button type="button" class="btn btn-outline col-6 me-2" data-title="Microsoft">Login with Microsoft</button>
                     <button type="button" class="btn btn-outline col-6" data-title="Google">Login with Google</button>
                 </div>
-                <div class="row p-0 m-0 mt-2">
+                <div class="row p-0 m-0 mt-2 justify-content-center">
                     <button type="button" class="btn btn-outline col-6 me-2" data-title="Facebook">Login with Facebook</button>
                     <button type="button" class="btn btn-outline col-6" data-title="Twitter">Login with Twitter</button>
                 </div>
@@ -74,10 +77,6 @@
                     <input type="password" class="form-control" id="RetypePassword" placeholder="RetypePassword">
                 </div>
                 <div class="row w-100 m-0 p-0 mt-2">
-                    <label for="RetypeEmail" class="form-label p-0 black-color">Retype Email</label>
-                    <input type="email" class="form-control" id="RetypeEmail" placeholder="test@test.com">
-                </div>
-                <div class="row w-100 m-0 p-0 mt-2">
                     <label for="Email" class="form-label p-0 black-color">Email</label>
                     <input type="email" class="form-control" id="Email" placeholder="test@test.com">
                 </div>
@@ -95,6 +94,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.js"></script>
         <script src="js/my.js"></script>
