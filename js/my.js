@@ -675,6 +675,7 @@ jQuery(document).ready(function($) {
     // Move from one table to another by checkbox
     function MoveElem($tableFrom, $tableTo) {
         let arrDel = [];
+        $tableFrom.closest(".bg-white").find("span.select").html("0")
         $tableFrom.find($('table.table tbody input[type="checkbox"]:checked')).each(function(i) {
             let j = $(this).closest("tr").attr('data-index')
             arrDel.push(Number(j))
@@ -968,6 +969,105 @@ jQuery(document).ready(function($) {
         $("#shoppers .report-body").attr("style", `max-height:${heightEl}px`)
     }
 
+    // show info in popup
+    function showInfo(){
+
+        $(".show-info").click(function(e) {
+            $(".toast").toast("hide");
+            $(".toast").find(".toast-body").attr("style", ``)
+            e.preventDefault()
+            let toast = $(e.target).closest(".bg-grey").find(".toast");
+            $(toast).addClass("bottom-0");
+            $(toast).removeClass("top-0");
+            $(toast).toast("show");
+            let distance = $(toast)[0].getBoundingClientRect();
+            let distance2 = $(e.target)[0].getBoundingClientRect();
+            if (distance.top < 0) {
+                var vh = window.innerHeight;
+                if ((vh - 300 - Math.abs(distance.top)) < 200) {
+                    $(toast).removeClass("bottom-0");
+                    $(toast).addClass("top-0");
+                } else {
+                    $(toast).find(".toast-body").attr("style", `max-height: calc(100vh - 300px - ${Math.abs(distance.top)}px)`)
+                }
+            }
+        });
+    }
+
+    // editDate in pickdate input
+
+    function editDate() {     var triggerTabList = [].slice.call(document.querySelectorAll('.pick-date'))
+
+    triggerTabList.forEach(function(element) {
+        var dateMask = IMask(element, {
+            mask: 'd-`m-`Y', // enable date mask
+
+            // other options are optional
+            pattern: 'Y-`m-`d', // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
+            // you can provide your own blocks definitions, default blocks for date mask are:
+            blocks: {
+                d: {
+                    mask: IMask.MaskedRange,
+                    from: 1,
+                    to: 31,
+                    maxLength: 2,
+                },
+                m: {
+                    mask: IMask.MaskedRange,
+                    from: 1,
+                    to: 12,
+                    maxLength: 2,
+                },
+                Y: {
+                    mask: IMask.MaskedRange,
+                    from: 1900,
+                    to: 9999,
+                }
+            },
+            // define date -> str convertion
+            format: function(date) {
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+
+                if (day < 10) day = "0" + day;
+                if (month < 10) month = "0" + month;
+
+                return [year, month, day].join('-');
+            },
+            // define str -> date convertion
+            parse: function(str) {
+                var yearMonthDay = str.split('-');
+                return new Date(yearMonthDay[0], yearMonthDay[1] - 1, yearMonthDay[2]);
+            },
+
+            // optional interval options
+            min: new Date(2000, 0, 1), // defaults to `1900-01-01`
+            max: new Date(2020, 0, 1), // defaults to `9999-01-01`
+
+            autofix: true, // defaults to `false`
+
+            // also Pattern options can be set
+            lazy: false,
+
+
+            // and other common options
+            overwrite: true // defaults to `false`
+        });
+
+        dateMask.on("complete", function() {
+            let date = dateMask.value;
+            let elem = $(dateMask.el)[0]["input"]
+
+
+            $(elem).pickadate('picker').set('select', date, { format: 'dd-mm-yyyy' });
+            dateMask.updateValue(date)
+
+
+
+        });
+    });
+    }
 
     //initial all function on load page
     $(window).resize(function() {
@@ -986,6 +1086,7 @@ jQuery(document).ready(function($) {
             DateSet['editable'] = true;
             DateSet['today'] = '';
             $('.pick-date').pickadate(DateSet);
+            editDate();       
             pickDate2();
             pickBranch();
         };
@@ -1018,6 +1119,7 @@ jQuery(document).ready(function($) {
         })
          }
         if ($('a.open-folder').length) { openInnF() }
+        if ($('a.show-info').length) { showInfo() }
         if ($("#pref-reg #all-reg").length) {
             $('#add').on('click', MoveElem.bind(null, $('#all-reg table.mini-table'), $('#pr-reg table.mini-table')))
             $('#remove').on('click', MoveElem.bind(null, $('#pr-reg table.mini-table'), $('#all-reg table.mini-table')))

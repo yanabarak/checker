@@ -2950,14 +2950,16 @@ body.locations .header-wrapper>h1+button+div {
 .open-datetime.form-select.sec-color {
     color: var(--second-brand-color) !important;
 }
-.add-ref-rec .content-wrapper,
-.unfin-job .content-wrapper {
+.add-ref-rec .content-wrapper {
     margin-right: -100px !important;
     margin-left: -3rem !important;
     margin-top: 1px !important;
 }
 .add-ref-rec #modalDateTime>.modal-dialog {
     width: 600px;
+}
+.btn-group>.btn.btn-primary:focus {
+  background: var(--main-brand-color) !important;
 }
 .bg-coin {
     width: 50px;
