@@ -1131,6 +1131,12 @@ body.myjobs #map div.action {
 body.openjobs #map div.action {
     min-width: 150px;
 }
+body.myjobs.overflow-hidden #infoJob,
+body.openjobs.overflow-hidden div#infoJob,
+body.myjobs.overflow-hidden #infoJob.content-wrapper,
+body.openjobs.overflow-hidden div#infoJob .content-wrapper {
+    height: 100%;
+}
 .hidd {
     opacity: 0;
     display: none;
@@ -2081,13 +2087,21 @@ div#register-form label {
 }
 /*Telephonic Survey page*/
 body.telephonic-survey #content,
-body.telephonic-survey-start #content{
+body.telephonic-survey-start #content {
     padding: 18px 24px !important;
     display: flex;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
+}
+.telephonic-survey #infoJob,
+.telephonic-survey-start #infoJob {
+    padding: 0px !important;
+    flex: 1 0 0%;
+}
+.quest-img {
+    max-width: 200px !important;
 }
 #widget-tel {
     width: 340px;
@@ -2959,7 +2973,7 @@ body.locations .header-wrapper>h1+button+div {
     width: 600px;
 }
 .btn-group>.btn.btn-primary:focus {
-  background: var(--main-brand-color) !important;
+    background: var(--main-brand-color) !important;
 }
 .bg-coin {
     width: 50px;
@@ -3645,6 +3659,129 @@ body.locations .content-wrapper>div>.bg-white {
         padding-bottom: 0px;
     }
 }
+@media (-webkit-min-device-pixel-ratio: 1.25),
+(min--moz-device-pixel-ratio: 1.25),
+(-o-min-device-pixel-ratio: 3/2),
+(min-resolution: 1.25dppx) {
+    body {
+        font-size: 13px !important;
+    }
+    a.call-button.rounded-circle {
+        height: 50px;
+        width: 50px;
+    }
+    .fs-18,
+    .btn.btn-outline-grey,
+    #collapsePersInfo .table-result {
+        font-size: 16px !important;
+    }
+    .fs-90 {
+        font-size: 60px !important;
+    }
+    h4 {
+        font-size: 18px !important;
+    }
+    .fs-2,
+    .fs-30 {
+        font-size: 28px !important;
+    }
+    h1 {
+        font-size: 24px !important;
+    }
+    h2 {
+        font-size: 22px !important;
+    }
+    h3 {
+        font-size: 20px !important;
+    }
+    .form-floating.big .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        font-size: 28px !important;
+    }
+    #collapsePersInfo {
+        max-height: 420px !important;
+    }
+    div.call-button.rounded-circle {
+        padding: 30px;
+    }
+    .row.tel-btn-group>div:last-child>div {
+        margin: 20px;
+    }
+    #status-btn-group>div {
+        height: calc(100vh - 530px) !important
+    }
+    #create-job-form {
+        padding: 29px 69px 29px 47px;
+    }
+    body.telephonic-survey #content {
+        padding: 18px 24px !important;
+    }
+    select#lang {
+        margin-bottom: 20px !important;
+    }
+    #create-job-form>.col-12:not(:first-child) {
+        margin-top: 10px !important;
+    }
+    .report-body.blue-grey-scroll {
+        max-height: auto !important;
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min--moz-device-pixel-ratio: 1.5),
+(-o-min-device-pixel-ratio: 3/2),
+(min-resolution: 1.5dppx) {
+    body {
+        font-size: 10px !important;
+    }
+    a.call-button.rounded-circle {
+        height: 30px;
+        width: 30px;
+    }
+    .fs-18,
+    .btn.btn-outline-grey,
+    #collapsePersInfo .table-result {
+        font-size: 14px !important;
+    }
+    .fs-90 {
+        font-size: 40px !important;
+    }
+    h4 {
+        font-size: 14px !important;
+    }
+    .fs-2,
+    .fs-30 {
+        font-size: 18px !important;
+    }
+    h1 {
+        font-size: 20px !important;
+    }
+    h2 {
+        font-size: 18px !important;
+    }
+    h3 {
+        font-size: 16px !important;
+    }
+    .form-floating.big .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        font-size: 16px !important;
+    }
+    button.filter-btn {
+        line-height: 30px;
+        height: fit-content;
+        box-sizing: border-box;
+        padding: 0 35px 0 15px;
+        background-size: 20px;
+    }
+    ul.menu-links.list-group i {
+        margin-right: 1rem;
+        width: 16px;
+        height: auto;
+        text-align: center;
+        font-size: 14px;
+        vertical-align: top;
+    }
+    .mb-4 {
+        margin-bottom: 0.75rem !important;
+    }
+}
 @media (min-width: 767.6px) {
     .survey_hist .header-wrapper .block {
         max-width: 200px !important;
@@ -3779,9 +3916,23 @@ body.locations .content-wrapper>div>.bg-white {
         background-size: 55px 100%;
         position: relative;
     }
-    .telephonic-survey-start div[id^="widget"] {
+    .telephonic-survey-start div[id^="widget"],
+    .telephonic-survey div[id^="widget"] {
         background-image: none;
         padding-left: 0px !important;
+    }
+    .telephonic-survey #widget-call {
+        padding-left: 10px !important;
+    }
+    .telephonic-survey #widget-tel {
+        padding-right: 0px;
+        margin-top: 150px !important;
+    }
+    body.telephonic-survey #content {
+        height: auto !important;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column-reverse;
     }
     .telephonic-survey-start #content #person-info.block {
         margin-left: 0px !important;
@@ -4580,6 +4731,21 @@ body.locations .content-wrapper>div>.bg-white {
         min-width: 100vw !important;
         padding-bottom: 77px !important;
     }
+    #content #person-info.block > div>.col-3{
+  padding: 10px 5px !important;
+}
+    body.telephonic-survey #content {
+        width: 100% !important;
+        float: none;
+    }
+    #widget-tel,
+    #content #widget-call {
+        width: 100% !important;
+        float: none;
+    }
+    #status-btn-group>div {
+        height: auto !important;
+    }
 }
 @media (max-width: 347.5px) {
     #content .block.bg-white {
@@ -4588,128 +4754,5 @@ body.locations .content-wrapper>div>.bg-white {
     }
     #widget-money p.fw-light.my-0.lh-sm {
         font-size: 20px !important;
-    }
-}
-@media (-webkit-min-device-pixel-ratio: 1.25),
-(min--moz-device-pixel-ratio: 1.25),
-(-o-min-device-pixel-ratio: 3/2),
-(min-resolution: 1.25dppx) {
-    body {
-        font-size: 13px !important;
-    }
-    a.call-button.rounded-circle {
-        height: 50px;
-        width: 50px;
-    }
-    .fs-18,
-    .btn.btn-outline-grey,
-    #collapsePersInfo .table-result {
-        font-size: 16px !important;
-    }
-    .fs-90 {
-        font-size: 60px !important;
-    }
-    h4 {
-        font-size: 18px !important;
-    }
-    .fs-2,
-    .fs-30 {
-        font-size: 28px !important;
-    }
-    h1 {
-        font-size: 24px !important;
-    }
-    h2 {
-        font-size: 22px !important;
-    }
-    h3 {
-        font-size: 20px !important;
-    }
-    .form-floating.big .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
-        font-size: 28px !important;
-    }
-    #collapsePersInfo {
-        max-height: 420px !important;
-    }
-    div.call-button.rounded-circle {
-        padding: 30px;
-    }
-    .row.tel-btn-group>div:last-child>div {
-        margin: 20px;
-    }
-    #status-btn-group>div {
-        height: calc(100vh - 530px) !important
-    }
-    #create-job-form {
-        padding: 29px 69px 29px 47px;
-    }
-    body.telephonic-survey #content {
-        padding: 18px 24px !important;
-    }
-    select#lang {
-        margin-bottom: 20px !important;
-    }
-    #create-job-form>.col-12:not(:first-child) {
-        margin-top: 10px !important;
-    }
-    .report-body.blue-grey-scroll {
-        max-height: auto !important;
-    }
-}
-@media (-webkit-min-device-pixel-ratio: 1.5),
-(min--moz-device-pixel-ratio: 1.5),
-(-o-min-device-pixel-ratio: 3/2),
-(min-resolution: 1.5dppx) {
-    body {
-        font-size: 10px !important;
-    }
-    a.call-button.rounded-circle {
-        height: 30px;
-        width: 30px;
-    }
-    .fs-18,
-    .btn.btn-outline-grey,
-    #collapsePersInfo .table-result {
-        font-size: 14px !important;
-    }
-    .fs-90 {
-        font-size: 40px !important;
-    }
-    h4 {
-        font-size: 14px !important;
-    }
-    .fs-2,
-    .fs-30 {
-        font-size: 18px !important;
-    }
-    h1 {
-        font-size: 20px !important;
-    }
-    h2 {
-        font-size: 18px !important;
-    }
-    h3 {
-        font-size: 16px !important;
-    }
-    .form-floating.big .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
-        font-size: 16px !important;
-    }
-    button.filter-btn {
-        line-height: 30px;
-        height: fit-content;
-        box-sizing: border-box;
-        padding: 0 35px 0 15px;
-        background-size: 20px;
-    }
-    ul.menu-links.list-group i {
-        margin-right: 1rem;
-        width: 16px;
-        height: auto;
-        text-align: center;
-        font-size: 14px;
-        vertical-align: top;
-    }
-    .mb-4 {
-        margin-bottom: 0.75rem !important;
     }
 }
