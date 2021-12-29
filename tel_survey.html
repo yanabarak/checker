@@ -64,7 +64,6 @@
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
-                                        
                                         <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
                                         <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
                                         <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new job</span></a></li>
@@ -116,7 +115,7 @@
             <div class="p-0 w-100" id="content">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     Survey data deleted, please update the status of this person
-                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <div class="col-auto mt-3 deactive" id="widget-tel">
                     <a href="#" class="text-decoration-none sec-color fs-18"><i class="fas fa-chevron-left me-2"></i> Back to survey list</a>
@@ -137,29 +136,178 @@
                             </select>
                             <label for="floatingSelect">Phone 1</label>
                         </div>
-                        <div class="row tel-btn-group my-2 m-0 p-0 w-100">
-                            <div class="col-auto p-0 me-auto">
-                                <div class="call-button rounded-circle position-relative">
-                                    <div id="anim">
-                                        <svg width="86" class="active" height="85" viewBox="0 0 86 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.4845 42.64C3.4845 49.2482 5.14083 55.7509 8.30209 61.5539C11.4633 67.3568 16.0287 72.2748 21.5808 75.8584" stroke="#15A812" stroke-width="5" stroke-linecap="round" class="path-1"></path>
-                                            <path d="M29.6722 80.1205C37.5874 82.9396 46.1918 83.1805 54.2524 80.8087" stroke="#15A812" stroke-width="4.5" stroke-linecap="round" class="path-2"></path>
-                                            <path d="M47.435 82.4862C54.8961 81.6598 61.9754 78.755 67.8668 74.1027C73.7581 69.4504 78.2249 63.2374 80.7586 56.1711" stroke="#15A812" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 10" class="path-3"></path>
-                                            <path d="M83.0221 45.3101C83.3965 39.7004 82.5868 34.0746 80.6457 28.7981" stroke="#15A812" stroke-width="3" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 8" class="path-4"></path>
-                                            <path d="M77.3274 21.8969C74.7582 17.6478 71.4221 13.913 67.4887 10.8826" stroke="#15A812" stroke-width="2" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6" class="path-5"></path>
-                                            <path d="M62.2567 7.46631C57.9002 5.08387 53.139 3.53148 48.2154 2.88815" stroke="#15A812" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" class="path-6"></path>
-                                        </svg>
+                        <form name="BeginSurveyForm" action="c_survey-frameset.php" method="POST">
+                            <input type="hidden" name="QuotaID" id="QuotaID" value="0">
+                            <input type="hidden" name="SmpRowID" id="SmpRowID" value="16">
+                            <input type="hidden" name="SurveyID" id="SurveyID" value="234">
+                            <input type="hidden" name="checker_extension" id="checker_extension" value="100680001">
+                            <input type="hidden" name="checker_password" id="checker_password" value="72078e5af0f5653a4af9d4031c9cd7a0">
+                            <input type="hidden" name="call_id" id="call_id" value="s-68-72156-234-16">
+                            <input type="hidden" name="sssID" id="sssID" value="188193">
+                            <input type="hidden" name="AltLangID" id="AltLangID" value="0">
+                            <div class="row tel-btn-group my-2 m-0 p-0 w-100">
+                                <div class="col-auto p-0 me-auto">
+                                    <div class="call-button rounded-circle position-relative">
+                                        <div id="anim">
+                                            <svg width="86" class="active" height="85" viewBox="0 0 86 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.4845 42.64C3.4845 49.2482 5.14083 55.7509 8.30209 61.5539C11.4633 67.3568 16.0287 72.2748 21.5808 75.8584" stroke="#15A812" stroke-width="5" stroke-linecap="round" class="path-1"></path>
+                                                <path d="M29.6722 80.1205C37.5874 82.9396 46.1918 83.1805 54.2524 80.8087" stroke="#15A812" stroke-width="4.5" stroke-linecap="round" class="path-2"></path>
+                                                <path d="M47.435 82.4862C54.8961 81.6598 61.9754 78.755 67.8668 74.1027C73.7581 69.4504 78.2249 63.2374 80.7586 56.1711" stroke="#15A812" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 10" class="path-3"></path>
+                                                <path d="M83.0221 45.3101C83.3965 39.7004 82.5868 34.0746 80.6457 28.7981" stroke="#15A812" stroke-width="3" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 8" class="path-4"></path>
+                                                <path d="M77.3274 21.8969C74.7582 17.6478 71.4221 13.913 67.4887 10.8826" stroke="#15A812" stroke-width="2" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 6" class="path-5"></path>
+                                                <path d="M62.2567 7.46631C57.9002 5.08387 53.139 3.53148 48.2154 2.88815" stroke="#15A812" stroke-miterlimit="1.55572" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4" class="path-6"></path>
+                                            </svg>
+                                        </div>
+                                        <a href="#" class="call-button rounded-circle" onclick="freepbx_dial(document.getElementById('floatingSelect').value);"></a>
                                     </div>
-                                    <a href="#" class="call-button rounded-circle"></a>
+                                </div>
+                                <div class="col-auto p-0 ms-auto">
+                                    <div class="call-button rounded-circle">
+                                        <a href="#" class="call-button rounded-circle decline" onclick="freepbx_hangup();"></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-auto p-0 ms-auto">
-                                <div class="call-button rounded-circle">
-                                    <a href="#" class="call-button rounded-circle decline"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary sec-bg border-0 fs-18 py-2">Begin Survey</button>
+                            <script type="text/javascript">
+                            var checker_extension = document.getElementById('checker_extension').value;
+                            var checker_password = '';
+
+                            if (document.getElementById('checker_password')) {
+                                checker_password = document.getElementById('checker_password').value;
+                            }
+
+                            var call_id = document.getElementById('call_id').value;
+                            var call_random_id = 0;
+                            var in_call = false;
+                            var debug = false;
+                            var status_text = "";
+
+                            $(document).ready(function() {
+                                if (status_text == "OnCall" ||
+                                    status_text == "OnCall/OfflineOrSwitchingPages") {
+                                    $("#dialcall").hide();
+                                    $("#dialprogress").show();
+                                }
+                            });
+
+                            function freepbx_dial(new_number_to_dial) {
+
+                                if (new_number_to_dial) {
+                                    var number_to_dial = new_number_to_dial;
+                                } else {
+                                    var number_to_dial = document.getElementById('dst_number').value;
+                                }
+
+                                call_random_id = Math.floor((Math.random() * 10000) + 1);
+                                $("#dialcall").hide();
+                                $("#dialprogress").show();
+                                if (in_call && new_number_to_dial) {
+                                    freepbx_hangup();
+                                    setTimeout(function() {
+                                        freepbx_dial(new_number_to_dial);
+                                    }, 1000);
+                                } else {
+                                    $.post('freepbx_exec.php', {
+                                        ext: "callcentric",
+                                        ext_number: checker_extension,
+                                        call_line: number_to_dial,
+                                        uid: call_id + "-" + call_random_id,
+                                        Send: "1",
+                                        cid: ""
+                                    }).done(function(data) {
+                                        in_call = true;
+                                        if (debug) $('#call_status').html(call_id + "-" + call_random_id + "Not asia");
+
+                                        // in case of auto dial - set timer for 20 seconds before moving on to next phone number / next record
+                                        if (1 == 2) {
+                                            setTimeout(function() {
+                                                if (in_call) {
+                                                    if (debug) $('#call_status').html($('#call_status').html() + "<br/ >20 seconds passed<br/ >checking if in a call ?");
+                                                    $.post('freepbx_exec.php', {
+                                                        ext: "callcentric",
+                                                        check_uid: call_id + "-" + call_random_id,
+                                                        Send: "1"
+                                                    }).done(function(data) {
+                                                        // Call s-68-5162-67-39-4371 is UP duration=19 billsec=0
+                                                        if (data.indexOf(" is Up ") < 0) {
+                                                            if (debug) $('#call_status').html($('#call_status').html() + 'voip server response to status check:<br />' + data + '<br />we are not in a call. Attempting next number or next person.');
+
+                                                            var found = false;
+                                                            var new_number_to_dial = '';
+                                                            var numbers = document.getElementById("dst_number").options;
+                                                            var numberslen = numbers.length;
+                                                            for (var i = 0; i < numberslen; i++) {
+                                                                if (debug) $('#call_status').html($('#call_status').html() + '<br />chacking .. ' + numbers[i].value);
+                                                                if (new_number_to_dial == '' && found) {
+                                                                    new_number_to_dial = i;
+                                                                } else if (numbers[i].value == number_to_dial) {
+                                                                    found = true;
+                                                                }
+                                                            }
+                                                            if (new_number_to_dial != '') {
+                                                                document.getElementById("dst_number").selectedIndex = new_number_to_dial;
+                                                                if (debug) $('#call_status').html($('#call_status').html() + '<br />' + 'about to call next number:' + numbers[new_number_to_dial].value);
+                                                                freepbx_hangup();
+                                                                freepbx_dial(numbers[new_number_to_dial].value);
+                                                            } else {
+                                                                if (debug) $('#call_status').html($('#call_status').html() + '<br />' + 'need to call next person');
+                                                                freepbx_hangup();
+
+                                                                //if waiting to long to answer the call we mark this record as busy / no response and proceed to next one
+                                                                var form = $('form[name=UpdateDetailsForm]');
+                                                                $('#busyNoResponse').remove();
+                                                                form.append('<input name="busyNoResponse" type="hidden" value="Busy / no response"/>');
+                                                                var data = form.serialize();
+
+                                                                $.post('c_index.php', data).done(function() {
+                                                                    $("#continuetonextperson").click();
+                                                                    window.location = $("#continuetonextperson").attr('href');
+                                                                });
+                                                            }
+                                                        } else {
+                                                            if (debug) $('#call_status').html($('#call_status').html() + '<br />' + data + '<br />we are in a call. no need to move on.');
+                                                        }
+                                                    });
+                                                }
+                                            }, 30000); // 30 seconds
+                                        }
+                                    });
+                                }
+
+                                return false;
+                            }
+
+                            function freepbx_hangup() {
+
+                                $("#dialcall").show();
+                                $("#dialprogress").hide();
+
+                                //$.post( "http://pbx.checker-soft.com/chktests/gen_call.php", { terminate_uid: call_id+"-"+call_random_id, Terminate: "1" } );
+                                $.post('freepbx_exec.php', {
+                                    ext: "callcentric",
+                                    terminate_ext: checker_extension,
+                                    TerminateExt: "1"
+                                }).done(function(data) {
+                                    $.post('freepbx_exec.php', {
+                                        ext: "callcentric",
+                                        terminate_uid: call_id + "-" + call_random_id,
+                                        Terminate: "1"
+                                    }).done(function(data) {
+                                        in_call = false;
+                                    });
+                                });
+
+                                return false;
+                            }
+
+                            function freepbx_openphone() {
+                                var win = window.open('https://eu.checker-soft.com/webphone/freepbx-advanced.php?phone2=1&&extension=' + checker_extension + '&password=' + checker_password, 'CheckerPhone', "height=600,width=600,status=yes,toolbar=no,scrollbars=yes,menubar=no,location=no");
+                                //win.blur();
+                                this.window.focus();
+
+                                in_call = false;
+                            }
+                            </script> <button type="submit" class="btn btn-primary sec-bg border-0 fs-18 py-2">Begin survey</button>
+                        </form>
                     </div>
                     <div class="col-12 col-md row m-0 mb-2 my-2">
                         <h3 class="sec-color text-center fw-light">Status</h3>
@@ -219,122 +367,124 @@
                                 </div>
                             </div>
                             <div class="row m-0 p-0 collapse bg-white rounded-bottom blue-scroll" id="collapsePersInfo">
-
                                 <button class="accept d-grey d-flex" id="editPers">Edit</button>
-                               <div class="p-0" >
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Allows showing details
+                                <div class="p-0">
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Allows showing details
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            No
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Smpinternal date added
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            19/08/2021
+                                        </div>
                                     </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        No
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">DOB
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            wrt
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Gender
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            Male
+                                        </div>
                                     </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Smpinternal date added
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Email for sending survey
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            info@johnsmith.com
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Contact number
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            2147483647
+                                        </div>
                                     </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        19/08/2021
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Number of emailed invitations
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            2
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Surveying password
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            qo28#df
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Date of purchase
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            13/10/2021
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Product purchased
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            vacuum
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Location
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            103 5th Street, Danbury, MA, USA
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Brand name
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            Dyson
+                                        </div>
+                                    </div>
+                                    <div class="row m-0 p-0">
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Allows showing details
+                                        </div>
+                                        <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
+                                            No
+                                        </div>
+                                        <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Smpinternal date added
+                                        </div>
+                                        <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
+                                            19/08/2021
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">DOB
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        wrt
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Gender
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        Male
-                                    </div>
-                                </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Email for sending survey
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        info@johnsmith.com
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Contact number
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        2147483647
-                                    </div>
-                                </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Number of emailed invitations
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        2
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Surveying password
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        qo28#df
-                                    </div>
-                                </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Date of purchase
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        13/10/2021
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Product purchased
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        vacuum
-                                    </div>
-                                </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Location
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        103 5th Street, Danbury, MA, USA
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Brand name
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        Dyson
-                                    </div>
-                                </div>
-                                <div class="row m-0 p-0">
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Allows showing details
-                                    </div>
-                                    <div class="col-3 text-left border border-1 border-top-0 border-bottom-0 border-start-0 px-3 d-flex flex-column justify-content-center table-result">
-                                        No
-                                    </div>
-                                    <div class="col-3 text-left py-3 px-4 d-flex flex-column justify-content-center table-title">Smpinternal date added
-                                    </div>
-                                    <div class="col-3 text-left  py-3  px-4 d-flex flex-column justify-content-center table-result">
-                                        19/08/2021
-                                    </div>
-                                </div>
-                               </div>
                             </div>
                         </div>
                         <div class="col-12 col-md bg-white border rounded-3 row m-0 mb-2 mb-lg-0 p-0  me-2" id="sur-preview">
                             <div class="py-3 px-4  blue-grey-scroll">
                                 <h3 class="sec-color">Survey Preview</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <div class="m-0 p-0 mb-4 quest-group">
-                            <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q1</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <img src="https://picsum.photos/340/170" alt="" class="quest-img">
-                            </div>
-                            <div class="m-0 p-0 mb-4 quest-group">
-                            <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q2</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <img src="https://picsum.photos/340/170" alt="" class="quest-img">
-                            </div><div class="m-0 p-0 mb-4 quest-group">
-                            <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q3</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <img src="https://picsum.photos/340/170" alt="" class="quest-img">
-                            </div><div class="m-0 p-0 mb-4 quest-group">
-                            <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q4</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <img src="https://picsum.photos/340/170" alt="" class="quest-img">
-                            </div><div class="m-0 p-0 mb-4 quest-group">
-                            <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q5</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
-                            <img src="https://picsum.photos/340/170" alt="" class="quest-img">
-                            </div>
+                                <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                <div class="m-0 p-0 mb-4 quest-group">
+                                    <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q1</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                    <img src="https://picsum.photos/340/170" alt="" class="quest-img">
+                                </div>
+                                <div class="m-0 p-0 mb-4 quest-group">
+                                    <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q2</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                    <img src="https://picsum.photos/340/170" alt="" class="quest-img">
+                                </div>
+                                <div class="m-0 p-0 mb-4 quest-group">
+                                    <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q3</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                    <img src="https://picsum.photos/340/170" alt="" class="quest-img">
+                                </div>
+                                <div class="m-0 p-0 mb-4 quest-group">
+                                    <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q4</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                    <img src="https://picsum.photos/340/170" alt="" class="quest-img">
+                                </div>
+                                <div class="m-0 p-0 mb-4 quest-group">
+                                    <p class="question d-grey mb-0 fw-bold"><span class="numb me-1">Q5</span>Lorem ipsum, dolor sit amet consectetur, adipisicing elit.</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Rem et soluta, velit doloribus explicabo porro excepturi aut iste. Voluptatem, quo quas eaque accusantium iure error ea sapiente, officia vel nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere vitae consequatur harum ex optio recusandae expedita dolore fuga eaque minima, debitis incidunt consectetur illum, magni pariatur atque quas eveniet suscipit!</p>
+                                    <img src="https://picsum.photos/340/170" alt="" class="quest-img">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -360,8 +510,7 @@
                     </div>
                     <div class="col-auto pt-3 pb-2 px-4 border border-1 border-top-0 border-bottom-0  border-start-0">
                         <input type="text" class="form-control datepicker_inline d-none" id="date-inline">
-                        
-                                    <input type="hidden" id="hidden-input-date">
+                        <input type="hidden" id="hidden-input-date">
                     </div>
                     <div class="col-auto py-3 px-4">
                         <p class="fs-16 fw-bold black-color m-0 p-0 my-1">Time</p>
@@ -427,11 +576,12 @@
         });
     });
 
-    $('#floatingSelect').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
-      let newLabel = $(e.target[clickedIndex]).attr("aria-label");
-      console.log($(e.target[clickedIndex]).attr("aria-label"))
-      $('label[for="floatingSelect"]').html(newLabel)
+    $('#floatingSelect').on('changed.bs.select', function(e, clickedIndex, isSelected, previousValue) {
+        let newLabel = $(e.target[clickedIndex]).attr("aria-label");
+        console.log($(e.target[clickedIndex]).attr("aria-label"))
+        $('label[for="floatingSelect"]').html(newLabel)
     });
+
     function dateAdd(date, interval, units) {
         if (!(date instanceof Date))
             return undefined;
@@ -474,8 +624,9 @@
 
 
     $("#person-info").click(function() {
-    let scrollW =$("#person-info").width() - $("#collapsePersInfo>div").width();
-    if(scrollW > 3) $("#collapsePersInfo>div").attr('style',`width:calc(100% + ${scrollW}px - 1.6px)`);})
+        let scrollW = $("#person-info").width() - $("#collapsePersInfo>div").width();
+        if (scrollW > 3) $("#collapsePersInfo>div").attr('style', `width:calc(100% + ${scrollW}px - 1.6px)`);
+    })
     // var picker2 = $input2.pickatime('picker')
     // picker2.close = function() {
     //     return true;
