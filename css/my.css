@@ -2252,6 +2252,10 @@ body.telephonic-survey #content {
     overflow: hidden;
     padding: 24px 48px !important;
 }
+#status-btn-group .blue-scroll .btn {
+    width: 100%;
+    min-width: 100%;
+}
 #status-btn-group>div {
     overflow-y: auto;
     height: calc(100vh - 590px);
