@@ -465,7 +465,9 @@ button.btn-md,
     text-decoration: none;
 }
 button.btn-outline-sec,
-[type="button"].btn-outline-sec {
+[type="button"].btn-outline-sec,
+button.btn-outline-sec:focus,
+[type="button"].btn-outline-sec:focus {
     color: var(--second-brand-color);
     box-shadow: 0px 0px 0px 2px var(--second-brand-color) inset;
 }
@@ -482,7 +484,7 @@ button:not(.navbar-toggler):not(.accordion-button):not([aria-label="Close"]):hov
     background-color: var(--main-brand-color);
     color: #fff;
 }
-form .btn[type="submit"] {
+.modal form .btn[type="submit"] {
     /*   width: 176px;*/
     height: 48px;
     padding: 0 30px !important;
@@ -2109,6 +2111,12 @@ body.telephonic-survey-start #content {
     padding-left: 0px !important;
     padding-right: 12px;
 }
+#widget-call form[name="BeginSurveyForm"] {
+    padding: 0px;
+}
+#widget-call form[name="BeginSurveyForm"] .btn {
+    width: 100%;
+}
 .bg-light-gradient {
     background: linear-gradient(179.01deg, #FFFFFF 53.71%, #EDEDED 99.43%)
 }
@@ -2186,8 +2194,8 @@ a.call-button.rounded-circle.decline:active {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='28' height='29' viewBox='0 0 28 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M26.2417 19.7757L20.5619 17.3821C20.3193 17.2804 20.0496 17.259 19.7935 17.321C19.5374 17.3831 19.3088 17.5253 19.1419 17.7262L16.6266 20.7481C12.679 18.9179 9.50212 15.7939 7.64087 11.9121L10.714 9.43873C10.9188 9.275 11.0637 9.05015 11.1268 8.79821C11.1899 8.54627 11.1679 8.28096 11.064 8.04245L8.62976 2.45731C8.51572 2.2002 8.31401 1.99028 8.05942 1.86374C7.80484 1.73721 7.51333 1.70199 7.23517 1.76416L1.96107 2.96097C1.69289 3.02187 1.45362 3.17035 1.28231 3.38219C1.11099 3.59403 1.01776 3.85671 1.01782 4.12737C1.01782 16.9183 11.5609 27.2658 24.5484 27.2658C24.8237 27.2659 25.091 27.1743 25.3065 27.0059C25.522 26.8374 25.6731 26.602 25.7351 26.3382L26.9522 21.152C27.015 20.8772 26.9784 20.5894 26.8487 20.3382C26.7191 20.087 26.5044 19.8881 26.2417 19.7757V19.7757Z' stroke='white' stroke-width='2'/%3e%3c/svg%3e");
 }
 a.call-button.rounded-circle {
-        height: 50px;
-        width: 50px;
+    height: 50px;
+    width: 50px;
     display: flex;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -3071,6 +3079,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .telephonic-survey-start #content #person-info.block {
     flex-grow: 1 !important;
+    margin-left: 5px !important;
+}
+.collapse #widget-call {
+    min-height: 100% !important;
 }
 .telephonic-survey-start .row.tel-btn-group>div:last-child>div {
     margin: 0px !important;
@@ -3096,11 +3108,17 @@ input[type="number"]::-webkit-inner-spin-button {
     padding-right: 25px;
 }
 .telephonic-survey-start #offcanvasButton .btn {
-    width: 100% !important;
+    width: auto;
     padding: 5px 32px;
+    margin-right: 20px;
+    max-width: max-content;
+    white-space: nowrap;
+}
+#offcanvasButton>form {
     margin-left: 0px !important;
     margin-right: 20px;
-    max-width: fit-content !important;
+    padding: 0px !important;
+    display: contents;
 }
 #offcanvasButton {
     justify-content: left !important;
@@ -4731,9 +4749,9 @@ body.locations .content-wrapper>div>.bg-white {
         min-width: 100vw !important;
         padding-bottom: 77px !important;
     }
-    #content #person-info.block > div>.col-3{
-  padding: 10px 5px !important;
-}
+    #content #person-info.block>div>.col-3 {
+        padding: 10px 5px !important;
+    }
     body.telephonic-survey #content {
         width: 100% !important;
         float: none;
