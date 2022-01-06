@@ -579,7 +579,7 @@ jQuery(document).ready(function($) {
 
     $(function() {
         if ($(".selectpicker").length) {
-            $('.selectpicker').selectpicker();
+            $('.selectpicker').selectpicker({selectedTextFormat:"count > 3",actionsBox:true});
         }
     });
 
