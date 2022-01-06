@@ -567,6 +567,7 @@ jQuery(document).ready(function($) {
                             $('select[name="orderBranchChange"]').append('<option value="' + id + '">' + order + '</option>');
                         }
                         $('input[name="change_branch_order_id"]').val(order_id);
+                        $('select[name="orderBranchChange"]').selectpicker('refresh');
                         $('#pick-branch-modal').modal('show');
                     }
                 },
