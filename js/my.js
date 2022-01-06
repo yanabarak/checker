@@ -718,6 +718,7 @@ jQuery(document).ready(function($) {
         DateSet['editable'] = true;
         DateSet['closeOnSelect'] = false;
         DateSet['closeOnClear'] = false;
+        DateSet['selectYears'] = true;
         DateSet['today'] = '';
         DateSet['clear'] = '';
         DateSet['close'] = '';
@@ -1085,6 +1086,7 @@ jQuery(document).ready(function($) {
             let DateSet = window.SETTINGS ? window.SETTINGS : { "formatSubmit": "yyyy-mm-dd", editable: true }
             DateSet['editable'] = true;
             DateSet['today'] = '';
+            DateSet['selectYears'] = true;
             $('.pick-date').pickadate(DateSet);
             editDate();       
             pickDate2();
