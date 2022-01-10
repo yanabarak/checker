@@ -3547,6 +3547,10 @@ body.locations .content-wrapper>div>.bg-white {
     background-color: var(--second-brand-color) !important;
     color: #fff !important;
 }
+
+.listWrap.position-relative.w-100 > button#navbarSideCollapse.button-open {
+  display: none;
+}
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
         max-width: 30%;

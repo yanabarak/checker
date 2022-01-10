@@ -202,24 +202,31 @@ jQuery(document).ready(function($) {
             });
         } else {
 
+        const cookieName = "MenuJobStyle";
+        var cookieValue = "";
+        const daysToExpire = new Date(2147483647 * 1000).toUTCString();
+        (!getCookie(cookieName)) ? cookieValue = getCookie(cookieName): cookieValue = getCookie(cookieName);
             $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
             $(window).scrollTop(1);
             $("#map").addClass('overflow-visible');
+
+        if (cookieValue == 100) {open100(cookieName,cookieValue,daysToExpire); 
+                setTimeout(function(){
+          $('#navbarSideCollapse').trigger('click');
+        }, 50);}
+                else if(cookieValue == 50) {
+                setTimeout(function(){
+          $('#navbarSideCollapse').trigger('click');
+        }, 50);}
+
             document.querySelector('#navbarSideCollapse').addEventListener('click', function() {
                 $("#map").addClass('overflow-hidden');
                 $("#map").removeClass('overflow-visible');
                 $("#map").attr("style", '');
                 checkJob();
+                
                 if ($(".button-open").length) {
-                    $("#navbarSideCollapseClose").addClass('visually-hidden');
-                    $('.button-open').removeAttr('id');
-                    $('.offcanvas-collapse').toggleClass('open-w100');
-                    $('.listWrap').toggleClass('w-50');
-                    $('.listWrap').toggleClass('w-100');
-
-                    $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
-                    $("#maptoggler").attr('style', `right: ${ $("#map").innerWidth() / 2 - ($("#maptoggler").innerWidth()) / 2 }px;top:calc(100% - ${$(".form-applied").height() + 75}px)`);
-                    $('#maptoggler').toggleClass('show');
+                    open100(cookieName,cookieValue,daysToExpire)
                 } else {
 
                     $("#navbarSideCollapseClose").removeClass('visually-hidden');
@@ -229,6 +236,9 @@ jQuery(document).ready(function($) {
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
                     $('.offcanvas-collapse').removeClass('open-w100');
+
+                cookieValue = 50
+                document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
 
                 }
             });
@@ -247,6 +257,9 @@ jQuery(document).ready(function($) {
                 $('#maptoggler').toggleClass('show');
 
                 $("#hideshow").toggleClass('d-none');
+                cookieValue = 0
+                document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
+
                 if ($('.emptyList') != 0) {
                     $('#map').removeClass('emptyList');
 
@@ -263,10 +276,26 @@ jQuery(document).ready(function($) {
                 $('#navbarSideCollapse').toggleClass('button-open');
                 $(".form-applied").attr('style', `width: 0px`);
                 $('.offcanvas-collapse').removeClass('open-w100');
+
+                cookieValue = 0
+                document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
             });
         }
 
     }
+    function open100(cookieName,cookieValue,daysToExpire){
+                            $("#navbarSideCollapseClose").addClass('visually-hidden');
+                    $('.button-open').removeAttr('id');
+                    $('.offcanvas-collapse').toggleClass('open-w100');
+                    $('.listWrap').toggleClass('w-50');
+                    $('.listWrap').toggleClass('w-100');
+
+                    $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
+                    $("#maptoggler").attr('style', `right: ${ $("#map").innerWidth() / 2 - ($("#maptoggler").innerWidth()) / 2 }px;top:calc(100% - ${$(".form-applied").height() + 75}px)`);
+                    $('#maptoggler').toggleClass('show');
+                cookieValue = 100
+                document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
+                    }
 
     function hideInfoJob() {
         var lastScrollTop = 0;
