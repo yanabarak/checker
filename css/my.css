@@ -1159,7 +1159,7 @@ a.preview {
     box-sizing: border-box;
     text-decoration: none;
 }
-a.preview .fas {
+a.preview .fas,a.preview .fab {
     width: 33px !important;
     height: 33px !important;
     display: flex;
@@ -1172,6 +1172,14 @@ a.preview .fas {
     border: 2px solid var(--second-brand-color);
     border-radius: 100%;
     box-sizing: border-box;
+}
+a.preview .fas.fa-print{
+  color: var(--main-brand-color);
+  border-color: var(--main-brand-color);
+}
+a.preview .fas.fa-search  {
+  border-color: #4367C7;
+  color: #4367C7;
 }
 #map .listWrap {
     position: absolute;
@@ -2852,6 +2860,9 @@ th:hover .fht-cell {
     top: calc(50% - 18px);
     color: #666666;
     font-size: 16px;
+}
+.myjobs .popover-body, .openjobs .popover-body {
+    padding: 5px !important;
 }
 .popover.fade.show.bs-popover-bottom .popover-arrow {
     transform: none !important;

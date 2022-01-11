@@ -398,23 +398,55 @@ jQuery(document).ready(function($) {
 
     // select all on myjob page
     function selectAll() {
+        let checked = false
+
+        $(".listWrap .navbar-collapse input[type='checkbox']").on('click', function(e) {
+            if ($(e.target).is(':checked')) {
+                checked = true
+            }
+            else{
+                if ($(e.target).closest(".navbar-collapse:not(.d-none)").find("input[type='checkbox']:checked").length) {
+                checked = true
+                } 
+                else if($(e.target).closest(".navbar-collapse:not(.d-none)").find("input[type='checkbox']:checked").length == 0){
+                checked = false
+            }
+            }
+
+        console.log(checked)
+        checked ?  $(".buttons-sel").removeClass("visually-hidden") : $(".buttons-sel").addClass("visually-hidden")
+        });
+
+
         $('#SelectAll').on('click', function() {
             if ($('#SelectAll').is(':checked')) {
                 $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', true).trigger('change');
+                checked = true
             } else {
                 $(".listWrap #navbarsListJob input[type='checkbox']").prop('checked', false).trigger('change');
+                checked = false
             }
+        console.log(checked)
+        checked ?  $(".buttons-sel").removeClass("visually-hidden") : $(".buttons-sel").addClass("visually-hidden")
         });
 
         $('#SelectAll2').on('click', function() {
             if ($('#SelectAll2').is(':checked')) {
                 $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', true).trigger('change');
+                checked = true
 
             } else {
                 $(".listWrap #navbarsListJobPack input[type='checkbox']").prop('checked', false).trigger('change');
+                checked = false
 
             }
+        console.log(checked)
+        checked ?  $(".buttons-sel").removeClass("visually-hidden") : $(".buttons-sel").addClass("visually-hidden")
         });
+
+
+
+            //$('#SelectAll').closest(".bg-white").find(".buttons-sel").removeClass("d-none")
     }
     // added design and necessary classes if job list is empty
     function checkJob() {
