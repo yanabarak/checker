@@ -210,9 +210,11 @@ jQuery(document).ready(function($) {
             $(window).scrollTop(1);
             $("#map").addClass('overflow-visible');
 
-        if (cookieValue == 100) {open100(cookieName,cookieValue,daysToExpire); 
+        if (cookieValue == 100) {
+                    open100(cookieName,cookieValue,daysToExpire); 
                 setTimeout(function(){
           $('#navbarSideCollapse').trigger('click');
+          $('.offcanvas-collapse').addClass('open-w100')
         }, 50);}
                 else if(cookieValue == 50) {
                 setTimeout(function(){
@@ -284,7 +286,7 @@ jQuery(document).ready(function($) {
 
     }
     function open100(cookieName,cookieValue,daysToExpire){
-                            $("#navbarSideCollapseClose").addClass('visually-hidden');
+                    $("#navbarSideCollapseClose").addClass('visually-hidden');
                     $('.button-open').removeAttr('id');
                     $('.offcanvas-collapse').toggleClass('open-w100');
                     $('.listWrap').toggleClass('w-50');

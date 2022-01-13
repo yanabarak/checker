@@ -154,6 +154,35 @@
                                     <i class="fas fa-chevron-left d-none d-md-inline-block"></i>
                                 </button>
                                 <div class="navbar-collapse offcanvas-collapse p-0" id="navbarsListJob">
+
+                                    <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job show-pack bg-white mb-2">
+                                        
+                                        <div class="d-flex flex-column col p-0 ps-lg-2">
+                                            <div class="col row m-0 p-0">
+
+                                                <div class="col-12 col-md-4 col-lg-3 pb-3 px-0 ps-2">
+                                                    <div class="color-lgrey">Package Name</div>
+                                                    <div class="fs-18 nowrap"> Package Test1</div>
+                                                </div>
+                                                <div class="col-6 col-md-2 px-0 pb-3 hidd pe-4">
+                                                    <div class="color-lgrey">Number of orders</div>
+                                                    <div class="black-color fs-18 text-wrap">3</div>
+                                                </div>
+
+                                                <div class="col-6 col-md-2 px-0 pb-3 hidd w-15 ps-4">
+                                                    <div class="color-lgrey nowrap">Clients</div>
+                                                    <div class="fs-18 ">Client 1, Client 2</div>
+                                                </div>
+                                                <div class="col-12 d-flex align-items-center actions ms-auto justify-content-between action col-lg-auto ps-0 px-2 pe-lg-2">
+                                                     <button class="accept disabled me-2" disabled>Need Certificate</button>
+                                                    <button class="accept d-grey show-pack" data-show="1">Show Package</button>
+
+                                                    <a href="#" data-bs-toggle="modal" data-bs-target="#RejectPack" class="color-lgrey fs-18 px-2">Reject</a>
+                                                    <button class="accept" data-bs-toggle="modal" data-bs-target="#AcceptPack">Accept</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
                                         <div class="col-auto px-2 px-md-3">
                                             <input class="form-check-input mt-4" type="checkbox" value="">
@@ -178,9 +207,88 @@
                                                         <p class="desc m-0">to check pur descto check pur descto check pur description</p>
                                                     </div>
                                                 </div>
-                                                <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
+                                                <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
+                                                    <div>
+                                                        <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-flex align-items-center actions ms-auto justify-content-between action col-auto" data-info="Accepted, awaiting implementation">
+                                                    <span class="await">You can not enter the review data today</span>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column col-12 p-0">
+                                            <div class="col">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="heading1">
+                                                        <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                                            <a href="#" class="preview me-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Previev survey" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-eye"></i></a>
+                                                            <a href="#" class="preview me-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Print survey" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-print"></i></a>
+                                                            <a href="#" class="preview me-3" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Execute a simulation" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-search"></i></a>
+                                                            <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
+                                                            
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-bs-parent="#navbarsListJob">
+                                                        <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
+                                                            <div class="col-12 border-bottom pb-2">
+                                                                <div class="color-lgrey">Client Description</div>
+                                                                <div class="fs-18">
+                                                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 border-bottom py-2">
+                                                                <div class="color-lgrey">Branch Address</div>
+                                                                <div class="fs-18">
+                                                                    <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 col-md py-2">
+                                                                <div class="color-lgrey">Order Number</div>
+                                                                <div class="fs-18 ">284622</div>
+                                                            </div>
+                                                            <div class="col-6 col-md  py-2">
+                                                                <div class="color-lgrey">Order Count</div>
+                                                                <div class="fs-18 ">2</div>
+                                                            </div>
+                                                            <div class="col-6 col-md hidd-100 py-2">
+                                                                <div class="color-lgrey">Briefing</div>
+                                                                <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
+                                        <div class="col-auto px-2 px-md-3">
+                                            <input class="form-check-input mt-4" type="checkbox" value="">
+                                        </div>
+                                        <div class="d-flex flex-column col p-0">
+                                            <div class="col row m-0 p-0">
+                                                <div class="col-5 col-md-2 px-0 pb-3">
+                                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
+                                                    <div class="black-color fs-18 text-wrap">H&M</div>
+                                                </div>
+                                                <div class="col-7 col-md-4 col-lg-5 pb-3 px-0">
+                                                    <div class="color-lgrey">Start at 08:00</div>
+                                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
+                                                </div>
+                                                <div class="col col-md-1 pb-3 hidd d-none">
+                                                    <div class="color-lgrey">Briefing</div>
+                                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
+                                                </div>
+                                                <div class="col-auto pb-3 hidd d-none desc-block">
+                                                    <div class="color-lgrey">Client Description</div>
+                                                    <div class="fs-18">
+                                                        <p class="desc m-0">to check pur descto check pur descto check pur description</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto" data-info="In progress">
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal" class="color-lgrey fs-18">Reject</a>
-                                                    <button class="accept">Accept</button>
+                                                    <button class="accept">Continue</button>
                                                 </div>
                                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
                                                     <div>
@@ -198,9 +306,9 @@
                                                             <a href="#" class="preview me-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Print survey" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-print"></i></a>
                                                             <a href="#" class="preview me-3" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Execute a simulation" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-search"></i></a>
                                                             <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                                            <div class=" d-sm-none action d-flex align-items-center justify-content-between">
+                                                            <div class=" d-sm-none action d-flex align-items-center justify-content-between" data-info="In progress">
                                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal" class="black-color text-decoration-none">Reject</a>
-                                                                <a href="#" type="button" class="accept text-decoration-none">Apply</a>
+                                                                <a href="#" type="button" class="accept text-decoration-none">Continue</a>
                                                             </div>
                                                         </button>
                                                     </h2>
@@ -226,7 +334,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -308,7 +416,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -418,7 +526,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -512,90 +620,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
-                                                                <div class="color-lgrey">Briefing</div>
-                                                                <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job show-pack bg-white mb-2">
-                                        <div class="col-auto px-2 px-md-3">
-                                            <input class="form-check-input mt-4" type="checkbox" value="">
-                                        </div>
-                                        <div class="d-flex flex-column col p-0">
-                                            <div class="col row m-0 p-0">
-                                                <div class="col-5 col-md-2 px-0 pb-3">
-                                                    <div><a href="#" class="pick-date-modal color-lgrey">26.05.2021</a></div>
-                                                    <div class="black-color fs-18 text-wrap">H&M</div>
-                                                </div>
-                                                <div class="col-7 col-md-4 col-lg-2 pb-3 px-0">
-                                                    <div class="color-lgrey">Start at 08:00</div>
-                                                    <div class="fs-18"> <a href="#" class="pick-branch-modal fs-18 color-grey">H&M 5th Avenue</a></div>
-                                                </div>
-                                                <div class="col col-md-1 pb-3 hidd d-none">
-                                                    <div class="color-lgrey">Briefing</div>
-                                                    <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
-                                                </div>
-                                                <div class="col-auto pb-3 hidd d-none desc-block">
-                                                    <div class="color-lgrey">Client Description</div>
-                                                    <div class="fs-18">
-                                                        <p class="desc m-0">to check pur descto check pur descto check pur description</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                                    <button class="accept d-grey show-pack" data-show="1">Show Package</button>
-                                                    <button class="accept start-job ms-2">Start</button>
-                                                </div>
-                                                <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
-                                                    <div>
-                                                        <p class="mb-0 title"> SOS Simple Questionnair [Shoppers]</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex flex-column col-12 p-0">
-                                            <div class="col">
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="heading5">
-                                                        <button class="accordion-button collapsed fs-18 ps-0 p-3 border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                                            <a href="#" class="preview me-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Previev survey" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-eye"></i></a>
-                                                            <a href="#" class="preview me-1" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Print survey" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-print"></i></a>
-                                                            <a href="#" class="preview me-3" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Execute a simulation" data-bs-placement="top" data-bs-original-title="" title=""><i class="fas fa-search"></i></a>
-                                                            <span class="d-none d-md-block">SOS Simple Questionnaire 15-01-2021 [Shoppers]</span>
-                                                            <div class=" d-sm-none action d-flex align-items-center justify-content-between">
-                                                                <a href="#" type="button" class="accept text-decoration-none d-grey show-pack" data-show="1">Show Package
-                                                                </a>
-                                                                <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
-                                                            </div>
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-bs-parent="#navbarsListJob">
-                                                        <div class="accordion-body row m-0 ms-0 ms-md-5 ps-0">
-                                                            <div class="col-12 border-bottom pb-2">
-                                                                <div class="color-lgrey">Client Description</div>
-                                                                <div class="fs-18">
-                                                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12 border-bottom py-2">
-                                                                <div class="color-lgrey">Branch Address</div>
-                                                                <div class="fs-18">
-                                                                    <p class="m-0">New Delhi, 27 B, Shivaji Marg, Moti Nagar </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 col-md py-2">
-                                                                <div class="color-lgrey">Order Number</div>
-                                                                <div class="fs-18 ">284622</div>
-                                                            </div>
-                                                            <div class="col-6 col-md  py-2">
-                                                                <div class="color-lgrey">Order Count</div>
-                                                                <div class="fs-18 ">2</div>
-                                                            </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -680,7 +705,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -762,7 +787,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -868,7 +893,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -974,7 +999,7 @@
                                                                 <div class="color-lgrey">Order Count</div>
                                                                 <div class="fs-18 ">2</div>
                                                             </div>
-                                                            <div class="col-6 col-md  py-2">
+                                                            <div class="col-6 col-md hidd-100 py-2">
                                                                 <div class="color-lgrey">Briefing</div>
                                                                 <div class="fs-18 "><a href="#" class="color-grey">Show brief</a></div>
                                                             </div>
@@ -1042,6 +1067,76 @@
                                 </div>
                                 <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
                                     <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal" class="text-decoration-none black-color">Reject</a>
+                                    <a href="#" type="button" class="accept text-decoration-none">Accept</a>
+                                </div>
+                                <!-- different buttons -->
+                                <!-- <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="text-decoration-none black-color">Reject</a>
+                                <a href="#" type="button" class="accept text-decoration-none start-job">Start</a>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="text-decoration-none black-color">Reject</a>
+                                <div class="btn-group accept start-lang start-job">
+                                    <a type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Lang Dropdown</span>
+                                    </a>
+                                    <a class="btn btn-secondary btn-lg" type="button">
+                                        Start
+                                    </a>
+                                    <ul class="dropdown-menu px-2 fw-normal color-grey">
+                                        <li>English</li>
+                                        <li>Hebrew</li>
+                                        <li>Russian</li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" type="button" class="accept text-decoration-none disabled" disabled>Need Certificate</a>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                <a href="#" class="preview"><i class="fas fa-eye"></i></a>
+                                <a href="#" type="button" class="accept text-decoration-none d-grey">Show Package</a>
+                                </div> -->
+                            </div>
+                            <div class="myjobcard p-0 " style="left: 70%; top: 120px;">
+                                <div class="m-0 scroll-y">
+                                    <div class="row m-0">
+                                        <div class="col-6 text-start p-0 fs-smaller color-lgrey"><span>26.05.2021</span></div>
+                                        <div class="col-6 text-end p-0 fs-smaller color-lgrey"><span>Start at 08:00</span></div>
+                                    </div>
+                                    <div class="row m-0">
+                                        <div class="black-color col-12 p-0">H&M</div>
+                                        <div class="col-12 p-0">H&M 5th Avenue</div>
+                                    </div>
+                                    <hr class="my-1">
+                                    <div class="row m-0">
+                                        <div class="col-12 p-0">Package Name Test1</div>
+                                    </div>
+                                    <div class="row m-0">
+                                        <textarea class="form-control p-1 px-0 border-0 border-top  border-bottom rounded-0" placeholder="Write your message here before applying"></textarea>
+                                    </div>
+                                    <div class="row m-0">
+                                        <div class="col-12 p-0">
+                                            <div class="color-lgrey">Order Number</div>
+                                            <div class="">284622</div>
+                                        </div>
+                                        <div class="col-12 p-0">
+                                            <div class="color-lgrey">Order Count</div>
+                                            <div class="">2</div>
+                                        </div>
+                                        <div class="col-12 p-0">
+                                            <div class="color-lgrey">Briefing</div>
+                                            <div class=""><a href="#" class="color-grey">Show brief</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="align-items-center border-top d-flex justify-content-between m-0 myjobcard-footer w-100 flex-row">
+                                    
+                                <a href="#" type="button" class="accept text-decoration-none d-grey">Show package</a>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal" class="text-decoration-none black-color">Reject</a>
                                     <a href="#" type="button" class="accept text-decoration-none">Accept</a>
                                 </div>
@@ -1257,6 +1352,53 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="AcceptPack" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-0 py-0 p-md-3 py-md-2 pb-md-3">
+                <div class="modal-body row m-0 p-0">
+                    <div class=" row m-0 py-4 py-lg-2">
+                        <button type="button" class="btn-close opacity-1 align-top  ms-auto col-auto position-absolute  top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div>
+                            <form class="row">
+
+<div class="col-12 my-0"><h4 class="fw-light black-color">Lorem impsum</h4><p><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Vestibulum vitae lorem ut leo mattis venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam mauris sem, eleifend nec ultricies non, vulputate eget sapien. Nunc elementum lacinia blandit. Praesent vel sapien blandit, molestie libero a, porta tellus. Aliquam blandit mauris quam, vitae venenatis tortor convallis eget. Mauris in eros in elit laoreet porta. Pellentesque massa neque, dictum quis sagittis nec, commodo in ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p></div>
+                                
+                                <div class="col-12 row m-0 mt-2 d-flex justify-content-end p-0">
+        <a data-bs-dismiss="modal" class="color-lgrey2 fs-18 col-auto align-self-center me-4">Cancel</a>
+                                    <button type="submit" class="btn btn-primary sec-bg border-0 col-auto fs-18">Accept</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="RejectPack" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-0 py-0 p-md-3 py-md-2 pb-md-3">
+                <div class="modal-body row m-0 p-0">
+                    <div class=" row m-0 py-4 py-lg-2">
+                        <button type="button" class="btn-close opacity-1 align-top  ms-auto col-auto position-absolute  top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div>
+                            <form class="row">
+
+<div class="col-12 my-0"><h4 class="fw-light black-color">Are you sure want to remove?</h4><p><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Vestibulum vitae lorem ut leo mattis venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam mauris sem, eleifend nec ultricies non, vulputate eget sapien. Nunc elementum lacinia blandit. Praesent vel sapien blandit, molestie libero a, porta tellus. Aliquam blandit mauris quam, vitae venenatis tortor convallis eget. Mauris in eros in elit laoreet porta. Pellentesque massa neque, dictum quis sagittis nec, commodo in ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p></div>
+                                
+                                <div class="col-12 row m-0 mt-2 d-flex justify-content-end p-0">
+        <a data-bs-dismiss="modal" class="color-lgrey2 fs-18 col-auto align-self-center me-4">Cancel</a>
+                                    <button type="submit" class="btn btn-primary sec-bg border-0 col-auto fs-18">Remove</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/jquery.min.js"></script>
     <script src="js/imask.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
