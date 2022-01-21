@@ -1923,6 +1923,7 @@ body.openjobs div.mini-menu#infoJobMenu {
     overflow: hidden;
     position: fixed !important;    
     right: 0px;
+    bottom: 0px;
 }
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
