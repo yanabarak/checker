@@ -209,6 +209,7 @@ jQuery(document).ready(function($) {
             $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
             $(window).scrollTop(1);
             $("#map").addClass('overflow-visible');
+                    $("#job-map").attr("style", `height: ${$(window).height() -  45 - $('#infoJobMenu').height()}px`);
 
         if (cookieValue == 100) {
                     open100(cookieName,cookieValue,daysToExpire); 
@@ -238,6 +239,7 @@ jQuery(document).ready(function($) {
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
                     $('.offcanvas-collapse').removeClass('open-w100');
+                    $("#job-map").attr("style", `height: ${$(window).height() - 45 - $('#infoJobMenu').height()}px`);
 
                 cookieValue = 50
                 document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
@@ -270,6 +272,7 @@ jQuery(document).ready(function($) {
 
             document.querySelector('#navbarSideCollapseClose').addEventListener('click', function() {
                 $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
+                    $("#job-map").attr("style", `height: ${$(window).height() - $('#infoJobMenu').height()}px`);
 
                 $("#navbarSideCollapseClose").addClass('visually-hidden');
                 $('.listWrap').toggleClass('w-50');
@@ -343,11 +346,15 @@ jQuery(document).ready(function($) {
             if (lastScrollTop > top) {
                 if (top == 0) {
                     $('#infoJobMenu').removeClass('mini-menu');
+
+                    $("#job-map").attr("style", `height: ${$(window).height()  - $('#infoJobMenu').height()}px`);
                     scrolld = false;
                 }
             } else if (lastScrollTop < top && lastScrollTop >= 20) {
                 if ((top <= $("#infoJobMenu").innerHeight() && top >= 10) && (document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
                     $('#infoJobMenu').addClass('mini-menu');
+
+                    $("#job-map").attr("style", `height: ${$(window).height()  - $('#infoJobMenu').height()}px`);
                     // $(window).scrollTop(top + 25);
                 }
                 scrolld = true;
