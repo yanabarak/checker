@@ -382,7 +382,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 #content #map {
     padding-right: 0px !important;
 }
-#map iframe {
+#map #job-map {
     height: 100%;
 }
 #content .block {
@@ -945,6 +945,7 @@ button.accept.d-grey,
 button.accept.d-grey:hover,
 [type="button"].accept.d-grey:hover {
     box-shadow: 0px 0px 0px 50px #666666 inset !important;
+    color: #fff !important;
 }
 body.myjobs #map .navbar-collapse.open-w100 div.action {
     justify-content: space-evenly !important;
@@ -1090,9 +1091,16 @@ button.accept.disabled:hover,
 .btn-group.accept.start-lang.start-job .dropdown-toggle.sel::after {
     content: attr(data-name);
 }
-.btn-group.accept.start-lang.start-job:hover {
+/*.btn-group.accept.start-lang.start-job:hover {
     box-shadow: 0px 0px 0px 50px var(--second-brand-color) inset;
     color: #fff;
+}*/
+.btn-group.accept.start-lang.start-job:hover > a.btn:nth-child(2) {
+    color: #fff !important;
+    box-shadow: 0px 0px 0px 50px var(--second-brand-color) inset;
+}
+.btn-group.accept.start-lang.start-job:hover {
+  background-color: var(--second-brand-color);
 }
 #map button.accept:hover,
 [type="button"].start-test.disabled:hover {
@@ -1911,7 +1919,7 @@ body.openjobs div.mini-menu#infoJobMenu {
     height: fit-content;
     position: unset;
 }
-#map iframe {
+#map #job-map {
     overflow: hidden;
     position: fixed;
 }
@@ -1974,20 +1982,36 @@ body.openjobs .action {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0px !important;
 }
-.myjobcard .btn-group.accept.start-lang.start-job>a:first-child {
-    min-width: 40.4px;
-    height: 40.4px;
+.myjobcard > div.myjobcard-footer a.accept {
+  line-height: 21px !important;
+  padding: 6px 7px !important;
+}
+.myjobcard .btn-group.accept.start-lang.start-job>a {    min-width: 30px;
+    height: 30px;
     background-color: var(--second-brand-color) !important;
     color: #fff !important;
     border-radius: 56px !important;
     border: 0px solid;
     padding-right: 0px;
+    min-height: 30px !important;
 }
 .myjobcard .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
     margin-top: 0px;
+    display: flex;    margin-top: 0px;
     display: flex;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.myjobcard-footer .btn-group.accept.start-lang.start-job > button:first-child,.myjobcard-footer .btn-group.accept.start-lang.start-job > [type="button"]:first-child {
+height:30px !important;
+min-height: 30px !important;
+ width: 30px !important;
+  min-width: 30px !important;
 }
 .myjobcard .btn-group.accept.start-lang.start-job>a:nth-child(2) {
     background-color: transparent !important;
@@ -2005,6 +2029,7 @@ body.openjobs .action {
 }
 .myjobcard .btn-group.accept.start-lang.start-job {
     padding-right: 0px !important;
+    font-size: 14px !important;
 }
 #navbarsListJob.show-pack-list {
     transform: translateX(-100%) !important;
