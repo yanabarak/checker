@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
     function togglerMap() {
         if (($(window).width() < 1025)) {
             hideInfoJob();
-            $("#map iframe").attr("height", $(window).height() - $('#infoJobMenu').height() + 100 + 'px');
+            $("#map #job-map").attr("height", $(window).height() - $('#infoJobMenu').height() + 100 + 'px');
             $("#map").attr("style", `height: ${$(window).height() - $('#infoJobMenu').height()}px`);
             $('#navbarSideCollapse').toggleClass('button-open');
             $('.button-open').removeAttr('id');
@@ -169,7 +169,7 @@ jQuery(document).ready(function($) {
                     $('#maptoggler').toggleClass('show');
 
                     $('#map').toggleClass('list');
-                    $("#map iframe").attr("height", $(window).height() - $('#infoJobMenu').height() + 'px');
+                    $("#map #job-map").attr("height", $(window).height() - $('#infoJobMenu').height() + 'px');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
                 } else {
                     $('.listWrap').toggleClass('w-100');
@@ -177,7 +177,7 @@ jQuery(document).ready(function($) {
                     $('.offcanvas-collapse').toggleClass('open');
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $('.offcanvas-collapse').removeClass('open-w100');
-                    $("#map iframe").attr("height", $(window).height() - $('#infoJobMenu').height() + 'px');
+                    $("#map #job-map").attr("height", $(window).height() - $('#infoJobMenu').height() + 'px');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
 
                 }
