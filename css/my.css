@@ -1924,7 +1924,10 @@ body.openjobs div.mini-menu#infoJobMenu {
     position: fixed !important;    
     right: 0px;
     bottom: 0px;
+    padding: 0px;
+    left: 0px;
 }
+
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
     /*   position: relative !important;*/
@@ -2003,8 +2006,8 @@ body.openjobs .action {
     display: flex;    margin-top: 0px;
     display: flex;
     position: relative;
-    top: 5px;
-    left: 5px;
+    top: 2.5px;
+    left: 2.5px;
     width: 20px;
     height: 20px;
 }
