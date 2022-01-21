@@ -1919,9 +1919,14 @@ body.openjobs div.mini-menu#infoJobMenu {
     height: fit-content;
     position: unset;
 }
-#map #job-map {
+#map #job-map {    
     overflow: hidden;
-    position: fixed !important;    
+    position: sticky !important;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: available;
+    right: 0px;
+    left: 0px;
 }
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
