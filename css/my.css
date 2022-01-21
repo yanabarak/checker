@@ -1921,7 +1921,7 @@ body.openjobs div.mini-menu#infoJobMenu {
 }
 #map #job-map {
     overflow: hidden;
-    position: fixed;
+    position: fixed !important;    
 }
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu {
