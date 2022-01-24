@@ -209,7 +209,7 @@ jQuery(document).ready(function($) {
             $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
             $(window).scrollTop(1);
             $("#map").addClass('overflow-visible');
-                    $("#job-map").attr("style", `height: ${$(window).height() -  45 - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() -  90 - $('#infoJobMenu').height()}px`);
 
         if (cookieValue == 100) {
                     open100(cookieName,cookieValue,daysToExpire); 
@@ -239,7 +239,7 @@ jQuery(document).ready(function($) {
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
                     $('.offcanvas-collapse').removeClass('open-w100');
-                    $("#job-map").attr("style", `height: ${$(window).height() - 45 - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() - 100 - $('#infoJobMenu').height()}px`);
 
                 cookieValue = 50
                 document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
@@ -272,7 +272,7 @@ jQuery(document).ready(function($) {
 
             document.querySelector('#navbarSideCollapseClose').addEventListener('click', function() {
                 $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
-                    $("#job-map").attr("style", `height: ${$(window).height() - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() -100- $('#infoJobMenu').height()}px`);
 
                 $("#navbarSideCollapseClose").addClass('visually-hidden');
                 $('.listWrap').toggleClass('w-50');
@@ -347,14 +347,14 @@ jQuery(document).ready(function($) {
                 if (top == 0) {
                     $('#infoJobMenu').removeClass('mini-menu');
 
-                    $("#job-map").attr("style", `height: ${$(window).height()  - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height()  - 50 - $('#infoJobMenu').height()}px`);
                     scrolld = false;
                 }
             } else if (lastScrollTop < top && lastScrollTop >= 20) {
                 if ((top <= $("#infoJobMenu").innerHeight() && top >= 10) && (document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
                     $('#infoJobMenu').addClass('mini-menu');
 
-                    $("#job-map").attr("style", `height: ${$(window).height()  - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height()  -40- $('#infoJobMenu').height()}px`);
                     // $(window).scrollTop(top + 25);
                 }
                 scrolld = true;
@@ -468,9 +468,15 @@ jQuery(document).ready(function($) {
         }
     }
     // click on "Show Package button"
-    function showPack() {
+     function showPack() {
         let titledef = $('h1.fs-2 span').text();
-        $(".d-grey.show-pack").on("click", function() {
+        $(document).off('click','.d-grey.show-pack').on("click",'.d-grey.show-pack', function() {
+            console.log('click');
+              if (!($("#navbarsListJob").hasClass("open"))) {
+                setTimeout(function(){
+                    console.log("test")
+                  $('#navbarSideCollapse').trigger('click');
+                }, 50);}
             let datashow = ($(this).attr('data-show'));
             let title = ($(this).closest('.card-list-job.show-pack').find('p.title').text());
             $('#navbarsListJobPack .card-list-job').each(function(index) {
@@ -502,7 +508,7 @@ jQuery(document).ready(function($) {
             // $('#navbarsListJobPack').attr("style", `transform:translateY(-${(($('#navbarsListJob').innerHeight()-$(window).scrollTop())/$('#navbarsListJobPack').innerHeight())*100}%)`);
         });
 
-        $(".form-applied .show-pack #back").on("click", function() {
+        $(document).off('click',".form-applied .show-pack #back").on("click", ".form-applied .show-pack #back", function() {
             let scroll = $(window).scrollTop();
             $('#navbarsListJob').removeClass("show-pack-list");
             setTimeout(function() {
