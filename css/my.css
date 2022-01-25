@@ -2051,7 +2051,7 @@ body.openjobs #map.emptyList .offcanvas-collapse.open {
     padding-bottom: 50px !important;
 }
 body.openjobs #map:not([class*=emptyList]) .offcanvas-collapse.open {
-    margin-bottom: 50px !important;
+    margin-bottom: 50px !important;height: 100% !important;
 }
 /*login page*/
 div#login-form,
