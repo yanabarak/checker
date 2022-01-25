@@ -178,6 +178,8 @@ jQuery(document).ready(function($) {
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $('.offcanvas-collapse').removeClass('open-w100');
                     $("#map #job-map").attr("height", $(window).height() - $('#infoJobMenu').height() + 'px');
+
+            console.log(1)
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
 
                 }
@@ -209,7 +211,8 @@ jQuery(document).ready(function($) {
             $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
             $(window).scrollTop(1);
             $("#map").addClass('overflow-visible');
-                    $("#job-map").attr("style", `height: ${$(window).height() -  90 - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() -  70 - $('#infoJobMenu').height()}px`);
+            console.log(2)
 
         if (cookieValue == 100) {
                     open100(cookieName,cookieValue,daysToExpire); 
@@ -239,7 +242,8 @@ jQuery(document).ready(function($) {
                     $('#navbarSideCollapse').toggleClass('button-open');
                     $(".form-applied").attr('style', `width: ${ $(".listWrap").innerWidth()}px`);
                     $('.offcanvas-collapse').removeClass('open-w100');
-                    $("#job-map").attr("style", `height: ${$(window).height() - 100 - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() -  60 - $('#infoJobMenu').height()}px`);
+            console.log(3)
 
                 cookieValue = 50
                 document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
@@ -272,8 +276,9 @@ jQuery(document).ready(function($) {
 
             document.querySelector('#navbarSideCollapseClose').addEventListener('click', function() {
                 $("#map").attr("style", 'height:' + ($(window).height() - 100) + 'px;');
-                    $("#job-map").attr("style", `height: ${$(window).height() -100- $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height() -70- $('#infoJobMenu').height()}px`);
 
+            console.log(4)
                 $("#navbarSideCollapseClose").addClass('visually-hidden');
                 $('.listWrap').toggleClass('w-50');
                 $('.offcanvas-collapse').toggleClass('open');
@@ -347,14 +352,16 @@ jQuery(document).ready(function($) {
                 if (top == 0) {
                     $('#infoJobMenu').removeClass('mini-menu');
 
-                    $("#job-map").attr("style", `height: ${$(window).height()  - 50 - $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height()  - 20 - $('#infoJobMenu').height()}px`);
+            console.log(5)
                     scrolld = false;
                 }
             } else if (lastScrollTop < top && lastScrollTop >= 20) {
                 if ((top <= $("#infoJobMenu").innerHeight() && top >= 10) && (document.documentElement.scrollHeight - $(window).innerHeight() > 200)) {
                     $('#infoJobMenu').addClass('mini-menu');
 
-                    $("#job-map").attr("style", `height: ${$(window).height()  -40- $('#infoJobMenu').height()}px`);
+                    $("#job-map").attr("style", `height: ${$(window).height()  -30- $('#infoJobMenu').height()}px`);
+            console.log(6)
                     // $(window).scrollTop(top + 25);
                 }
                 scrolld = true;
