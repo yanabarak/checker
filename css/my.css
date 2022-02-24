@@ -862,6 +862,9 @@ div#infoJobMenu.mini-menu+div button#navbarSideCollapseClose {
     visibility: hidden;
     transition: transform .3s ease-in-out, top .3s ease-in-out;
 }
+#maptoggler i {
+    margin-left: 5px;
+  }
 #maptoggler.show {
     /*   bottom: 30px;*/
     visibility: visible;
@@ -988,6 +991,7 @@ button.accept.disabled:hover,
     border-radius: 0 0 23px 23px;
     background: linear-gradient(0deg, rgb(255, 255, 255) calc(100% - 18px), rgba(253, 187, 45, 0) calc(100% - 18px));
     padding: 20px 0px 12px !important;
+    inset: 0px auto auto 0px !important;
 }
 .btn-group.accept.start-lang.start-job>ul.dropdown-menu.show li {
     width: auto !important;
@@ -1073,10 +1077,19 @@ button.accept.disabled:hover,
     background-color: var(--second-brand-color) !important;
     color: #fff !important;
     border-radius: 56px !important;
+    z-index: 0 !important;
 }
 .btn-group.accept.start-lang.start-job button.btn:not(:first-child) {
     background-color: transparent !important;
     padding-left: 14px !important;
+    z-index: 0 !important;
+}
+.btn-group.accept.start-lang.start-job > ul.dropdown-menu.show li:hover {
+    color: var(--second-brand-color);
+  }
+.btn-group.accept.start-lang.start-job:hover button.btn:not(:first-child){
+    color: #fff !important;
+
 }
 .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
     height: 30px;
@@ -1715,7 +1728,7 @@ select#lang+button {
 .picker__select--year {
     display: inline-block;
     color: #AEAEAE;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     width: 60px !important;
     padding: 0.375rem 10px 0.375rem 0px !important;
@@ -1736,7 +1749,7 @@ select#lang+button {
     background-position: right 2px center;
 }
 .btn[data-id="lang"] .filter-option-inner-inner {
-    width: 100px !important;
+    max-width: 200px !important;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -3045,7 +3058,6 @@ body.locations .header-wrapper>h1+button+div {
 #pref-reg .bg-white>div:last-child,
 #pref-reg .bg-white>p:last-child {
     border-top: 1px solid #434141;
-     !important;
     padding-top: 10px;
     width: 100%;
     padding-right: 30px !important;
@@ -3660,6 +3672,20 @@ body.locations .content-wrapper>div>.bg-white {
 .listWrap.position-relative.w-100 > button#navbarSideCollapse.button-open {
   display: none;
 }
+
+.dropdown-menu.show {
+    border: 1px solid var(--second-brand-color);
+  }
+  .dropdown.bootstrap-select.form-select button.btn.dropdown-toggle.show {
+    border: 1px solid var(--second-brand-color);
+  }
+  #infoJobMenu {
+    z-index: 100;
+  }
+  .actions.ms-auto.action.col-auto > button:first-child:last-child {
+    align-self: center;
+    margin: 0 auto;
+  }
 @media (max-width: 1024.5px) {
     .tel-elem-info>.col-auto:nth-child(2):not(.me-lg-5) {
         max-width: 30%;
@@ -3817,10 +3843,9 @@ body.locations .content-wrapper>div>.bg-white {
         padding-bottom: 0px;
     }
 }
-@media (-webkit-min-device-pixel-ratio: 1.25),
-(min--moz-device-pixel-ratio: 1.25),
-(-o-min-device-pixel-ratio: 3/2),
-(min-resolution: 1.25dppx) {
+@media (-webkit-min-device-pixel-ratio: 1.25) and (-webkit-max-device-pixel-ratio: 1.75),
+(min--moz-device-pixel-ratio: 1.25) and (max--moz-device-pixel-ratio: 1.75),
+(min-resolution: 1.25dppx) and (max-resolution: 1.75dppx) {
     body {
         font-size: 13px !important;
     }
@@ -3883,10 +3908,9 @@ body.locations .content-wrapper>div>.bg-white {
         max-height: auto !important;
     }
 }
-@media (-webkit-min-device-pixel-ratio: 1.5),
-(min--moz-device-pixel-ratio: 1.5),
-(-o-min-device-pixel-ratio: 3/2),
-(min-resolution: 1.5dppx) {
+@media (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 1.75),
+(min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 1.75),
+(min-resolution: 1.5dppx) and (max-resolution: 1.75dppx) {
     body {
         font-size: 10px !important;
     }
@@ -3945,7 +3969,7 @@ body.locations .content-wrapper>div>.bg-white {
         max-width: 200px !important;
     }
     button.navbar-toggler:hover .animated-hamburger.open span:nth-child(3) {
-        transform: rotate(40deg) translateX(-10px) translateY(0px) !important;
+        transform: rotate(40deg) translateX(-9px) translateY(0px) !important;
         width: 13px !important;
     }
     button.navbar-toggler:hover .animated-hamburger.open span:nth-child(1) {
@@ -3953,7 +3977,7 @@ body.locations .content-wrapper>div>.bg-white {
         width: 15px !important;
     }
     button.navbar-toggler:hover .animated-hamburger.open span:nth-child(2) {
-        transform: rotate(-40deg) translateX(-1px) translateY(4px) !important;
+        transform: rotate(-40deg) translateX(0px) translateY(4px) !important;
         width: 14px !important;
         opacity: 1 !important;
     }
