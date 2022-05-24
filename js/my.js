@@ -591,8 +591,8 @@ jQuery(document).ready(function ($) {
         checked = false;
       }
       checked
-        ? $(".buttons-sel").removeClass("visually-hidden")
-        : $(".buttons-sel").addClass("visually-hidden");
+        ? $(".buttons-sel").removeClass("invisible")
+        : $(".buttons-sel").addClass("invisible");
     });
 
     $("#SelectAll2").on("click", function () {
@@ -608,8 +608,8 @@ jQuery(document).ready(function ($) {
         checked = false;
       }
       checked
-        ? $(".buttons-sel").removeClass("visually-hidden")
-        : $(".buttons-sel").addClass("visually-hidden");
+        ? $(".buttons-sel").removeClass("invisible")
+        : $(".buttons-sel").addClass("invisible");
     });
 
     //$('#SelectAll').closest(".bg-white").find(".buttons-sel").removeClass("d-none")
