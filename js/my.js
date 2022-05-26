@@ -654,9 +654,14 @@ jQuery(document).ready(function ($) {
         $("div#infoJobMenu").addClass("d-flex");
         $("#infoJobMenu .block.rounded-3").addClass("visually-hidden");
         if ($(window).innerWidth() > 767) {
+          
+          $("#navbarsListJob").attr(
+            "style",
+            `height:${$("#map").innerHeight()}px`
+          );
           $("#navbarsListJobPack").attr(
             "style",
-            `height:${$("#navbarsListJob").innerHeight()}px`
+            `height:${$("#map").innerHeight()}px`
           );
           if ($(window).scrollTop() > 10) {
             $(window).scrollTop("11");
@@ -1325,9 +1330,9 @@ jQuery(document).ready(function ($) {
       $(toast).addClass("bottom-0");
       $(toast).removeClass("top-0");
       $(toast).toast("show");
-      let distance = $(toast)[0].getBoundingClientRect();
-      let distance2 = $(e.target)[0].getBoundingClientRect();
-      if (distance.top < 0) {
+      
+      var distance = $(toast)[0].getBoundingClientRect();
+      if (distance.top < 0 && (!$("#job-map").length)) {
         var vh = window.innerHeight;
         if (vh - 300 - Math.abs(distance.top) < 200) {
           $(toast).removeClass("bottom-0");
@@ -1340,6 +1345,35 @@ jQuery(document).ready(function ($) {
               `max-height: calc(100vh - 300px - ${Math.abs(distance.top)}px)`
             );
         }
+      }
+      else if($("#job-map").length){
+        var top2 = $('#navbarsListJobPack + div').offset().top
+        var $this = $(this);
+        var topx = $this.offset().top;
+        var distTop = topx - Math.abs($('#infoJobMenu').offset().top + $('#infoJobMenu').outerHeight());
+        var distBot = $('#navbarsListJobPack + div').offset().top - topx - $this.outerHeight();
+        if(distTop > distBot){
+          $(toast)
+            .find(".toast-body")
+            .attr(
+              "style",
+              `max-height: calc(${distTop}px - 50px); `
+            );
+        }
+        else{
+          $(toast).removeClass("bottom-0");
+          $(toast).addClass("top-0");
+          $(toast)
+            .find(".toast-body")
+            .attr(
+              "style",
+              `max-height: calc(${distBot}px - 60px); `
+            );
+        }
+        $(toast).attr(
+          "style",
+          `width: 600px; `
+        );
       }
     });
   }
