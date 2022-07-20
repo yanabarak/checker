@@ -591,8 +591,8 @@ jQuery(document).ready(function ($) {
         checked = false;
       }
       checked
-        ? $(".buttons-sel").removeClass("invisible")
-        : $(".buttons-sel").addClass("invisible");
+        ? $(".buttons-sel").removeClass("visually-hidden")
+        : $(".buttons-sel").addClass("visually-hidden");
     });
 
     $("#SelectAll2").on("click", function () {
@@ -608,8 +608,8 @@ jQuery(document).ready(function ($) {
         checked = false;
       }
       checked
-        ? $(".buttons-sel").removeClass("invisible")
-        : $(".buttons-sel").addClass("invisible");
+        ? $(".buttons-sel").removeClass("visually-hidden")
+        : $(".buttons-sel").addClass("visually-hidden");
     });
 
     //$('#SelectAll').closest(".bg-white").find(".buttons-sel").removeClass("d-none")
@@ -654,14 +654,9 @@ jQuery(document).ready(function ($) {
         $("div#infoJobMenu").addClass("d-flex");
         $("#infoJobMenu .block.rounded-3").addClass("visually-hidden");
         if ($(window).innerWidth() > 767) {
-          
-          $("#navbarsListJob").attr(
-            "style",
-            `height:${$("#map").innerHeight()}px`
-          );
           $("#navbarsListJobPack").attr(
             "style",
-            `height:${$("#map").innerHeight()}px`
+            `height:${$("#navbarsListJob").innerHeight()}px`
           );
           if ($(window).scrollTop() > 10) {
             $(window).scrollTop("11");
@@ -851,21 +846,21 @@ jQuery(document).ready(function ($) {
 
   $(function () {
     if ($(".start-lang.start-job").length) {
-      $(".dropdown-menu li span").click(function () {
+      $(".start-lang.start-job .dropdown-menu li").click(function () {
         let sel = $(this).attr("data-name");
         $(this)
           .closest(".start-lang.start-job")
           .find("button.dropdown-toggle")
-          .addClass("sel");
-
-        $(this)
-          .closest(".start-lang.start-job")
-          .find("button.dropdown-toggle")
+          .addClass("sel")
           .attr("data-name", sel);
         // $(".btn:first-child").text($(this).attr("data-name"));
         //  $(".btn:first-child").val($(this).text());
       });
     }
+  });
+  
+  $('aside .fa-bell').parent().click(function(){
+    $("#shopper-message-modal").modal("show");
   });
 
   // page telephon survey
@@ -1330,9 +1325,9 @@ jQuery(document).ready(function ($) {
       $(toast).addClass("bottom-0");
       $(toast).removeClass("top-0");
       $(toast).toast("show");
-      
-      var distance = $(toast)[0].getBoundingClientRect();
-      if (distance.top < 0 && (!$("#job-map").length)) {
+      let distance = $(toast)[0].getBoundingClientRect();
+      let distance2 = $(e.target)[0].getBoundingClientRect();
+      if (distance.top < 0) {
         var vh = window.innerHeight;
         if (vh - 300 - Math.abs(distance.top) < 200) {
           $(toast).removeClass("bottom-0");
@@ -1345,35 +1340,6 @@ jQuery(document).ready(function ($) {
               `max-height: calc(100vh - 300px - ${Math.abs(distance.top)}px)`
             );
         }
-      }
-      else if($("#job-map").length){
-        var top2 = $('#navbarsListJobPack + div').offset().top
-        var $this = $(this);
-        var topx = $this.offset().top;
-        var distTop = topx - Math.abs($('#infoJobMenu').offset().top + $('#infoJobMenu').outerHeight());
-        var distBot = $('#navbarsListJobPack + div').offset().top - topx - $this.outerHeight();
-        if(distTop > distBot){
-          $(toast)
-            .find(".toast-body")
-            .attr(
-              "style",
-              `max-height: calc(${distTop}px - 50px); `
-            );
-        }
-        else{
-          $(toast).removeClass("bottom-0");
-          $(toast).addClass("top-0");
-          $(toast)
-            .find(".toast-body")
-            .attr(
-              "style",
-              `max-height: calc(${distBot}px - 60px); `
-            );
-        }
-        $(toast).attr(
-          "style",
-          `width: 600px; `
-        );
       }
     });
   }
@@ -1464,6 +1430,36 @@ jQuery(document).ready(function ($) {
   });
 
   $(document).ready(function () {
+    $('.accordion-button a').click(function(){
+      if(!$(this).prop('disabled')){
+        window.location.href=$(this).attr('href');
+      }
+    });
+    
+    $('#Region').change(function(){
+      let regions=[];
+      $('option:selected',this).each(function(){
+        regions.push($(this).attr('value'));
+      });
+      
+      $.ajax({
+        url: "?Controller=Jobs&Action=cities",
+        method: "POST",
+        data: { regions_id:  regions},
+        success: function (response) {
+          let data = JSON.parse(response);
+          
+          $("#City option").remove();
+
+          for(let i=0;i<data.length;i++){
+            $("#City").append($('<option value="'+data[i].CityID+'"/>').text(data[i].CityName));
+          }
+          
+          $('#City').dropdown('update');
+        },
+      })
+    });
+    
     spinerOff();
 
     drawStuff();
@@ -1480,6 +1476,7 @@ jQuery(document).ready(function ($) {
       DateSet["editable"] = true;
       DateSet["today"] = "";
       DateSet["selectYears"] = true;
+      DateSet.format='dd-mm-yyyy';
       $(".pick-date").pickadate(DateSet);
       editDate();
       pickDate2();
