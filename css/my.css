@@ -790,7 +790,7 @@ a[type="button"] {
   width: 50%;
   padding-right: 1rem;
   padding-left: 1rem;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   visibility: hidden;
   background-color: #fff;
   transform: translateX(-100%);
@@ -831,7 +831,7 @@ button#navbarSideCollapse {
 }
 #map button#navbarSideCollapse.button-open {
   position: absolute;
-  top: 19px;
+  top: 1px;
   left: calc(100% + 35px);
   font-size: 0px !important;
   height: 38px;
@@ -839,12 +839,13 @@ button#navbarSideCollapse {
 }
 button#navbarSideCollapseClose {
   position: absolute;
-  top: 38px;
+  top: 20px;
   left: calc(100% + 9px);
   font-size: 0px !important;
   height: 38px;
   transition: transform 0.3s ease-in-out, left 0.3s ease-in-out;
 }
+#map button#navbarSideCollapse.button-open
 div#infoJobMenu h1 i {
   font-size: 30px;
   margin-right: 10px !important;
@@ -859,6 +860,10 @@ div#infoJobMenu.mini-menu + div button#navbarSideCollapseClose {
 }
 .mini-menu + .content-wrapper > #map #navbarSideCollapseClose {
   left: calc(50% + 19px);
+  top: 39px;
+}
+.mini-menu + .content-wrapper > #map button#navbarSideCollapse {
+  margin-top: 129px !important;
 }
 .mini-menu + .content-wrapper > #map button#navbarSideCollapse.button-open {
   left: calc(50% + 35px);
@@ -1022,12 +1027,22 @@ button.accept.disabled:hover,
   inset: 0px auto auto 0px !important;
   min-width: 127px;
 }
+.myjobcard-footer.w-100.flex-row .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show {
+  position: absolute !important;
+  min-width: 100px;
+  margin-top: -10px !important;
+}
+.myjobcard-footer.w-100.flex-row .btn-group.accept.start-lang.start-job .dropdown-toggle::after{
+  margin-top: 3px
+}
+
 .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show li {
   width: auto !important;
   font-size: 16px;
   line-height: 150%;
   color: #666;
   padding: 0 12px;
+  border-bottom: 0.5px solid #dadada;
 }
 .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show li > span {
   width: 100%;
@@ -1057,7 +1072,10 @@ button.accept.disabled:hover,
 }
 .btn-group.accept.start-lang.start-job > * {
   position: relative;
-  z-index: 100;
+  /* z-index: 100; */
+}
+.btn-group.accept.start-lang.start-job .dropdown-header {
+  margin: 0px !important;
 }
 /*.btn-group.accept.start-lang.start-job button.btn.dropdown-toggle {
     z-index: 10 !important;
@@ -1119,7 +1137,7 @@ button.accept.disabled:hover,
 .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show li:hover {
   color: var(--second-brand-color);
 }
-.btn-group.accept.start-lang.start-job:hover button.btn:not(:first-child) {
+.btn-group.accept.start-lang.start-job:hover button.btn:not(:first-child),.btn-group.accept.start-lang.start-job:hover a  {
   color: #fff !important;
 }
 .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
@@ -2482,6 +2500,9 @@ body.telephonic-survey #content {
   padding: 10px 20px;
   padding-right: 15px;
 }
+.btn.btn-outline-grey i {
+  margin-left: 5px;
+}
 #status-btn-group button {
   word-break: keep-all;
   white-space: nowrap;
@@ -2651,9 +2672,9 @@ body.telephonic-survey #content {
   margin-top: -42px;
 }
 #editPers {
-  right: 25px;
-  position: sticky;
-  top: calc(100% - 50px);
+  right: 0px;
+  position: fixed;
+  top: 550px;
   min-width: 126px;
   height: 42px;
   opacity: 0.3;
@@ -3357,7 +3378,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .telephonic-survey #infoJob > div,
 .telephonic-survey-start #infoJob > div {
-  margin-bottom: 19px !important;
+  margin-bottom: 10px !important;
 }
 .collapse #widget-call {
   min-height: 100% !important;
@@ -3866,6 +3887,174 @@ body.locations .content-wrapper > div > .bg-white {
 }
 button.ms-auto.filter-btn + .lang-row.ms-auto {
   margin-left: 1em !important;
+}
+/* personal info */
+#pers_info {
+  border: 1px solid #DADADA;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 23px 49px 60px 37px;
+  background-color: #fff !important;
+}
+#pers_info .box > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 128px;
+  height: 128px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 0.5s linear;
+}
+#pers_info .box.image.rounded-circle {
+  position: relative;
+  overflow: hidden;
+  width: 125px;
+  height: 125px;
+  -webkit-box-shadow: 0px 0px 0px 5px #E5E5E5;;
+  -moz-box-shadow: 0px 0px 0px 5px #E5E5E5;;
+  box-shadow: 0px 0px 0px 5px #E5E5E5;;
+  transition: all 0.5s linear;
+}
+.mw-100{
+  min-width: 100px;
+}
+#pers_info #donut1{
+  max-width: 160px;
+}
+
+#actual-btn + label {  
+  cursor: pointer;
+  background: #E5E5E5;
+}
+
+#file-chosen{
+  margin-left: 0.3rem;
+  font-family: sans-serif;
+}
+
+#file-chosen.desc{
+  width: 100px;
+  word-break: normal;
+  overflow: hidden;
+  max-width: 140px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.donut-ring-grey{
+  stroke: #9E9F9F;
+}
+
+input[type="text"][readonly] {
+  border: 0px !important;
+}
+/* Chrome, Safari, Edge, Opera */
+#pers_info input[type*="number"]::-webkit-outer-spin-button,
+#pers_info input[type*="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#pers_info input[type*="number"] {
+  -moz-appearance: textfield;
+}
+#pers_info input[type*="text"],
+#pers_info input[type*="number"],
+#pers_info input[type*="password"],
+#pers_info input[type*="email"],
+#pers_info button.btn.dropdown-toggle,
+#pers_info .dropdown.bootstrap-select.form-select .form-control{
+  background-color: #FFFFFF;
+  border: 1px solid #D6D6D6;
+  border-radius: 5px;
+  line-height: 16px;
+  color: #000000;
+  font-size: 14px;
+  padding: 6px 15px;
+  min-height: unset;
+  width: 100%;
+}
+#pers_info button.btn.dropdown-toggle{
+  padding-right: 30px;
+}
+#pers_info input[type="password"]::placeholder,
+#pers_info input[type="text"]::placeholder,
+#pers_info input[type*="email"]::placeholder,
+#pers_info input[type*="number"]::placeholder,
+#pers_info button.btn.dropdown-toggle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+#pers_info .bootstrap-select .dropdown-menu li a{
+  font-size: 14px;
+
+}
+#pers_info form #main_info {
+  grid-auto-flow: column;
+  grid-template-columns: calc(50% - 30px) calc(50% - 30px)auto;
+grid-template-rows: repeat(50, auto);
+grid-column-gap: 60px;
+}
+#info_img, #pers_info hr{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  clear: both;
+}
+#pers_info form #main_info>div{
+  width: 100%;
+}
+.column-2{
+  grid-column-start: 2;
+}
+small, .small{
+  font-size: 8px;
+}
+input[name="rangeMiles"]{
+  max-width: 65px;
+  float: left;
+}
+.btn.btn-outline-secondary.btn-number {
+  background: #F1F1F1;
+  border-radius: 5px;
+  border: 0px solid;
+  font-size: 10px;
+  width: 22px;
+  height: 22px;
+  color: #000;
+}
+.input-group-append.col-auto,.input-group-prepend.col-auto {
+  padding: 0 10px;
+}
+
+
+#map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(6),
+#map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(4),
+#map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(5),
+#map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-7:nth-child(2){
+  min-width: 200px !important;
+  max-width: 200px !important;
+}
+
+#shopper-message-modal .modal-content {
+  resize: both;
+  overflow: hidden;
+  padding: 8px 20px !important;
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid #dadada;
+  box-shadow: 0 0 5px 0 #dadada78;  
+}
+#shopper-message-modal .modal-content .btn-close {
+    filter: invert(29%) sepia(96%) saturate(1809%) hue-rotate(200deg) brightness(101%) contrast(105%);
+  opacity: 1;
+  margin-right: -0.375rem;
+  margin-left: 0.75rem;
+  width: 1em;
+  height: 1em;
 }
 @media (max-width: 1024.5px) {
   .tel-elem-info > .col-auto:nth-child(2):not(.me-lg-5) {
@@ -5228,6 +5417,11 @@ button.ms-auto.filter-btn + .lang-row.ms-auto {
   }
   .telephonic-survey h4.black-color {
     font-size: 14px !important;
+  }
+  
+  #pers_info{
+    background-color: #fff !important;;
+    padding: 10px 20px !important;
   }
 }
 @media (max-width: 347.5px) {

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
+</head>
+
+<body class="overflow-hidden locations">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap"
+        style="z-index: 10000;">
+        <div class="spinner-border mx-auto sec-color" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+    </div>
+    <div class="container-fluid  d-block d-md-none">
+        <header class="d-flex align-items-center border-bottom py-2">
+            <div class="col-2 text-start">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <div class="animated-hamburger"><span></span><span></span><span></span></div>
+                </button>
+            </div>
+            <div class="logo col-8 justify-content-center mb-md-0">
+                <div class="col-md-6">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="wrapper d-flex align-items-stretch flex-column flex-md-row">
+            <aside class="sticky-md-top">
+                <div class="sticky-top sidebar left asidebar">
+                    <div class="d-none d-md-flex  align-items-center">
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span>
+                            </div>
+                        </button>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                    </div>
+                    <div class="logo-container">
+                        <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
+                    </div>
+                    <div id="carouselMenu" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div id="content1" class="carousel-item active">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i>
+                                                <span>Payments report</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My
+                                                    Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open
+                                                    Jobs</span></a></li>
+                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new
+                                                    job</span></a></li>
+                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i>
+                                                <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI
+                                                    Studio</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i>
+                                                <span>Locations addresses</span></a></li>
+                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add
+                                                    refund record</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training &
+                                                    Certifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs
+                                                    History</span></a></li>
+                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files
+                                                    library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire
+                                                    preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i>
+                                                <span>Notifications</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i>
+                                                <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="user-panel py-3 mb-0">
+                                    <a class="image d-flex align-items-center me-4" type="button"
+                                        data-bs-target="#carouselMenu" data-bs-slide="next">
+                                        <div class="box image rounded-circle">
+                                            <img src="https://picsum.photos/640/360" alt="User Image">
+                                        </div>
+                                        <h6 class="text-center mb-0 long">Larysa Chernenko
+                                            <i class="fas fa-chevron-right"></i>
+                                        </h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="content2" class="carousel-item">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu"
+                                                data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i>
+                                                <span>Back</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu ">
+                                    <ul class="menu-links list-group me-4">
+                                        <li class="active"><a href="pers_info.html"><i class="far fa-user"></i>
+                                                <span>Personal Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work
+                                                    Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred
+                                                    Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i>
+                                                <span>Agreements</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="p-0 w-100" id="content">
+                <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob">
+                    <div class="row m-0 mt-5 mt-md-0 header-wrapper">
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i
+                                class="far fa-list-alt sec-color fs-30 me-4"></i>Personal Information</h1>
+
+                    </div>
+                    <div class="content-wrapper m-0 p-0">
+                        <div class="my-auto row p-0 d-flex flex-column flex-lg-row align-items-center m-0">
+                            <div id="pers_info" class="row bg-white m-auto">
+                                <form action="" class="p-0">
+                                    <div class="row col d-flex align-items-center flex-row p-0 m-0">
+                                        <span class="black-color d-inline-block col-auto p-0">Default System
+                                            Language</span>
+                                        <div class="col-auto mb-auto pe-0">
+                                            <select class="form-select mb-4 selectpicker" id="lang">
+                                                <option selected>English</option>
+                                                <option value="1">Ukrainian</option>
+                                                <option value="2">Hebrew</option>
+                                                <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
+                                                <option value="4">HebrewHebrew</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr class="w-100 my-3" />
+                                    <div class="row col d-xl-grid align-items-center flex-row p-0 m-0 gy-3"
+                                        id="main_info">
+                                        <div id="info_img" class="row m-0 p-0">
+                                            <div
+                                                class="col-12 col-xl-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                                <span
+                                                    class="black-color d-inline-block col-md-auto col-12 p-0 mw-100">Picture</span>
+                                                <div class="box image rounded-circle my-4 my-md-0 col-6 col-md-auto">
+                                                    <img src="https://picsum.photos/640/360" alt="User Image">
+                                                </div>
+
+                                                <div
+                                                    class="col-auto ms-4 d-flex align-items-start flex-column p-0 gap-2 col-md-auto">
+                                                    <button type="submit"
+                                                        class="btn btn-md sec-bg border-0 white-color fw-normal rounded-6 p-2 py-1 fs-14">Upload
+                                                        new picture</button>
+                                                    <input type="file" accept="image/*" id="actual-btn" hidden="">
+                                                    <label for="actual-btn" class="rounded-6 p-2 py-1 fs-14">Choose
+                                                        File</label>
+                                                    <span id="file-chosen" class="desc"></span>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-12 col-xl-6 d-flex align-items-center flex-row p-0 justify-content-end">
+
+                                                <span class="black-color d-inline-block col-auto p-0 mw-100">Information
+                                                    Filled</span>
+
+                                                <div class="col-6 col-lg-5 p-0 d-flex order-1 order-lg-1 ms-3 position-relative"
+                                                    id="donut1">
+                                                    <h5
+                                                        class="d-flex flex-column justify-content-around m-0 visually-hidden">
+                                                        100</h5>
+                                                    <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"
+                                                        data-work="65,100">
+                                                        <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954"
+                                                            fill="#fff"></circle>
+                                                        <circle class="donut-ring" cx="21" cy="21" r="11.75"
+                                                            fill="transparent" stroke="#F7F7F7" stroke-width="4">
+                                                        </circle>
+                                                        <circle class="donut-ring-grey" cx="21" cy="21"
+                                                            r="15.91549430918954" fill="transparent" stroke-width="3">
+                                                        </circle>
+                                                        <circle class="donut-segment-white" cx="21" cy="21"
+                                                            r="15.91549430918954" stroke-linecap="round"
+                                                            fill="transparent" stroke="#fff" stroke-width="4"
+                                                            stroke-dasharray="39.5 60.5" stroke-dashoffset="19.75">
+                                                        </circle>
+                                                        <circle class="donut-segment-jobs" stroke-linecap="round"
+                                                            cx="21" cy="21" r="15.91549430918954" fill="transparent"
+                                                            stroke-width="3" stroke-dasharray="39 61"
+                                                            stroke-dashoffset="19.5">
+                                                        </circle>
+                                                    </svg>
+                                                    <h5
+                                                        class="d-flex flex-column justify-content-around m-0 fs-3 sec-color position-absolute w-100 h-100 text-center">
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="ShopperID" class="col-form-label">Shopper ID</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" readonly class="form-control-plaintext"
+                                                    id="ShopperID" value="153864">
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="FullName" class="col-form-label">Full Name</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="FullName" value=""
+                                                    placeholder="Full Name">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="Password" class="col-form-label">Password</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="password" class="form-control-plaintext" id="Password"
+                                                    value="" placeholder="Letters & numbers only">
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="Address" class="col-form-label">Address</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Address"
+                                                    placeholder="Address">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="HouseNumber" class="col-form-label">House Number</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="HouseNumber"
+                                                    placeholder="House Number">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="Email" class="col-form-label">Email</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="email" class="form-control-plaintext" id="Email"
+                                                    placeholder="Email">
+
+                                            </div>
+                                        </div>
+
+                                        <!-- second row -->
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <h4 class="black-color">Region</h4>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Country" class="col-form-label">Country</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="Country"
+                                                    title="Choose country">
+                                                    <option value="0">Choose Country</option>
+                                                    <option value="1">Choose Country</option>
+                                                    <option value="2">Choose Country</option>
+                                                    <option value="3">Choose Country</option>
+                                                    <option value="1">Choose Country</option>
+                                                    <option value="2">Choose Country</option>
+                                                    <option value="3">Choose Country</option>
+                                                    <option value="1">Choose Country</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Region" class="col-form-label">Region</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="Region"
+                                                    title="Choose region">
+                                                    <option value="0">Choose Region</option>
+                                                    <option value="1">Choose Region</option>
+                                                    <option value="0">Choose Region</option>
+                                                    <option value="1">Choose Region</option>
+                                                    <option value="0">Choose Region</option>
+                                                    <option value="1">Choose Region</option>
+                                                    <option value="0">Choose Region</option>
+                                                    <option value="1">Choose Region</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="City" class="col-form-label">City</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="City"
+                                                    title="Choose city">
+                                                    <option value="0">Choose City</option>
+                                                    <option value="1">Choose City</option>
+                                                    <option value="0">Choose City</option>
+                                                    <option value="1">Choose City</option>
+                                                    <option value="0">Choose City</option>
+                                                    <option value="1">Choose City</option>
+                                                    <option value="0">Choose City</option>
+                                                    <option value="1">Choose City</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Postcode" class="col-form-label">Postcode</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Postcode"
+                                                    placeholder="Postcode">
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Additional" class="col-form-label">Additional</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Additional">
+
+                                            </div>
+                                        </div>
+
+                                        <hr class="w-100 mt-4 mb-1" />
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="Email2" class="col-form-label">Another Email</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="email" class="form-control-plaintext" id="Email2"
+                                                    placeholder="Email">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="BirthDate" class="col-form-label">Birth Date</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="number" min="7" max="120" class="form-control-plaintext" id="BirthDate"
+                                                    placeholder="Birt Date">
+                                                <small class="position-absolute">Min 7 - Max 120 years</small>
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="ID" class="col-form-label">ID Number</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="number" class="form-control-plaintext" id="ID"
+                                                    placeholder="ID Number">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="SSN" class="col-form-label">SSN</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="number" class="form-control-plaintext" id="SSN"
+                                                    placeholder="SSN">
+
+                                            </div>
+                                        </div>
+
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="rangeMiles" class="col-form-label">Availability
+                                                    radius</label>
+                                            </div>
+                                            <div class="col-9 ps-2 align-items-center d-flex">
+                                                <input type="text" class="form-control-plaintext col-3"
+                                                    name="rangeMiles" id="rangeMiles" min="0" max="1000" value="750"
+                                                    onchange="rangeMiles1.value = rangeMiles.value" />
+                                                <span class="mx-2">Miles</span>
+
+                                                <div class="col row">
+                                                    <span class="input-group-prepend col-auto">
+                                                        <button type="button"
+                                                            class="btn btn-outline-secondary btn-number"
+                                                            data-type="minus" data-field="rangeMiles">
+                                                            <span class="fa fa-minus"></span>
+                                                        </button>
+                                                    </span>
+                                                    <input type="range" oninput="rangeMiles.value = rangeMiles1.value"
+                                                        class="form-control-range slider col p-0" type="range" min="0"
+                                                        max="1000" value="750" id="rangeMiles1" step="1"
+                                                        onchange="rangeMiles.value = rangeMiles1.value">
+                                                    <span class="input-group-append col-auto">
+                                                        <button type="button"
+                                                            class="btn btn-outline-secondary btn-number"
+                                                            data-type="plus" data-field="rangeMiles">
+                                                            <span class="fa fa-plus"></span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="Bank" class="col-form-label">Bank name</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="Bank"
+                                                    title="Choose Bank">
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                    <option value="0">Choose Bank</option>
+                                                    <option value="1">Choose Bank</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
+                                            <div class="col-3">
+                                                <label for="AccountNumber" class="col-form-label">Account number</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="number" class="form-control-plaintext" id="AccountNumber"
+                                                    placeholder="Account number">
+
+                                            </div>
+                                        </div>
+
+                                        <!-- 2th column -->
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Mobile" class="col-form-label">Mobile</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Mobile">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Phone1" class="col-form-label">Daytime Phone</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Phone1">
+
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Phone2" class="col-form-label">Evening phone</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <input type="text" class="form-control-plaintext" id="Phone2">
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Smoker" class="col-form-label">Smoker</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="Smoker"
+                                                    title="Please select">
+                                                    <option value="0">yes</option>
+                                                    <option value="1">No</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Vegeterian" class="col-form-label">Vegeterian</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="Vegeterian"
+                                                    title="Please select">
+                                                    <option value="0">yes</option>
+                                                    <option value="1">No</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="laptop" class="col-form-label">I have a laptop</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" aria-label="Please select" id="laptop"
+                                                    title="Please select">
+                                                    <option value="0">yes</option>
+                                                    <option value="1">No</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-12 col-md-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap column-2">
+                                            <div class="col-3">
+                                                <label for="Languages" class="col-form-label">Languages</label>
+                                            </div>
+                                            <div class="col-9 ps-2">
+                                                <select class="form-select selectpicker" data-actions-box="true"
+                                                    data-live-search="true" multiple aria-label="Please select" id="Languages"
+                                                    title="Choose Languages">
+                                                    <option value="0">Choose Languages</option>
+                                                    <option value="1">Choose Languages</option>
+                                                    <option value="0">Choose Languages</option>
+                                                    <option value="1">Choose Languages</option>
+                                                    <option value="0">Choose Languages</option>
+                                                    <option value="1">Choose Languages</option>
+                                                    <option value="0">Choose Languages</option>
+                                                    <option value="1">Choose Languages</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col d-flex align-items-center justify-content-end flex-row p-0 m-0 mt-5">
+                                        <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18">Save</button>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-filter-control.min.js"></script>
+    <script src="js/my.js"></script>
+</body>
+
+</html>
