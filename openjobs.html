@@ -829,7 +829,7 @@
                                             <textarea class="form-control w-100" rows="3"></textarea></div>
                                         <div class="col-12 col-md gap-2 p-0 me-auto d-flex flex-row flex-md-column justify-content-between mt-2 mt-md-0 ps-md-3 align-items-center buttons-sel invisible">
                                             <button type="submit" class="btn btn-primary sec-bg border-0 me-auto fs-18">Apply</button>
-                                            <a href="#" class="black-color fs-18 me-auto">Remove Application</a>
+                                            <a href="#" class="black-color fs-16 me-auto">Remove Application</a>
                                         </div>
                                     </div>
                                     <div class="col-auto p-0 d-flex justify-content-left align-items-center show-pack position-relative flex-column flex-md-row visually-hidden">
@@ -837,9 +837,16 @@
                                             <input type="checkbox" class="form-check-input mt-0" id="SelectAll2">
                                             <label class="form-check-label fs-18 black-color ms-3" for="SelectAll2">Select All</label>
                                         </div>
-                                        <div class="col-auto p-0 d-flex buttons-sel invisible align-items-center mt-2 mt-md-0">
+                                        <div class="col-auto p-0 d-flex buttons-sel invisible align-items-center mt-2 mt-md-0 position-relative ms-auto me-auto">
                                             <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
-                                            <button class="accept">Accept Selected</button></div><button class="border-0 position-absolute bg-transparent" id="back"><i class="fas fa-chevron-circle-left"></i></button>
+                                            <button class="accept">Accept Selected</button>
+                                            <a href="#" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus hover click" data-bs-html="true" data-bs-placement="top" data-bs-content='
+                                            <div class="col-12">Please tick <b>Accept</b> button if you are ready to perform jobs that are available in this package.You can see the list of available jobs above. You can’t <b>Accept</b> a single job because it is a part ofthe packege. </div>
+                                            <hr>
+                                            <div class="col-12">
+                                                This is a package on the job board. Once you <b>Reject</b>  a package, means you are <b></b>rejecting all jobs in that package</b>.
+                                            </div>' class="preview ms-2"><i class="fas fa-info"></i></a>
+                                        </div><button class="border-0 position-absolute bg-transparent" id="back"><i class="fas fa-chevron-circle-left"></i></button>
                                     </div>
                                 </div>
                             </div>

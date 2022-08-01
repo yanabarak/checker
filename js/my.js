@@ -99,9 +99,11 @@ jQuery(document).ready(function ($) {
     let datawork = $("#donut1 .donut").attr("data-work").split(",");
     if (datawork[0] == 0 && datawork[1] == 0) {
       $("#donut1 svg").addClass("d-none");
+      $("#donut1").closest(".bg-white.block").addClass("no-job");
+      $("#donut1").closest(".bg-white.block").find('h5.title').after(
+        '<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
+      );
       $("#legenddonut1").addClass("hidden");
-      let legend = $("#donut1 h5").addClass("fs-4");
-      legend[1].append("Oops! Nothing here... (>_<)");
     } else {
       if (datawork[0] == 0) {
         $("#donut1 .donut-segment-white").addClass("d-none");
@@ -142,9 +144,11 @@ jQuery(document).ready(function ($) {
     let datawork = $("#donut2 .donut").attr("data-work").split(",");
     if (datawork[0] == 0 && datawork[1] == 0) {
       $("#donut2 svg").addClass("d-none");
+      $("#donut2").closest(".bg-white.block").addClass("no-job");
+      $("#donut2").closest(".bg-white.block").find('h5.title').after(
+        '<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
+      );
       $("#legenddonut2").addClass("hidden");
-      let legend = $("#donut2 h5").addClass("fs-4");
-      legend[1].append("Oops! Nothing here... (>_<)");
     } else {
       if (datawork[0] == 0) {
         $("#donut2 .donut-segment-white").addClass("d-none");

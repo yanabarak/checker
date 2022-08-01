@@ -114,8 +114,10 @@
                 <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob">
                     <div class="row m-0 mt-5 mt-md-0 position-sticky header-wrapper" id="infoJobMenu">
                         <h1 class="fs-2 fw-bold p-0 mb-4 sec-color d-inline-lock col-auto"><i class="fas fa-briefcase sec-color align-middle fs-50 me-4"></i><span>My Jobs</span></h1>
-                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
-                        <div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color">
+                        <button data-bs-toggle="modal" data-bs-target="#formModal" type="button" class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0 position-relative">Filter<span class="position-absolute top-0 start-100 translate-middle badge rounded-circle sec-bg">
+                            3
+                            <span class="visually-hidden">applied filters</span>
+                          </span></button><div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color">
                             <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
                                 <p class="fs-90 fw-light my-0 lh-sm ">
                                     5
@@ -352,10 +354,10 @@
                                                         <p class="mb-0"> SOS Simple Questionnair [Shoppers]</p>
                                                     </div>
                                                 </div>
-                                                <div class="col d-flex align-items-center actions ms-auto justify-content-between action col-auto" data-info="Accepted, awaiting implementation">
-                                                    <span class="await">You can not enter the review data today</span>
-                                                    
-                                                </div>
+                                                <div class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto" data-info="Accepted, awaiting implementation">
+                                                    <span class="await" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="You can not enter the review data today" data-bs-placement="top" data-bs-original-title="" title=""></span>        
+                                                    <a href="#" class="color-lgrey fs-18 reject-order-modal" data-id="246347" data-action="Controller=Jobs&amp;Action=reject&amp;jobboard=0">Reject</a>
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-column col-12 p-0">
@@ -1302,14 +1304,21 @@
                                         </div>
                                     </div>
                                     <div class="col-auto p-0 d-flex justify-content-left align-items-center show-pack position-relative flex-column flex-md-row visually-hidden">
-                                        <div class="col-auto p-0 d-flex align-items-center me-4">
+                                        <div class="col-auto p-0 d-flex align-items-center me-0">
                                             <input type="checkbox" class="form-check-input mt-0" id="SelectAll2">
                                             <label class="form-check-label fs-18 black-color ms-3" for="SelectAll2">Select All</label>
                                         </div>
-                                        <div class="col-auto p-0 d-flex buttons-sel invisible align-items-center mt-2 mt-md-0">
+                                        <div class="col-auto p-0 d-flex buttons-sel invisible align-items-center mt-2 mt-md-0 position-relative ms-auto me-auto">
                                             <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
-                                            <button class="accept">Accept Selected</button></div><button class="border-0 position-absolute bg-transparent" id="back"><i class="fas fa-chevron-circle-left"></i></button>
-                                    </div>
+                                            <button class="accept">Accept Selected</button>
+                                            <a href="#" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="focus hover click" data-bs-html="true" data-bs-placement="top" data-bs-content='
+                                            <div class="col-12">Please tick <b>Accept</b> button if you are ready to perform jobs that are available in this package.You can see the list of available jobs above. You can’t <b>Accept</b> a single job because it is a part ofthe packege. </div>
+                                            <hr>
+                                            <div class="col-12">
+                                                This is a package on the job board. Once you <b>Reject</b>  a package, means you are <b></b>rejecting all jobs in that package</b>.
+                                            </div>' class="preview ms-2"><i class="fas fa-info"></i></a>
+                                        </div><button class="border-0 position-absolute bg-transparent" id="back"><i class="fas fa-chevron-circle-left"></i></button>
+                                             </div>
                                 </div>
                             </div>
                             
