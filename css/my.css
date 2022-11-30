@@ -5429,6 +5429,11 @@ div#infoJob .block.no-job img ~ h5 {
     background-color: #fff !important;
     padding: 10px 20px !important;
   }
+  .update-img {
+    margin-left: 0px !important;
+    margin-top: 0px !important ;
+    width: fit-content;
+  }
 }
 @media (max-width: 347.5px) {
   #content .block.bg-white {

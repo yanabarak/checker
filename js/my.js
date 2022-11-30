@@ -102,12 +102,16 @@ jQuery(document).ready(function ($) {
         datawork[1] == 0 ? $('#donut1 .donut-segment-white').addClass('d-none') : false;
         let valuework =
           (99 / (Number.parseInt(datawork[0]) + Number.parseInt(datawork[1]))) * datawork[0];
+        if ($('#pers_info').length) {
+          valuework = (99 / Number.parseInt(datawork[1])) * datawork[0];
+        }
         $('#donut1 .donut-segment-white')
           .attr('stroke-dasharray', `${valuework + 0.5} ${100 - valuework - 0.5}`)
           .attr('stroke-dashoffset', `${(valuework + 0.5) / 2}`);
         $('#donut1 .donut-segment-jobs')
           .attr('stroke-dasharray', `${valuework} ${100 - valuework}`)
           .attr('stroke-dashoffset', `${valuework / 2}`);
+        console.log(valuework);
       }
 
       let legend = $('#donut1 h5');
@@ -813,10 +817,30 @@ jQuery(document).ready(function ($) {
   // init popover
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl, {
-      sanitize: false,
-    });
+    return new bootstrap.Popover(popoverTriggerEl);
   });
+  $('.box.image')
+    .popover({
+      trigger: 'manual',
+      html: true,
+      animation: false,
+      sanitize: false,
+    })
+    .on('mouseenter', function () {
+      var _this = this;
+      $(this).popover('show');
+      $('.popover').on('mouseleave', function () {
+        $(_this).popover('hide');
+      });
+    })
+    .on('mouseleave', function () {
+      var _this = this;
+      setTimeout(function () {
+        if (!$('.popover:hover').length) {
+          $(_this).popover('hide');
+        }
+      }, 300);
+    });
   // page files library, function open iner folders
   function openInnF() {
     $('table').on('all.bs.table', function () {
