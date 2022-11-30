@@ -171,20 +171,23 @@
                                                 class="col-12 col-xl-6 d-flex align-items-start flex-md-row align-items-center p-0 flex-wrap">
                                                 <span
                                                     class="black-color d-inline-block col-md-auto col-12 p-0 mw-100">Picture</span>
-                                                <div class="box image rounded-circle my-4 my-md-0 col-6 col-md-auto">
+                                                <div class="box image rounded-circle my-4 my-md-0 col-6 col-md-auto"
+                                                    data-bs-container="body" data-bs-toggle="popover"
+                                                    data-bs-trigger="focus click" data-bs-html="true"
+                                                    data-bs-placement="right" data-bs-custom-class="update-img"
+                                                    data-bs-content='
+                                                    <a href="#" class=""><svg class="icon icon-update-img me-2"
+                                                            width="18" height="18">
+                                                            <use href="./img/icon/icons-set.svg#icon-update-img"></use>
+                                                        </svg>Change profile photo</a>
+                                                    <a href="#">
+                                                        <svg class="icon icon-remove-img me-2" width="18"
+                                                            height="18">
+                                                            <use href="./img/icon/icons-set.svg#icon-remove-img"></use>
+                                                        </svg>Delete profile photo</a>'>
                                                     <img src="https://picsum.photos/640/360" alt="User Image">
                                                 </div>
 
-                                                <div
-                                                    class="col-auto ms-4 d-flex align-items-start flex-column p-0 gap-2 col-md-auto">
-                                                    <button type="submit"
-                                                        class="btn btn-md sec-bg border-0 white-color fw-normal rounded-6 p-2 py-1 fs-14">Upload
-                                                        new picture</button>
-                                                    <input type="file" accept="image/*" id="actual-btn" hidden="">
-                                                    <label for="actual-btn" class="rounded-6 p-2 py-1 fs-14">Choose
-                                                        File</label>
-                                                    <span id="file-chosen" class="desc"></span>
-                                                </div>
                                             </div>
                                             <div
                                                 class="col-12 col-xl-6 d-flex align-items-center flex-row p-0 justify-content-end">
@@ -406,8 +409,8 @@
                                                 <label for="BirthDate" class="col-form-label">Birth Date</label>
                                             </div>
                                             <div class="col-9 ps-2">
-                                                <input type="number" min="7" max="120" class="form-control-plaintext" id="BirthDate"
-                                                    placeholder="Birt Date">
+                                                <input type="number" min="7" max="120" class="form-control-plaintext"
+                                                    id="BirthDate" placeholder="Birt Date">
                                                 <small class="position-absolute">Min 7 - Max 120 years</small>
 
                                             </div>
@@ -597,8 +600,8 @@
                                             </div>
                                             <div class="col-9 ps-2">
                                                 <select class="form-select selectpicker" data-actions-box="true"
-                                                    data-live-search="true" multiple aria-label="Please select" id="Languages"
-                                                    title="Choose Languages">
+                                                    data-live-search="true" multiple aria-label="Please select"
+                                                    id="Languages" title="Choose Languages">
                                                     <option value="0">Choose Languages</option>
                                                     <option value="1">Choose Languages</option>
                                                     <option value="0">Choose Languages</option>
@@ -613,16 +616,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="row col d-flex align-items-center justify-content-end flex-row p-0 m-0 mt-5">
-                                        <button type="submit" class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18">Save</button>
+                                    <div
+                                        class="row col d-flex align-items-center justify-content-end flex-row p-0 m-0 mt-5">
+                                        <button type="submit"
+                                            class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18">Save</button>
                                     </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     </div>
     <script src="js/jquery.min.js"></script>
