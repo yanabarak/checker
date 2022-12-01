@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="css/my.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
     <script type="text/javascript">
-    window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
+        window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
     </script>
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
 </head>
 
 <body class="overflow-hidden unfin-job">
-    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap"
+        style="z-index: 10000;">
         <div class="spinner-border mx-auto sec-color" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
@@ -30,7 +33,9 @@
     <div class="container-fluid  d-block d-md-none">
         <header class="d-flex align-items-center border-bottom py-2">
             <div class="col-2 text-start">
-                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <div class="animated-hamburger"><span></span><span></span><span></span></div>
                 </button>
             </div>
@@ -46,8 +51,11 @@
             <aside class="sticky-md-top">
                 <div class="sticky-top sidebar left asidebar">
                     <div class="d-none d-md-flex  align-items-center">
-                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span></div>
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span>
+                            </div>
                         </button>
                         <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
                     </div>
@@ -60,53 +68,76 @@
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i>
+                                                <span>Payments report</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
 
-                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
-                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
-                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new job</span></a></li>
-                                        <li class="active"><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
-                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
-                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
-                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add refund record</span></a></li>
-                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
-                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
-                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
-                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
-                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My
+                                                    Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open
+                                                    Jobs</span></a></li>
+                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new
+                                                    job</span></a></li>
+                                        <li class="active"><a href="unfin_jobs.html"><i
+                                                    class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a>
+                                        </li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI
+                                                    Studio</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i>
+                                                <span>Locations addresses</span></a></li>
+                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add
+                                                    refund record</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training &
+                                                    Certifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs
+                                                    History</span></a></li>
+                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files
+                                                    library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire
+                                                    preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i>
+                                                <span>Notifications</span></a></li>
                                     </ul>
                                 </div>
                                 <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i>
+                                                <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="user-panel py-3 mb-0">
-                                    <a class="image d-flex align-items-center me-4" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
+                                    <a class="image d-flex align-items-center me-4" type="button"
+                                        data-bs-target="#carouselMenu" data-bs-slide="next">
                                         <div class="box image rounded-circle">
                                             <img src="https://picsum.photos/640/360" alt="User Image">
                                         </div>
                                         <h6 class="text-center mb-0 long">Larysa Chernenko
-                                            <i class="fas fa-chevron-right"></i></h6>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </h6>
                                     </a>
                                 </div>
                             </div>
                             <div id="content2" class="carousel-item">
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
-                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu" data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i> <span>Back</span></a></li>
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu"
+                                                data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i>
+                                                <span>Back</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu ">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
-                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
-                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred Regions</span></a></li>
-                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal
+                                                    Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work
+                                                    Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred
+                                                    Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i>
+                                                <span>Agreements</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -117,23 +148,26 @@
             <div class="p-0 w-100" id="content">
                 <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
                     <div class="row m-0 mt-5 mt-md-0 position-sticky header-wrapper" id="infoJobMenu" style="">
-                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="fas fa-star-half-alt sec-color fs-30 me-lg-4 me-2"></i>Incomplete Jobs</h1>
-                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
-                        <div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color">
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i
+                                class="fas fa-star-half-alt sec-color fs-30 me-lg-4 me-2"></i>Incomplete Jobs</h1>
+                        <button
+                            class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0"
+                            data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
+                        <div class="col sec-bg block border rounded-3 row m-0 mb-2 white-color position-relative">
                             <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
                                 <p class="fs-90 fw-light my-0 lh-sm ">
                                     5
                                 </p>
                                 <span>Returned jobs</span>
-                            </div>
+                            </div><a href="#" class="stretched-link"></a>
                         </div>
-                        <div class="col main-bg block border rounded-3 row m-0 mb-2 white-color">
+                        <div class="col main-bg block border rounded-3 row m-0 mb-2 white-color position-relative">
                             <div class="cardnew position-relative col col-md-12 p-0 text-center flex-column">
                                 <p class="fs-90 fw-light my-0 lh-sm ">
                                     3
                                 </p>
                                 <span>In-progress jobs</span>
-                            </div>
+                            </div><a href="#" class="stretched-link"></a>
                         </div>
                         <div class="col-auto ms-auto lang-row">
                             <select class="form-select mb-4 selectpicker" id="lang">
@@ -142,13 +176,15 @@
                                 <option value="2">Hebrew</option>
                                 <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
                                 <option value="4">HebrewHebrew</option>
-                            </select></div>
+                            </select>
+                        </div>
                     </div>
                     <div class="content-wrapper m-0 p-0">
                         <div class="m-0 p-0" id="rec-wrap">
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -169,10 +205,14 @@
                                     </div>
                                     <hr class="d-block d-lg-none col-12 my-2">
                                     <div class="col d-flex actions action col-lg-auto pb-2 pb-lg-0">
-                                        <button class="accept start-job my-auto">Start</button>
+                                        <a href="#" type="button" class=" btn accept start-job my-auto">Start</a>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec1" aria-expanded="false" aria-controls="collapseRec1">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec1" aria-expanded="false"
+                                            aria-controls="collapseRec1">
                                         </button>
                                     </div>
                                 </div>
@@ -202,11 +242,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -353,7 +395,8 @@
                             </div>
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -377,12 +420,16 @@
                                         <button class="accept start-job my-auto">Start</button>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec0" aria-expanded="false" aria-controls="collapseRec0">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec0" aria-expanded="false"
+                                            aria-controls="collapseRec0">
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec0">
-                                    
+
                                     <div class="row m-0 py-2 px-0 p-lg-2 px-lg-3  border-0 autoflow">
                                         <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                             <div class="color-lgrey">Questinnarie name</div>
@@ -408,11 +455,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -559,7 +608,8 @@
                             </div>
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -583,12 +633,16 @@
                                         <button class="accept start-job my-auto">Start</button>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec2" aria-expanded="false" aria-controls="collapseRec2">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec2" aria-expanded="false"
+                                            aria-controls="collapseRec2">
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec2">
-                                    
+
                                     <div class="row m-0 py-2 px-0 p-lg-2 px-lg-3  border-0 autoflow">
                                         <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                             <div class="color-lgrey">Questinnarie name</div>
@@ -614,11 +668,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -765,7 +821,8 @@
                             </div>
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -789,12 +846,16 @@
                                         <button class="accept start-job my-auto">Start</button>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec3" aria-expanded="false" aria-controls="collapseRec3">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec3" aria-expanded="false"
+                                            aria-controls="collapseRec3">
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec3">
-                                    
+
                                     <div class="row m-0 py-2 px-0 p-lg-2 px-lg-3  border-0 autoflow">
                                         <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                             <div class="color-lgrey">Questinnarie name</div>
@@ -820,11 +881,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -971,7 +1034,8 @@
                             </div>
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -995,12 +1059,16 @@
                                         <button class="accept start-job my-auto">Start</button>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec4" aria-expanded="false" aria-controls="collapseRec4">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec4" aria-expanded="false"
+                                            aria-controls="collapseRec4">
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec4">
-                                    
+
                                     <div class="row m-0 py-2 px-0 p-lg-2 px-lg-3  border-0 autoflow">
                                         <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                             <div class="color-lgrey">Questinnarie name</div>
@@ -1026,11 +1094,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -1177,7 +1247,8 @@
                             </div>
                             <div class="row bg-white d-flex align-items-center m-0 border-top">
                                 <div class="row m-0 p-0 col mx-0 info-record">
-                                    <div class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
+                                    <div
+                                        class="row m-0 tel-elem-info col-12 col-lg d-flex align-items-center p-lg-2 ps-lg-0 px-2 px-lg-0 pb-0 ps-lg-0 justify-content-between">
                                         <div class="col-6 col-lg-2 p-0 ms-lg-5">
                                             <div class="color-lgrey">Start at 08:00</div>
                                             <div class="fs-18 dd-grey">26.05.2021</div>
@@ -1201,12 +1272,16 @@
                                         <button class="accept start-job my-auto">Start</button>
                                     </div>
                                     <div class="col-1 d-flex align-items-center bg-grey p-0 button-show">
-                                        <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec5" aria-expanded="false" aria-controls="collapseRec5">
+                                        <button
+                                            class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                            type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseRec5" aria-expanded="false"
+                                            aria-controls="collapseRec5">
                                         </button>
                                     </div>
                                 </div>
                                 <div class="row m-0 collapse tel-elem-info p-0 bg-grey" id="collapseRec5">
-                                    
+
                                     <div class="row m-0 py-2 px-0 p-lg-2 px-lg-3  border-0 autoflow">
                                         <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                             <div class="color-lgrey">Questinnarie name</div>
@@ -1232,11 +1307,13 @@
                                             <div class="color-lgrey">Quality assurance note</div>
                                             <div class="fs-18 dd-grey">Test123</div>
                                         </div>
-                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18" data-bs-autohide="false">
+                                        <div class=" bg-white det-info-job position-absolute toast hide bottom-0 start-0 fs-18"
+                                            data-bs-autohide="false">
                                             <div class="m-0 p-0 bg-white ">
                                                 <div class="toast-header px-2 border-0 pb-0">
                                                     <strong class="me-auto fs-18 sec-color">Sample details</strong>
-                                                    <button type="button" class="btn-close sec-color" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close sec-color"
+                                                        data-bs-dismiss="toast" aria-label="Close"></button>
                                                 </div>
                                                 <div class="toast-body blue-grey-scroll ">
                                                     <div class="row">
@@ -1393,12 +1470,15 @@
             <div class="modal-content p-0 py-0 p-md-2 py-md-2 pb-md-3">
                 <div class="modal-body row m-0 p-0">
                     <div class=" row m-0 py-4 py-lg-0">
-                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                         <div>
                             <form class="row">
                                 <div class="col-12 my-0">
                                     <label for="staticvalue" class="dd-grey fs-12 mb-0">Client Name</label>
-                                    <select class="form-select selectpicker" multiple data-actions-box="true" data-live-search="true" aria-label="Client" id="staticClient" title="Choose client">
+                                    <select class="form-select selectpicker" multiple data-actions-box="true"
+                                        data-live-search="true" aria-label="Client" id="staticClient"
+                                        title="Choose client">
                                         <option value="0">Choose client</option>
                                         <option value="1">Choose client1</option>
                                         <option value="2">Choose client2</option>
@@ -1407,7 +1487,8 @@
                                     </select>
                                 </div>
                                 <div class="col-12 row m-0 mt-2">
-                                    <button type="submit" class="btn btn-primary sec-bg border-0 col-auto fs-18">Show</button>
+                                    <button type="submit"
+                                        class="btn btn-primary sec-bg border-0 col-auto fs-18">Show</button>
                                 </div>
                             </form>
                         </div>
@@ -1427,29 +1508,29 @@
     <script src="js/bootstrap-table-filter-control.min.js"></script>
     <script src="js/my.js"></script>
     <script>
-    $(document).ready(function() {
-        $(".show-info").click(function(e) {
-            $(".toast").toast("hide");
-            $(".toast").find(".toast-body").attr("style", ``)
-            e.preventDefault()
-            let toast = $(e.target).closest(".bg-grey").find(".toast");
-            $(toast).addClass("bottom-0");
-            $(toast).removeClass("top-0");
-            $(toast).toast("show");
-            let distance = $(toast)[0].getBoundingClientRect();
-            let distance2 = $(e.target)[0].getBoundingClientRect();
-            if (distance.top < 0) {
-                var vh = window.innerHeight;
-                if ((vh - 300 - Math.abs(distance.top)) < 200) {
-                    $(toast).removeClass("bottom-0");
-                    $(toast).addClass("top-0");
-                } else {
-                    $(toast).find(".toast-body").attr("style", `max-height: calc(100vh - 300px - ${Math.abs(distance.top)}px)`)
+        $(document).ready(function () {
+            $(".show-info").click(function (e) {
+                $(".toast").toast("hide");
+                $(".toast").find(".toast-body").attr("style", ``)
+                e.preventDefault()
+                let toast = $(e.target).closest(".bg-grey").find(".toast");
+                $(toast).addClass("bottom-0");
+                $(toast).removeClass("top-0");
+                $(toast).toast("show");
+                let distance = $(toast)[0].getBoundingClientRect();
+                let distance2 = $(e.target)[0].getBoundingClientRect();
+                if (distance.top < 0) {
+                    var vh = window.innerHeight;
+                    if ((vh - 300 - Math.abs(distance.top)) < 200) {
+                        $(toast).removeClass("bottom-0");
+                        $(toast).addClass("top-0");
+                    } else {
+                        $(toast).find(".toast-body").attr("style", `max-height: calc(100vh - 300px - ${Math.abs(distance.top)}px)`)
+                    }
                 }
-            }
-            console.log(distance.top);
+                console.log(distance.top);
+            });
         });
-    });
     </script>
 </body>
 
