@@ -1203,6 +1203,14 @@ jQuery(document).ready(function ($) {
       let toast = $(e.target).closest('.bg-grey').find('.toast');
       $(toast).addClass('bottom-0');
       $(toast).removeClass('top-0');
+
+      if ($('.unfin-job').length) {
+        let left =
+          e.target.getBoundingClientRect().left -
+          $(e.target).closest('.bg-grey')[0].getBoundingClientRect().left;
+        $(toast).attr('style', `left:${left}px`);
+      }
+
       $(toast).toast('show');
       var distance = $(toast)[0].getBoundingClientRect();
       if (distance.top < 0 && !$('#job-map').length) {
