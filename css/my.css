@@ -4091,13 +4091,12 @@ div#infoJob .block.no-job img ~ h5 {
 .fas.fa-circle.ellipsis {
   position: relative;
 }
-
-h1 > i.sec-color {
-  margin-right: 20px !important;
-  font-size: 34px;
-}
 h1.fs-2 {
-  font-size: calc(1rem + 0.9vw) !important;
+  font-size: 25px !important;
+}
+h1 > i.sec-color {
+  margin-right: 15px !important;
+  font-size: 30px;
 }
 @media (max-width: 1024.5px) {
   .tel-elem-info > .col-auto:nth-child(2):not(.me-lg-5) {
