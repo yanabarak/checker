@@ -1209,6 +1209,7 @@ jQuery(document).ready(function ($) {
           e.target.getBoundingClientRect().left -
           $(e.target).closest('.bg-grey')[0].getBoundingClientRect().left;
         $(toast).attr('style', `left:${left}px`);
+        $(toast).removeClass('start-0');
       }
 
       $(toast).toast('show');
