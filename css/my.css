@@ -375,11 +375,12 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 #content {
   min-height: 100vh;
   background-color: transparent;
+  background-image: url('../img/Mainpage.jpg');
   /*background-image: url(../../checker-files/media/68/css/images/Mainpage.jpg);*/
   background-position: right bottom;
   background-repeat: no-repeat;
   /*    background-blend-mode: darken;*/
-  background-size: auto;
+  background-size: cover;
   background-attachment: fixed;
 }
 .wrapper {
@@ -388,7 +389,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
   background-position: right bottom;
   background-repeat: no-repeat;
   /*    background-blend-mode: darken;*/
-  background-size: auto;
+  background-size: cover;
   background-attachment: fixed;
 }
 .pr-100 {
@@ -2144,7 +2145,7 @@ div#register-form h2 {
 }
 div#login-form > div,
 div#register-form > div {
-  padding: 36px 76px 20px;
+  padding: 20px 76px 20px;
 }
 div#login-form > .sec-bg,
 div#register-form > .sec-bg {
@@ -2230,7 +2231,12 @@ div#register-form .btn-outline[data-title]:hover {
 div#login-form input,
 div#register-form input {
   min-height: 40px;
+  height: 40px;
   color: #000;
+  font-size: 14px;
+}
+div#login-form input::placeholder {
+  font-size: 14px;
 }
 div#login-form select#lang,
 div#register-form select#lang,
@@ -2269,6 +2275,27 @@ div#register-form label {
 }
 .bootstrap-select .dropdown-menu li a span {
   height: auto !important;
+}
+
+#login-form .btn.sec-bg {
+  height: 48px;
+}
+
+.error-login-text {
+  background: rgba(236, 28, 36, 0.08);
+  border-radius: 5px;
+  padding: 7px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #ec1c24;
+  margin-bottom: 0px;
+}
+
+div.recover-form {
+  min-height: 90vh;
+  max-height: 706px;
 }
 /*Telephonic Survey page*/
 body.telephonic-survey #content,
