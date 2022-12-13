@@ -5310,11 +5310,11 @@ h1 > i.sec-color {
   }
   div#login-form > div,
   div#register-form > div {
-    padding: 0px !important;
+    padding: 20px !important;
   }
   div#login-form,
   div#register-form {
-    border-radius: 0px;
+    border-radius: 5px;
     box-shadow: none;
     margin: 0 27px !important;
     margin-top: 44px !important;
@@ -5342,12 +5342,12 @@ h1 > i.sec-color {
     height: 40px;
     box-sizing: border-box;
   }
-  div#login-form .footer {
+  /* div#login-form .footer {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: 10px;
-  }
+  } */
   .autoflow {
     display: flex;
     display: -webkit-flex;
