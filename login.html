@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>   
+    <title>Login Page</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
@@ -17,7 +19,8 @@
 </head>
 
 <body class="overflow-hidden">
-    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap"
+        style="z-index: 10000;">
         <div class="spinner-border mx-auto sec-color" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
@@ -45,15 +48,18 @@
                     <h2 class="black-color fw-bold p-0">Please log in here</h2>
                 </div>
                 <div class="row p-0 m-0 mt-2  justify-content-center">
-                    <button type="button" class="btn btn-outline col-6 me-2" data-title="Microsoft">Login with Microsoft</button>
+                    <button type="button" class="btn btn-outline col-6 me-2" data-title="Microsoft">Login with
+                        Microsoft</button>
                     <button type="button" class="btn btn-outline col-6" data-title="Google">Login with Google</button>
                 </div>
                 <div class="row p-0 m-0 mt-2 justify-content-center">
-                    <button type="button" class="btn btn-outline col-6 me-2" data-title="Facebook">Login with Facebook</button>
+                    <button type="button" class="btn btn-outline col-6 me-2" data-title="Facebook">Login with
+                        Facebook</button>
                     <button type="button" class="btn btn-outline col-6" data-title="Twitter">Login with Twitter</button>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
-                    <p class="title text-center p-0 m-0"><span class="fst-italic p-1 bg-white color-lgrey2 fs-16">Or</span></p>
+                    <p class="title text-center p-0 m-0"><span
+                            class="fst-italic p-1 bg-white color-lgrey2 fs-16">Or</span></p>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-3">
                     <label for="fullName" class="form-label p-0 black-color">Full Name</label>
@@ -64,8 +70,22 @@
                     <input type="password" class="form-control" id="Password" placeholder="Password">
                 </div>
                 <div class="row w-100 m-0 p-0 mt-1">
-                    <a href="#" class="text-end color-lgrey p-0" onclick="javascript:alert('Try to relax and recall your password');return false">Forgot your password?</a>
+                    <a href="./recover_pass.html" class="text-end color-lgrey p-0 col">Forgot your
+                        password?</a>
+                    <a href="./recover_username.html" class="text-end color-lgrey p-0 ms-2 col-auto">Forgot your
+                        ID?</a>
                 </div>
+
+                <div class="row w-100 m-0 p-0 mt-2 error-login">
+                    <p class="error-login-text">You have used an invalid username and/or password. Please note that the
+                        password is case-sensitive, and the user will
+                        become inactive after several failed attempts. </p>
+                </div>
+                <!-- <div class="row w-100 m-0 p-0 mt-2 error-login">
+                    <p class="error-login-text">Your IP 198.890.345.567 has been blocked. Please contact administrator
+                        () to unblock it.</p>
+                </div> -->
+
                 <div class="row w-100 m-0 p-0 mt-2" id="recaptcha">
                     <img src="img/tmp_recaptcha.png" alt="Tmp file" class="mw-100 p-0">
                 </div>
@@ -73,10 +93,12 @@
                     <button type="submit" class="btn btn-primary sec-bg border-0 w-100 fs-18">Login</button>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
-                    <p class="color-lgrey p-0 text-center m-0">Don’t have an account yet? <a href="#" class="black-color">Register</a></p>
+                    <p class="color-lgrey p-0 text-center m-0">Don’t have an account yet? <a href="#"
+                            class="black-color">Register</a></p>
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
-                    <p class="color-lgrey p-0 text-center footer m-0">Checker System LTD PREPRODUCTION system), B Camin27 Phone +972 1599444-555 Email checker.testing@grnail.com </p>
+                    <p class="color-lgrey p-0 text-center footer m-0">Checker System LTD PREPRODUCTION system), B
+                        Camin27 Phone +972 1599444-555 Email checker.testing@grnail.com </p>
                 </div>
             </div>
         </div>

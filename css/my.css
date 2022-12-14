@@ -2145,7 +2145,7 @@ div#register-form h2 {
 }
 div#login-form > div,
 div#register-form > div {
-  padding: 20px 76px 20px;
+  padding: 36px 76px 20px;
 }
 div#login-form > .sec-bg,
 div#register-form > .sec-bg {
@@ -5316,7 +5316,7 @@ h1 > i.sec-color {
   div#register-form {
     border-radius: 5px;
     box-shadow: none;
-    margin: 0 27px !important;
+    margin: 0 10px !important;
     margin-top: 44px !important;
     margin-bottom: auto !important;
     display: -webkit-flex;
