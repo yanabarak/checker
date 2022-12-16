@@ -5348,12 +5348,23 @@ font {
   div#login-form .btn-outline,
   div#register-form .btn-outline {
     padding-right: 10px !important;
-    width: 155px !important;
+    width: calc(50% - 4px) !important;
     font-size: 12px !important;
     font-weight: normal;
     background-size: 20px auto;
     background-position: left 10px center;
     padding-left: 40px;
+  }
+
+  #login-form > .col > .row,
+  #register-form > .col > .row {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  #login-form img.mb-100,
+  #register-form img.mb-100 {
+    margin-bottom: 50px;
   }
   div#login-form .btn.btn-primary,
   div#register-form .btn.btn-primary {
