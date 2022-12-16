@@ -8,6 +8,7 @@
 }*/
 body {
   color: #666666;
+  background-color: #e8f6fe;
 }
 .spinerWrap {
   z-index: 10000;
@@ -2135,6 +2136,7 @@ div#register-form {
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   max-width: 1100px;
+  min-height: 674px;
 }
 .box-shadow {
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
@@ -2227,6 +2229,15 @@ div#register-form .btn-outline[data-title]:hover {
 #register-form p.title {
   border-bottom: 1px solid #aeaeae;
   line-height: 0.1em;
+  position: relative;
+  height: 20px;
+}
+#login-form p.title span,
+#register-form p.title span {
+  bottom: -50%;
+  position: relative;
+  transform: translateY(50%);
+  display: inline-block;
 }
 div#login-form input,
 div#register-form input {
@@ -4124,6 +4135,13 @@ h1.fs-2 {
 h1 > i.sec-color {
   margin-right: 15px !important;
   font-size: 30px;
+}
+
+font {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  line-height: inherit !important;
 }
 @media (max-width: 1024.5px) {
   .tel-elem-info > .col-auto:nth-child(2):not(.me-lg-5) {
