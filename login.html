@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v15.0"
+        nonce="0l7cHEWY"></script>
 </head>
 
 <body class="overflow-hidden">
@@ -53,9 +56,15 @@
                     <button type="button" class="btn btn-outline col-6" data-title="Google">Login with Google</button>
                 </div>
                 <div class="row p-0 m-0 mt-2 justify-content-center">
-                    <button type="button" class="btn btn-outline col-6 me-2" data-title="Facebook">Login with
-                        Facebook</button>
+
                     <button type="button" class="btn btn-outline col-6" data-title="Twitter">Login with Twitter</button>
+                    <div class="facebook-group col-6 p-0 ms-2">
+                        <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
+                            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                        <button type="button" class="btn btn-outline col" data-title="Facebook">Login with
+                            Facebook</button>
+                    </div>
+
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
                     <p class="title text-center p-0 m-0"><span
