@@ -2188,10 +2188,6 @@ div#register-form > .sec-bg {
   background-repeat: no-repeat;
   background-size: auto;
 }
-div#register-form > .sec-bg,
-div#register-form > .sec-bg select#lang {
-  background-color: #143d53;
-}
 div#login-form img.logo,
 div#register-form img.logo {
   max-width: 170px;
@@ -2294,6 +2290,11 @@ div#register-form select#lang + button {
   box-shadow: none;
   background-position: right 7px center;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 0.612305L6.5 5.6123L12 0.612305' stroke='%23ffffff' stroke-width='1.5'/%3e%3c/svg%3e ") !important;
+}
+
+div#register-form > .sec-bg,
+div#register-form > .sec-bg select#lang {
+  background-color: #143d53 !important;
 }
 div#login-form select#lang + button .filter-option,
 div#register-form select#lang + button .filter-option {
