@@ -1243,6 +1243,42 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  function offcanvasBrief() {
+    $('[aria-controls="offcanvasBrief"]').click(function (e) {
+      let info = $(e.target).closest('.bg-grey').find('.toast').html();
+      let elem = $(e.target).attr('data-bs-target');
+      let rsz = `<div id="rsz"></div>`;
+      $(elem).html(rsz + info);
+      var doc = document,
+        wd = $(elem).width(),
+        main = document.querySelector('#offcanvasBrief'),
+        x,
+        dx;
+
+      var startResize = function (evt) {
+        x = evt.screenX;
+      };
+
+      var resize = function (evt) {
+        dx = evt.screenX - x;
+        x = evt.screenX;
+        wd -= dx;
+        main.style.width = wd + 'px';
+      };
+
+      $(document)
+        .off('mousedown', '#rsz')
+        .on('mousedown', '#rsz', function (evt) {
+          startResize(evt);
+          doc.body.addEventListener('mousemove', resize);
+          doc.body.addEventListener('mouseup', function () {
+            doc.body.removeEventListener('mousemove', resize);
+          });
+        });
+    });
+  }
+  offcanvasBrief();
+
   // editDate in pickdate input
 
   function editDate() {

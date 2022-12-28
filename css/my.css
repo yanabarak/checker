@@ -2337,6 +2337,17 @@ div#register-form label {
   color: #ec1c24;
   margin-bottom: 0px;
 }
+.success-login-text {
+  background: #d1e7de;
+  border-radius: 5px;
+  padding: 7px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #1a8755;
+  margin-bottom: 0px;
+}
 
 div.recover-form {
   min-height: 90vh;
@@ -4072,6 +4083,27 @@ input[name='rangeMiles'] {
   padding: 0 10px;
 }
 
+.offcanvas.show .toast-body.blue-grey-scroll {
+  max-height: calc(100% - 50px);
+  overflow: auto;
+}
+
+.offcanvas {
+  z-index: 10000;
+}
+#rsz {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.5);
+  padding: 0px;
+  cursor: ew-resize;
+}
+.btn-close.btn-hide {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3e%3cpath d='M470.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 256 265.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160zm-352 160l160-160c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L210.7 256 73.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0z'/%3e%3c/svg%3e");
+}
 #map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(6),
 #map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(4),
 #map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(5),
