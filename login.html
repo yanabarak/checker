@@ -16,9 +16,70 @@
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v15.0"
-        nonce="0l7cHEWY"></script>
+    <script>
+        let firstcheck = true
+        function statusChangeCallback(response) {
+            // console.log(4) // Called with the results from FB.getLoginStatus().
+            // console.log('statusChangeCallback');
+            // console.log(response);                   // The current login status of the person.
+            // if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+            //     testAPI();
+            // } else {                                 // Not logged into your webpage or we are unable to tell.
+            //     document.getElementById('status').innerHTML = 'Please log ' +
+            //         'into this webpage.';
+            // }
+
+            console.log(response);  // The current login status of the person.
+            console.log((!firstcheck && response.status == 'unknown'))
+            if (response.status === 'connected') {
+                this.testAPI();
+            } else if (response.status === 'not_authorized' || (!firstcheck && response.status == 'unknown')) {
+                FB.login((response) => {
+                    if (response.status === 'connected') {
+                        this.testAPI();
+                    } else {
+                        document.getElementById('status').innerHTML = 'Please log ' + 'into this webpage.';
+                    }
+                });
+            } else {
+                firstcheck = false
+                document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+            }
+        }
+
+
+        function checkLoginState() { // Called when a person is finished with the Login Button.
+            FB.getLoginStatus(function (response) {   // See the onlogin handler
+                statusChangeCallback(response);
+            });
+        }
+
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1234313520746498',
+                cookie: true,                     // Enable cookies to allow the server to access the session.
+                xfbml: true,                     // Parse social plugins on this webpage.
+                version: 'v15.0'           // Use this Graph API version for this call.
+            });
+
+
+            FB.getLoginStatus(function (response) {  // Called after the JS SDK has been initialized.
+                statusChangeCallback(response);        // Returns the login status.
+            });
+        };
+
+        function testAPI() { // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function (response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                    'Thanks for logging in, ' + response.name + '!';
+            });
+        }
+
+    </script>
 </head>
 
 <body class="overflow-hidden">
@@ -36,11 +97,104 @@
                     <h2 class="white-color fw-bold">Shoppers Login</h2>
                 </div>
                 <div class="row">
-                    <div class="col-auto"><select class="form-select mt-2 bootstrap-select selectpicker" id="lang">
-                            <option selected="">English</option>
-                            <option value="1">Ukrainian</option>
-                            <option value="2">Hebrew</option>
-                        </select></div>
+                    <div class="col-auto">
+                        <select class="form-select mb-4 selectpicker" id="lang"
+                            onchange="call_set_lang_page(this.value)" tabindex="null">
+                            <option value="save-lang.php?w=ch2&amp;lang_id=0&amp;id=125823">Default</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=26&amp;id=125823">Arabic (Egypt)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=38&amp;id=125823">Arabic (Saudi Arabia)
+                            </option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=31&amp;id=125823">Arabic (UAE)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=29&amp;id=125823">Bosnian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=17&amp;id=125823">Bulgarian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=23&amp;id=125823">Croatian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=28&amp;id=125823">Czech</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=50&amp;id=125823">Danish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=5&amp;id=125823">German</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=53&amp;id=125823">German (Swiss)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=33&amp;id=125823">Dutch</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=4&amp;id=125823">English Australia</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=3&amp;id=125823">English UK</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=1&amp;id=125823">English US</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=10&amp;id=125823" selected="">English v2
+                            </option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=44&amp;id=125823">English (Retail surveys)
+                            </option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=43&amp;id=125823">English (Surveys)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=37&amp;id=125823">Spanish (Catalan)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=6&amp;id=125823">Spanish (Spain)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=19&amp;id=125823">Spanish (South America)
+                            </option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=14&amp;id=125823">Estonian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=39&amp;id=125823">Dutch (Flemish)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=9&amp;id=125823">French</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=18&amp;id=125823">French (Belgium)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=16&amp;id=125823">Hungarian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=25&amp;id=125823">Japanese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=2&amp;id=125823">Hebrew</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=40&amp;id=125823">Hebrew (reviews)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=30&amp;id=125823">Hebrew (surveys)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=49&amp;id=125823">Hebrew evaluations</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=41&amp;id=125823">Italian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=11&amp;id=125823">Lithuanian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=27&amp;id=125823">Macedonian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=22&amp;id=125823">Polish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=7&amp;id=125823">Portuguese (Brazil)</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=42&amp;id=125823">Portuguese (Portugal)
+                            </option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=15&amp;id=125823">Romanian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=32&amp;id=125823">Serbian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=24&amp;id=125823">Slovak</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=34&amp;id=125823">Slovene</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=36&amp;id=125823">Thai</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=12&amp;id=125823">Turkish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=8&amp;id=125823">Russian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=20&amp;id=125823">Russian v2</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=21&amp;id=125823">Ukrainian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=13&amp;id=125823">Chinese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=35&amp;id=125823">Chinese - Mandarin</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=45&amp;id=125823">Georgian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=46&amp;id=125823">Norwegian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=48&amp;id=125823">Latvian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=51&amp;id=125823">Vietnamese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=52&amp;id=125823">Greek</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=54&amp;id=125823">Finnish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=15&amp;id=125823">Romanian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=32&amp;id=125823">Serbian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=24&amp;id=125823">Slovak</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=34&amp;id=125823">Slovene</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=36&amp;id=125823">Thai</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=12&amp;id=125823">Turkish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=8&amp;id=125823">Russian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=20&amp;id=125823">Russian v2</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=21&amp;id=125823">Ukrainian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=13&amp;id=125823">Chinese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=35&amp;id=125823">Chinese - Mandarin</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=45&amp;id=125823">Georgian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=46&amp;id=125823">Norwegian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=48&amp;id=125823">Latvian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=51&amp;id=125823">Vietnamese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=52&amp;id=125823">Greek</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=54&amp;id=125823">Finnish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=15&amp;id=125823">Romanian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=32&amp;id=125823">Serbian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=24&amp;id=125823">Slovak</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=34&amp;id=125823">Slovene</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=36&amp;id=125823">Thai</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=12&amp;id=125823">Turkish</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=8&amp;id=125823">Russian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=20&amp;id=125823">Russian v2</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=21&amp;id=125823">Ukrainian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=13&amp;id=125823">Chinese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=35&amp;id=125823">Chinese - Mandarin</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=45&amp;id=125823">Georgian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=46&amp;id=125823">Norwegian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=48&amp;id=125823">Latvian</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=51&amp;id=125823">Vietnamese</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=52&amp;id=125823">Greek</option>
+                            <option value="save-lang.php?w=ch2&amp;lang_id=54&amp;id=125823">Finnish</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="col row m-0">
@@ -58,12 +212,12 @@
                 <div class="row p-0 m-0 mt-2 justify-content-center">
 
                     <button type="button" class="btn btn-outline col-6" data-title="Twitter">Login with Twitter</button>
-                    <div class="facebook-group col-6 p-0 ms-2">
-                        <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
-                            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                        <button type="button" class="btn btn-outline col" data-title="Facebook">Login with
-                            Facebook</button>
-                    </div>
+
+                    <button type="button" scope="public_profile,email" onclick="checkLoginState();"
+                        class="btn btn-outline col-6 ms-2" data-title="Facebook">Login with
+                        Facebook</button>
+                </div>
+                <div id="status">
 
                 </div>
                 <div class="row w-100 m-0 p-0 mt-4">
@@ -123,6 +277,8 @@
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/bootstrap-table-filter-control.min.js"></script>
     <script src="js/my.js"></script>
+
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 
 </html>

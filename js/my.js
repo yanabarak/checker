@@ -43,6 +43,7 @@ jQuery(document).ready(function ($) {
       if (cookieValue == 'off') {
         $('.asidebar').addClass('fliph');
         $('.animated-hamburger').removeClass('open');
+        popoverMenu();
       } else {
         $('.asidebar').removeClass('fliph');
         $('.animated-hamburger').addClass('open');
@@ -53,6 +54,11 @@ jQuery(document).ready(function ($) {
     }
     $('.navbar-toggler-button').on('click', function () {
       if ($(window).width() >= 768) {
+        if (!$('.asidebar.fliph').length) {
+          popoverMenu();
+        } else {
+          popoverMenuDestroy();
+        }
         $('.asidebar.fliph').length ? (cookieValue = 'on') : (cookieValue = 'off');
         document.cookie =
           cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
@@ -65,6 +71,30 @@ jQuery(document).ready(function ($) {
           $('.form-applied').attr('style', `width: ${$('.listWrap').innerWidth()}px`);
         }, 500);
       }
+    });
+  }
+
+  const popoverTriggerMenu = document.querySelectorAll(
+    'ul.menu-links a i[data-bs-toggle="popover-menu"]'
+  );
+  let popoverListMenu = [];
+  // function for show popover
+  function popoverMenu() {
+    popoverListMenu = [...popoverTriggerMenu].map(
+      popoverTriggerEl =>
+        new bootstrap.Popover(popoverTriggerEl, {
+          placement: 'right',
+          content: function () {
+            return $(this).closest('li').find('span').html();
+          },
+          trigger: 'hover focus',
+          fallbackPlacements: ['right'],
+        })
+    );
+  }
+  function popoverMenuDestroy() {
+    popoverListMenu.forEach(function (index, element) {
+      index.disable();
     });
   }
 
