@@ -562,6 +562,22 @@ hr[size='3'] {
   margin-left: 10% !important;
   margin-top: 2% !important;
 }
+
+.no-job {
+  min-width: 100%;
+  display: block;
+  float: none;
+}
+.no-job + h5 {
+  width: 100%;
+  float: none;
+  text-align: center;
+  margin-top: 20px;
+}
+#donut1:has(img),
+#donut2:has(img) {
+  flex-wrap: wrap;
+}
 .opacity-100 {
   opacity: 0%;
 }
