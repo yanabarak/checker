@@ -1,6 +1,11 @@
 jQuery(document).ready(function ($) {
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
+  let activeTab = $(myCarousel).find('li.active').closest('.carousel-item');
+  if (!$(activeTab[0]).hasClass('.active')) {
+    $('.carousel-item').removeClass('active');
+    $(activeTab[0]).addClass('active');
+  }
   var carousel = new bootstrap.Carousel(myCarousel, {
     interval: false,
     touch: false,
