@@ -568,10 +568,15 @@ jQuery(document).ready(function ($) {
     if ($('#map #navbarsListJob div').length == 0) {
       $('#map').addClass('emptyList');
       $('body').addClass('overflow-hidden');
-      // $("#map").attr('style', `max-height: ${ $(window).innerHeight() - ($("#infoJob").innerHeight())}px`);
       $('#map .offcanvas-collapse').html(
-        '<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
+        '<img src="images/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
       );
+      $('#navbarsListJob')
+        .find('img')
+        .attr(
+          'style',
+          `height: ${$(window).innerHeight() - 75 - $('#infoJobMenu').innerHeight()}px`
+        );
     }
   }
   // click on "Show Package button"
