@@ -1917,6 +1917,8 @@ div#map.emptyList .listWrap .offcanvas-collapse h1 {
 
 div#map.emptyList .no-job {
   min-width: unset;
+  max-width: 100%;
+  object-fit: contain;
 }
 div#infoJobMenu.mini-menu + div button#navbarSideCollapse.navbar-toggler.button-open {
   position: fixed;
