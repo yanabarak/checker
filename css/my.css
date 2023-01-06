@@ -3182,7 +3182,7 @@ th:hover .fht-cell {
 .openjobs .popover-body {
   padding: 5px !important;
 }
-.popover.fade.show.bs-popover-bottom .popover-arrow {
+body:not(.mainpage) .popover.fade.show.bs-popover-bottom .popover-arrow {
   transform: none !important;
   left: 29px !important;
 }

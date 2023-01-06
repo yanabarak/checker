@@ -46,10 +46,13 @@
                         <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button"
                             data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
                             aria-expanded="false" aria-label="Toggle navigation">
-                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span>
+                            <div class="animated-hamburger open" data-bs-toggle="popover-menu"
+                                data-bs-content="Show menu"><span></span><span></span><span></span><span></span>
                             </div>
                         </button>
-                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"
+                                data-bs-trigger="hover focus" data-bs-container="body" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-content="Notifications"></i> </a>
                     </div>
                     <div class="logo-container">
                         <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
@@ -128,7 +131,8 @@
                                 </div>
                                 <div class="user-panel py-3 mb-0">
                                     <a class="image d-flex align-items-center me-4" type="button"
-                                        data-bs-target="#carouselMenu" data-bs-slide="next">
+                                        data-bs-target="#carouselMenu" data-bs-slide="next"
+                                        data-bs-toggle="popover-menu" data-bs-content="Personal info">
                                         <div class="box image rounded-circle">
                                             <img src="https://picsum.photos/640/360" alt="User Image">
                                         </div>

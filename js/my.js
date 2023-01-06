@@ -1,10 +1,12 @@
 jQuery(document).ready(function ($) {
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
-  let activeTab = $(myCarousel).find('li.active').closest('.carousel-item');
-  if (!$(activeTab[0]).hasClass('.active')) {
-    $('.carousel-item').removeClass('active');
-    $(activeTab[0]).addClass('active');
+  if ($(myCarousel).find('li.active').length) {
+    let activeTab = $(myCarousel).find('li.active').closest('.carousel-item');
+    if (!$(activeTab[0]).hasClass('.active')) {
+      $('.carousel-item').removeClass('active');
+      $(activeTab[0]).addClass('active');
+    }
   }
   var carousel = new bootstrap.Carousel(myCarousel, {
     interval: false,
@@ -79,9 +81,7 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  const popoverTriggerMenu = document.querySelectorAll(
-    'ul.menu-links a i[data-bs-toggle="popover-menu"]'
-  );
+  const popoverTriggerMenu = document.querySelectorAll('[data-bs-toggle="popover-menu"]');
   let popoverListMenu = [];
   // function for show popover
   function popoverMenu() {
@@ -90,7 +90,7 @@ jQuery(document).ready(function ($) {
         new bootstrap.Popover(popoverTriggerEl, {
           placement: 'right',
           content: function () {
-            return $(this).closest('li').find('span').html();
+            return $(this).closest('li').find('span').text();
           },
           trigger: 'hover focus',
           fallbackPlacements: ['right'],
