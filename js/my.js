@@ -92,7 +92,7 @@ jQuery(document).ready(function ($) {
           content: function () {
             return $(this).closest('li').find('span').text();
           },
-          trigger: 'hover focus click',
+          trigger: 'hover focus',
           fallbackPlacements: ['right'],
           customClass: 'no-title-popover',
         })
@@ -1397,6 +1397,27 @@ jQuery(document).ready(function ($) {
       });
     });
   }
+
+  // show search box in table if something inside
+
+  $(document)
+    .off('change', 'th .search-input')
+    .on('change', 'th .search-input', function () {
+      $(this).val()
+        ? $(this).closest('th').addClass('show')
+        : $(this).closest('th').removeClass('show');
+    });
+
+  $(document)
+    .off('changed.bs.select', '.select-lang')
+    .on('changed.bs.select', '.select-lang', function (e) {
+      $(this).val()
+        ? $(this)
+            .siblings('.dropdown-toggle')
+            .find('.filter-option-inner-inner')
+            .html($(this).val())
+        : false;
+    });
 
   //initial all function on load page
   $(window).resize(function () {

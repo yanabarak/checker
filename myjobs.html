@@ -195,7 +195,7 @@
                                     <i class="fas fa-chevron-left d-none d-md-inline-block"></i>
                                 </button>
                                 <div class="navbar-collapse offcanvas-collapse p-0" id="navbarsListJob">
-
+                                    <!-- 
                                     <div
                                         class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job show-pack bg-white mb-2">
 
@@ -611,7 +611,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div
                                         class="row bt-1 m-0 py-3 border-bottom border-top pb-0 card-list-job bg-white mb-2">
                                         <div class="col-auto px-2 px-md-3">
@@ -765,25 +765,32 @@
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal"
                                                         class="color-lgrey fs-18">Reject</a>
                                                     <div class="btn-group accept start-lang start-job">
-                                                        <button type="button"
-                                                            class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
-                                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <span class="visually-hidden">Lang Dropdown</span>
-                                                        </button>
+                                                        <select name="" class="selectpicker select-lang"
+                                                            data-container="#infoJob" title=" "
+                                                            data-header="Choose a language">
+                                                            <option value="He">Hebrew</option>
+                                                            <option value="En">Long name checking</option>
+                                                            <option value="En1">English</option>
+                                                            <option value="He1">Hebrew</option>
+                                                            <option value="En2">English</option>
+                                                            <option value="He2">Hebrew</option>
+                                                            <option value="He">Hebrew</option>
+                                                            <option value="En">English</option>
+                                                            <option value="En1">English</option>
+                                                            <option value="He1">Hebrew</option>
+                                                            <option value="En2">English</option>
+                                                            <option value="He2">Hebrew</option>
+                                                            <option value="He">Hebrew</option>
+                                                            <option value="En">English</option>
+                                                            <option value="En1">English</option>
+                                                            <option value="He1">Hebrew</option>
+                                                        </select>
                                                         <button class="btn btn-secondary btn-lg" type="button">
                                                             Start
                                                         </button>
-                                                        <ul
-                                                            class="dropdown-menu px-2 fw-normal color-grey dropdown-menu-end">
-                                                            <li>
-                                                                <h6 class="dropdown-header">Choose a language</h6>
-                                                            </li>
-                                                            <li><span data-name="En">English</span></li>
-                                                            <li><span data-name="He">Hebrew</span></li>
-                                                            <li><span data-name="Ru">Russian</span></li>
-                                                            <li><span data-name="Ln">Really long name</span></li>
-                                                        </ul>
                                                     </div>
+
+
                                                 </div>
                                                 <div class="col-12 col-md d-block d-md-none border-bottom p-0 py-3">
                                                     <div>
@@ -1156,6 +1163,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- end -->
                                 </div>
                                 <div class="navbar-collapse offcanvas-collapse p-0 visually-hidden"
