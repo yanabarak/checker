@@ -92,8 +92,9 @@ jQuery(document).ready(function ($) {
           content: function () {
             return $(this).closest('li').find('span').text();
           },
-          trigger: 'hover focus',
+          trigger: 'hover focus click',
           fallbackPlacements: ['right'],
+          customClass: 'no-title-popover',
         })
     );
   }
@@ -389,6 +390,15 @@ jQuery(document).ready(function ($) {
         $('.form-applied').height() + 75
       }px)`
     );
+
+    if ($('#map #navbarsListJob div').length == 0) {
+      $('#maptoggler').attr(
+        'style',
+        `right: ${
+          $('#map').innerWidth() / 2 - $('#maptoggler').innerWidth() / 2
+        }px;top:calc(100% - 50px)`
+      );
+    }
     $('#maptoggler').toggleClass('show');
     cookieValue = 100;
     document.cookie = cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
@@ -574,14 +584,12 @@ jQuery(document).ready(function ($) {
       $('#map').addClass('emptyList');
       $('body').addClass('overflow-hidden');
       $('#map .offcanvas-collapse').html(
-        '<img src="images/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
+        '<img src="img/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
       );
-      $('#navbarsListJob')
-        .find('img')
-        .attr(
-          'style',
-          `height: ${$(window).innerHeight() - 75 - $('#infoJobMenu').innerHeight()}px`
-        );
+      $('#navbarsListJob').attr(
+        'style',
+        `height: ${$(window).innerHeight() - $('#infoJobMenu').innerHeight()}px`
+      );
     }
   }
   // click on "Show Package button"

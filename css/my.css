@@ -1898,9 +1898,12 @@ div#map.emptyList .listWrap .offcanvas-collapse {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: #fff;
   padding-top: 20px !important;
+}
+div#map.emptyList .listWrap .offcanvas-collapse.open-w100 {
+  padding-bottom: 50px !important;
 }
 #infoJobMenu.mini-menu + .content-wrapper > div#map.emptyList .listWrap .offcanvas-collapse {
   justify-content: center;
@@ -1919,6 +1922,7 @@ div#map.emptyList .no-job {
   min-width: unset;
   max-width: 100%;
   object-fit: contain;
+  max-height: calc(100% - 50px);
 }
 div#infoJobMenu.mini-menu + div button#navbarSideCollapse.navbar-toggler.button-open {
   position: fixed;
@@ -2269,6 +2273,11 @@ button.btn[data-title='Facebook']:hover,
 }
 button.btn[data-title='Twitter']:hover {
   background-image: url('../img/icon/Twitter_w.svg');
+}
+div#login-form button.btn[data-title='Microsoft'],
+div#login-form button.btn[data-title='Google'],
+div#login-form button.btn[data-title='Twitter'] {
+  display: none;
 }
 div#login-form .btn-outline[data-title]:hover,
 div#register-form .btn-outline[data-title]:hover,
@@ -3151,7 +3160,8 @@ th:hover {
   position: unset;
   transition: position 0s linear 0.5s;
 }
-th:hover .fht-cell {
+th:hover .fht-cell,
+.fht-cell:has(.filter-control:has(input:not(:placeholder-shown))) {
   transition: top 0.5s linear;
   position: absolute;
   top: -47px;
@@ -3201,6 +3211,12 @@ body:not(.mainpage) .popover.fade.show.bs-popover-bottom .popover-arrow {
   box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+}
+.no-title-popover .popover-header {
+  display: none;
+}
+.no-title-popover:has(.popover-header) {
+  margin-top: -5px !important;
 }
 /*preffered regions*/
 /*#all-reg,#pr-reg {
