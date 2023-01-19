@@ -1245,10 +1245,14 @@ jQuery(document).ready(function ($) {
   // show info in popup
   function showInfo() {
     $('.show-info').click(function (e) {
-      $('.toast').toast('hide');
       $('.toast').find('.toast-body').attr('style', ``);
       e.preventDefault();
       let toast = $(e.target).closest('.bg-grey').find('.toast');
+      $('.toast').each(function (index) {
+        if (!(JSON.stringify($(this).html()) == JSON.stringify(toast.html()))) {
+          $(this).addClass('hide');
+        }
+      });
       $(toast).addClass('bottom-0');
       $(toast).removeClass('top-0');
 
@@ -1256,7 +1260,28 @@ jQuery(document).ready(function ($) {
         let left =
           e.target.getBoundingClientRect().left -
           $(e.target).closest('.bg-grey')[0].getBoundingClientRect().left;
-        $(toast).attr('style', `left:${left}px`);
+        let bottom =
+          $(e.target).closest('.bg-grey')[0].getBoundingClientRect().bottom -
+          e.target.getBoundingClientRect().bottom;
+        if (
+          bottom > 20 &&
+          $(e.target).closest('.bg-grey')[0].getBoundingClientRect().top > bottom
+        ) {
+          $(toast).attr('style', `bottom:${bottom}px !important;`);
+        }
+        if (
+          $(e.target).closest('.bg-grey')[0].getBoundingClientRect().right -
+            e.target.getBoundingClientRect().left <=
+          360
+        ) {
+          let right =
+            $(e.target).closest('.bg-grey')[0].getBoundingClientRect().right -
+            e.target.getBoundingClientRect().left;
+          $(toast).css('right', `${right - 25}px`);
+          $(toast).addClass('right-0');
+        } else {
+          $(toast).css('left', `${left}px`);
+        }
         $(toast).removeClass('start-0');
       }
 
@@ -1401,8 +1426,8 @@ jQuery(document).ready(function ($) {
   // show search box in table if something inside
 
   $(document)
-    .off('change', 'th .search-input')
-    .on('change', 'th .search-input', function () {
+    .off('keyup', 'th .search-input')
+    .on('keyup', 'th .search-input', function () {
       $(this).val()
         ? $(this).closest('th').addClass('show')
         : $(this).closest('th').removeClass('show');

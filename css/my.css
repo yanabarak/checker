@@ -3772,6 +3772,21 @@ input[type='number']::-webkit-inner-spin-button {
   margin-left: -9px;
   margin-bottom: -1px;
 }
+.unfin-job {
+  overflow-x: hidden;
+}
+.toast.det-info-job.right-0:after {
+  margin-left: auto;
+  margin-right: -7px;
+  left: auto;
+  right: 20px;
+}
+.toast.det-info-job.right-0:before {
+  margin-left: auto;
+  margin-right: -8px;
+  left: auto;
+  right: 20px;
+}
 .det-info-job .toast-body .row > .col-6:first-child {
   color: #717171;
 }
@@ -3790,7 +3805,7 @@ input[type='number']::-webkit-inner-spin-button {
   margin-bottom: 10px;
 }
 .toast.det-info-job.top-0 {
-  margin-top: 45px !important;
+  margin-top: 55px !important;
 }
 .btn-close.sec-color {
   filter: invert(29%) sepia(96%) saturate(1809%) hue-rotate(200deg) brightness(101%) contrast(105%);
@@ -4289,6 +4304,21 @@ h1 > i.sec-color {
   font-size: 30px;
 }
 
+#shopper-message-modal .modal-content {
+  min-width: 350px;
+  margin: 0 auto;
+  width: 600px;
+}
+#shopper-message-modal .modal-content .block p img {
+  width: 100%;
+}
+#shopper-message-modal .modal-dialog {
+  max-width: 99vw;
+  width: fit-content;
+}
+#shopper-message-modal .modal-dialog > * {
+  padding: 0px;
+}
 font {
   color: inherit !important;
   font-size: inherit !important;
