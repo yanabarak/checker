@@ -2124,8 +2124,13 @@ body.survey_hist #infoJob {
 /*.col-auto.pb-3.hidd.d-none.ms-auto+.ms-auto {
     margin-left: 0px !important;
 }*/
-body.openjobs .action {
+/* body.openjobs .action {
   margin-right: 20px !important;
+} */
+
+form > .buttons-sel:nth-child(2) > a.remove-multiple {
+  margin-left: 0px;
+  margin-right: auto;
 }
 .myjobcard .myjobcard-footer > a:last-child {
   width: auto !important;
@@ -4269,7 +4274,18 @@ div#infoJob .block.no-job img ~ h5 {
 .open.w-100:not(.open-w100) + .form-applied > .show-pack textarea {
   height: 50px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+.open.w-100:not(.open-w100) + .form-applied > .show-pack form {
+  display: flex;
+  flex-direction: row;
+}
+.open.w-100 + .form-applied > .show-pack form > * {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .open.w-100:not(.open-w100) + .form-applied > .show-pack form {
   margin-left: 0px !important;
