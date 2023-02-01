@@ -1897,6 +1897,7 @@ select#lang + button {
 #map textarea.form-control {
   min-height: 100%;
   max-height: 300px;
+  width: 300px;
 }
 .card-list-job .accordion-body > * {
   padding-left: 12px !important;
@@ -2128,7 +2129,8 @@ body.survey_hist #infoJob {
   margin-right: 20px !important;
 } */
 
-form > .buttons-sel:nth-child(2) > a.remove-multiple {
+.show-pack form a,
+.show-main form a {
   margin-left: 0px;
   margin-right: auto;
 }
