@@ -1136,39 +1136,58 @@
                                             <label class="form-check-label fs-18 black-color ms-3"
                                                 for="SelectAll">Select All</label>
                                         </div>
-                                        <div class="col-12 col-md-6 p-0 ps-md-3 buttons-sel invisible">
-                                            <textarea class="form-control w-100" rows="3"></textarea>
-                                        </div>
-                                        <div
-                                            class="col-12 col-md gap-2 p-0 me-auto d-flex flex-row flex-md-column justify-content-between mt-2 mt-md-0 ps-md-3 align-items-center buttons-sel invisible">
-                                            <button type="submit"
-                                                class="btn btn-primary sec-bg border-0 me-auto fs-18">Apply</button>
-                                            <a href="#" class="black-color fs-16 me-auto">Remove Application</a>
-                                        </div>
+                                        <form action="c_index.php?Controller=Jobs&amp;Action=accept&amp;jobboard=1"
+                                            method="post" class="col p-0 ps-md-3 buttons-sel row">
+                                            <div class="col-12 col-md-6 p-0 ps-md-3 buttons-sel">
+                                                <textarea class="form-control w-100 " rows="3" name="ApplicationComment"
+                                                    style="height: 88px;"></textarea>
+                                            </div>
+
+                                            <div
+                                                class="col-12 col-md gap-2 p-0 me-auto d-flex flex-row flex-md-column justify-content-start mt-2 mt-md-0 ps-md-3 align-items-start buttons-sel">
+
+                                                <input type="hidden" name="order_id" id="orderIds"
+                                                    value="238514,238525,238517,238518,237360,235861">
+                                                <button type="submit"
+                                                    class="btn btn-primary sec-bg border-0 me-auto fs-18">Apply</button>
+
+                                                <a href="c_index.php?Controller=Jobs&amp;Action=reject&amp;jobboard=1&amp;order_ids[]=238514&amp;order_ids[]=238525&amp;order_ids[]=238517&amp;order_ids[]=238518&amp;order_ids[]=237360&amp;order_ids[]=235861"
+                                                    data-clear-url="c_index.php?Controller=Jobs&amp;Action=reject&amp;jobboard=1"
+                                                    class="remove-multiple black-color fs-18" disabled="disabled">Remove
+                                                    application</a>
+                                            </div>
+                                        </form>
                                     </div>
                                     <div
                                         class="col-auto p-0 d-flex justify-content-left align-items-center show-pack position-relative flex-column flex-md-row visually-hidden">
-                                        <div class="col-auto p-0 d-flex align-items-center me-4">
+                                        <!-- <div class="col-auto p-0 d-flex align-items-center me-4">
                                             <input type="checkbox" class="form-check-input mt-0" id="SelectAll2">
                                             <label class="form-check-label fs-18 black-color ms-3"
                                                 for="SelectAll2">Select All</label>
-                                        </div>
-                                        <form
-                                            class="col-auto p-0 d-flex buttons-sel align-items-center mt-2 mt-md-0 position-relative ms-auto me-auto">
-                                            <div><textarea class="form-control" rows="3"></textarea><a href="#"
-                                                    class="black-color fs-18 px-0 px-md-2 pe-3">Remove
-                                                    Selected</a><button class="accept">Accept
-                                                    Selected</button></div>
-
+                                        </div> -->
+                                        <form action="c_index.php?Controller=Jobs&amp;Action=accept&amp;jobboard=1"
+                                            method="post" class="col p-0 ps-md-3 row">
+                                            <input type="hidden" name="order_id" value="238500,238511"
+                                                id="pkgOrder_ids">
+                                            <div class="col-auto p-0 d-flex align-items-center mt-2 mt-md-0">
+                                                <textarea class="form-control" rows="3"
+                                                    name="ApplicationComment"></textarea>
+                                                <a data-clear-url="c_index.php?Controller=Jobs&amp;Action=reject&amp;jobboard=1"
+                                                    href="c_index.php?Controller=Jobs&amp;Action=reject&amp;jobboard=1&amp;order_ids[]=238500&amp;order_ids[]=238511"
+                                                    class="black-color fs-18 px-0 px-md-2 pe-3 pkgRejectUrl"
+                                                    style="display: none;">Remove</a>
+                                                <button type="submit" class="accept pkgApply">Apply</button>
+                                            </div>
                                             <a href="#" data-bs-container="body" data-bs-toggle="popover"
-                                                data-bs-trigger="focus hover" data-bs-html="true"
-                                                data-bs-placement="top" data-bs-content="
-                                                                                    <div class=&quot;col-12&quot;>Please tick <b>Accept</b> button if you are ready to perform jobs that are available in this package.You can see the list of available jobs above. You can’t <b>Accept</b> a single job because it is a part ofthe packege. </div>
-                                                                                    <hr>
-                                                                                    <div class=&quot;col-12&quot;>
-                                                                                        This is a package on the job board. Once you <b>Reject</b>  a package, means you are <b></b>rejecting all jobs in that package</b>.
-                                                                                    </div>" class="preview ms-2"
-                                                data-bs-original-title="" title=""><i class="fas fa-info"></i></a>
+                                                data-bs-trigger="hover" data-bs-html="true" data-bs-placement="top"
+                                                data-bs-content="
+                                                                                            <div class=&quot;col-12&quot;>Please tick <b>Accept</b> button if you are ready to perform jobs that are available in this package.You can see the list of available jobs above. You can’t <b>Accept</b> a single job because it is a part ofthe packege. </div>
+                                                                                            <hr>
+                                                                                            <div class=&quot;col-12&quot;>
+                                                                                                This is a package on the job board. Once you <b>Reject</b>  a package, means you are <b></b>rejecting all jobs in that package</b>.
+                                                                                            </div>"
+                                                class="preview ms-2" data-bs-original-title="" title=""><i
+                                                    class="fas fa-info"></i></a>
                                         </form>
                                         <button class="border-0 position-absolute bg-transparent" id="back"><i
                                                 class="fas fa-chevron-circle-left"></i></button>
