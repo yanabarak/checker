@@ -878,10 +878,11 @@ div#infoJobMenu.mini-menu + div button#navbarSideCollapseClose {
   top: 39px;
 }
 .mini-menu + .content-wrapper > #map button#navbarSideCollapse {
-  margin-top: 129px !important;
+  margin-top: 20px !important;
 }
 .mini-menu + .content-wrapper > #map button#navbarSideCollapse.button-open {
   left: calc(50% + 35px);
+  margin-top: 129px !important;
 }
 #maptoggler {
   position: absolute;

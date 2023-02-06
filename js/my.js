@@ -318,7 +318,7 @@ jQuery(document).ready(function ($) {
           $('.offcanvas-collapse').removeClass('open-w100');
           $('#job-map').attr(
             'style',
-            `height: ${$(window).height() - 60 - $('#infoJobMenu').height()}px`
+            `height: ${$(window).height() - 10 - $('#infoJobMenu').height()}px`
           );
           // console.log(3)
 
@@ -356,10 +356,10 @@ jQuery(document).ready(function ($) {
 
       document.querySelector('#navbarSideCollapseClose').addEventListener('click', function () {
         $('#map').attr('style', 'height:' + ($(window).height() - 100) + 'px;');
-        $('#job-map').attr(
-          'style',
-          `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
-        );
+        // $('#job-map').attr(
+        //   'style',
+        //   `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
+        // );
 
         // console.log(4)
         $('#navbarSideCollapseClose').addClass('visually-hidden');
