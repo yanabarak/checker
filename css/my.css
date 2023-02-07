@@ -994,6 +994,14 @@ body.myjobs #map .navbar-collapse.open-w100 div.action {
   justify-content: space-evenly !important;
   margin-right: 0px;
 }
+
+body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
+  justify-content: center !important;
+  column-gap: 10px;
+}
+.myjobs .show-pack .remove-multiple {
+  margin-right: 10px;
+}
 body.openjobs #map div.action[data-info*=' '] > a:first-child:last-child {
   margin: 0 auto;
 }
@@ -2080,6 +2088,8 @@ body.openjobs div.mini-menu#infoJobMenu {
   bottom: 0px;
   padding: 0px;
   left: 0px;
+  top: 0px;
+  min-height: 100%;
 }
 
 body.myjobs div#infoJobMenu,

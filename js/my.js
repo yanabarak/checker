@@ -592,6 +592,7 @@ jQuery(document).ready(function ($) {
       );
     }
   }
+
   // click on "Show Package button"
   function showPack() {
     let titledef = $('h1.fs-2 span').text();
@@ -619,7 +620,9 @@ jQuery(document).ready(function ($) {
         $('#infoJobMenu .block.rounded-3').addClass('visually-hidden');
         if ($(window).innerWidth() > 767) {
           $('#navbarsListJob').attr('style', `height:${$('#map').innerHeight()}px`);
-          $('#navbarsListJobPack').attr('style', `height:${$('#map').innerHeight()}px`);
+          // $('#navbarsListJobPack').attr('style', `height:${$('#map').innerHeight()}px`);
+          $('#navbarsListJobPack').attr('style', `${$('#navbarsListJobPack')[0].scrollHeight}px`);
+          // $('#job-map').attr('style', `height:${$('#map').innerHeight()}px`);
           if ($(window).scrollTop() > 10) {
             $(window).scrollTop('11');
           }
@@ -634,6 +637,15 @@ jQuery(document).ready(function ($) {
         $('.form-applied .show-pack').removeClass('visually-hidden');
 
         // $('#navbarsListJobPack').attr("style", `transform:translateY(-${(($('#navbarsListJob').innerHeight()-$(window).scrollTop())/$('#navbarsListJobPack').innerHeight())*100}%)`);
+
+        $(document).on('click', '.accordion-header', function (e) {
+          console.log($($(e.currentTarget).closest('#navbarsListJobPack'))[0].scrollLeftMax);
+          $($(e.currentTarget).closest('#navbarsListJobPack'))[0].scrollHeight;
+          $($(e.currentTarget).closest('#navbarsListJobPack')).attr(
+            'style',
+            `${$($(e.currentTarget).closest('#navbarsListJobPack'))[0].scrollHeight}px`
+          );
+        });
       });
 
     $(document)
@@ -645,6 +657,7 @@ jQuery(document).ready(function ($) {
           $('#navbarsListJob').removeClass('d-none');
         }, 500);
         $('#navbarsListJobPack').attr('style', ``);
+        $('#navbarsListJob').attr('style', ``);
 
         $('#navbarsListJobPack').removeClass('show-job-pack');
         $('#navbarsListJobPack').addClass('visually-hidden');
