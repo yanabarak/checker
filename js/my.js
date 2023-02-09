@@ -810,6 +810,17 @@ jQuery(document).ready(function ($) {
         selectedTextFormat: 'count > 3',
         actionsBox: true,
       });
+
+      if ($('.selectpicker').hasClass('select-lang')) {
+        $('div.select-lang option:selected').each(function () {
+          console.log(
+            $($(this).closest('.bootstrap-select')).find('.filter-option-inner-inner').text()
+          );
+          $($(this).closest('.bootstrap-select'))
+            .find('.filter-option-inner-inner')
+            .text($(this).val());
+        });
+      }
     }
   });
 
@@ -1446,16 +1457,16 @@ jQuery(document).ready(function ($) {
         : $(this).closest('th').removeClass('show');
     });
 
-  $(document)
-    .off('changed.bs.select', '.select-lang')
-    .on('changed.bs.select', '.select-lang', function (e) {
-      $(this).val()
-        ? $(this)
-            .siblings('.dropdown-toggle')
-            .find('.filter-option-inner-inner')
-            .html($(this).val())
-        : false;
-    });
+  // $(document)
+  // .off('changed.bs.select', '.select-lang')
+  // .on('changed.bs.select', '.select-lang', function (e) {
+  //   $(this).val()
+  //     ? $(this)
+  //         .siblings('.dropdown-toggle')
+  //         .find('.filter-option-inner-inner')
+  //         .html($(this).val())
+  //     : false;
+  // });
 
   //initial all function on load page
   $(window).resize(function () {

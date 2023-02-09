@@ -871,8 +871,14 @@ button#navbarSideCollapseClose {
 div#infoJobMenu.mini-menu + div button#navbarSideCollapseClose {
   position: fixed;
   margin-top: 91.5px;
-  margin-left: 120px;
+  margin-left: 20px;
 }
+@-moz-document url-prefix() {
+  div#infoJobMenu.mini-menu + div button#navbarSideCollapseClose {
+    margin-left: 120px;
+  }
+}
+
 .mini-menu + .content-wrapper > #map #navbarSideCollapseClose {
   left: calc(50% + 19px);
   top: 39px;
@@ -1270,6 +1276,11 @@ button.accept.disabled:hover,
 }
 body.myjobs #map div.action {
   min-width: 220px;
+  justify-content: space-around !important;
+}
+body.myjobs #map div.action:has(form) {
+  justify-content: center !important;
+  padding-right: 0px !important;
 }
 body.openjobs #map div.action {
   min-width: 150px;
@@ -1990,8 +2001,13 @@ div#map.emptyList .no-job {
 div#infoJobMenu.mini-menu + div button#navbarSideCollapse.navbar-toggler.button-open {
   position: fixed;
   margin-top: 110px;
-  margin-left: 150px;
+  margin-left: 50px;
   z-index: 2;
+}
+@-moz-document url-prefix() {
+  div#infoJobMenu.mini-menu + div button#navbarSideCollapse.navbar-toggler.button-open {
+    margin-left: 150px;
+  }
 }
 body.myjobs div#infoJobMenu,
 body.openjobs div#infoJobMenu,
@@ -2132,6 +2148,10 @@ body.survey_hist #infoJob {
 }
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-7:nth-child(2) {
   max-width: 150px;
+}
+
+.card-list-job .col-7.col-md-4.col-lg-5 {
+  padding-left: 20px !important;
 }
 /*.col-auto.pb-3.hidd.d-none.ms-auto+.ms-auto {
     margin-left: 0px !important;
