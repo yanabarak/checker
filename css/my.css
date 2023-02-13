@@ -1,13 +1,67 @@
 :root {
-  --main-brand-color: #bdd82f;
-  --second-brand-color: #007bff;
+  /* --main-brand-color: #ff0000;
+  --second-brand-color: #ffff00;
+
+  --backg-color: #000000;
+  --font-color: #222; */
+
+  --color: 70, 68%;
+  --l: 52%;
+
+  --sec-color: 208, 100%;
+  --sec-l: 50%;
+
+  /* --color: 170, 68%;
+  --l: 52%;
+
+  --sec-color: 8, 100%;
+  --sec-l: 50%; */
+
+  /* --font-color: #00f; */
+
+  --main-brand-color: hsl(var(--color), var(--l));
+  --second-brand-color: hsl(var(--sec-color), var(--sec-l));
+  --color-main-darkest: hsl(var(--color), calc(var(--l) - 10%));
+  --color-second-darkest: hsl(var(--sec-color), calc(var(--sec-l) - 10%));
+  --color-second-lightest: hsl(var(--sec-color), calc(var(--sec-l) + 40%));
+
+  --filter: invert(34%) sepia(86%) saturate(2631%) hue-rotate(196deg) brightness(97%) contrast(115%);
+  /* --filter: invert(16%) sepia(48%) saturate(7305%) hue-rotate(354deg) brightness(104%)
+    contrast(122%); */
 }
 /*@media (min-width: 1000px) and (max-height: 800px) and (min-height: 700px) {
   body {font-size: 12px;
   }
 }*/
+.dropdown-item,
+.form-select {
+  color: var(--font-color, #212529);
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: var(--font-color, #1e2125);
+}
+.btn-primary {
+  color: #fff;
+  background-color: var(--color-second-darkest);
+  border-color: var(--color-second-darkest);
+}
+.form-control:focus {
+  color: var(--font-color, #1e2125);
+  background-color: #fff;
+  border-color: var(--second-brand-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem var(--color-second-lightest);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem var(--color-second-lightest);
+}
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--color-second-darkest);
+}
 body {
-  color: #666666;
+  color: var(--font-color, #666666);
   background-color: #e8f6fe;
 }
 .spinerWrap {
@@ -224,7 +278,7 @@ ul.menu-links.list-group li {
   border-radius: 0px 15px 15px 0px;
 }
 ul.menu-links.list-group a {
-  color: #666;
+  color: var(--font-color, #666);
   text-decoration: none;
   width: 100%;
   display: flex;
@@ -232,7 +286,7 @@ ul.menu-links.list-group a {
 }
 ul.menu-links.list-group li.active:hover a,
 ul.menu-links.list-group li:hover a {
-  color: #666;
+  color: var(--font-color, #666);
 }
 ul.menu-links.list-group i {
   margin-right: 1.5rem;
@@ -421,19 +475,19 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
   color: var(--second-brand-color);
 }
 .black-color {
-  color: #000;
+  color: var(--font-color, #000);
 }
 .white-color {
   color: #fff;
 }
 .color-grey {
-  color: #666;
+  color: var(--font-color, #666);
 }
 .color-lgrey {
-  color: #aeaeae;
+  color: var(--font-color, #aeaeae);
 }
 .color-lgrey2 {
-  color: #797979;
+  color: var(--font-color, #797979);
 }
 .main-bg {
   background-color: var(--main-brand-color);
@@ -442,14 +496,14 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
   background-color: var(--second-brand-color);
 }
 .thr-bg {
-  background-color: #4367c7;
+  background-color: var(--color-second-darkest);
 }
 .bg-grey {
   background-color: #f7f7f7;
 }
 h5.title {
   font-weight: 900;
-  color: #c2c2c2;
+  color: var(--font-color, #c2c2c2);
   line-height: 2;
   font-size: 18px;
 }
@@ -653,7 +707,7 @@ select.form-select,
   color: #aeaeae;
   font-size: 16px;
   border-color: #dadada;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.949707 0.872359L7.98695 7.12769L15.0242 0.872359' stroke='%23007BFF' stroke-width='2'/%3e%3c/svg%3e ");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.949707 0.872359L7.98695 7.12769L15.0242 0.872359' stroke='%23aeaeae' stroke-width='2'/%3e%3c/svg%3e ");
   background-size: 14px 6px;
 }
 .dropdown.bootstrap-select.form-select {
@@ -769,8 +823,11 @@ form.row .col-auto,
 form.row .col-12 {
   padding: 0px 3.5px;
 }
+.accordion-button {
+  color: var(--font-color, #212529);
+}
 #accordionFormJob h4.accordion-button {
-  color: black;
+  color: var(--font-color, black);
   background-color: transparent;
   box-shadow: none;
   font-size: calc(1.275rem + 0.3vw);
@@ -896,7 +953,7 @@ div#infoJobMenu.mini-menu + div button#navbarSideCollapseClose {
   top: 120%;
   bottom: auto;
   position: fixed;
-  background: #007bff;
+  background: var(--color-second-darkest);
   box-shadow: 0px 4.80502px 4.80502px rgba(0, 0, 0, 0.25);
   border-radius: 51.654px;
   color: #fff;
@@ -1005,8 +1062,31 @@ body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   justify-content: center !important;
   column-gap: 10px;
 }
+.myjobs .apply-multiple:first-child > textarea {
+  min-height: 88px !important;
+}
+.myjobs .apply-multiple:first-child > .remove-multiple.black-color {
+  position: absolute;
+  left: calc(100% + 20px);
+  bottom: 0px;
+  width: max-content;
+}
+.myjobs .apply-multiple:nth-child(2) {
+  align-self: flex-start;
+  margin-bottom: 50px;
+}
+.myjobs .apply-multiple:first-child {
+  position: relative;
+  margin-right: 20px;
+}
 .myjobs .show-pack .remove-multiple {
   margin-right: 10px;
+}
+.remove-multiple,
+.remove-multiple:hover {
+  text-decoration: underline;
+  background: transparent !important;
+  border: 0px solid;
 }
 body.openjobs #map div.action[data-info*=' '] > a:first-child:last-child {
   margin: 0 auto;
@@ -1052,7 +1132,7 @@ button.accept.disabled:hover,
   width: 100% !important;
   z-index: 5;
   background: #ffffff;
-  border: 4px solid #007bff;
+  border: 4px solid var(--color-second-darkest);
   border-top: 0px solid !important;
   border-radius: 0 0 23px 23px;
   background: linear-gradient(
@@ -1077,7 +1157,7 @@ button.accept.disabled:hover,
   width: auto !important;
   font-size: 16px;
   line-height: 150%;
-  color: #666;
+  color: var(--font-color, #666);
   padding: 0 12px;
   border-bottom: 0.5px solid #dadada;
 }
@@ -1285,7 +1365,8 @@ body.myjobs #map div.action:has(form) {
 body.openjobs #map div.action {
   min-width: 150px;
 }
-.actions .await {
+.actions .await,
+.myjobcard-footer .await {
   display: inline-block;
   max-width: 200px;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='23' viewBox='0 0 24 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M19.0679 22.823H4.72252C2.81151 22.823 1.27849 22.0828 0.515017 20.7929C-0.248813 19.502 -0.159413 17.8027 0.759257 16.1284L8.14867 2.65803C9.08844 0.944417 10.4187 0 11.8945 0C13.3718 0 14.7017 0.944417 15.6418 2.65803L23.0312 16.1291C23.9499 17.8027 24.0389 19.5016 23.2754 20.7926C22.512 22.0828 20.9789 22.823 19.0679 22.823ZM11.8949 2.28362C11.2995 2.28362 10.664 2.82002 10.1512 3.75514L2.76145 17.2262C2.23971 18.176 2.13816 19.0514 2.4793 19.63C2.82153 20.2075 3.64007 20.5397 4.72252 20.5397H19.0679C20.1504 20.5397 20.9689 20.2075 21.3111 19.63C21.6523 19.0514 21.5507 18.1764 21.029 17.2273L13.6396 3.75514C13.1268 2.81966 12.4913 2.28362 11.8949 2.28362Z' fill='%23EC1C24'/%3e%3cpath d='M10.5289 16.5761C10.5289 15.7672 11.0942 15.1869 11.9035 15.1869C12.7127 15.1869 13.2455 15.7672 13.2616 16.5761C13.2616 17.3689 12.7274 17.9643 11.9035 17.9643C11.0781 17.9643 10.5289 17.3689 10.5289 16.5761ZM11.0334 14.4237L10.6819 7.50922H13.1089L12.7735 14.4237H11.0334Z' fill='%23EC1C24'/%3e%3c/svg%3e ");
@@ -1357,14 +1438,15 @@ a.preview .fab {
   border: 2px solid var(--second-brand-color);
   border-radius: 100%;
   box-sizing: border-box;
+  color: var(--second-brand-color);
 }
 a.preview .fas.fa-print {
   color: var(--main-brand-color);
   border-color: var(--main-brand-color);
 }
 a.preview .fas.fa-search {
-  border-color: #4367c7;
-  color: #4367c7;
+  border-color: var(--color-second-darkest);
+  color: var(--color-second-darkest);
 }
 a.preview.show-info .fas {
   color: #75b9ff;
@@ -1385,19 +1467,36 @@ button.filter-btn {
   height: fit-content;
   box-sizing: border-box;
   padding: 0 65px 0 25px;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23007BFF' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23007BFF' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23007BFF' stroke-width='2'/%3e%3c/svg%3e ");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 38px auto;
   transition: all 0.3s linear;
   max-height: 40px;
+  position: relative;
+}
+button.filter-btn::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23000' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23000' stroke-width='2'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 38px auto;
+  content: '';
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  right: 10px;
+  top: 0px;
+  display: block;
+  filter: var(--filter);
 }
 button.filter-btn.active,
 button.filter-btn:hover {
   color: #fff;
   background-color: var(--second-brand-color) !important;
   box-shadow: 0px 0px 0px 2px var(--second-brand-color) inset !important;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='38' height='25' viewBox='0 0 38 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cline x1='36.9214' y1='18.4875' x2='22.2624' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='4.15381' y1='18.4875' x2='1.07815' y2='18.4875' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='12.9771' cy='18.5684' r='5.02286' transform='rotate(-180 12.9771 18.5684)' stroke='%23fff' stroke-width='2'/%3e%3cline x1='1.07813' y1='6.60352' x2='15.7371' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3cline x1='33.8457' y1='6.60352' x2='36.9214' y2='6.60352' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3e%3ccircle cx='25.0224' cy='6.52262' r='5.02286' stroke='%23fff' stroke-width='2'/%3e%3c/svg%3e ");
+}
+button.filter-btn.active::after,
+button.filter-btn:hover::after {
+  filter: invert(1);
 }
 .myjob-title {
   width: calc(50% + 10px);
@@ -1542,7 +1641,7 @@ button.filter-btn:hover {
   font-weight: 900;
   font-size: 24px;
   line-height: 150%;
-  color: #bdd82f !important;
+  color: var(--main-brand-color) !important;
   position: absolute;
   height: 100%;
   margin: 0px;
@@ -1851,6 +1950,21 @@ button.navbar-toggler + a i.far.fa-bell.badge-notificatios:hover {
   margin-top: -4px;
   pointer-events: none;
   transition: color 0.1s;
+}
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  filter: var(--filter);
+}
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: '';
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.2s ease-in-out;
 }
 .toggleCer.accordion-button::after {
   filter: grayscale(1);
@@ -2193,14 +2307,22 @@ body.survey_hist #infoJob {
   padding-right: 0px;
   min-height: 30px !important;
 }
+.myjobcard-footer .btn-group.accept.start-lang.start-job button.btn.dropdown-toggle {
+  height: 33px;
+  min-width: 33px !important;
+}
+.myjobcard-footer .btn-group.accept.start-lang.start-job > [type='button']:not(:first-child) {
+  padding-left: 5px !important;
+  padding-right: 10px !important;
+}
 .myjobcard .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
   margin-top: 0px;
   display: flex;
   margin-top: 0px;
   display: flex;
   position: relative;
-  top: 2.5px;
-  left: 2.5px;
+  top: -1.5px;
+  left: 4.5px;
   width: 20px;
   height: 20px;
 }
@@ -2718,8 +2840,8 @@ body.telephonic-survey #content {
   float: none !important;
 }
 .time-btn.outline.active {
-  background: #007bff;
-  border: 1px solid #007bff;
+  background: var(--color-second-darkest);
+  border: 1px solid var(--color-second-darkest);
   color: #fff;
 }
 #time-inline {
@@ -2732,10 +2854,10 @@ body.telephonic-survey #content {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.51758 1.87904L6.33913 6.16486L11.1607 1.87904' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
   background-repeat: no-repeat;
   background-position: right 15px center;
-  color: #666;
+  color: var(--font-color, #666);
 }
 #time-inline::placeholder {
-  color: #666666;
+  color: var(--font-color, #666);
 }
 #datetime {
   max-width: none;
@@ -2825,13 +2947,13 @@ body.telephonic-survey #content {
   box-sizing: border-box;
 }
 #collapsePersInfo .table-title {
-  color: #666;
+  color: var(--font-color, #666);
   min-height: 69px;
   font-size: 14px;
   font-weight: 400;
 }
 #collapsePersInfo .table-result {
-  color: #000;
+  color: var(--font-color, #000);
   font-weight: 500;
   min-height: 69px;
   font-size: 18px;
@@ -2978,8 +3100,13 @@ ol.inline-list li:before {
   padding-right: 3px;
 }
 /*files library*/
+
 .fas.fa-arrow-download.main-color {
-  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='17' viewBox='0 0 13 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.22527 13.7821C6.27574 13.8389 6.34799 13.8714 6.42396 13.8714C6.49993 13.8714 6.57191 13.8389 6.62265 13.7821L11.6268 8.14766C11.6961 8.0693 11.7131 7.95774 11.6703 7.86238C11.6276 7.76702 11.5325 7.70566 11.4281 7.70566H9.01832V2.28479C9.01832 2.1379 8.89958 2.01917 8.75269 2.01917H4.09496C3.94807 2.01917 3.82933 2.1379 3.82933 2.28479V7.70566H1.41985C1.31519 7.70566 1.22037 7.76702 1.1776 7.86238C1.13483 7.95774 1.15183 8.0693 1.22116 8.14766L6.22527 13.7821Z' fill='%23BDD82F'/%3e%3cpath d='M4.09485 1.632H8.75258C8.89947 1.632 9.01821 1.513 9.01821 1.36637V0.265625C9.01821 0.119 8.89947 0 8.75258 0H4.09485C3.94796 0 3.82922 0.119 3.82922 0.265625V1.36637C3.82922 1.513 3.94796 1.632 4.09485 1.632Z' fill='%23BDD82F'/%3e%3cpath d='M11.3447 14.6283H1.50359C0.89 14.6283 0.390625 15.1277 0.390625 15.7415C0.390625 16.3551 0.89 16.8545 1.50359 16.8545H11.3447C11.9586 16.8545 12.458 16.3551 12.458 15.7415C12.458 15.1277 11.9586 14.6283 11.3447 14.6283Z' fill='%23BDD82F'/%3e%3c/svg%3e ");
+  filter: var(--filter);
+  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='17' viewBox='0 0 13 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6.22527 13.7821C6.27574 13.8389 6.34799 13.8714 6.42396 13.8714C6.49993 13.8714 6.57191 13.8389 6.62265 13.7821L11.6268 8.14766C11.6961 8.0693 11.7131 7.95774 11.6703 7.86238C11.6276 7.76702 11.5325 7.70566 11.4281 7.70566H9.01832V2.28479C9.01832 2.1379 8.89958 2.01917 8.75269 2.01917H4.09496C3.94807 2.01917 3.82933 2.1379 3.82933 2.28479V7.70566H1.41985C1.31519 7.70566 1.22037 7.76702 1.1776 7.86238C1.13483 7.95774 1.15183 8.0693 1.22116 8.14766L6.22527 13.7821Z' fill='%23000'/%3e%3cpath d='M4.09485 1.632H8.75258C8.89947 1.632 9.01821 1.513 9.01821 1.36637V0.265625C9.01821 0.119 8.89947 0 8.75258 0H4.09485C3.94796 0 3.82922 0.119 3.82922 0.265625V1.36637C3.82922 1.513 3.94796 1.632 4.09485 1.632Z' fill='%23000'/%3e%3cpath d='M11.3447 14.6283H1.50359C0.89 14.6283 0.390625 15.1277 0.390625 15.7415C0.390625 16.3551 0.89 16.8545 1.50359 16.8545H11.3447C11.9586 16.8545 12.458 16.3551 12.458 15.7415C12.458 15.1277 11.9586 14.6283 11.3447 14.6283Z' fill='%23000'/%3e%3c/svg%3e ");
+}
+.fas.fa-eye.sec-color {
+  color: var(--main-brand-color);
 }
 #files-library .table-fixed thead {
   background-color: #f4f4f4;
@@ -3031,7 +3158,7 @@ div#files-library .bootstrap-table .fixed-table-container .table .col-1 div,
 }
 a.view,
 a.download {
-  color: #717171;
+  color: var(--font-color, #717171);
   text-decoration: none;
 }
 .table.classic a.view i,
@@ -3104,7 +3231,7 @@ a.download {
 }
 .classic.table th {
   padding: 0px !important;
-  color: #2b2b2b;
+  color: var(--font-color, #2b2b2b);
   font-size: 16px;
   background-color: transparent;
 }
@@ -3125,7 +3252,7 @@ a.download {
   border-radius: 0px 5px 0px 0px;
 }
 .classic.table td {
-  color: #666666;
+  color: var(--font-color, #666666);
   font-size: 14px;
 }
 .classic.table td:first-child i {
@@ -3133,7 +3260,7 @@ a.download {
 }
 .classic.table td:nth-child(2) {
   font-size: 18px;
-  color: #000;
+  color: var(--font-color, #000);
   font-weight: 500;
 }
 #files-library > .bootstrap-table {
@@ -3368,14 +3495,14 @@ body:not(.mainpage) .popover.fade.show.bs-popover-bottom .popover-arrow {
 .mini-table.classic.table td:nth-child(2) {
   font-weight: 400;
   font-size: 16px;
-  color: #2b2b2b;
+  color: var(--font-color, #2b2b2b);
 }
 #pr-reg .mini-table.classic.table td,
 #pr-reg p {
-  color: #383838;
+  color: var(--font-color, #383838);
 }
 .dd-grey {
-  color: #383838;
+  color: var(--font-color, #383838);
 }
 .classic.mini-table.table .col-2 input {
   margin-left: 44px !important;
@@ -3721,7 +3848,7 @@ input[type='number']::-webkit-inner-spin-button {
   bottom: -15px !important;
   position: absolute;
   right: calc(50% - 100px) !important;
-  background: #007bff !important;
+  background: var(--color-second-darkest) !important;
   box-shadow: 0px 4.80502px 4.80502px rgba(0, 0, 0, 0.25);
   border-radius: 51.654px;
   color: #fff;
@@ -3838,10 +3965,10 @@ input[type='number']::-webkit-inner-spin-button {
   right: 20px;
 }
 .det-info-job .toast-body .row > .col-6:first-child {
-  color: #717171;
+  color: var(--font-color, #717171);
 }
 .det-info-job .toast-body .row > .col-6:last-child {
-  color: #383838;
+  color: var(--font-color, #383838);
   font-weight: 500;
 }
 .det-info-job {
@@ -3858,7 +3985,7 @@ input[type='number']::-webkit-inner-spin-button {
   margin-top: 55px !important;
 }
 .btn-close.sec-color {
-  filter: invert(29%) sepia(96%) saturate(1809%) hue-rotate(200deg) brightness(101%) contrast(105%);
+  filter: var(--filter);
   opacity: 1;
 }
 /*detailed report*/
@@ -3916,17 +4043,17 @@ i.open-arr {
   background-repeat: no-repeat;
   background-size: 18px;
   background-position: center;
-  filter: invert(34%) sepia(86%) saturate(2631%) hue-rotate(196deg) brightness(97%) contrast(115%);
+  filter: var(--filter);
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.9738 0C13.6966 0 13.4719 0.224706 13.4719 0.501894C13.4719 0.779083 13.6966 1.00379 13.9738 1.00379H14.8804C16.1347 1.00379 16.7634 2.51979 15.8773 3.40746L13.0539 6.23565C12.858 6.4319 12.8581 6.74978 13.0542 6.94587C13.2504 7.14208 13.5685 7.14208 13.7647 6.94587L16.5894 4.12119C17.4742 3.23638 18.9871 3.86304 18.9871 5.11435V6.01226C18.9871 6.29207 19.2139 6.51889 19.4937 6.51889C19.7735 6.51889 20.0004 6.29206 20.0004 6.01226V3.25945C20.0004 1.4593 18.5411 0 16.7409 0H13.9738Z' fill='%23000000'/%3e%3cpath d='M6.02655 0C6.30374 0 6.52845 0.224706 6.52845 0.501894C6.52845 0.779083 6.30374 1.00379 6.02655 1.00379H5.11991C3.86562 1.00379 3.23692 2.51979 4.12308 3.40746L6.94648 6.23565C7.1424 6.4319 7.14227 6.74978 6.94617 6.94587C6.74997 7.14208 6.43185 7.14208 6.23565 6.94587L3.41096 4.12119C2.52615 3.23638 1.01326 3.86304 1.01326 5.11435V6.01226C1.01326 6.29207 0.786432 6.51889 0.506629 6.51889C0.226826 6.51889 0 6.29207 0 6.01226V3.25945C0 1.4593 1.4593 0 3.25945 0H6.02655Z' fill='%23000000'/%3e%3cpath d='M13.9738 20C13.6966 20 13.4719 19.7753 13.4719 19.4981C13.4719 19.2209 13.6966 18.9962 13.9738 18.9962H14.8804C16.1347 18.9962 16.7634 17.4802 15.8773 16.5925L13.0539 13.7643C12.858 13.5681 12.8581 13.2502 13.0542 13.0541C13.2504 12.8579 13.5685 12.8579 13.7647 13.0541L16.5894 15.8788C17.4742 16.7636 18.9871 16.137 18.9871 14.8856V13.9877C18.9871 13.7079 19.2139 13.4811 19.4937 13.4811C19.7735 13.4811 20.0004 13.7079 20.0004 13.9877V16.7405C20.0004 18.5407 18.5411 20 16.7409 20H13.9738Z' fill='%23000000'/%3e%3cpath d='M6.02655 20C6.30374 20 6.52845 19.7753 6.52845 19.4981C6.52845 19.2209 6.30374 18.9962 6.02655 18.9962H5.11991C3.86562 18.9962 3.23692 17.4802 4.12309 16.5925L6.94648 13.7643C7.1424 13.5681 7.14227 13.2502 6.94618 13.0541C6.74997 12.8579 6.43185 12.8579 6.23565 13.0541L3.41096 15.8788C2.52615 16.7636 1.01326 16.137 1.01326 14.8856V13.9877C1.01326 13.7079 0.786432 13.4811 0.506629 13.4811C0.226826 13.4811 0 13.7079 0 13.9877V16.7405C0 18.5407 1.4593 20 3.25945 20H6.02655Z' fill='%23000000'/%3e%3c/svg%3e ");
 }
-a:hover i.open-arr {
+/* a:hover i.open-arr {
   width: 18px;
   background-repeat: no-repeat;
   background-size: 18px;
   background-position: center;
   filter: invert(83%) sepia(79%) saturate(466%) hue-rotate(10deg) brightness(89%) contrast(90%);
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.9738 0C13.6966 0 13.4719 0.224706 13.4719 0.501894C13.4719 0.779083 13.6966 1.00379 13.9738 1.00379H14.8804C16.1347 1.00379 16.7634 2.51979 15.8773 3.40746L13.0539 6.23565C12.858 6.4319 12.8581 6.74978 13.0542 6.94587C13.2504 7.14208 13.5685 7.14208 13.7647 6.94587L16.5894 4.12119C17.4742 3.23638 18.9871 3.86304 18.9871 5.11435V6.01226C18.9871 6.29207 19.2139 6.51889 19.4937 6.51889C19.7735 6.51889 20.0004 6.29206 20.0004 6.01226V3.25945C20.0004 1.4593 18.5411 0 16.7409 0H13.9738Z' fill='%23000000'/%3e%3cpath d='M6.02655 0C6.30374 0 6.52845 0.224706 6.52845 0.501894C6.52845 0.779083 6.30374 1.00379 6.02655 1.00379H5.11991C3.86562 1.00379 3.23692 2.51979 4.12308 3.40746L6.94648 6.23565C7.1424 6.4319 7.14227 6.74978 6.94617 6.94587C6.74997 7.14208 6.43185 7.14208 6.23565 6.94587L3.41096 4.12119C2.52615 3.23638 1.01326 3.86304 1.01326 5.11435V6.01226C1.01326 6.29207 0.786432 6.51889 0.506629 6.51889C0.226826 6.51889 0 6.29207 0 6.01226V3.25945C0 1.4593 1.4593 0 3.25945 0H6.02655Z' fill='%23000000'/%3e%3cpath d='M13.9738 20C13.6966 20 13.4719 19.7753 13.4719 19.4981C13.4719 19.2209 13.6966 18.9962 13.9738 18.9962H14.8804C16.1347 18.9962 16.7634 17.4802 15.8773 16.5925L13.0539 13.7643C12.858 13.5681 12.8581 13.2502 13.0542 13.0541C13.2504 12.8579 13.5685 12.8579 13.7647 13.0541L16.5894 15.8788C17.4742 16.7636 18.9871 16.137 18.9871 14.8856V13.9877C18.9871 13.7079 19.2139 13.4811 19.4937 13.4811C19.7735 13.4811 20.0004 13.7079 20.0004 13.9877V16.7405C20.0004 18.5407 18.5411 20 16.7409 20H13.9738Z' fill='%23000000'/%3e%3cpath d='M6.02655 20C6.30374 20 6.52845 19.7753 6.52845 19.4981C6.52845 19.2209 6.30374 18.9962 6.02655 18.9962H5.11991C3.86562 18.9962 3.23692 17.4802 4.12309 16.5925L6.94648 13.7643C7.1424 13.5681 7.14227 13.2502 6.94618 13.0541C6.74997 12.8579 6.43185 12.8579 6.23565 13.0541L3.41096 15.8788C2.52615 16.7636 1.01326 16.137 1.01326 14.8856V13.9877C1.01326 13.7079 0.786432 13.4811 0.506629 13.4811C0.226826 13.4811 0 13.7079 0 13.9877V16.7405C0 18.5407 1.4593 20 3.25945 20H6.02655Z' fill='%23000000'/%3e%3c/svg%3e ");
-}
+} */
 #tabReportContent > .active {
   display: flex !important;
   flex-direction: column;
@@ -4012,7 +4139,7 @@ body.locations .bootstrap-table .fixed-table-container .mini-table.table tbody t
   padding-right: 5px !important;
   font-weight: 400;
   font-size: 16px;
-  color: #2b2b2b;
+  color: var(--font-color, #2b2b2b);
   justify-content: flex-start;
 }
 body.locations .content-wrapper > div > .bg-white {
@@ -4330,7 +4457,7 @@ div#infoJob .block.no-job img ~ h5 {
   gap: 10px;
 }
 .badge.black-color.fw-light {
-  color: #929292;
+  color: var(--font-color, #929292);
   font-size: 12px;
   display: inline-block;
   right: 0px;
@@ -5062,7 +5189,7 @@ font {
     bottom: 40px;
     top: auto !important;
     left: calc(50% - 185.26px / 2) !important;
-    background: #007bff !important;
+    background: var(--color-second-darkest) !important;
     box-shadow: 0px 4.80502px 4.80502px rgb(0 0 0 / 25%) !important;
     border-radius: 51.654px !important;
     color: #fff !important;
