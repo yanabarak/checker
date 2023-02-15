@@ -891,6 +891,7 @@ jQuery(document).ready(function ($) {
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl);
   });
+
   $('.box.image')
     .popover({
       trigger: 'manual',
@@ -1631,6 +1632,20 @@ jQuery(document).ready(function ($) {
       actualBtn.addEventListener('change', function () {
         fileChosen.textContent = this.files[0].name;
       });
+    }
+
+    if ($('#job-map').length) {
+      $(document)
+        .off('click', '#job-map')
+        .on('click', '#job-map', function () {
+          $('.selectpicker').selectpicker({ selectedTextFormat: 'count > 3', actionsBox: true });
+          var popoverTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="popover"]')
+          );
+          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+          });
+        });
     }
   });
 });

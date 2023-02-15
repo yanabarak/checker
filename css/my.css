@@ -1,23 +1,9 @@
 :root {
-  /* --main-brand-color: #ff0000;
-  --second-brand-color: #ffff00;
-
-  --backg-color: #000000;
-  --font-color: #222; */
-
   --color: 70, 68%;
   --l: 52%;
 
   --sec-color: 208, 100%;
   --sec-l: 50%;
-
-  /* --color: 170, 68%;
-  --l: 52%;
-
-  --sec-color: 8, 100%;
-  --sec-l: 50%; */
-
-  /* --font-color: #00f; */
 
   --main-brand-color: hsl(var(--color), var(--l));
   --second-brand-color: hsl(var(--sec-color), var(--sec-l));
@@ -26,8 +12,8 @@
   --color-second-lightest: hsl(var(--sec-color), calc(var(--sec-l) + 40%));
 
   --filter: invert(34%) sepia(86%) saturate(2631%) hue-rotate(196deg) brightness(97%) contrast(115%);
-  /* --filter: invert(16%) sepia(48%) saturate(7305%) hue-rotate(354deg) brightness(104%)
-    contrast(122%); */
+
+  --backg-color: #e9f6fe;
 }
 /*@media (min-width: 1000px) and (max-height: 800px) and (min-height: 700px) {
   body {font-size: 12px;
@@ -431,7 +417,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 #content {
   min-height: 100vh;
   background-color: transparent;
-  background-image: url('../img/Mainpage.jpg');
+  background: var(--backg-color, url('../img/Mainpage.jpg'));
   /*background-image: url(../../checker-files/media/68/css/images/Mainpage.jpg);*/
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -441,7 +427,7 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 }
 .wrapper {
   background-color: #e9f6fe;
-  background-image: url(../../checker-files/media/68/css/images/Mainpage.jpg);
+  background: var(--backg-color, url(../../checker-files/media/68/css/images/Mainpage.jpg));
   background-position: right bottom;
   background-repeat: no-repeat;
   /*    background-blend-mode: darken;*/
@@ -1025,13 +1011,21 @@ button.accept.disabled,
   padding: 7px 12px !important;
 }
 button.disabled,
-[type='button'].disabled {
+[type='button'].disabled,
+[type='button'].need-cert {
   font-size: 13px;
   color: #aeaeae;
   box-shadow: 0px 0px 0px 4px #aeaeae inset;
   padding: 7px 1px;
   max-width: 118px;
   line-height: 1;
+}
+[type='button'].need-cert {
+  padding: 7px !important;
+  display: flex;
+  min-height: 40.4px;
+  justify-content: center;
+  align-items: center;
 }
 button.accept.d-grey,
 [type='button'].accept.d-grey {
@@ -1048,8 +1042,19 @@ button.accept.d-grey,
   justify-content: center;
   align-items: center !important;
 }
+#map button.accept.d-grey[disabled],
+#map [type='button'].accept.d-grey[disabled] {
+  opacity: 0.4;
+}
+#map button.accept.d-grey[disabled]:hover,
+#map [type='button'].accept.d-grey[disabled]:hover {
+  color: #666666 !important;
+  box-shadow: 0px 0px 0px 4px #666666 inset !important;
+  background-color: #fff !important;
+}
 button.accept.d-grey:hover,
-[type='button'].accept.d-grey:hover {
+[type='button'].accept.d-grey:hover,
+[type='button'].need-cert:hover {
   box-shadow: 0px 0px 0px 50px #666666 inset !important;
   color: #fff !important;
 }
@@ -1143,6 +1148,19 @@ button.accept.disabled:hover,
   padding: 20px 0px 5px !important;
   inset: 0px auto auto 0px !important;
   min-width: 127px;
+}
+.myjobcard-footer {
+  padding-top: 10px;
+}
+
+.myjobcard-footer .accept {
+  min-height: 30px !important;
+  padding: 0 10px !important;
+  min-width: unset !important;
+  font-size: 14px !important;
+}
+.myjobcard-footer a {
+  font-size: 16px !important;
 }
 .myjobcard-footer.w-100.flex-row .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show {
   position: absolute !important;
@@ -2229,7 +2247,7 @@ body.openjobs div#infoJobMenu {
   right: 0px;
   top: 0px;
   background-color: #e9f6fe;
-  background-image: url('../../checker-files/media/68/css/images/Mainpage.jpg');
+  background: var(--backg-color, url(../../checker-files/media/68/css/images/Mainpage.jpg));
   background-position: bottom;
   transition: all 0.5s linear;
 }

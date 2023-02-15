@@ -217,9 +217,9 @@
                                                 </div>
                                                 <div
                                                     class="col-12 d-flex align-items-center actions ms-auto justify-content-between action col-lg-auto ps-0 px-2 pe-lg-2">
-                                                    <button class="accept disabled me-2" disabled>Need
-                                                        Certificate</button>
-                                                    <button class="accept d-grey show-pack" data-show="1">Show
+                                                    <a type="button" href="#" class="accept me-2 need-cert">Need
+                                                        Certificate</a>
+                                                    <button class="accept d-grey show-pack" data-show="1" disabled>Show
                                                         Package</button>
 
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#RejectPack"
@@ -1066,7 +1066,7 @@
                                                 </div>
                                                 <div
                                                     class="col d-none d-md-flex align-items-center actions ms-auto justify-content-between action col-auto">
-                                                    <button class="accept disabled" disabled>Need Certificate</button>
+                                                    <a type="button" class="accept me-2 need-cert">Need Certificate</a>
                                                     <a href="#" data-bs-toggle="modal" data-bs-target="#reject-modal"
                                                         class="color-lgrey fs-18 px-2">Reject</a>
                                                     <button class="accept start-job">Start</button>
@@ -1711,6 +1711,28 @@
                                             class="col-auto p-0 d-flex buttons-sel invisible justify-content-end align-items-center">
                                             <a href="#" class="black-color fs-18 px-0 px-md-2 pe-3">Remove Selected</a>
                                             <button class="accept">Accept Selected</button>
+                                        </div>
+                                        <div class="m-0 p-0 d-flex flex-column justify-content-end col-auto mt-0"
+                                            id="record-nav" style="margin-top: 0px !important;">
+                                            <div style="align-items: baseline;" class="nav-group row mb-3 me-0 col">
+                                                <div class="set col-auto">Show <input class="form-control"
+                                                        type="number"> records in
+                                                    page</div>
+                                                <div class="numb col-auto">Page <input class="form-control"
+                                                        type="number"> of <span class="total">4356</span>
+                                                </div>
+                                                <div class="arrow col-auto p-0">
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <button type="button" class="btn btn-primary"><i
+                                                                class="fas fa-chevron-left"></i></button>
+                                                        <button type="button" class="btn btn-primary"><i
+                                                                class="fas fa-chevron-right"></i></button>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit"
+                                                    class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-4 col-auto ms-4">Show</button>
+                                            </div>
                                         </div>
                                     </div>
                                     <div
