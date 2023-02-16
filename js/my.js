@@ -590,6 +590,15 @@ jQuery(document).ready(function ($) {
         'style',
         `height: ${$(window).innerHeight() - $('#infoJobMenu').innerHeight()}px`
       );
+    } else {
+      $('#navbarsListJob').attr(
+        'style',
+        `min-height: ${
+          $(window).innerHeight() -
+          $('#infoJobMenu').innerHeight() -
+          $($('.card-list-job.form-applied')[0]).height()
+        }px`
+      );
     }
   }
 
@@ -1634,6 +1643,23 @@ jQuery(document).ready(function ($) {
       });
     }
 
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('.set-link'));
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl, {
+        template:
+          '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body p-32"></div></div>',
+        customClass: 'settings-popover',
+        html: true,
+        sanitize: false,
+
+        placement: 'right',
+        fallbackPlacements: ['right'],
+        content: function () {
+          return $('#settings-content').html();
+        },
+      });
+    });
+
     if ($('#job-map').length) {
       $(document)
         .off('click', '#job-map')
@@ -1645,6 +1671,29 @@ jQuery(document).ready(function ($) {
           var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl);
           });
+
+          $(document)
+            .off('click', '#job-map .show-list-pack')
+            .on('click', '#job-map .show-list-pack', function () {
+              if ($('#navbarsListJob.show-pack-list').length) {
+                let scroll = $(window).scrollTop();
+                $('#navbarsListJob').removeClass('show-pack-list');
+                setTimeout(function () {
+                  $('#navbarsListJob').removeClass('d-none');
+                }, 500);
+                $('#navbarsListJobPack').attr('style', ``);
+                $('#navbarsListJob').attr('style', ``);
+
+                $('#navbarsListJobPack').removeClass('show-job-pack');
+                $('#navbarsListJobPack').addClass('visually-hidden');
+                $('div#infoJobMenu').removeClass('d-flex');
+                $('#infoJobMenu .block.rounded-3').removeClass('visually-hidden');
+                $(window).scrollTop(scroll);
+
+                $('.form-applied .show-main').removeClass('visually-hidden');
+                $('.form-applied .show-pack').addClass('visually-hidden');
+              } else $('#navbarSideCollapse').trigger('click');
+            });
         });
     }
   });

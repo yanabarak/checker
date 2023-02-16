@@ -72,7 +72,8 @@ img.logo {
   box-shadow: none;
 }
 aside button.navbar-toggler.navbar-toggler-button {
-  padding: 19px 19px 16px 19px;
+  padding: 19px 19px 18px 17px;
+  transform: scale(0.9);
 }
 .sticky-top.sidebar.left.asidebar > .d-none.d-md-flex.align-items-center:first-child {
   flex-direction: row-reverse;
@@ -451,9 +452,9 @@ aside .fliph button.navbar-toggler.navbar-toggler-button {
 #content .block:not(:last-child) {
   margin-right: 5px !important;
 }
-#content .block:not(:first-child) {
+/* #content .block:not(:first-child) {
   margin-left: 5px !important;
-}
+} */
 .main-color {
   color: var(--main-brand-color);
 }
@@ -1062,7 +1063,6 @@ body.myjobs #map .navbar-collapse.open-w100 div.action {
   justify-content: space-evenly !important;
   margin-right: 0px;
 }
-
 body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   justify-content: center !important;
   column-gap: 10px;
@@ -1086,6 +1086,40 @@ body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
 }
 .myjobs .show-pack .remove-multiple {
   margin-right: 10px;
+}
+.myjobcard-footer .accept.start-job {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-pack .apply-multiple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.open.w-100 + .form-applied > .show-pack form > .remove-multiple {
+  width: max-content;
+  min-width: fit-content;
+}
+
+.myjobs .popover.bs-popover-top .popover-body > p:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  bottom: 0;
+}
+.myjobs .popover.bs-popover-top .popover-body > p:not(:last-child) {
+  padding-bottom: 10px;
+  position: relative;
+}
+.myjobs .popover.bs-popover-top .popover-body > p:last-child {
+  margin-bottom: 5px;
+}
+.myjobs .popover.bs-popover-top .popover-body > br {
+  display: none;
 }
 .remove-multiple,
 .remove-multiple:hover {
@@ -1168,7 +1202,9 @@ button.accept.disabled:hover,
   margin-top: -10px !important;
 }
 .myjobcard-footer.w-100.flex-row .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
-  margin-top: 3px;
+  position: relative;
+  top: 2px;
+  left: -3px;
 }
 
 .btn-group.accept.start-lang.start-job > ul.dropdown-menu.show li {
@@ -4540,6 +4576,17 @@ h1 > i.sec-color {
 }
 #shopper-message-modal .modal-dialog > * {
   padding: 0px;
+}
+.popover.settings-popover {
+  top: 0px !important;
+  bottom: 0px !important;
+  left: -10px !important;
+  border-radius: 16px;
+  border: 0px solid;
+  min-width: 600px;
+}
+.popover.settings-popover .popover-arrow::before {
+  opacity: 0.2;
 }
 font {
   color: inherit !important;
