@@ -7,6 +7,8 @@
     <title>Main</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/my.css">
+    <!-- <link rel="stylesheet" href="css/dark_theme.css"> -->
+    <!-- <link rel="stylesheet" href="css/colors.css"> -->
     <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
@@ -53,6 +55,12 @@
                         <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"
                                 data-bs-trigger="hover focus" data-bs-container="body" data-bs-toggle="popover"
                                 data-bs-placement="left" data-bs-content="Notifications"></i> </a>
+                        <a href="#" class="pt-1 pe-3 set-link" data-bs-trigger="click" aria-current="page"
+                            data-bs-container="body" data-bs-placement="right"><i data-bs-trigger="hover focus"
+                                data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left"
+                                data-bs-content="Setup theme" data-bs-original-title="" title=""
+                                class="fas fa-cog fs-18 text-black black-color"></i>
+                        </a>
                     </div>
                     <div class="logo-container">
                         <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
@@ -645,11 +653,93 @@
             </div>
         </div>
     </div>
+
+    <div class="visually-hidden settings-content" id="settings-content">
+        <div class="modal-body p-0 row">
+            <div class="row col-12 p-0 m-0">
+                <h5 class="black-color col fw-bold mb-3">
+                    Theme settings
+                </h5>
+                <button type="button" aria-label="Close"
+                    class="btn-close opacity-1 align-top align-self-start ms-auto col-auto me-2"
+                    onclick="$('.set-link').popover('hide');"></button>
+            </div>
+
+            <div class="row col-12 p-0 m-0 mb-3 scrollable-content ms-3 gap-2">
+                <div
+                    class="row col-11 d-flex rounded-3 m-0 p-0 d-flex align-items-center border p-3 border-secondary position-relative">
+                    <input type="radio" name="selectTheme" value="light" id="LightTheme"
+                        class="form-check-input m-0 p-0" checked>
+                    <label for="LightTheme" class="form-check-label col-auto h5 m-0 ms-2">
+                        Light theme <img src="./img/theme_light.png" alt=""
+                            style="width: 50px;position: absolute;right: 10px;top: 2px;">
+                    </label>
+                </div>
+                <div
+                    class="row col-11 d-flex rounded-3 m-0 p-0 d-flex align-items-center border p-3 border-secondary position-relative">
+                    <input type="radio" name="selectTheme" value="dark" id="darkTheme" class="form-check-input m-0 p-0">
+                    <label for="darkTheme" class="form-check-label col-auto h5 m-0 ms-2">
+                        Dark theme <img src="./img/theme_dark.png" alt=""
+                            style="width: 50px;position: absolute;right: 10px;top: 2px;">
+                    </label>
+                </div>
+                <div
+                    class="row col-11 d-flex rounded-3 m-0 p-0 d-flex align-items-center border p-3 border-secondary position-relative">
+                    <input type="radio" name="selectTheme" id="customTheme" value="custom"
+                        class="form-check-input m-0 p-0" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                    <label for="customTheme" class="form-check-label col-auto h5 m-0 ms-2">
+                        Customizable theme <img src="./img/theme_custom.png" alt="" style=" width: 50px;position:
+                            absolute;right: 10px;top: 2px;">
+                    </label>
+
+                    <div class="mt-3 ps-1 row custom-theme gap-2 collapse w-100 pe-0" id="collapseExample">
+                        <div class="row m-0 p-0">
+                            <p class="mb-0 fst-italic">Note: if you don't want to change some value, you can keep
+                                default</p>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col d-flex align-items-center pe-0">
+                                <label class="form-check-label m-0 me-2 w-75" for="mainBrandColor">
+                                    Select main brand color
+                                </label>
+                                <input type="color" name="mainBrandColor" id="mainBrandColor" value="#000001">
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <label class="form-check-label m-0 me-2 w-75" for="secondBrandColor">
+                                    Select second brand color
+                                </label>
+                                <input type="color" name="secondBrandColor" id="secondBrandColor" value="#000001">
+                            </div>
+                        </div>
+                        <div class="row m-0 p-0">
+                            <div class="col d-flex align-items-center pe-0">
+                                <label class="form-check-label m-0 me-2 w-75" for="fontColor">
+                                    Select font color
+                                </label>
+                                <input type="color" name="fontColor" id="fontColor" value="#000001">
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <label class="form-check-label m-0 me-2 w-75" for="backgroundColor">
+                                    Select background color
+                                </label>
+                                <input type="color" name="backgroundColor" id="backgroundColor" value="#000001">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-11 m-0 p-0 mt-2"><button type="submit" id="saveTheme"
+                        class="btn btn-primary sec-bg border-0 p-2 fs-16">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
     <script src="js/my.js"></script>
+
 </body>
 
 </html>

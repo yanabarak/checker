@@ -1,0 +1,371 @@
+body,
+#content,
+body.myjobs div#infoJobMenu,
+body.openjobs div#infoJobMenu {
+  background-image: none;
+  background-color: #0e0e0f !important;
+}
+body {
+  color: #fff;
+}
+/* asidebar */
+.sticky-md-top {
+  background: #151c26;
+  border-right-color: #64748b;
+}
+.border-top {
+  border-top-color: #64748b !important;
+}
+.border-bottom {
+  border-bottom-color: #64748b !important;
+}
+.animated-hamburger span {
+  background-color: #fff !important;
+}
+.badge-notificatios::after {
+  border-color: #151c26;
+}
+ul.menu-links.list-group i {
+  color: #334155;
+}
+.fas.fa-circle.ellipsis::after {
+  color: #151c26;
+}
+ul.menu-links.list-group span {
+  color: #f3f4f6;
+}
+ul.menu-links.list-group li.active i,
+ul.menu-links.list-group li.active a span {
+  color: #000000;
+}
+ul.menu-links.list-group li:hover {
+  background: #64748b;
+}
+button.navbar-toggler:hover .animated-hamburger span {
+  background-color: #fff !important;
+}
+/* end asidebar */
+
+/* buttons, selects */
+button.navbar-toggler + a,
+.btn.dropdown-toggle.btn-light:not(.bs-placeholder) > .filter-option,
+.title span {
+  color: #fff;
+}
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle:hover,
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle:active {
+  color: inherit !important;
+  background-color: #334155 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+select.form-select,
+.dropdown.bootstrap-select.form-select button.btn.dropdown-toggle,
+#create-job-form > .col-12.inactive .btn.dropdown-toggle.btn-light {
+  border-color: #64748b;
+}
+select#lang,
+select#lang + button {
+  background-color: #1e293b;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1);
+}
+.dropdown-item,
+.form-select {
+  color: #fff;
+}
+.form-select,
+.form-control.pick-date,
+input[type='text'],
+input[type='password'],
+#pick-branch-modal select,
+.dropdown-menu,
+.form-control,
+.pick-date,
+#pick-date-to,
+#pick-date-from,
+#pers_info input[type*='text'],
+#pers_info input[type*='number'],
+#pers_info input[type*='password'],
+#pers_info input[type*='email'],
+#pers_info button.btn.dropdown-toggle,
+#pers_info .dropdown.bootstrap-select.form-select .form-control {
+  background-color: #334155;
+  border-color: #64748b !important;
+  color: #fff !important;
+}
+.form-control.pick-date::placeholder,
+input[type='password']::placeholder,
+input[type='text']::placeholder,
+#pers_info input[type='password']::placeholder,
+#pers_info input[type='text']::placeholder,
+#pers_info input[type*='email']::placeholder,
+#pers_info input[type*='number']::placeholder {
+  color: #fff !important;
+  opacity: 1;
+}
+.fht-cell input {
+  background-color: #334155;
+  color: #fff;
+}
+.form-control:focus {
+  color: #fff;
+  background-color: #334155;
+  border-color: #dadada;
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.btn-close {
+  filter: invert(1);
+}
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+/* end buttons, selects */
+
+/* main page */
+#content .block.bg-white,
+.detailed-report-block {
+  background: #18212f !important;
+  border-color: #18212f !important;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1) !important;
+}
+#widget-jobs .fas.fa-clipboard::after {
+  color: #18212f;
+}
+.donut-segment-white {
+  stroke: #18212f;
+}
+.donut-hole {
+  fill: #18212f;
+}
+.donut-ring {
+  stroke: #334155;
+}
+.donut-ring[stroke*='#fff'] {
+  stroke: #18212f;
+}
+.legend span {
+  color: #e2e2e2;
+}
+.cardnew span {
+  color: #e2e8f0;
+}
+.cardnew.bg-grey {
+  background: #1e293b;
+}
+.fs-50.black-color,
+.dd-grey {
+  color: #fff;
+}
+a.black-color,
+.color-lgrey {
+  color: #dadada;
+}
+/* end main page */
+/* detailed report */
+.bg-white {
+  background: #18212f !important;
+}
+.bg-coin,
+.bg-stamp {
+  border-color: #334155 !important;
+}
+.bg-grey {
+  background-color: #334155 !important;
+}
+.report-body > .bg-white:not(:last-child)::after,
+.report-body > .row:not(.info-record):not(:last-child)::after {
+  background-color: #64748b;
+}
+/* end detailed report */
+/* my jobs */
+#content .block {
+  border: 0px solid !important;
+}
+#map .offcanvas-collapse.open {
+  background-color: #0e0e0f !important;
+}
+.modal-content {
+  background-color: #334155;
+}
+#accordionFormJob h4.accordion-button,
+.card-list-job .accordion-button,
+.card-list-job .color-grey {
+  color: #fff;
+}
+#map button.accordion-button {
+  background: linear-gradient(45deg, #334155, #334155);
+  background-size: 52px 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#map .accordion-body {
+  background-color: #334155;
+}
+#map .listWrap > button:not(.accept):not(.accordion-button) {
+  background: #18212f !important;
+  border-color: #18212f !important;
+  color: #fff;
+}
+button.accept,
+[type='button'].accept,
+.btn-group.accept.start-lang.start-job {
+  background-color: transparent;
+}
+.accordion-item,
+.card-list-job .bg-grey {
+  background-color: #18212f !important;
+}
+.black-color,
+.picker,
+.picker__weekday {
+  color: #fff !important;
+}
+.picker__holder {
+  background: #18212f !important;
+  border-color: #18212f !important;
+}
+.picker__nav--next,
+.picker__nav--prev {
+  background-color: #334155 !important;
+}
+.picker__nav--next::before,
+.picker__nav--prev::before {
+  color: #dadada !important;
+}
+.picker__nav--next:hover::before,
+.picker__nav--prev:hover::before {
+  color: #fff !important;
+}
+.picker__button--clear,
+.picker__button--close,
+.picker__button--today {
+  background: #18212f !important;
+  border-color: #18212f !important;
+  color: #dadada;
+}
+.picker__select--year {
+  background: #18212f !important;
+}
+/* create new job */
+#create-job-form {
+  border-color: #64748b;
+}
+#create-job-form > .col-12.inactive .btn.dropdown-toggle.btn-light {
+  background-color: #18212f !important;
+}
+#create-job-form > .col-12.inactive .btn {
+  background-color: #334155;
+}
+/* incomplite */
+.toast.det-info-job > div {
+  border: 1px solid #18212f;
+}
+.toast-header {
+  background-color: transparent;
+}
+.det-info-job .toast-body .row > .col-6:first-child {
+  color: #dadada;
+}
+.det-info-job .toast-body .row > .col-6:last-child {
+  color: #fff;
+}
+/* table */
+.classic.table thead,
+.classic.table > thead > tr > th,
+th .sortable {
+  background-color: #18212f;
+  color: #fff;
+}
+.classic.table tbody > tr:not(.no-records-found) {
+  border-bottom: 1px solid #64748b;
+}
+.table > :not(caption) > * > *,
+.bootstrap-table .fixed-table-container .table.classic thead .th-inner.sortable.both.desc,
+.bootstrap-table .fixed-table-container .table.classic thead .th-inner.sortable.both.asc {
+  background-color: #334155;
+  color: #fff;
+}
+.fht-cell .filter-control::after,
+.classic.table td,
+.classic.table td:nth-child(2),
+.bootstrap-table .fixed-table-container .table.classic thead .th-inner.sortable.both.desc::after,
+.bootstrap-table .fixed-table-container .table.classic thead .th-inner.sortable.both.asc::after,
+body.locations .bootstrap-table .fixed-table-container .mini-table.table tbody td {
+  color: #fff;
+}
+/* ref record */
+.info-record + div:not(.info-record) > div {
+  border-bottom: 8px solid #18212f;
+}
+/* files library */
+
+#files-library .table-fixed thead,
+.classic.table {
+  background-color: #0e0e0f;
+}
+.classic.table > tbody {
+  background-color: #0e0e0f;
+  border-right: 15px solid #0e0e0f;
+}
+/* certificates */
+.cert-elem .status {
+  background-color: #334155;
+}
+.cert-elem {
+  color: #fff;
+}
+
+/* pers info */
+#pers_info {
+  background-color: #18212f !important;
+  border-color: #18212f !important;
+  box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1) !important;
+}
+/* pref reg */
+#pr-reg .mini-table.classic.table td,
+#pr-reg p,
+.mini-table.classic.table th,
+.mini-table.classic.table td:nth-child(2) {
+  color: #fff;
+}
+#pref-reg #pills-tab .nav-link {
+  background-color: #18212f;
+}
+/* login */
+div#login-form .btn-outline,
+div#register-form .btn-outline {
+  background-color: #334155 !important;
+  border-color: #334155 !important;
+  color: #fff;
+}
+
+/* popover */
+
+.popover,
+.popover.fade.show.bs-popover-bottom {
+  background-color: #334155;
+  color: #fff;
+  border: 0px solid;
+}
+.popover-body {
+  color: #fff !important;
+}
+.popover label {
+  color: #fff;
+}
+.border-secondary {
+  border-color: #64748b !important;
+}
+.bs-popover-end > .popover-arrow::after,
+.bs-popover-auto[data-popper-placement^='right'] > .popover-arrow::after {
+  border-right-color: #334155;
+}
+.bs-popover-top > .popover-arrow::after,
+.bs-popover-auto[data-popper-placement^='top'] > .popover-arrow::after {
+  border-top-color: #334155;
+}
+.bs-popover-bottom > .popover-arrow::after,
+.bs-popover-auto[data-popper-placement^='bottom'] > .popover-arrow::after {
+  border-bottom-color: #334155;
+}

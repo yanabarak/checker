@@ -261,6 +261,10 @@ aside .logo {
 .fliph .menu-links.list-group {
   overflow: hidden;
 }
+
+.sidebar.fliph .set-link {
+  display: none;
+}
 ul.menu-links.list-group li {
   border-radius: 0px 15px 15px 0px;
 }
@@ -1072,7 +1076,7 @@ body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   column-gap: 10px;
 }
 .myjobs .apply-multiple:first-child > textarea {
-  min-height: 88px !important;
+  min-height: 96px !important;
 }
 .myjobs .apply-multiple:first-child > .remove-multiple.black-color {
   position: absolute;
@@ -2095,7 +2099,7 @@ select#lang + button {
 #map textarea.form-control {
   min-height: 100%;
   max-height: 300px;
-  min-width: 300px;
+  min-width: 200px;
   resize: both;
 }
 .card-list-job .accordion-body > * {
@@ -2259,7 +2263,7 @@ body.openjobs div.mini-menu#infoJobMenu {
   height: fit-content;
   position: unset;
   transform: translateX(0%);
-  background-color: #e9f6fe;
+  background-color: var(--backg-color, #e9f6fe);
 }
 .card-list-job.bg-white {
   box-shadow: 4px 4px 25px rgb(0 0 0 / 10%);
@@ -2361,6 +2365,26 @@ body.survey_hist #infoJob {
 .myjobcard > div.myjobcard-footer a.accept {
   line-height: 21px !important;
   padding: 6px 7px !important;
+}
+
+.btn-group > .btn.btn-primary.prev-page {
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+}
+
+.myjobs #record-nav > .nav-group,
+.openjobs #record-nav > .nav-group {
+  margin-left: 0px !important;
+  justify-content: end;
+}
+.myjobs #record-nav > .nav-group .col-auto,
+.openjobs #record-nav > .nav-group .col-auto {
+  padding: 0 3px;
+}
+.myjobs #record-nav > .nav-group .sec-bg,
+.openjobs #record-nav > .nav-group .sec-bg {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 .myjobcard .btn-group.accept.start-lang.start-job > a {
   min-width: 30px;
@@ -4493,9 +4517,9 @@ div#infoJob .block.no-job img ~ h5 {
 .buttons-sel.bg-grey {
   background-color: transparent !important;
 }
-.buttons-sel textarea {
+/* .buttons-sel textarea {
   width: 300px;
-}
+} */
 .open.w-100:not(.open-w100) + .form-applied > .show-pack textarea {
   height: 50px;
   width: 100%;
@@ -4590,7 +4614,6 @@ h1 > i.sec-color {
 }
 .popover.settings-popover {
   top: 0px !important;
-  bottom: 0px !important;
   left: -10px !important;
   border-radius: 16px;
   border: 0px solid;
@@ -4606,6 +4629,30 @@ h1 > i.sec-color {
 .openjobs .form-control.pick-date {
   color: var(--second-brand-color);
 }
+
+.form-check-input {
+  clear: left;
+}
+.form-check-input#color-change:not(:checked):not(:active):not(:focus) {
+  background-color: var(--second-brand-color);
+}
+.form-switch.form-switch-md .form-check-input {
+  height: 1.5rem;
+  width: calc(2rem + 0.75rem);
+  border-radius: 3rem;
+}
+#color-change:not(:checked) + h5 {
+  color: var(--second-brand-color);
+}
+#color-change:checked + h5 + h5 {
+  color: var(--second-brand-color);
+}
+.custom-theme input[type='color'] {
+  border: 0px;
+  padding: 0px;
+  height: 25px;
+}
+
 font {
   color: inherit !important;
   font-size: inherit !important;
