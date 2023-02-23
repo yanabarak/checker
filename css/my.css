@@ -2130,13 +2130,8 @@ body.openjobs [type='button'].btn.btn-primary {
   display: block;
   transition: all 0.3s linear;
 }
-body.openjobs #map .listWrap {
-  padding-bottom: 116px !important;
-}
+body.openjobs #map .listWrap,
 body.myjobs #map .listWrap {
-  padding-bottom: 75px !important;
-}
-body.openjobs #map .listWrap {
   padding-bottom: 120px !important;
 }
 div#map.emptyList,
@@ -2376,6 +2371,12 @@ body.survey_hist #infoJob {
 .openjobs #record-nav > .nav-group {
   margin-left: 0px !important;
   justify-content: end;
+}
+#record-nav button.btn {
+  height: 28.5px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  line-height: 28.5px;
 }
 .myjobs #record-nav > .nav-group .col-auto,
 .openjobs #record-nav > .nav-group .col-auto {
