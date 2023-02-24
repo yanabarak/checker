@@ -4667,7 +4667,7 @@ h1 > i.sec-color {
   left: -10px !important;
   border-radius: 16px;
   border: 0px solid;
-  min-width: 600px;
+  min-width: 350px;
 }
 .popover.settings-popover .popover-arrow::before {
   opacity: 0.2;
