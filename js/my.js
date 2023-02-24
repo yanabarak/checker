@@ -1823,22 +1823,27 @@ jQuery(document).ready(function ($) {
     !getCookie(cookieName)
       ? (cookieValue = getCookie(cookieName))
       : (cookieValue = getCookie(cookieName));
+    if (!cookieValue) {
+      return;
+    }
+    cookieValue = JSON.parse(cookieValue);
+    console.log(cookieValue.theme);
 
     if ($('.themeSettingsCSS').length) {
       $('.themeSettingsCSS').remove();
     }
 
-    if (cookieValue == 'light') {
+    if (cookieValue.theme == 'light') {
       return;
     }
-    if (cookieValue == 'dark') {
+    if (cookieValue.theme == 'dark') {
       $('head').append(
         '<link class="themeSettingsCSS" rel="stylesheet" href="./css/dark_theme.css" type="text/css" />'
       );
     } else {
       $('head').append(`<style class="themeSettingsCSS">
                     :root{
-                        ${cookieValue}
+                        ${cookieValue.settingColor}
                     }
                     </style>`);
     }
@@ -2012,6 +2017,32 @@ jQuery(document).ready(function ($) {
 
     var popoverTriggerList = [].slice.call(document.querySelectorAll('.set-link'));
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      popoverTriggerEl.addEventListener('shown.bs.popover', function (e) {
+        if ($(e.target).hasClass('set-link')) {
+          const cookieName = 'themeSettings';
+          !getCookie(cookieName)
+            ? (cookieValue = getCookie(cookieName))
+            : (cookieValue = getCookie(cookieName));
+          if (!cookieValue) {
+            return;
+          }
+          cookieValue = JSON.parse(cookieValue);
+
+          if (cookieValue.theme == 'dark') {
+            $('.popover #darkTheme').prop('checked', true);
+          } else if (cookieValue.theme == 'custom') {
+            console.log($('.popover #customTheme'));
+            $('.popover #customTheme').prop('checked', true);
+            console.log(cookieValue.values);
+            if (cookieValue.values) {
+              for (const [key, value] of Object.entries(cookieValue.values)) {
+                console.log(`${key}: ${value}`);
+                $(`.popover #${key}`).val(value);
+              }
+            }
+          }
+        }
+      });
       return new bootstrap.Popover(popoverTriggerEl, {
         template:
           '<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body p-32"></div></div>',
@@ -2068,14 +2099,17 @@ jQuery(document).ready(function ($) {
     $(document)
       .off('click', '#saveTheme')
       .on('click', '#saveTheme', function () {
-        let themeSettings = '';
+        let themeSettings = {};
         if ($('input[name="selectTheme"]:checked').val() == 'light') {
-          themeSettings = '';
+          themeSettings.theme = 'light';
         }
         if ($('input[name="selectTheme"]:checked').val() == 'dark') {
-          themeSettings = 'dark';
+          themeSettings.theme = 'dark';
         } else if ($('input[name="selectTheme"]:checked').val() == 'custom') {
-          themeSettings = '';
+          themeSettings.theme = 'custom';
+          themeSettings.settingColor = '';
+          themeSettings.values = {};
+
           if ($('.popover #mainBrandColor').val() != '#000001') {
             let hexColor = $('.popover #mainBrandColor').val();
             let hslColor = hexToHsl(hexColor);
@@ -2083,7 +2117,8 @@ jQuery(document).ready(function ($) {
             let color = `${hslColor.h}, ${hslColor.s}%`;
             let l = `${hslColor.l}%`;
 
-            themeSettings += `--color:${color};--l:${l};`;
+            themeSettings.settingColor += `--color:${color};--l:${l};`;
+            themeSettings.values.mainBrandColor = hexColor;
           }
 
           if ($('.popover #secondBrandColor').val() != '#000001') {
@@ -2103,17 +2138,20 @@ jQuery(document).ready(function ($) {
               result = solver.solve();
             } while (result.loss > 5);
 
-            themeSettings += `--sec-color: ${secColor};--sec-l: ${secl};--${result.filter}`;
+            themeSettings.settingColor += `--sec-color: ${secColor};--sec-l: ${secl};--${result.filter}`;
+            themeSettings.values.secondBrandColor = hexColor;
           }
 
           if ($('.popover #fontColor').val() != '#000001') {
             let fontColor = $('.popover #fontColor').val();
-            themeSettings += `--font-color: ${fontColor};`;
+            themeSettings.settingColor += `--font-color: ${fontColor};`;
+            themeSettings.values.fontColor = fontColor;
           }
 
           if ($('.popover #backgroundColor').val() != '#000001') {
             let bgColor = $('.popover #backgroundColor').val();
-            themeSettings += `--backg-color: ${bgColor};`;
+            themeSettings.settingColor += `--backg-color: ${bgColor};`;
+            themeSettings.values.bgColor = bgColor;
           }
         }
 
@@ -2124,7 +2162,7 @@ jQuery(document).ready(function ($) {
         document.cookie =
           cookieName +
           '=' +
-          encodeURIComponent(cookieValue) +
+          encodeURIComponent(JSON.stringify(cookieValue)) +
           ';samesite=strict; expires=' +
           daysToExpire;
 
