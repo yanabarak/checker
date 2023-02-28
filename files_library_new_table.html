@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files library</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
+</head>
+
+<body class="overflow-hidden files-library">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap"
+        style="z-index: 10000;">
+        <div class="spinner-border mx-auto sec-color" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+    </div>
+    <div class="container-fluid  d-block d-md-none">
+        <header class="d-flex align-items-center border-bottom py-2">
+            <div class="col-2 text-start">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <div class="animated-hamburger"><span></span><span></span><span></span></div>
+                </button>
+            </div>
+            <div class="logo col-8 justify-content-center mb-md-0">
+                <div class="col-md-6">
+                    <img src="img/checker_logo.png" alt="Company logo" class=" mx-auto d-block">
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="wrapper d-flex align-items-stretch flex-column flex-md-row">
+            <aside class="sticky-md-top">
+                <div class="sticky-top sidebar left asidebar">
+                    <div class="d-none d-md-flex  align-items-center">
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span>
+                            </div>
+                        </button>
+                        <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
+                    </div>
+                    <div class="logo-container">
+                        <img src="img/checker_logo.png" alt="Company logo" class=" d-none d-md-block logo">
+                    </div>
+                    <div id="carouselMenu" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div id="content1" class="carousel-item active">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                                        <li><a href="det_report.html"><i class="far fa-money-bill-alt"></i>
+                                                <span>Payments report</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu">
+                                    <ul class="menu-links list-group me-4">
+
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My
+                                                    Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open
+                                                    Jobs</span></a></li>
+                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new
+                                                    job</span></a></li>
+                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i>
+                                                <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI
+                                                    Studio</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i>
+                                                <span>Locations addresses</span></a></li>
+                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add
+                                                    refund record</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training &
+                                                    Certifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs
+                                                    History</span></a></li>
+                                        <li class="active"><a href="files_library.html"><i
+                                                    class="far fa-folder-open"></i> <span>Files library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire
+                                                    preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i>
+                                                <span>Notifications</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class=" border-top m-0 pt-3 user-menu mt-auto mb-0">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i>
+                                                <span>Logout</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="user-panel py-3 mb-0">
+                                    <a class="image d-flex align-items-center me-4" type="button"
+                                        data-bs-target="#carouselMenu" data-bs-slide="next">
+                                        <div class="box image rounded-circle">
+                                            <img src="https://picsum.photos/640/360" alt="User Image">
+                                        </div>
+                                        <h6 class="text-center mb-0 long">Larysa Chernenko
+                                            <i class="fas fa-chevron-right"></i>
+                                        </h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="content2" class="carousel-item">
+                                <div class="m-0 pb-3 user-menu border-bottom">
+                                    <ul class="menu-links list-group me-4">
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu"
+                                                data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i>
+                                                <span>Back</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="m-0 pb-3 pt-3 user-menu ">
+                                    <ul class="menu-links list-group me-4">
+                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal
+                                                    Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work
+                                                    Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred
+                                                    Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i>
+                                                <span>Agreements</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="p-0 w-100" id="content">
+                <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
+                    <div class="row m-0 mt-5 mt-md-0 header-wrapper">
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i
+                                class="far fa-folder-open sec-color fs-30 me-4"></i>Files library</h1>
+                        <div class="col-auto ms-auto">
+                            <select class="form-select mb-4 selectpicker" id="lang">
+                                <option selected>English</option>
+                                <option value="1">Ukrainian</option>
+                                <option value="2">Hebrew</option>
+                                <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
+                                <option value="4">HebrewHebrew</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="content-wrapper m-0 p-0">
+                        <div id="files-library-new" class="my-auto row p-0 m-0">
+                            <table data-class="table table-borderless add-height table-tree"
+                                class="table table-borderless add-height table-tree" data-height="500"
+                                data-filter-control="true" data-tree-enable="true">
+                                <thead>
+                                    <tr>
+                                        <th data-sortable="true" data-field="name" data-filter-control="input"
+                                            data-width="40" data-width-unit="%">Name</th>
+                                        <th data-sortable="true" data-field="desc" data-filter-control="input">
+                                            Description</th>
+                                        <th data-width="80">View</th>
+                                        <th data-width="100">Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="treegrid-1" id="node-1">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-2 treegrid-parent-1 children-1" id="node-1-2">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-4 treegrid-parent-2 children-2" id="node-2-4">
+                                        <td>test</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-3 treegrid-parent-2 children-2" id="node-2-3">
+                                        <td>test 2</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-5" id="node-5">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-6 treegrid-parent-5 children-1" id="node-5-1">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-7 treegrid-parent-6 children-2" id="node-6-1">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-8 " id="node-8">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-9 " id="node-9">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-10 " id="node-10">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-11 " id="node-11">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-12 " id="node-12">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                    <tr class="treegrid-13 " id="node-13">
+                                        <td>Samsung</td>
+                                        <td>
+                                            <p>ddd</p>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                target="_blank" class="view"><i class="fas fa-eye sec-color"></i></a>
+                                        </td>
+                                        <td><a href="checker-files/media/68/pictures/chk_file_lib-14-87898-Samsung.png"
+                                                class="download" download="Samsung"><i
+                                                    class="fas fa-arrow-download main-color"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <div class="m-0 p-0 d-flex flex-column justify-content-end" id="record-nav">
+                            <div class="nav-group col-auto ms-auto row mb-3 me-0">
+                                <div class="set col-auto">Show <input class="form-control" type="number"> records in
+                                    page</div>
+                                <div class="numb col-auto">Page <input class="form-control" type="number"> of <span
+                                        class="total">4356</span>
+                                </div>
+                                <div class="arrow col-auto p-0">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fas fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-primary"><i
+                                                class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group col-auto ms-auto p-0">
+                                <button type="submit"
+                                    class="btn btn-md sec-bg border-0 white-color rounded-6 p-2 fs-18 px-4 col-auto">Show</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-filter-control.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-treegrid@0.3.0/js/jquery.treegrid.min.js"></script>
+    <script src="js/my.js"></script>
+</body>
+
+</html>

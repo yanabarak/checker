@@ -3498,6 +3498,150 @@ table.childs .parent_tr.active {
     z-index: 1000;
  transition: position 0s linear 0s;
 }*/
+
+/* files library */
+
+#files-library-new td {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#files-library-new td > p:only-child {
+  margin: 0px;
+}
+#files-library-new tbody tr {
+  position: relative;
+}
+tr .treegrid-expander {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  transition: all 0.3s linear;
+}
+tr.children-1 .treegrid-expander {
+  left: 30px;
+}
+tr.children-2 .treegrid-expander {
+  left: 40px;
+}
+tr.children-3 .treegrid-expander {
+  left: 50px;
+}
+tr.children-4 .treegrid-expander {
+  left: 60px;
+}
+tr.children-5 .treegrid-expander {
+  left: 70px;
+}
+tr .treegrid-expander::before {
+  content: '\f07b';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: var(--main-brand-color);
+  transition: all 0.3s linear;
+}
+tr .treegrid-expander.treegrid-expander-expanded::before {
+  content: '\f07c';
+}
+
+tr:not(.treegrid-expanded):not(.treegrid-collapsed) .treegrid-expander::before {
+  content: '\f15c';
+  font-family: 'Font Awesome 5 Free';
+  color: var(--second-brand-color);
+}
+.table-tree.table > thead > tr > th {
+  background: #f4f4f4;
+}
+.table.table-borderless.table-tree.table-bordered.table-hover *,
+.table.table-borderless.table-tree.table-bordered.table-hover {
+  border: 0px solid transparent !important;
+}
+.table.table-borderless tbody {
+  background-color: #fff;
+}
+#files-library-new table > tbody > tr > td:nth-last-child(2),
+#files-library-new table > thead > tr > th:nth-last-child(2),
+#files-library-new table > tbody > tr > td:last-child,
+#files-library-new table > thead > tr > th:last-child {
+  text-align: center;
+}
+.table.table-tree a.view i,
+.table.table-tree a.download i {
+  font-size: 16px;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead th .both {
+  background-image: none;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.desc,
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc {
+  background: #edebeb;
+  border-radius: 45px;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.desc:after,
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc:after {
+  content: '\f0d7';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  color: #545454;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc:after {
+  content: '\f0d8';
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both {
+  position: relative;
+}
+
+#files-library-new table > tbody > tr > td:first-child {
+  font-size: 18px;
+  color: var(--font-color, #000);
+  font-weight: 500;
+}
+
+#files-library-new table > thead > tr > th:first-child,
+#files-library-new table > tbody > tr > td:first-child {
+  padding-left: 90px;
+}
+#files-library-new table > tbody > tr.children-1 > td:first-child {
+  padding-left: 100px;
+}
+#files-library-new table > tbody > tr.children-2 > td:first-child {
+  padding-left: 110px;
+}
+#files-library-new table > tbody > tr.children-3 > td:first-child {
+  padding-left: 120px;
+}
+#files-library-new table > tbody > tr.children-4 > td:first-child {
+  padding-left: 130px;
+}
+#files-library-new table > tbody > tr.children-5 > td:first-child {
+  padding-left: 140px;
+}
+#files-library-new .table.table-tree > tbody > tr:not(.no-records-found) {
+  border-bottom: 1px solid #dadada !important;
+}
+#files-library-new .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer),
+#files-library-new .bootstrap-table .fixed-table-container.fixed-height .fixed-table-border {
+  border: 0px solid;
+}
+
+#files-library-new {
+  margin: 0px !important;
+  margin-top: 50px !important;
+}
+#files-library-new .bootstrap-table.bootstrap5 {
+  padding: 0px;
+}
+
+#files-library-new .fixed-table-header {
+  height: 44px !important;
+}
+/* end files library */
 #files-library {
   margin-top: 30px !important;
 }

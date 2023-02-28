@@ -1,3 +1,17 @@
+if ($('table[data-tree-enable]').length) {
+  $('table[data-tree-enable]').each(function () {
+    if ($(this).hasClass('add-height')) {
+      let height = window.innerHeight - 200;
+      if ($('#record-nav').length) {
+        height = height - 100;
+      }
+      $(this).attr('data-height', height);
+    }
+    $(this).bootstrapTable().treegrid({
+      initialState: 'collapsed',
+    });
+  });
+}
 jQuery(document).ready(function ($) {
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
@@ -2096,6 +2110,12 @@ jQuery(document).ready(function ($) {
     }
 
     // change theme on click
+
+    // $(document)
+    //   .off('change', '.settings-popover input')
+    //   .on('change', '.settings-popover input', function () {
+
+    //});
     $(document)
       .off('click', '#saveTheme')
       .on('click', '#saveTheme', function () {
@@ -2151,7 +2171,7 @@ jQuery(document).ready(function ($) {
           if ($('.popover #backgroundColor').val() != '#000001') {
             let bgColor = $('.popover #backgroundColor').val();
             themeSettings.settingColor += `--backg-color: ${bgColor};`;
-            themeSettings.values.bgColor = bgColor;
+            themeSettings.values.backgroundColor = bgColor;
           }
         }
 
