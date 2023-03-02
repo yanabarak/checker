@@ -753,7 +753,8 @@ select.form-select,
 .form-control.pick-date,
 input[type='text'],
 input[type='password'],
-#pick-branch-modal select {
+#pick-branch-modal select,
+.picker__input {
   font-size: 16px;
   border-color: #dadada;
   background-color: #fff;
@@ -762,13 +763,15 @@ input[type='password'],
 }
 .form-control.pick-date::placeholder,
 input[type='password']::placeholder,
-input[type='text']::placeholder {
+input[type='text']::placeholder,
+.picker__input::placeholder {
   font-size: 16px;
   color: #aeaeae !important;
 }
 .pick-date,
 #pick-date-to,
-#pick-date-from {
+#pick-date-from,
+.picker__input {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.949707 0.872359L7.98695 7.12769L15.0242 0.872359' stroke='%23aeaeae' stroke-width='2'/%3e%3c/svg%3e ");
   background-size: 14px 6px;
   background-color: #fff;
@@ -926,14 +929,14 @@ button#navbarSideCollapseClose {
 aside:has(.fliph) + #content #navbarSideCollapseClose {
   left: calc(50% + 40px);
 }
-aside:has(.fliph) + #content #navbarSideCollapse {
+aside:has(.fliph) + #content #navbarSideCollapse.button-open {
   left: calc(50% + 90px);
 }
 aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCollapseClose {
   top: 39px;
   left: calc(50% + 50px);
 }
-aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCollapse {
+aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCollapse.button-open {
   top: 0px;
   left: calc(50% - 30px);
 }
@@ -942,7 +945,12 @@ aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCol
   aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCollapseClose {
     left: calc(50% - 80px) !important;
   }
-  aside:has(.fliph) + #content .mini-menu + .content-wrapper > #map #navbarSideCollapse {
+  aside:has(.fliph)
+    + #content
+    .mini-menu
+    + .content-wrapper
+    > #map
+    #navbarSideCollapse.button-open {
     left: calc(50% - 60px) !important;
   }
 }
@@ -1143,6 +1151,9 @@ body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card-list-job.bg-white.show-pack .col-12.col-md-4.col-lg-3 {
+  min-width: 200px;
 }
 .open.w-100 + .form-applied > .show-pack form > .remove-multiple {
   width: max-content;
@@ -3519,7 +3530,7 @@ tr .treegrid-expander {
   height: 24px;
   position: absolute;
   left: 20px;
-  top: 18px;
+  top: calc(50% - 12px);
   transition: all 0.3s linear;
 }
 tr.children-1 .treegrid-expander {
@@ -5243,10 +5254,12 @@ font {
   }
   div#carouselMenu,
   div#content1,
+  div#content2,
   .carousel-inner {
     height: auto !important;
   }
-  div#content1 {
+  div#content1,
+  div#content2 {
     min-height: calc(100vh - 55px);
     flex-direction: column;
   }
@@ -5255,8 +5268,12 @@ font {
     background-color: #fff;
     z-index: 1;
   }
+  header {
+    height: 55px;
+    max-width: 100vw;
+  }
   aside {
-    z-index: 10;
+    z-index: 100000;
     position: fixed;
     background: white;
     width: 100%;
@@ -5526,11 +5543,19 @@ font {
   }
   body.myjobs div#infoJobMenu .col-auto.ms-auto.lang-row,
   body.openjobs div#infoJobMenu .col-auto.ms-auto.lang-row,
-  body.unfin-job div#infoJobMenu .col-auto.ms-auto.lang-row {
+  body.unfin-job div#infoJobMenu .col-auto.ms-auto.lang-row,
+  #infoJobMenu > h1 + .lang-row,
+  #infoJobMenu > h1 + button + .lang-row {
     position: absolute;
     right: 0px;
     padding-right: 1.5rem !important;
     top: 20px !important;
+  }
+
+  #infoJobMenu > h1 + .lang-row,
+  #infoJobMenu > h1 + button + .lang-row {
+    top: 0px !important;
+    padding-right: 0px !important;
   }
   body.myjobs #map .navbar-collapse.open-w100 div.action,
   body.myjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12,
@@ -5550,9 +5575,9 @@ font {
     display: inline-block;
   }
   #map button.navbar-toggler.button-open {
-    bottom: 40px;
+    bottom: calc(10 * var(--vh));
     top: auto !important;
-    left: calc(50% - 185.26px / 2) !important;
+    left: 50% !important;
     background: var(--color-second-darkest) !important;
     box-shadow: 0px 4.80502px 4.80502px rgb(0 0 0 / 25%) !important;
     border-radius: 51.654px !important;
@@ -5562,6 +5587,36 @@ font {
     line-height: 150% !important;
     border: 0px solid !important;
     padding: 5.5px 32px !important;
+    transform: translateX(-50%);
+    width: fit-content;
+    white-space: nowrap;
+  }
+  .myjobs #infoJobMenu h1 span,
+  .openjobs #infoJobMenu h1 span {
+    position: absolute;
+    margin-top: 3px;
+    width: calc(100vw - 180px);
+    display: inline-block;
+  }
+  .modal-content {
+    margin-top: 55px;
+  }
+  div#infoJob .block {
+    padding: 5px;
+  }
+  div#infoJob .block.border.rounded-3 .fs-90 {
+    font-size: 60px;
+  }
+  div#infoJob .block.border.rounded-3 span {
+    font-size: 12px !important;
+  }
+  div#infoJob .block.border.rounded-3.main-bg {
+    margin-left: auto !important;
+    margin-right: 0px !important;
+  }
+  div#infoJob .block.border.rounded-3 {
+    margin-left: 0px !important;
+    width: calc(100% - 7px);
   }
   .tel-elem-info > .col-12 ~ .col-auto:last-child {
     min-width: 0px !important;
@@ -5596,7 +5651,11 @@ font {
     overflow: scroll;
   }
   #content #map.list {
-    padding: 24px !important;
+    padding: 18px !important;
+    overflow-x: hidden;
+  }
+  .action a {
+    font-size: 13px;
   }
   #content #map.list iframe,
   #content #map.list .myjobcard {
@@ -5622,6 +5681,19 @@ font {
     text-align: center;
     margin: 0px;
     width: 100%;
+  }
+  #modal-reject-order .cardnew {
+    padding-top: 20px !important;
+  }
+  #pick-date-modal,
+  #pick-branch-modal {
+    top: 70px;
+  }
+  #pick-date-modal .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    filter: invert(1);
   }
   #pick-date-modal .modal-footer {
     display: flex;
@@ -5666,9 +5738,45 @@ font {
   }
   .cert-elem .fs-18 {
     line-height: 1;
+    font-size: 16px !important;
+  }
+
+  .bg-grey.cert-elem .col:nth-child(2):has(.title.sec-color) {
+    display: block;
+    min-width: 150px;
+    align-self: baseline;
+  }
+  .bg-grey.cert-elem .col:nth-child(2):has(.col-auto) {
+    min-width: unset !important;
+  }
+  .bg-grey.cert-elem .btn.btn-input.btn-md.btn-outline-main.main-color.start-test {
+    position: absolute;
+    left: 75px;
+    top: 19px;
+  }
+  .cert-elem .preview {
+    margin-right: 5px !important;
+    display: block;
+  }
+  .cert-elem .status {
+    min-width: 62px;
+    min-height: 62px;
+  }
+  .bg-grey.cert-elem .col:nth-child(2) {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+  .bg-grey.cert-elem .color-lgrey {
+    font-size: 10px;
+  }
+  .bg-grey.cert-elem .col:nth-child(2) .col-auto {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
   }
   .cert-elem .color-lgrey + .fs-18 {
-    font-size: 16px;
+    font-size: 14px !important;
     line-height: 1.2;
   }
   .cert-elem .status {
@@ -5689,6 +5797,7 @@ font {
     margin-left: -12px !important;
     margin-right: -12px !important;
     width: auto !important;
+    position: relative;
   }
   .cert-elem > .cert-elem {
     padding: 5px;
@@ -5706,8 +5815,17 @@ font {
     padding-bottom: 0px !important;
   }
   img.no-job {
-    max-width: 100%;
-    max-height: 30vh;
+    max-width: 80% !important;
+    max-height: 30vh !important;
+  }
+  #content #map.list #job-map {
+    display: none !important;
+  }
+  .card-list-job.bg-white > .d-flex:last-child > .col {
+    padding: 0px;
+  }
+  .card-list-job.bg-white .border-bottom {
+    border: 0px solid !important;
   }
   div#infoJobMenu.mini-menu + .content-wrapper > div#map.emptyList {
     height: 100% !important;
@@ -5791,6 +5909,29 @@ font {
   body.myjobs #content #map.list .form-applied > div > div:last-child {
     width: 100% !important;
     justify-content: space-between !important;
+    flex-direction: column;
+    align-content: center;
+    gap: 10px !important;
+    margin-top: 20px;
+  }
+  .myjobs .apply-multiple:first-child > .remove-multiple.black-color {
+    position: unset;
+  }
+  .myjobs .apply-multiple:first-child {
+    margin: 0px !important;
+  }
+  .myjobs .apply-multiple:nth-child(2) {
+    margin: 0px !important;
+    align-self: center;
+  }
+  body.myjobs #content #map.list .form-applied > div > div:last-child > * {
+    width: 100%;
+  }
+  .myjobs .apply-multiple:nth-child(2) > button {
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .form-applied .fs-18,
   .form-applied button.accept {
@@ -5859,14 +6000,18 @@ font {
   }
   #pref-reg .bg-white > div:last-child > .btn {
     margin-left: 0px !important;
+    font-size: 16px !important;
+    padding: 5px !important;
   }
   #pref-reg .bg-white > div:last-child,
   #pref-reg .bg-white > p:last-child {
-    padding-right: 20px !important;
-    padding-left: 20px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
   }
   #pref-reg .bg-white > div:last-child > p {
     text-align: right !important;
+    font-size: 14px !important;
+    justify-content: space-around !important;
   }
   #pref-reg .mini-table.classic.table tr td.col-6 {
     font-size: 12px;
@@ -6246,6 +6391,51 @@ font {
     margin-left: 0px !important;
     margin-top: 0px !important ;
     width: fit-content;
+  }
+  .content-wrapper.m-0.p-0 > h4 {
+    font-size: 12px;
+  }
+  h1.fs-2 {
+    font-size: 20px !important;
+  }
+  #shopper-message-modal .modal-content {
+    min-width: unset !important;
+    box-shadow: 0 0 10px 2px #acabab !important;
+  }
+  #shopper-message-modal .modal-dialog {
+    width: auto;
+  }
+  #shopper-message-modal.modal {
+    z-index: 100001;
+  }
+  #pref-reg #pills-tab .nav-link {
+    padding: 10px !important;
+  }
+  #pills-tab {
+    gap: 10px;
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    margin-bottom: 0px;
+    align-content: stretch;
+  }
+  #pref-reg #pills-tab .nav-link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+  #pills-tabContent .classic.mini-table.table th.col-2 input {
+    margin-left: 6px !important;
+  }
+
+  .modal-dialog.modal-dialog-centered.modal-sm {
+    width: unset !important;
+    max-width: 100vw !important;
+  }
+  #formModal .modal-content {
+    padding: 20px !important;
   }
 }
 @media (max-width: 347.5px) {

@@ -7,10 +7,75 @@ if ($('table[data-tree-enable]').length) {
       }
       $(this).attr('data-height', height);
     }
-    $(this).bootstrapTable().treegrid({
-      initialState: 'collapsed',
+    $table = $(this);
+    $(this).bootstrapTable({
+      // showColumns: true,
+      search: true,
+      // treeShowField: 'name',
+      onPostBody: function () {
+        input = $table.find('.search-input');
+
+        var columns = $table.bootstrapTable('getOptions').columns;
+        if (columns && columns[0][1].visible) {
+          $table.treegrid({
+            initialState: 'collapsed',
+            treeColumn: 1,
+            onChange: function () {
+              $table.bootstrapTable('resetView');
+            },
+          });
+        }
+      },
+      customSearch: function (data, text) {
+        if (!text) {
+          return data;
+        }
+        console.log(data);
+        // const index = [];
+        // for (let i = 0; i < data.length; i++) {
+        //   const row = data[i];
+        //   for (const value of Object.values(row)) {
+        //     if ((value + '').includes(text)) {
+        //       index.push(...getIndexArray(data, row, i));
+        //     }
+        //   }
+        // }
+        return filterRowsByText(text, data);
+        // return data.filter((row, i) => {
+        //   return index.includes(i);
+        // });
+      },
     });
+    // .treegrid({
+    //   initialState: 'collapsed',
+    // });
   });
+}
+
+function filterRowsByText(text, rows) {
+  text = text.toLowerCase();
+  const filteredRows = rows.filter(row => {
+    const hasText = row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
+    if (hasText) {
+      return true;
+    } else {
+      const isChild = row._class.includes('treegrid-parent-');
+      const arrP = [];
+      if (isChild) {
+        const classP = row._class.match(/\btreegrid-parent-\d+\b/)[0];
+        const parentId = classP.split('-')[2];
+        const parentRow = rows.find(parent =>
+          parent._id.startsWith(`node-${parentId}`) ? parent : false
+        );
+        arrP.push(parentRow);
+        console.log(arrP);
+        return true;
+      } else {
+        return false;
+      }
+    }
+  });
+  return filteredRows;
 }
 jQuery(document).ready(function ($) {
   // initial for swaping menu
@@ -620,8 +685,8 @@ jQuery(document).ready(function ($) {
   function showPack() {
     let titledef = $('h1.fs-2 span').text();
     $(document)
-      .off('click', '.d-grey.show-pack')
-      .on('click', '.d-grey.show-pack', function () {
+      .off('click touchstart', '.d-grey.show-pack')
+      .on('click touchstart', '.d-grey.show-pack', function () {
         if (!$('#navbarsListJob').hasClass('open')) {
           setTimeout(function () {
             $('#navbarSideCollapse').trigger('click');
@@ -996,7 +1061,7 @@ jQuery(document).ready(function ($) {
           .html($(this).closest('tbody').find('input[type="checkbox"]:checked').length);
       });
 
-      $('.selAll').on('click', function () {
+      $('.selAll').on('click touchstart', function () {
         let par = $(this).attr('data-select');
         if ($(this).is(':checked')) {
           $(par).find("input[type='checkbox']").prop('checked', true).trigger('change');
