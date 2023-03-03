@@ -77,6 +77,8 @@ function filterRowsByText(text, rows) {
   });
   return filteredRows;
 }
+
+let titledef = '';
 jQuery(document).ready(function ($) {
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
@@ -680,10 +682,9 @@ jQuery(document).ready(function ($) {
       );
     }
   }
-
   // click on "Show Package button"
   function showPack() {
-    let titledef = $('h1.fs-2 span').text();
+    titledef = $('h1.fs-2 span').text();
     $(document)
       .off('click touchstart', '.d-grey.show-pack')
       .on('click touchstart', '.d-grey.show-pack', function () {
@@ -2160,6 +2161,7 @@ jQuery(document).ready(function ($) {
                 }, 500);
                 $('#navbarsListJobPack').attr('style', ``);
                 $('#navbarsListJob').attr('style', ``);
+                $('h1.fs-2 span').text(titledef);
 
                 $('#navbarsListJobPack').removeClass('show-job-pack');
                 $('#navbarsListJobPack').addClass('visually-hidden');

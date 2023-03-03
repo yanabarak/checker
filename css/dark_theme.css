@@ -8,6 +8,9 @@ body.openjobs div#infoJobMenu {
 body {
   color: #fff;
 }
+header {
+  background-color: #18212f !important;
+}
 /* asidebar */
 .sticky-md-top {
   background: #151c26;
@@ -125,7 +128,7 @@ input[type='text']::placeholder,
 /* main page */
 #content .block.bg-white,
 .detailed-report-block {
-  background: #18212f !important;
+  background-color: #18212f !important;
   border-color: #18212f !important;
   box-shadow: 4px 4px 25px rgba(0, 0, 0, 0.1) !important;
 }
@@ -368,4 +371,17 @@ div#register-form .btn-outline {
 .bs-popover-bottom > .popover-arrow::after,
 .bs-popover-auto[data-popper-placement^='bottom'] > .popover-arrow::after {
   border-bottom-color: #334155;
+}
+@media (max-width: 767.5px) {
+  div[id^='widget'] {
+    padding-left: 65px !important;
+    background-image: linear-gradient(
+      45deg,
+      var(--main-brand-color),
+      var(--main-brand-color)
+    ) !important;
+    background-size: 55px 100% !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+  }
 }

@@ -1185,8 +1185,9 @@ body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   background: transparent !important;
   border: 0px solid;
 }
-body.openjobs #map div.action[data-info*=' '] > a:first-child:last-child {
-  margin: 0 auto;
+body.openjobs #map div.action[data-info*=' '] > a:first-child:last-child,
+body.openjobs #map div.action a:first-child:last-child {
+  margin: 0 auto !important;
 }
 .col-auto.pb-3.hidd.d-none.desc-block:nth-child(3) {
   margin-left: 150px;
@@ -3616,22 +3617,22 @@ tr:not(.treegrid-expanded):not(.treegrid-collapsed) .treegrid-expander::before {
 
 #files-library-new table > thead > tr > th:first-child,
 #files-library-new table > tbody > tr > td:first-child {
-  padding-left: 90px;
+  padding-left: 90px !important;
 }
 #files-library-new table > tbody > tr.children-1 > td:first-child {
-  padding-left: 100px;
+  padding-left: 100px !important;
 }
 #files-library-new table > tbody > tr.children-2 > td:first-child {
-  padding-left: 110px;
+  padding-left: 110px !important;
 }
 #files-library-new table > tbody > tr.children-3 > td:first-child {
-  padding-left: 120px;
+  padding-left: 120px !important;
 }
 #files-library-new table > tbody > tr.children-4 > td:first-child {
-  padding-left: 130px;
+  padding-left: 130px !important;
 }
 #files-library-new table > tbody > tr.children-5 > td:first-child {
-  padding-left: 140px;
+  padding-left: 140px !important;
 }
 #files-library-new .table.table-tree > tbody > tr:not(.no-records-found) {
   border-bottom: 1px solid #dadada !important;
@@ -5567,8 +5568,8 @@ font {
   body.openjobs #map .offcanvas-collapse.open {
     padding-bottom: 0px !important;
   }
-  div#infoJobMenu.d-flex > button:nth-child(2) {
-    margin-top: 0px !important;
+  body(:not(.myjobs)) div#infoJobMenu.d-flex > button:nth-child(2) {
+     margin-top: 0px !important;
   }
   .card-list-job.bg-white .col-12 > .accept {
     min-width: 127px !important;
@@ -5745,6 +5746,7 @@ font {
     display: block;
     min-width: 150px;
     align-self: baseline;
+    margin-bottom: 50px !important;
   }
   .bg-grey.cert-elem .col:nth-child(2):has(.col-auto) {
     min-width: unset !important;
@@ -5752,7 +5754,7 @@ font {
   .bg-grey.cert-elem .btn.btn-input.btn-md.btn-outline-main.main-color.start-test {
     position: absolute;
     left: 75px;
-    top: 19px;
+    margin-top: 25px;
   }
   .cert-elem .preview {
     margin-right: 5px !important;
@@ -6329,13 +6331,26 @@ font {
     justify-content: center !important;
     gap: 10px;
   }
+  body.openjobs #map .navbar-collapse.open-w100 div.action,
+  body.myjobs #map .navbar-collapse.open-w100 div.action {
+    order: 1;
+    margin-bottom: 10px !important;
+  }
   #map .accept {
     font-size: 14px !important;
     width: fit-content !important;
     min-width: 80px !important;
     padding: 7px !important;
     height: 31px !important;
+    min-height: 31px !important;
     margin: 0 5px;
+  }
+  #map a {
+    font-size: 14px !important;
+    width: fit-content !important;
+  }
+  .position-absolute.badge.sec-bg {
+    font-size: 10px;
   }
 
   body.myjobs #map div.action {
@@ -6434,8 +6449,54 @@ font {
     width: unset !important;
     max-width: 100vw !important;
   }
-  #formModal .modal-content {
+  #formModal .modal-content .modal-body > .p-0.m-0 {
     padding: 20px !important;
+  }
+  .btn-group.accept.start-lang.start-job button.btn.dropdown-toggle {
+    height: 31px;
+    top: -5px;
+    left: -4px;
+    min-width: 33px !important;
+  }
+  #map .btn-group.accept.start-lang.start-job {
+    min-height: 35px !important;
+  }
+  #map .btn-group.accept.start-lang.start-job > [type='button']:not(:first-child) {
+    padding-left: 0px !important;
+  }
+  .card-list-job p.mb-0 {
+    font-size: 16px;
+  }
+
+  .show-main + .show-pack form ~ button#back {
+    bottom: 8px;
+    right: 5px;
+    width: fit-content;
+  }
+  .show-main + .show-pack * {
+    width: 100%;
+    display: block;
+  }
+  .show-main + .show-pack * {
+    width: 100%;
+    display: block;
+  }
+  .show-main + .show-pack form ~ .actionMessage {
+    position: absolute;
+    bottom: 5px;
+    right: 40px;
+  }
+  .set-link {
+    position: fixed;
+    right: 0px;
+    top: 10px;
+  }
+  .popover.settings-popover {
+    left: 0px !important;
+    transform: none !important;
+    z-index: 1000000;
+    top: 0px !important;
+    width: 100% !important;
   }
 }
 @media (max-width: 347.5px) {
