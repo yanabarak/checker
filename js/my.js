@@ -738,8 +738,8 @@ jQuery(document).ready(function ($) {
       });
 
     $(document)
-      .off('click', '.form-applied .show-pack #back')
-      .on('click', '.form-applied .show-pack #back', function () {
+      .off('click touchstart', '.form-applied .show-pack #back')
+      .on('click touchstart', '.form-applied .show-pack #back', function () {
         let scroll = $(window).scrollTop();
         $('#navbarsListJob').removeClass('show-pack-list');
         setTimeout(function () {
@@ -1904,10 +1904,11 @@ jQuery(document).ready(function ($) {
       ? (cookieValue = getCookie(cookieName))
       : (cookieValue = getCookie(cookieName));
     if (!cookieValue) {
+      $('body').addClass('light');
       return;
     }
     cookieValue = JSON.parse(cookieValue);
-    console.log(cookieValue.theme);
+    $('body').addClass(cookieValue.theme);
 
     if ($('.themeSettingsCSS').length) {
       $('.themeSettingsCSS').remove();
@@ -1997,7 +1998,7 @@ jQuery(document).ready(function ($) {
     });
 
     changeTheme();
-    setTimeout(() => spinerOff(), 250);
+    setTimeout(() => spinerOff(), 400);
 
     drawStuff();
     if ($('#donut1').length) {
@@ -2107,7 +2108,6 @@ jQuery(document).ready(function ($) {
             return;
           }
           cookieValue = JSON.parse(cookieValue);
-
           if (cookieValue.theme == 'dark') {
             $('.popover #darkTheme').prop('checked', true);
           } else if (cookieValue.theme == 'custom') {
@@ -2138,10 +2138,16 @@ jQuery(document).ready(function ($) {
       });
     });
 
+    $(document)
+      .off('click touchstart', '.btn[data-title="Facebook"]')
+      .on('click touchstart', '.btn[data-title="Facebook"]', function () {
+        checkLoginState();
+      });
+
     if ($('#job-map').length) {
       $(document)
-        .off('click', '#job-map')
-        .on('click', '#job-map', function () {
+        .off('click touchstart', '#job-map')
+        .on('click touchstart', '#job-map', function () {
           $('.selectpicker').selectpicker({ selectedTextFormat: 'count > 3', actionsBox: true });
           var popoverTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="popover"]')
@@ -2151,8 +2157,8 @@ jQuery(document).ready(function ($) {
           });
 
           $(document)
-            .off('click', '#job-map .show-list-pack')
-            .on('click', '#job-map .show-list-pack', function () {
+            .off('click touchstart', '#job-map .show-list-pack')
+            .on('click touchstart', '#job-map .show-list-pack', function () {
               if ($('#navbarsListJob.show-pack-list').length) {
                 let scroll = $(window).scrollTop();
                 $('#navbarsListJob').removeClass('show-pack-list');

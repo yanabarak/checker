@@ -372,6 +372,12 @@ div#register-form .btn-outline {
 .bs-popover-auto[data-popper-placement^='bottom'] > .popover-arrow::after {
   border-bottom-color: #334155;
 }
+#formModal .modal-body div#accordionFormJob {
+  background-color: transparent;
+}
+#job-map {
+  color: #000;
+}
 @media (max-width: 767.5px) {
   div[id^='widget'] {
     padding-left: 65px !important;

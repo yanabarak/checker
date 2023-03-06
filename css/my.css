@@ -1114,11 +1114,13 @@ button.accept.d-grey:hover,
   box-shadow: 0px 0px 0px 50px #666666 inset !important;
   color: #fff !important;
 }
-body.myjobs #map .navbar-collapse.open-w100 div.action {
+body.myjobs #map .navbar-collapse.open-w100 div.action,
+body.openjobs #map .navbar-collapse.open-w100 div.action {
   justify-content: space-evenly !important;
   margin-right: 0px;
 }
-body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
+body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await),
+body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
   justify-content: center !important;
   column-gap: 10px;
 }
@@ -2202,6 +2204,7 @@ div#map.emptyList .listWrap .offcanvas-collapse {
   justify-content: center;
   background-color: #fff;
   padding-top: 20px !important;
+  overflow: auto;
 }
 div#map.emptyList .listWrap .offcanvas-collapse.open-w100 {
   padding-bottom: 50px !important;
@@ -4154,7 +4157,7 @@ input[type='number']::-webkit-inner-spin-button {
   padding: 5.5px 32px !important;
 }
 .unfin-job #rec-wrap {
-  margin-top: 50px !important;
+  margin-top: 20px !important;
 }
 .unfin-job #rec-wrap .action {
   height: auto;
@@ -4895,6 +4898,33 @@ h1 > i.sec-color {
   display: none;
 }
 
+#files-library-new .bootstrap-table .fixed-table-toolbar .search:after {
+  content: '\f002';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  color: #545454;
+  top: calc(50% - 12px);
+  color: #666666;
+  font-size: 16px;
+}
+
+#files-library-new .bootstrap-table .fixed-table-toolbar .search input {
+  height: 40px;
+  border: 0px;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  position: relative;
+  padding-right: 40px;
+  text-overflow: ellipsis;
+}
+.light img[src*='default_logo.svg'],
+.custom img[src*='default_logo.svg'] {
+  filter: invert(1);
+}
+
 font {
   color: inherit !important;
   font-size: inherit !important;
@@ -5568,8 +5598,8 @@ font {
   body.openjobs #map .offcanvas-collapse.open {
     padding-bottom: 0px !important;
   }
-  body(:not(.myjobs)) div#infoJobMenu.d-flex > button:nth-child(2) {
-     margin-top: 0px !important;
+  body:not(.myjobs) div#infoJobMenu.d-flex > button:nth-child(2) {
+    margin-top: 0px !important;
   }
   .card-list-job.bg-white .col-12 > .accept {
     min-width: 127px !important;
@@ -5899,6 +5929,7 @@ font {
   }
   #content #map.list .open-w100 {
     width: 100%;
+    overflow: auto;
   }
   body.myjobs #content #map.list .form-applied,
   body.openjobs #content #map.list .form-applied {
@@ -5907,6 +5938,12 @@ font {
   .card-list-job.show-pack a[type='button'] {
     width: auto !important;
     min-width: auto;
+  }
+  .openjobs .card-list-job.form-applied .buttons-sel.row {
+    margin: 0 auto;
+  }
+  .openjobs .card-list-job.form-applied .show-main {
+    flex-direction: column;
   }
   body.myjobs #content #map.list .form-applied > div > div:last-child {
     width: 100% !important;
