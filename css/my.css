@@ -4959,7 +4959,7 @@ font {
   #map button.navbar-toggler.button-open {
     top: 16px;
     left: 16px;
-    position: absolute;
+    position: fixed;
   }
   a.start-test.btn-md {
     min-height: 32px;
@@ -5629,6 +5629,10 @@ font {
     width: calc(100vw - 180px);
     display: inline-block;
   }
+  body.myjobs div#infoJobMenu.d-flex h1 span,
+  body.openjobs div#infoJobMenu.d-flex h1 span {
+    position: unset;
+  }
   .modal-content {
     margin-top: 55px;
   }
@@ -5962,6 +5966,7 @@ font {
   .myjobs .apply-multiple:nth-child(2) {
     margin: 0px !important;
     align-self: center;
+    min-height: 20px;
   }
   body.myjobs #content #map.list .form-applied > div > div:last-child > * {
     width: 100%;

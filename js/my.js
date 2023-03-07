@@ -2177,7 +2177,15 @@ jQuery(document).ready(function ($) {
 
                 $('.form-applied .show-main').removeClass('visually-hidden');
                 $('.form-applied .show-pack').addClass('visually-hidden');
-              } else $('#navbarSideCollapse').trigger('click');
+
+                if ($(window).width() < 768) {
+                  $('#map .navbar-toggler.button-open').trigger('click');
+                }
+              } else {
+                if ($(window).width() < 768) {
+                  $('#map .navbar-toggler.button-open').trigger('click');
+                } else $('#navbarSideCollapse').trigger('click');
+              }
             });
         });
     }
