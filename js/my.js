@@ -1,85 +1,67 @@
-if ($('table[data-tree-enable]').length) {
-  $('table[data-tree-enable]').each(function () {
-    if ($(this).hasClass('add-height')) {
-      let height = window.innerHeight - 200;
-      if ($('#record-nav').length) {
-        height = height - 100;
-      }
-      $(this).attr('data-height', height);
-    }
-    $table = $(this);
-    $(this).bootstrapTable({
-      // showColumns: true,
-      search: true,
-      // treeShowField: 'name',
-      onPostBody: function () {
-        input = $table.find('.search-input');
-
-        var columns = $table.bootstrapTable('getOptions').columns;
-        if (columns && columns[0][1].visible) {
-          $table.treegrid({
-            initialState: 'collapsed',
-            treeColumn: 1,
-            onChange: function () {
-              $table.bootstrapTable('resetView');
-            },
-          });
-        }
-      },
-      customSearch: function (data, text) {
-        if (!text) {
-          return data;
-        }
-        console.log(data);
-        // const index = [];
-        // for (let i = 0; i < data.length; i++) {
-        //   const row = data[i];
-        //   for (const value of Object.values(row)) {
-        //     if ((value + '').includes(text)) {
-        //       index.push(...getIndexArray(data, row, i));
-        //     }
-        //   }
-        // }
-        return filterRowsByText(text, data);
-        // return data.filter((row, i) => {
-        //   return index.includes(i);
-        // });
-      },
-    });
-    // .treegrid({
-    //   initialState: 'collapsed',
-    // });
-  });
-}
-
-function filterRowsByText(text, rows) {
-  text = text.toLowerCase();
-  const filteredRows = rows.filter(row => {
-    const hasText = row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
-    if (hasText) {
-      return true;
-    } else {
-      const isChild = row._class.includes('treegrid-parent-');
-      const arrP = [];
-      if (isChild) {
-        const classP = row._class.match(/\btreegrid-parent-\d+\b/)[0];
-        const parentId = classP.split('-')[2];
-        const parentRow = rows.find(parent =>
-          parent._id.startsWith(`node-${parentId}`) ? parent : false
-        );
-        arrP.push(parentRow);
-        console.log(arrP);
-        return true;
-      } else {
-        return false;
-      }
-    }
-  });
-  return filteredRows;
-}
-
 let titledef = '';
 jQuery(document).ready(function ($) {
+  if ($('table[data-tree-enable]').length) {
+    $('table[data-tree-enable]').each(function () {
+      if ($(this).hasClass('add-height')) {
+        let height = window.innerHeight - 200;
+        if ($('#record-nav').length) {
+          height = height - 100;
+        }
+        $(this).attr('data-height', height);
+      }
+      $table = $(this);
+      $(this).bootstrapTable({
+        search: true,
+        onPostBody: function () {
+          input = $table.find('.search-input');
+          var columns = $table.bootstrapTable('getOptions').columns;
+          if (columns && columns[0][1].visible) {
+            $table.treegrid({
+              initialState: 'collapsed',
+              treeColumn: 1,
+              onChange: function () {
+                $table.bootstrapTable('resetView');
+              },
+            });
+          }
+        },
+        customSearch: function (data, text) {
+          if (!text) {
+            return data;
+          }
+          let res = filterRowsByText(text, data);
+          return res;
+        },
+      });
+    });
+  }
+
+  function filterRowsByText(text, rows) {
+    text = text.toLowerCase();
+    const filteredRows = rows.filter(row => {
+      const hasText =
+        row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
+      if (hasText) {
+        return true;
+      } else {
+        const isChild = row._class.includes('treegrid-parent-');
+        const arrP = [];
+        if (isChild) {
+          const classP = row._class.match(/\btreegrid-parent-\d+\b/)[0];
+          const parentId = classP.split('-')[2];
+          const parentRow = rows.find(parent =>
+            parent._id.startsWith(`node-${parentId}`) ? parent : false
+          );
+          arrP.push(parentRow);
+          console.log(arrP);
+          return true;
+        } else {
+          return false;
+        }
+      }
+    });
+    return filteredRows;
+  }
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
   if ($(myCarousel).find('li.active').length) {
@@ -1918,7 +1900,7 @@ jQuery(document).ready(function ($) {
       return;
     }
     if (cookieValue.theme == 'dark') {
-      $('head').append(
+      $('body').append(
         '<link class="themeSettingsCSS" rel="stylesheet" href="./css/dark_theme.css" type="text/css" />'
       );
     } else {

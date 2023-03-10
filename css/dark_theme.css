@@ -106,8 +106,12 @@ input[type='text']::placeholder,
   color: #fff !important;
   opacity: 1;
 }
-.fht-cell input {
+.fht-cell input,
+#files-library-new .bootstrap-table .fixed-table-toolbar .search input {
   background-color: #334155;
+  color: #fff;
+}
+#files-library-new .bootstrap-table .fixed-table-toolbar .search::after {
   color: #fff;
 }
 .form-control:focus {
@@ -276,8 +280,21 @@ button.accept,
 /* table */
 .classic.table thead,
 .classic.table > thead > tr > th,
-th .sortable {
+th .sortable,
+.table.table-borderless.table-tree th {
   background-color: #18212f;
+  color: #fff;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.desc::after,
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc::after {
+  color: #fff;
+}
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.desc,
+.bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc {
+  background: #64748b;
+  border-radius: 45px;
+}
+#files-library-new table > tbody > tr > td:first-child {
   color: #fff;
 }
 .classic.table tbody > tr:not(.no-records-found) {
