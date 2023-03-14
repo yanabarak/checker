@@ -940,7 +940,12 @@ button#navbarSideCollapseClose {
   top: 320px;
   left: calc(50% + 140px);
 }
-
+#map .listWrap:has(.show-job-pack.open) button#navbarSideCollapse.button-open {
+  top: 140px;
+}
+#map .listWrap:has(.show-job-pack.open) button#navbarSideCollapseClose {
+  top: 140px;
+}
 aside:has(.fliph) + #content #navbarSideCollapseClose {
   left: calc(50% + 40px);
 }
@@ -1133,6 +1138,7 @@ body.myjobs #map .navbar-collapse.open-w100 div.action,
 body.openjobs #map .navbar-collapse.open-w100 div.action {
   justify-content: space-evenly !important;
   margin-right: 0px;
+  min-width: 220px !important;
 }
 body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await),
 body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
@@ -1154,7 +1160,14 @@ body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await)
 }
 .myjobs .apply-multiple:first-child {
   position: relative;
-  margin-right: 20px;
+  margin-right: 10px;
+  max-width: calc(100% - 180px) !important;
+}
+.myjobs .show-pack .apply-multiple:first-child {
+  max-width: calc(100% - 280px) !important;
+}
+.openjobs .buttons-sel {
+  width: fit-content !important;
 }
 .myjobs .show-pack .remove-multiple {
   margin-right: 10px;
@@ -1285,7 +1298,6 @@ body.myjobs #map .listWrap:not(:has(#record-nav)) {
 }
 .myjobcard-footer.w-100.flex-row .btn-group.accept.start-lang.start-job .dropdown-toggle::after {
   position: relative;
-  top: 2px;
   left: -3px;
 }
 
@@ -1530,6 +1542,19 @@ body.openjobs #map div.action {
   width: 100%;
   text-align: center;
   font-size: 12px;
+
+  font-size: 11px;
+  position: absolute;
+  bottom: 0px;
+  line-height: 1;
+}
+body.myjobs #map form div.action,
+body.openjobs #map form div.action {
+  min-width: 160px !important;
+  width: fit-content !important;
+  gap: 5px;
+  position: relative;
+  padding-bottom: 20px;
 }
 body.myjobs.overflow-hidden #infoJob,
 body.openjobs.overflow-hidden div#infoJob,
@@ -2166,7 +2191,8 @@ select#lang + button {
 #map textarea.form-control {
   min-height: 100%;
   max-height: 300px;
-  min-width: 300px;
+  min-width: 240px;
+  max-width: 100% !important;
   resize: both;
 }
 
@@ -2550,7 +2576,7 @@ div#navbarsListJobPack.show-job-pack {
 }
 body.openjobs #map.emptyList .offcanvas-collapse.open {
   padding-bottom: 100px !important;
-  padding-top: 380px !important;
+  padding-top: 70px !important;
 }
 body.openjobs #map.emptyList .offcanvas-collapse.open:has(img:first-child:nth-last-child(2)) {
   padding-top: 0px !important;
@@ -4720,7 +4746,9 @@ input[name='rangeMiles'] {
 #map .offcanvas-collapse.open.w-100.open-w100 .col-5:first-child:nth-last-child(5),
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-7:nth-child(2) {
   min-width: 200px !important;
-  max-width: 19vw !important;
+  /* max-width: 19vw !important; */
+  max-width: 33vw !important;
+  margin-right: 5px;
 }
 #shopper-message-modal .modal-content {
   resize: both;
@@ -5636,6 +5664,9 @@ font {
   body.openjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12 {
     width: auto;
     margin: 0 auto !important;
+  }
+  .actions[data-info]::after {
+    position: unset;
   }
   body.openjobs #map .offcanvas-collapse.open {
     padding-bottom: 0px !important;

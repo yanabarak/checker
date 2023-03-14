@@ -41,9 +41,12 @@ jQuery(document).ready(function ($) {
     const filteredRows = rows.filter(row => {
       const hasText =
         row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
-      if (hasText) {
+      const isChild = row._class.includes('treegrid-parent-');
+      if (!isChild && hasText) {
+        console.log(row._class);
         return true;
       } else {
+        return false;
         const isChild = row._class.includes('treegrid-parent-');
         const arrP = [];
         if (isChild) {
