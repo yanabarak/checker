@@ -2169,6 +2169,10 @@ select#lang + button {
   min-width: 300px;
   resize: both;
 }
+
+#map .show-pack textarea.form-control {
+  min-width: 200px;
+}
 .card-list-job .accordion-body > * {
   padding-left: 12px !important;
 }
@@ -2241,7 +2245,7 @@ div#map.emptyList .no-job {
   min-width: unset;
   max-width: 100%;
   object-fit: contain;
-  max-height: calc(100% - 50px);
+  /* max-height: calc(100% - 50px); */
   margin-bottom: 10px;
 }
 div#infoJobMenu.mini-menu + div button#navbarSideCollapse.navbar-toggler.button-open {
@@ -2278,13 +2282,15 @@ div#infoJob .block {
   grid-row-start: 2;
 }
 .myjobs #content .block:not(:last-child):not(:nth-child(3)),
-.openjobs #content .block:not(:last-child):not(:nth-child(3)) {
+.openjobs #content .block:not(:last-child):not(:nth-child(3)),
+.unfin-job #content .block:not(:last-child):not(:nth-child(3)) {
   margin-right: 0px !important;
   margin-left: 5px !important;
   width: auto;
 }
 .myjobs #content .block:nth-child(3),
-.openjobs #content .block:nth-child(3) {
+.openjobs #content .block:nth-child(3),
+.unfin-job #content .block:nth-child(3) {
   width: auto;
 }
 div#infoJob .block:nth-child(3) {
@@ -5381,7 +5387,8 @@ font {
     font-size: 24px !important;
   }
   button.btn-md,
-  [type='button'].btn-md {
+  [type='button'].btn-md,
+  #content .block.bg-white a.black-color {
     font-size: 12px;
     min-width: 123px;
     margin: 0 auto;
@@ -6017,6 +6024,11 @@ font {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .myjobs #content .block:not(:last-child):not(:nth-child(3)),
+  .openjobs #content .block:not(:last-child):not(:nth-child(3)),
+  .unfin-job #content .block:not(:last-child):not(:nth-child(3)) {
+    width: 100%;
   }
   .form-applied .fs-18,
   .form-applied button.accept {

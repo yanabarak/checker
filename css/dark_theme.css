@@ -407,4 +407,12 @@ div#register-form .btn-outline {
     background-repeat: no-repeat !important;
     background-position: left center !important;
   }
+  #rec-wrap > div:not(.collapse),
+  .card-list-job.bg-white {
+    border: 1px solid #64748b;
+  }
+
+  .open + .form-applied {
+    background-color: transparent !important;
+  }
 }
