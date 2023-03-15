@@ -43,9 +43,12 @@ jQuery(document).ready(function ($) {
         row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
       const isChild = row._class.includes('treegrid-parent-');
       if (!isChild && hasText) {
-        console.log(row._class);
         return true;
       } else {
+        let isChild2 = row._class.includes('treegrid-parent-');
+        if (isChild2) {
+          return true;
+        }
         return false;
         const isChild = row._class.includes('treegrid-parent-');
         const arrP = [];
@@ -63,7 +66,16 @@ jQuery(document).ready(function ($) {
         }
       }
     });
-    return filteredRows;
+    const haveRows = rows.filter(row => {
+      const hasText =
+        row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
+      var isChild = row._class.includes('treegrid-parent-');
+      if (!isChild && hasText) {
+        return true;
+      }
+    });
+    if (haveRows.length) return filteredRows;
+    else return [];
   }
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
@@ -656,7 +668,7 @@ jQuery(document).ready(function ($) {
         'style',
         `height: ${$(window).innerHeight() - $('#infoJobMenu').innerHeight()}px`
       );
-    } else {
+    } else if ($(window).innerWidth() > 767) {
       $('#navbarsListJob').attr(
         'style',
         `min-height: ${

@@ -1166,6 +1166,10 @@ body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await)
 .myjobs .show-pack .apply-multiple:first-child {
   max-width: calc(100% - 280px) !important;
 }
+.openjobs .show-pack .col-auto:first-of-type {
+  max-width: calc(100% - 450px) !important;
+  min-width: 300px;
+}
 .openjobs .buttons-sel {
   width: fit-content !important;
 }
@@ -4889,12 +4893,14 @@ h1 > i.sec-color {
   left: -10px !important;
   border-radius: 16px;
   border: 0px solid;
-  min-width: 350px;
+  width: 350px;
 }
 .popover.settings-popover .popover-arrow::before {
   opacity: 0.2;
 }
-
+.popover.settings-popover .border-secondary.position-relative {
+  padding-right: 70px !important;
+}
 .myjobs input[type='text'],
 .myjobs .form-control.pick-date,
 .openjobs input[type='text'],
@@ -5671,8 +5677,18 @@ font {
   body.openjobs #map .offcanvas-collapse.open {
     padding-bottom: 0px !important;
   }
-  body:not(.myjobs) div#infoJobMenu.d-flex > button:nth-child(2) {
+  body:not(.myjobs):not(.openjobs) div#infoJobMenu.d-flex > button:nth-child(2) {
     margin-top: 0px !important;
+  }
+  .openjobs .buttons-sel {
+    width: 100% !important;
+  }
+  .openjobs .show-pack .col-auto:first-of-type {
+    max-width: 100% !important;
+    flex-direction: column;
+  }
+  .myjobs .show-pack .apply-multiple:first-child {
+    max-width: 100% !important;
   }
   .card-list-job.bg-white .col-12 > .accept {
     min-width: 127px !important;
@@ -6041,6 +6057,10 @@ font {
   }
   .myjobs .apply-multiple:first-child {
     margin: 0px !important;
+    max-width: unset !important;
+  }
+  body.openjobs #map:not([class*='emptyList']) .offcanvas-collapse.open {
+    height: fit-content !important;
   }
   .myjobs .apply-multiple:nth-child(2) {
     margin: 0px !important;
