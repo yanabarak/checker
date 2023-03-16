@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
           if (columns && columns[0][1].visible) {
             $table.treegrid({
               initialState: 'collapsed',
-              treeColumn: 1,
+              treeColumn: 0,
               onChange: function () {
                 $table.bootstrapTable('resetView');
               },
@@ -38,16 +38,26 @@ jQuery(document).ready(function ($) {
 
   function filterRowsByText(text, rows) {
     text = text.toLowerCase();
-    const filteredRows = rows.filter(row => {
+    const childsArr = [];
+    const filtArr = [];
+    var filteredRows = rows.filter((row, i) => {
       const hasText =
         row.name.toLowerCase().includes(text) || row.desc.toLowerCase().includes(text);
       const isChild = row._class.includes('treegrid-parent-');
       if (!isChild && hasText) {
+        filtArr.push(row);
         return true;
       } else {
         let isChild2 = row._class.includes('treegrid-parent-');
         if (isChild2) {
-          return true;
+          const classP = row._class.match(/\btreegrid-parent-\d+\b/)[0];
+          const parentId = classP.split('-')[2];
+          let res = filtArr.filter(el => (el._id.split('-').includes(parentId) ? true : false));
+          if (res.length) {
+            filtArr.push(row);
+            return true;
+          }
+          return false;
         }
         return false;
         const isChild = row._class.includes('treegrid-parent-');

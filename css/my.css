@@ -1168,7 +1168,7 @@ body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await)
 }
 .openjobs .show-pack .col-auto:first-of-type {
   max-width: calc(100% - 450px) !important;
-  min-width: 300px;
+  min-width: 330px;
 }
 .openjobs .buttons-sel {
   width: fit-content !important;
@@ -2650,7 +2650,7 @@ div#register-form > .sec-bg {
 }
 div#login-form img.logo,
 div#register-form img.logo {
-  max-width: 170px;
+  /* max-width: 170px; */
   max-height: 60px;
 }
 div#login-form .btn-outline,
@@ -3599,7 +3599,9 @@ tr .treegrid-expander {
   height: 24px;
   position: absolute;
   left: 20px;
-  top: calc(50% - 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
   transition: all 0.3s linear;
 }
 tr.children-1 .treegrid-expander {
@@ -3655,6 +3657,7 @@ tr:not(.treegrid-expanded):not(.treegrid-collapsed) .treegrid-expander::before {
 }
 .bootstrap-table .fixed-table-container .table.table-tree thead th .both {
   background-image: none;
+  padding-right: 35px !important;
 }
 .bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.desc,
 .bootstrap-table .fixed-table-container .table.table-tree thead .th-inner.sortable.both.asc {
@@ -3681,6 +3684,7 @@ tr:not(.treegrid-expanded):not(.treegrid-collapsed) .treegrid-expander::before {
   font-size: 18px;
   color: var(--font-color, #000);
   font-weight: 500;
+  position: relative;
 }
 
 #files-library-new table > thead > tr > th:first-child,
@@ -4106,6 +4110,9 @@ input[type='number']::-webkit-inner-spin-button {
 }
 .w-15 {
   width: 15% !important;
+}
+.open-w100 .show-pack .hidd.w-15 {
+  min-width: 200px;
 }
 #offcanvasButton {
   max-height: calc(100vh - 70px);
@@ -4751,8 +4758,11 @@ input[name='rangeMiles'] {
 #map .offcanvas-collapse.open.w-100.open-w100 .card-list-job.bg-white .col-7:nth-child(2) {
   min-width: 200px !important;
   /* max-width: 19vw !important; */
-  max-width: 33vw !important;
+  max-width: 30vw !important;
   margin-right: 5px;
+}
+#map .show-pack > form textarea ~ button {
+  margin: 5px auto 5px 0 !important;
 }
 #shopper-message-modal .modal-content {
   resize: both;
@@ -6394,9 +6404,10 @@ font {
     width: calc(50% - 4px) !important;
     font-size: 12px !important;
     font-weight: normal;
-    background-size: 20px auto;
-    background-position: left 10px center;
-    padding-left: 40px;
+    background-size: 15px auto;
+    background-position: left 5px center;
+    padding-left: 25px;
+    justify-content: center;
   }
 
   #login-form > .col > .row,
