@@ -395,6 +395,12 @@ div#register-form .btn-outline {
 #job-map {
   color: #000;
 }
+#job-map .black-color {
+  color: #000 !important;
+}
+#job-map .color-lgrey {
+  color: #151c26;
+}
 @media (max-width: 767.5px) {
   div[id^='widget'] {
     padding-left: 65px !important;

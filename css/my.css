@@ -1166,9 +1166,20 @@ body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await)
 .myjobs .show-pack .apply-multiple:first-child {
   max-width: calc(100% - 280px) !important;
 }
-.openjobs .show-pack .col-auto:first-of-type {
+.openjobs .show-pack .col-auto:first-of-type:has(textarea) {
   max-width: calc(100% - 450px) !important;
   min-width: 330px;
+}
+.openjobs #map .show-pack .col-auto:first-of-type {
+  width: fit-content;
+}
+.openjobs #map .show-pack .col-auto:first-of-type a {
+  width: fit-content;
+  display: block !important;
+}
+.openjobs #map .show-pack .col-auto:first-of-type > textarea {
+  max-width: 500px !important;
+  min-width: 200px;
 }
 .openjobs .buttons-sel {
   width: fit-content !important;
@@ -6667,5 +6678,9 @@ font {
   }
   #widget-money p.fw-light.my-0.lh-sm {
     font-size: 20px !important;
+  }
+  div#login-form .btn-outline {
+    background-image: none;
+    padding: 12px;
   }
 }
