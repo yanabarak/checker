@@ -1,5 +1,14 @@
 let titledef = '';
 jQuery(document).ready(function ($) {
+  if ($('[data-bs-content]').length) {
+    $('[data-bs-content]').each(function () {
+      let resLine = $(this)
+        .attr('data-bs-content')
+        .replace(/<\/?font[^>]*>/g, '');
+      $(this).attr('data-bs-content', resLine);
+    });
+  }
+
   if ($('table[data-tree-enable]').length) {
     $('table[data-tree-enable]').each(function () {
       if ($(this).hasClass('add-height')) {
