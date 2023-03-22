@@ -401,6 +401,12 @@ div#register-form .btn-outline {
 #job-map .color-lgrey {
   color: #151c26;
 }
+#shopper-message-modal table td {
+  background-color: transparent !important;
+}
+#shopper-message-modal *[style*='color:#000'] {
+  color: #fff !important;
+}
 @media (max-width: 767.5px) {
   div[id^='widget'] {
     padding-left: 65px !important;

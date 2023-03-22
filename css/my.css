@@ -5627,9 +5627,9 @@ font {
     border-radius: 6px;
     box-shadow: 4px 4px 25px 0px #0000001a;
   }
-  div#accordionFormJob form label {
+  /* div#accordionFormJob form label {
     display: none;
-  }
+  } */
   div#accordionFormJob form > div {
     padding-bottom: 6px;
   }
@@ -5691,6 +5691,12 @@ font {
   body.openjobs #map .navbar-collapse.open-w100 div.action.flex-column .col-12 {
     width: auto;
     margin: 0 auto !important;
+    padding-left: 0px !important;
+  }
+  #map .show-pack .accept:first-child {
+    margin: 0 auto;
+    right: -4px;
+    position: relative;
   }
   .actions[data-info]::after {
     position: unset;
@@ -5989,6 +5995,9 @@ font {
   #maptoggler.show {
     top: auto;
     bottom: calc(2 * var(--vh));
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    left: auto !important;
   }
   body.myjobs div#infoJobMenu,
   body.openjobs div#infoJobMenu,
@@ -6503,6 +6512,7 @@ font {
   body.myjobs #map .navbar-collapse.open-w100 div.action {
     order: 1;
     margin-bottom: 10px !important;
+    padding-right: 36px !important;
   }
   #map .accept {
     font-size: 14px !important;
