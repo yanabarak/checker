@@ -5364,6 +5364,19 @@ font {
   button.navbar-toggler:hover .animated-hamburger span {
     background-color: #666 !important;
   }
+
+  .openjobs #map .show-pack .col-auto:first-of-type {
+    display: grid !important;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  .openjobs #map .show-pack .col-auto:first-of-type .accept.pkgApply {
+    grid-column-start: 2;
+  }
+  .openjobs #map .show-pack .col-auto:first-of-type .form-control {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 }
 @media (max-width: 767.5px) {
   .col.bg-white.block.border.rounded-3.row.m-0.mb-2 {
