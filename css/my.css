@@ -1162,6 +1162,7 @@ body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await)
   position: relative;
   margin-right: 10px;
   max-width: calc(100% - 180px) !important;
+  min-width: 200px;
 }
 .myjobs .show-pack .apply-multiple:first-child {
   max-width: calc(100% - 280px) !important;
