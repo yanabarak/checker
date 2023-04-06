@@ -1484,30 +1484,31 @@ jQuery(document).ready(function ($) {
 
   // editDate in pickdate input
 
-  function editDate() {
+  function editDate(dateFormat) {
+    let divider = dateFormat.includes('-') ? '-' : '.';
     var triggerTabList = [].slice.call(document.querySelectorAll('.pick-date'));
 
     triggerTabList.forEach(function (element) {
       var dateMask = IMask(element, {
-        mask: 'd-`m-`Y', // enable date mask
+        mask: dateFormat, // enable date mask
 
         // other options are optional
-        pattern: 'Y-`m-`d', // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
+        pattern: dateFormat, // Pattern mask with defined blocks, default is 'd{.}`m{.}`Y'
         // you can provide your own blocks definitions, default blocks for date mask are:
         blocks: {
-          d: {
+          dd: {
             mask: IMask.MaskedRange,
             from: 1,
             to: 31,
             maxLength: 2,
           },
-          m: {
+          mm: {
             mask: IMask.MaskedRange,
             from: 1,
             to: 12,
             maxLength: 2,
           },
-          Y: {
+          yyyy: {
             mask: IMask.MaskedRange,
             from: 1900,
             to: 9999,
@@ -1522,17 +1523,17 @@ jQuery(document).ready(function ($) {
           if (day < 10) day = '0' + day;
           if (month < 10) month = '0' + month;
 
-          return [year, month, day].join('-');
+          return [year, month, day].join('.');
         },
         // define str -> date convertion
         parse: function (str) {
-          var yearMonthDay = str.split('-');
+          var yearMonthDay = str.split(divider);
           return new Date(yearMonthDay[0], yearMonthDay[1] - 1, yearMonthDay[2]);
         },
 
         // optional interval options
         min: new Date(2000, 0, 1), // defaults to `1900-01-01`
-        max: new Date(2020, 0, 1), // defaults to `9999-01-01`
+        max: new Date(2050, 0, 1), // defaults to `9999-01-01`
 
         autofix: true, // defaults to `false`
 
@@ -1547,7 +1548,7 @@ jQuery(document).ready(function ($) {
         let date = dateMask.value;
         let elem = $(dateMask.el)[0]['input'];
 
-        $(elem).pickadate('picker').set('select', date, { format: 'dd-mm-yyyy' });
+        $(elem).pickadate('picker').set('select', date, { format: dateFormat });
         dateMask.updateValue(date);
       });
     });
@@ -2030,9 +2031,9 @@ jQuery(document).ready(function ($) {
       DateSet['editable'] = true;
       DateSet['today'] = '';
       DateSet['selectYears'] = true;
-      DateSet.format = 'dd-mm-yyyy';
+      DateSet.format = typeof dateFormat == 'undefined' ? 'dd-mm-yyyy' : dateFormat.toLowerCase();
       $('.pick-date').pickadate(DateSet);
-      editDate();
+      editDate(DateSet.format);
       pickDate2();
       pickBranch();
     }
