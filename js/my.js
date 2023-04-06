@@ -1538,7 +1538,7 @@ jQuery(document).ready(function ($) {
         autofix: true, // defaults to `false`
 
         // also Pattern options can be set
-        lazy: false,
+        //lazy: false,
 
         // and other common options
         overwrite: true, // defaults to `false`
