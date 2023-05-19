@@ -386,26 +386,30 @@ jQuery(document).ready(function ($) {
           $('#navbarSideCollapse').trigger('click');
           $('.offcanvas-collapse').addClass('open-w100');
         }, 50);
-      }
-      $('#map').attr('style', 'height:' + ($(window).height() - 70) + 'px;');
-      $(window).scrollTop(1);
-      $('#map').addClass('overflow-visible');
-      $('#job-map').attr(
-        'style',
-        `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
-      );
-      // console.log(2)
+        $('#map').attr('style', 'height:' + ($(window).height() - 70) + 'px;');
+        $(window).scrollTop(1);
+        $('#map').addClass('overflow-visible');
+      } else {
+        $('#map').attr('style', 'height:' + ($(window).height() - 70) + 'px;');
+        $(window).scrollTop(1);
+        $('#map').addClass('overflow-visible');
+        $('#job-map').attr(
+          'style',
+          `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
+        );
+        // console.log(2)
 
-      if (cookieValue == 100) {
-        open100(cookieName, cookieValue, daysToExpire);
-        setTimeout(function () {
-          $('#navbarSideCollapse').trigger('click');
-          $('.offcanvas-collapse').addClass('open-w100');
-        }, 50);
-      } else if (cookieValue == 50) {
-        setTimeout(function () {
-          $('#navbarSideCollapse').trigger('click');
-        }, 50);
+        if (cookieValue == 100) {
+          open100(cookieName, cookieValue, daysToExpire);
+          setTimeout(function () {
+            $('#navbarSideCollapse').trigger('click');
+            $('.offcanvas-collapse').addClass('open-w100');
+          }, 50);
+        } else if (cookieValue == 50) {
+          setTimeout(function () {
+            $('#navbarSideCollapse').trigger('click');
+          }, 50);
+        }
       }
 
       document.querySelector('#navbarSideCollapse').addEventListener('click', function () {
