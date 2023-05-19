@@ -5015,7 +5015,9 @@ h1 > i.sec-color {
 .custom img[src*='default_logo.svg'] {
   filter: invert(1);
 }
-
+.fs-18.dd-grey {
+  word-wrap: anywhere;
+}
 font {
   color: inherit !important;
   font-size: inherit !important;
@@ -6693,6 +6695,21 @@ font {
   }
   #files-library-new {
     margin-top: 0px !important;
+  }
+
+  .survey_hist .info-record > .tel-elem-info .button-show {
+    display: none !important;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 1000px) {
+  .survey_hist .position-relative > input[name='filter[from]'].form-control.pick-date + div {
+    left: -250px;
+    top: -100px;
+  }
+  .survey_hist input[name='filter[to]'].form-control.pick-date + div {
+    right: -250px;
+    top: -100px;
   }
 }
 @media (max-width: 347.5px) {

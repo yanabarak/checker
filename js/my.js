@@ -376,6 +376,17 @@ jQuery(document).ready(function ($) {
       !getCookie(cookieName)
         ? (cookieValue = getCookie(cookieName))
         : (cookieValue = getCookie(cookieName));
+
+      if ($('.disabled-map').length != 0) {
+        cookieValue == 100;
+        document.cookie =
+          cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
+        open100(cookieName, cookieValue, daysToExpire);
+        setTimeout(function () {
+          $('#navbarSideCollapse').trigger('click');
+          $('.offcanvas-collapse').addClass('open-w100');
+        }, 50);
+      }
       $('#map').attr('style', 'height:' + ($(window).height() - 70) + 'px;');
       $(window).scrollTop(1);
       $('#map').addClass('overflow-visible');
