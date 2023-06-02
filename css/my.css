@@ -42,6 +42,17 @@
 .form-check-input:focus {
   box-shadow: 0 0 0 0.25rem var(--color-second-lightest);
 }
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem var(--color-second-lightest);
+}
+.form-check-input:focus {
+  border-color: var(--color-second-lightest);
+}
+.form-check-input:checked {
+  background-color: var(--second-brand-color);
+  border-color: var(--second-brand-color);
+}
 .dropdown-item.active,
 .dropdown-item:active {
   background-color: var(--color-second-darkest);

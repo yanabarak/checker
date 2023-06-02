@@ -2028,7 +2028,14 @@ jQuery(document).ready(function ($) {
         input.val(0);
       }
     });
-
+    if ($('.form-checking-number').length) {
+      $('.form-checking-number').keypress(function (event) {
+        var keyCode = event.which;
+        if (keyCode !== 8 && keyCode !== 0 && (keyCode < 48 || keyCode > 57)) {
+          event.preventDefault();
+        }
+      });
+    }
     changeTheme();
     setTimeout(() => spinerOff(), 400);
 
