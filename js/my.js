@@ -2059,6 +2059,13 @@ jQuery(document).ready(function ($) {
       pickDate2();
       pickBranch();
     }
+    if ($('.pick-time').length) {
+      $('.pick-time').pickatime({
+        editable: true,
+        formatSubmit: 'HH:i',
+        formatLabel: 'HH:i',
+      });
+    }
     if ($('#accordionFormJob').length) {
       mobileAccordion();
     }

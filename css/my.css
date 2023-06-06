@@ -4686,6 +4686,7 @@ input[type='text'][readonly] {
   -moz-appearance: textfield;
 }
 #pers_info input[type*='text'],
+#pers_info input[type*='text'].pick-time,
 #pers_info input[type*='number'],
 #pers_info input[type*='password'],
 #pers_info input[type*='email'],
@@ -4700,6 +4701,11 @@ input[type='text'][readonly] {
   padding: 6px 15px;
   min-height: unset;
   width: 100%;
+}
+
+#pers_info input[type*='text'].pick-time {
+  border: 1px solid #d6d6d6 !important;
+  background-image: none !important;
 }
 #pers_info button.btn.dropdown-toggle {
   padding-right: 30px;
@@ -5095,6 +5101,10 @@ h1 > i.sec-color {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.picker__input + .picker {
+  max-width: 350px;
 }
 font {
   color: inherit !important;
