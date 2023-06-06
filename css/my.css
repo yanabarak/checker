@@ -5126,6 +5126,22 @@ h1 > i.sec-color {
 .picker__input + .picker {
   max-width: 350px;
 }
+
+.group-inform {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  column-count: 2;
+  gap: 50px;
+}
+.group-inform > * {
+  display: flex;
+  width: auto;
+  padding-top: 10px !important;
+}
+#pers_info .form-switch input.form-check-input {
+  width: 40px;
+  height: 20px;
+}
 font {
   color: inherit !important;
   font-size: inherit !important;
