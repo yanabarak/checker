@@ -2229,6 +2229,105 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    // ************************ Drag and drop ***************** //
+    function dragsDocument(element) {
+      if ($('#main_info').length) {
+        console.log($('#main_info>*:not(.column-2)').length);
+        $('#image-row').attr(
+          'style',
+          `grid-row-start: ${$('#main_info>*:not(.column-2)').length - 1};grid-row-end: ${
+            $('#main_info>*:not(.column-2)').length + 1
+          }`
+        );
+      }
+      let dropArea = element;
+
+      // Prevent default drag behaviors
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false);
+        document.body.addEventListener(eventName, preventDefaults, false);
+      });
+
+      // Highlight drop area when item is dragged over it
+      ['dragenter', 'dragover', 'mouseover'].forEach(eventName => {
+        dropArea.addEventListener(eventName, highlight, false);
+      });
+      ['dragleave', 'drop', 'mouseout'].forEach(eventName => {
+        dropArea.addEventListener(eventName, unhighlight, false);
+      });
+
+      // Handle dropped files
+      dropArea.addEventListener('drop', handleDrop, false);
+      element.getElementsByClassName('fileElem')[0].addEventListener('change', handleFiles, false);
+      let url;
+
+      function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      function highlight(e) {
+        dropArea.classList.add('highlight');
+      }
+
+      function unhighlight(e) {
+        dropArea.classList.remove('highlight');
+      }
+
+      function handleFiles(files) {
+        if (files.target) {
+          files = files.target.files;
+        }
+        files = [...files];
+        files.forEach(uploadFile);
+      }
+
+      function handleDrop(e) {
+        var dt = e.dataTransfer;
+        var files = dt.files;
+        handleFiles(files);
+      }
+
+      function previewFile(file, url) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = function () {
+          let img = document.createElement('img');
+          img.src = reader.result;
+          dropArea.classList.add('full');
+
+          element.querySelector('.gallery').innerHTML = `<img src="${img.src}" data-url="${url}">`;
+        };
+      }
+
+      function uploadFile(file, i) {
+        // var url = 'https://api.cloudinary.com/v1_1/dlv7otqvk/image/upload';
+        // var xhr = new XMLHttpRequest();
+        // var formData = new FormData();
+        // xhr.open('POST', url, true);
+        // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        // formData.set('upload_preset', 'ml_default');
+        // formData.set('file', file);
+        // xhr.send(formData);
+        // xhr.onload = function () {
+        //   var a = JSON.parse(xhr.response);
+        //   url = a['url'];
+
+        //   previewFile(file, url);
+        // };
+        if (!file.type.startsWith('image')) {
+          dropArea.classList.add('full');
+          $(dropArea).find('.gallery').html(`<p class="name">${file.name}</p>`);
+        } else {
+          previewFile(file);
+        }
+      }
+    }
+    let arr = Array.prototype.slice.call(document.getElementsByClassName('drop-area'));
+    for (let i = 0; i < arr.length; i++) {
+      dragsDocument(arr[i]);
+    }
+
     // change theme on click
 
     // $(document)
