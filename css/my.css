@@ -3234,7 +3234,8 @@ body.telephonic-survey #content {
 #editPers:hover {
   opacity: 1;
 }
-.update-img a {
+.update-img a,
+.update-img label {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
@@ -3242,13 +3243,19 @@ body.telephonic-survey #content {
   display: block;
   text-decoration: none;
 }
-.update-img a:first-child {
+.update-img > *:first-child {
   margin-bottom: 15px;
 }
-.update-img a svg {
+.update-img a svg,
+.update-img label svg {
   fill: currentColor;
 }
-.update-img a:hover {
+
+.update-img input[type='file'] {
+  display: none;
+}
+.update-img a:hover,
+.update-img label:hover {
   color: var(--second-brand-color);
 }
 .update-img .popover-arrow {
@@ -3263,6 +3270,18 @@ body.telephonic-survey #content {
   border-radius: 10px;
   margin-left: -30px !important;
   margin-top: 40px !important;
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  opacity: 0;
+  transition: all 300ms linear;
+}
+
+#info_img > .col-6:first-child:hover .update-img {
+  display: flex;
+  opacity: 1;
 }
 /*Telephonic Survey page*/
 /*create new job*/
@@ -4742,7 +4761,8 @@ input[type='text'][readonly] {
 small.position-absolute {
   font-size: 8px;
 }
-input[name='rangeMiles'] {
+input[name='rangeMiles'],
+input[name='field_AvailabilityRadious'] {
   max-width: 65px;
   float: left;
 }
