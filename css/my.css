@@ -5059,7 +5059,7 @@ h1 > i.sec-color {
 .drop-area {
   cursor: pointer;
   width: 100%;
-  height: 106px;
+  height: 100px;
   background: #f9f9f9;
   padding: 5px;
   display: flex;
@@ -5076,7 +5076,6 @@ h1 > i.sec-color {
   border-color: var(--second-brand-color);
 }
 .drop-area.full {
-  border: 0px solid;
   justify-content: space-between;
   overflow: hidden;
 }
@@ -5102,12 +5101,12 @@ h1 > i.sec-color {
 }
 .drop-area .gallery {
   display: block;
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 100px;
+  width: 70px;
 }
 
 .drop-area > .gallery,
@@ -5129,7 +5128,6 @@ h1 > i.sec-color {
   min-width: 100%;
   min-height: 100%;
 }
-
 .drop-area.full .name {
   margin: 0px;
   justify-content: start;
@@ -5139,14 +5137,20 @@ h1 > i.sec-color {
   font-weight: 400;
   font-size: 16px;
   color: #797979;
-  padding: 0 10px;
+  padding-right: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: calc(100% - 190px);
+  max-width: calc(100% - 150px);
   text-align: left;
+  white-space: nowrap;
 }
 .drop-area .gallery img[src*='file-icon'] {
   object-fit: contain;
+  max-width: 80%;
+  object-fit: contain;
+  min-width: 80%;
+  min-height: 100%;
+  margin: 0 auto;
 }
 .drop-area span svg.icon-delete {
   stroke: var(--second-brand-color);

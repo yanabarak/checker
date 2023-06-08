@@ -2304,7 +2304,16 @@ jQuery(document).ready(function ($) {
           dropArea.classList.add('full');
           $(dropArea).find('.name').remove();
           element.querySelector('.gallery').innerHTML = `<img src="${img.src}" data-url="${url}">`;
-          $(dropArea).find('.gallery').after(`<p class="name">${file.name}</p>`);
+          $(dropArea).find('.gallery').after(`<p class="name" data-bs-toggle="popover"
+                                                        data-bs-trigger="hover focus"
+                                                        data-bs-placement="left"
+                                                        data-bs-content="${file.name}">${file.name}</p>`);
+          var popoverTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="popover"]')
+          );
+          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+          });
         };
       }
 
@@ -2327,7 +2336,16 @@ jQuery(document).ready(function ($) {
           dropArea.classList.add('full');
           $(dropArea).find('.name').remove();
           element.querySelector('.gallery').innerHTML = `<img src="./img/file-icon.png" />`;
-          $(dropArea).find('.gallery').after(`<p class="name">${file.name}</p>`);
+          $(dropArea).find('.gallery').after(`<p class="name" data-bs-toggle="popover"
+          data-bs-placement="left"
+                                                        data-bs-trigger="hover focus"
+                                                        data-bs-content="${file.name}">${file.name}</p>`);
+          var popoverTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="popover"]')
+          );
+          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+          });
         } else {
           previewFile(file);
         }
