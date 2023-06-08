@@ -2302,8 +2302,9 @@ jQuery(document).ready(function ($) {
           let img = document.createElement('img');
           img.src = reader.result;
           dropArea.classList.add('full');
-
+          $(dropArea).find('.name').remove();
           element.querySelector('.gallery').innerHTML = `<img src="${img.src}" data-url="${url}">`;
+          $(dropArea).find('.gallery').after(`<p class="name">${file.name}</p>`);
         };
       }
 
@@ -2324,7 +2325,9 @@ jQuery(document).ready(function ($) {
         // };
         if (!file.type.startsWith('image')) {
           dropArea.classList.add('full');
-          $(dropArea).find('.gallery').html(`<p class="name">${file.name}</p>`);
+          $(dropArea).find('.name').remove();
+          element.querySelector('.gallery').innerHTML = `<img src="./img/file-icon.png" />`;
+          $(dropArea).find('.gallery').after(`<p class="name">${file.name}</p>`);
         } else {
           previewFile(file);
         }

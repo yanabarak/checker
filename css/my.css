@@ -5075,6 +5075,11 @@ h1 > i.sec-color {
   background: var(--color-second-lightest);
   border-color: var(--second-brand-color);
 }
+.drop-area.full {
+  border: 0px solid;
+  justify-content: space-between;
+  overflow: hidden;
+}
 .drop-area.full > span:first-child {
   display: none;
 }
@@ -5097,12 +5102,21 @@ h1 > i.sec-color {
 }
 .drop-area .gallery {
   display: block;
-  max-height: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 940px;
+  width: 100px;
+}
+
+.drop-area > .gallery,
+.drop-area > span.actions {
+  display: none;
+}
+.drop-area.full > .gallery,
+.drop-area.full > span.actions {
+  display: flex;
 }
 .drop-area .gallery img,
 .drop-area .gallery embed,
@@ -5116,11 +5130,31 @@ h1 > i.sec-color {
   min-height: 100%;
 }
 
-.drop-area.full .gallery > .name {
+.drop-area.full .name {
   margin: 0px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   display: flex;
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 16px;
+  color: #797979;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 190px);
+  text-align: left;
+}
+.drop-area .gallery img[src*='file-icon'] {
+  object-fit: contain;
+}
+.drop-area span svg.icon-delete {
+  stroke: var(--second-brand-color);
+}
+.actions {
+  gap: 4px;
+  border-left: 1px solid #dadada;
+  padding-left: 4px;
 }
 
 .picker__input + .picker {
@@ -5137,6 +5171,9 @@ h1 > i.sec-color {
   display: flex;
   width: auto;
   padding-top: 10px !important;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 #pers_info .form-switch input.form-check-input {
   width: 40px;
