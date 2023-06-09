@@ -2332,6 +2332,8 @@ jQuery(document).ready(function ($) {
 
         //   previewFile(file, url);
         // };
+
+        $(dropArea).find('[data-info="review"]').removeClass('visually-hidden');
         if (!file.type.startsWith('image')) {
           dropArea.classList.add('full');
           $(dropArea).find('.name').remove();
@@ -2346,6 +2348,7 @@ jQuery(document).ready(function ($) {
           var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl);
           });
+          $(dropArea).find('[data-info="review"]').addClass('visually-hidden');
         } else {
           previewFile(file);
         }
@@ -2355,6 +2358,25 @@ jQuery(document).ready(function ($) {
     for (let i = 0; i < arr.length; i++) {
       dragsDocument(arr[i]);
     }
+    const link = document.querySelector('[data-info="review"]');
+
+    // Add click event listener to the link
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      // Find the parent .drop-area element
+      const dropArea = this.closest('.drop-area');
+
+      // Find the src of the image inside dropArea
+      const imageSrc = dropArea.querySelector('img').src;
+
+      // Get the modal element
+      const modalImage = document.querySelector(this.dataset.bsTarget);
+
+      // Update the src attribute of the modal image
+      const modalImg = modalImage.querySelector('img');
+      modalImg.src = imageSrc;
+    });
 
     // change theme on click
 
