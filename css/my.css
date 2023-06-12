@@ -4720,6 +4720,7 @@ input[type='text'][readonly] {
   padding: 6px 15px;
   min-height: unset;
   width: 100%;
+  outline: none !important;
 }
 
 #pers_info input[type*='text'].pick-time {
@@ -5183,6 +5184,60 @@ h1 > i.sec-color {
   width: 40px;
   height: 20px;
 }
+
+/* errors */
+
+.formError + input,
+.formError + textarea {
+  border-color: #dc3545 !important;
+  padding-right: calc(1.5em + 0.75rem);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size='1'],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size='1'] {
+  padding-right: 4.125rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"),
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center, center right 2.25rem;
+  background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.formError .formErrorContent {
+  border: 0px solid !important;
+  background-color: #c10517 !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
+  -webkit-border-radius: 4px !important;
+  -o-border-radius: 4px !important;
+}
+
+.formError .formErrorArrow div {
+  display: none !important;
+}
+
+.formErrorContent {
+  font-family: inherit !important;
+}
+.formErrorContent:after {
+  content: ' ';
+  width: 0;
+  height: 0;
+  border-width: 7px 7px 0 7px;
+  border-color: #c10517 transparent transparent transparent;
+  border-style: solid;
+  position: absolute;
+  left: 10px;
+  bottom: -5px;
+}
+/* errors */
 font {
   color: inherit !important;
   font-size: inherit !important;
@@ -6864,6 +6919,23 @@ font {
 
   .survey_hist .info-record > .tel-elem-info .button-show {
     display: none !important;
+  }
+  body.myjobs #map .navbar-collapse.open-w100 div.action,
+  body.myjobs #map .navbar-collapse.open-w100 div.action:has(span.await),
+  body.myjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await),
+  body.openjobs #map .navbar-collapse .col.actions.action.col-auto:has(span.await) {
+    margin: 0px !important;
+    padding-right: 0px !important;
+    width: 100% !important;
+    display: flex !important;
+    max-width: unset !important;
+    justify-content: space-around !important;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    border-left: 0px !important;
+  }
+  #map .navbar-collapse.open-w100 .black-color {
+    color: var(--main-brand-color);
   }
 }
 

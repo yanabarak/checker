@@ -2184,6 +2184,24 @@ jQuery(document).ready(function ($) {
       });
     });
 
+    if ($('.cert-elem').length && $(window).width() < 768) {
+      var exampleTriggerEl = $('.cert-elem')[0];
+      var popover = bootstrap.Popover.getInstance(exampleTriggerEl);
+      popover.show();
+      $(document).on('click touchstart', function (e) {
+        popover.hide();
+        popover.disable();
+
+        // // init popover
+        // var popoverTriggerList = [].slice.call(
+        //   document.querySelectorAll('[data-bs-toggle="popover"]')
+        // );
+        // var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        //   return new bootstrap.Popover(popoverTriggerEl);
+        // });
+      });
+    }
+
     $(document)
       .off('click touchstart', '.btn[data-title="Facebook"]')
       .on('click touchstart', '.btn[data-title="Facebook"]', function () {
@@ -2359,24 +2377,25 @@ jQuery(document).ready(function ($) {
       dragsDocument(arr[i]);
     }
     const link = document.querySelector('[data-info="review"]');
+    if (link) {
+      // Add click event listener to the link
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default link behavior
 
-    // Add click event listener to the link
-    link.addEventListener('click', function (event) {
-      event.preventDefault(); // Prevent the default link behavior
+        // Find the parent .drop-area element
+        const dropArea = this.closest('.drop-area');
 
-      // Find the parent .drop-area element
-      const dropArea = this.closest('.drop-area');
+        // Find the src of the image inside dropArea
+        const imageSrc = dropArea.querySelector('img').src;
 
-      // Find the src of the image inside dropArea
-      const imageSrc = dropArea.querySelector('img').src;
+        // Get the modal element
+        const modalImage = document.querySelector(this.dataset.bsTarget);
 
-      // Get the modal element
-      const modalImage = document.querySelector(this.dataset.bsTarget);
-
-      // Update the src attribute of the modal image
-      const modalImg = modalImage.querySelector('img');
-      modalImg.src = imageSrc;
-    });
+        // Update the src attribute of the modal image
+        const modalImg = modalImage.querySelector('img');
+        modalImg.src = imageSrc;
+      });
+    }
 
     // change theme on click
 

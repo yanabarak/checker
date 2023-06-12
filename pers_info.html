@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/bootstrap-select.css">
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
+    <link href="css/validationEngine.jquery.css" rel="stylesheet">
 </head>
 
 <body class="overflow-hidden locations">
@@ -150,7 +151,7 @@
                     <div class="content-wrapper m-0 p-0">
                         <div class="my-auto row p-0 d-flex flex-column flex-lg-row align-items-center m-0">
                             <div id="pers_info" class="row bg-white m-auto">
-                                <form action="" class="p-0">
+                                <form action="" class="p-0" id="formid">
                                     <div class="row col d-flex align-items-center flex-row p-0 m-0">
                                         <span class="black-color d-inline-block col-auto p-0">Default System
                                             Language</span>
@@ -292,8 +293,9 @@
                                                     <label for="Email" class="col-form-label">Email</label>
                                                 </div>
                                                 <div class="col-9 ps-2">
-                                                    <input type="email" class="form-control-plaintext" id="Email"
-                                                        placeholder="Email">
+                                                    <input type="email"
+                                                        class="form-control-plaintext validate[required]" id="Email"
+                                                        placeholder="Email" data-validation-engine="validate[required]">
 
                                                 </div>
                                             </div>
@@ -725,7 +727,7 @@
         </div>
     </div>
     </div>
-    <script src="js/jquery.min.js"></script>
+    <script src="https://eu.checker-soft.com/preproduction/js/shopper/jquery-3.3.1.min.js"></script>
     <script src="js/imask.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/popper.min.js"></script>
@@ -736,6 +738,72 @@
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/bootstrap-table-filter-control.min.js"></script>
     <script src="js/my.js"></script>
+    <script src="js/jquery.validationEngine-en.js"></script>
+    <script src="js/jquery.validationEngine.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            var button_pressed = '';
+            function ActivateValidationEngine() {
+                $('#formid').validationEngine('attach', {
+                    onValidationComplete: function (form, status) {
+
+
+                        $('select.validate_mandatory_combo').each(function () {
+                            var parentId = $(this).parent().attr('id');
+                            if ($('#' + parentId).is(':visible')) {
+                                if ($(this).prop('multiple')) {
+                                    var comboBoxSelectedOpt = document.getElementById(this.id).selectedOptions;
+                                    if (comboBoxSelectedOpt.length == 0) {
+                                        $('#' + parentId).validationEngine('showPrompt', '* This field is required', 'error', 'topRight', true);
+                                        status = false;
+                                    }
+                                    else {
+                                        $('#' + parentId).validationEngine('hide');
+                                    }
+                                }
+                                else {
+                                    var comboBoxSelectedOpt = document.getElementById(this.id);
+                                    var comboBoxSelectedOptValue = comboBoxSelectedOpt.options[comboBoxSelectedOpt.selectedIndex].value;
+                                    if (comboBoxSelectedOptValue == 0) {
+                                        $('#' + parentId).validationEngine('showPrompt', '* This field is required', 'error', 'topRight', true);
+                                        status = false;
+                                    }
+                                    else {
+                                        $('#' + parentId).validationEngine('hide');
+                                    }
+                                }
+                            }
+                        });
+                        var city = $('#field_CityName').val();
+                        if (city == '') {
+                            $('#field_CityName_DIV').validationEngine('showPrompt', '* This field is required', 'error', 'topRight', true);
+                            status = false;
+                        }
+
+                        if (status == true) return true;
+
+                        //            if(button_pressed==''){
+                        //                return true;
+                        //            }else if(status==true && button_pressed!=''){
+                        // TODO: commented out this line (#2412) //var second_validation=validate_te_form(button_pressed);
+                        // becasue it was not letting users (due to connection timeouts) save the automatic notifications see this ticket: http://ccrm.checker-soft.com/index.php?module=Bugs&action=DetailView&record=61006324-96b2-0a38-812b-57849a4d488b
+                        //                    var second_validation=validate_te_form(button_pressed);
+                        //                if(second_validation==true){
+                        //return true;
+                        //                }
+                        //            }
+                    }
+                });
+            }
+            ActivateValidationEngine()
+
+
+        });
+    </script>
 </body>
 
 </html>
