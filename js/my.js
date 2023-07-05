@@ -1380,11 +1380,11 @@ jQuery(document).ready(function ($) {
 
     let heightEl = full / 3;
 
-    $('#detailed .report-body').attr('style', `max-height:${heightEl}px`);
-    $('#summary .report-body').attr('style', `max-height:${heightEl}px`);
-    $('#flowProject .report-body').attr('style', `max-height:${heightEl}px`);
-    $('#flow .report-body').attr('style', `max-height:${heightEl}px`);
-    $('#shoppers .report-body').attr('style', `max-height:${heightEl}px`);
+    $('#detailed .report-body').attr('style', `max-height:${allHeight - headerHeight - 140}px`);
+    // $('#summary .report-body').attr('style', `max-height:${heightEl}px`);
+    // $('#flowProject .report-body').attr('style', `max-height:${heightEl}px`);
+    // $('#flow .report-body').attr('style', `max-height:${heightEl}px`);
+    // $('#shoppers .report-body').attr('style', `max-height:${heightEl}px`);
   }
 
   // show info in popup

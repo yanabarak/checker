@@ -9,20 +9,23 @@
     <link rel="stylesheet" href="css/my.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/classic.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.date.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/classic.time.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/bootstrap-select.css">
     <script type="text/javascript">
-    window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
+        window.SETTINGS = { "monthsFull": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "today": "Today", "clear": "Clear", "close": "Close", "format": "dd-mm-yyyy", "formatSubmit": "yyyy-mm-dd" };
     </script>
     <link href="css/bootstrap-table.min.css" rel="stylesheet">
     <link href="css/bootstrap-table-filter-control.min.css" rel="stylesheet">
 </head>
 
 <body class="overflow-hidden detailed-report">
-    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap" style="z-index: 10000;">
+    <div class="d-flex justify-content-center position-fixed w-100 h-100 flex-column bg-white" id="spinerWrap"
+        style="z-index: 10000;">
         <div class="spinner-border mx-auto sec-color" role="status">
             <span class="visually-hidden">Загрузка...</span>
         </div>
@@ -30,7 +33,9 @@
     <div class="container-fluid  d-block d-md-none">
         <header class="d-flex align-items-center border-bottom py-2">
             <div class="col-2 text-start">
-                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler navbar-toggler-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <div class="animated-hamburger"><span></span><span></span><span></span></div>
                 </button>
             </div>
@@ -46,8 +51,11 @@
             <aside class="sticky-md-top">
                 <div class="sticky-top sidebar left asidebar">
                     <div class="d-none d-md-flex  align-items-center">
-                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span></div>
+                        <button class="navbar-toggler navbar-toggler-button d-none d-md-block" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="animated-hamburger open"><span></span><span></span><span></span><span></span>
+                            </div>
                         </button>
                         <a href="#"><i class="far fa-bell badge-notificatios fs-18 text-black"></i> </a>
                     </div>
@@ -60,52 +68,75 @@
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
                                         <li><a href="main3.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                                        <li class="active"><a href="det_report.html"><i class="far fa-money-bill-alt"></i> <span>Payments report</span></a></li>
+                                        <li class="active"><a href="det_report.html"><i
+                                                    class="far fa-money-bill-alt"></i> <span>Payments report</span></a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My Jobs</span></a></li>
-                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open Jobs</span></a></li>
-                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new job</span></a></li>
-                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i> <span>Incomplete Jobs</span></a></li>
-                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI Studio</span></a></li>
-                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i> <span>Locations addresses</span></a></li>
-                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add refund record</span></a></li>
-                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training & Certifications</span></a></li>
-                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs History</span></a></li>
-                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files library</span></a></li>
-                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire preview</span></a></li>
-                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i> <span>Notifications</span></a></li>
+                                        <li><a href="myjobs.html"><i class="fas fa-briefcase"></i> <span>My
+                                                    Jobs</span></a></li>
+                                        <li><a href="openjobs.html"><i class="fas fa-clipboard-list"></i> <span>Open
+                                                    Jobs</span></a></li>
+                                        <li><a href="create_job.html"><i class="far fa-star"></i> <span>Create new
+                                                    job</span></a></li>
+                                        <li><a href="unfin_jobs.html"><i class="fas fa-star-half-alt"></i>
+                                                <span>Incomplete Jobs</span></a></li>
+                                        <li><a href="tel.html"><i class="fas fa-headset"></i> <span>CATI
+                                                    Studio</span></a></li>
+                                        <li><a href="location.html"><i class="fas fa-map-marker-alt"></i>
+                                                <span>Locations addresses</span></a></li>
+                                        <li><a href="ref_record.html"><i class="far fa-money-bill-alt"></i> <span>Add
+                                                    refund record</span></a></li>
+                                        <li><a href="certif.html"><i class="fas fa-stamp"></i> <span>Training &
+                                                    Certifications</span></a></li>
+                                        <li><a href="survey_history.html"><i class="fas fa-tasks"></i> <span>Jobs
+                                                    History</span></a></li>
+                                        <li><a href="files_library.html"><i class="far fa-folder-open"></i> <span>Files
+                                                    library</span></a></li>
+                                        <li><a href="tel_survey.html"><i class="fas fa-eye"></i> <span>Questionnaire
+                                                    preview</span></a></li>
+                                        <li><a href="notif.html"><i class="far fa-bell badge-notificatios"></i>
+                                                <span>Notifications</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="  m-0 pt-3 user-menu mt-auto mb-0">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                                        <li><a href="first.html"><i class="fas fa-sign-out-alt"></i>
+                                                <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="user-panel py-3 mb-0">
-                                    <a class="image d-flex align-items-center me-4" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
+                                    <a class="image d-flex align-items-center me-4" type="button"
+                                        data-bs-target="#carouselMenu" data-bs-slide="next">
                                         <div class="box image rounded-circle">
                                             <img src="https://picsum.photos/640/360" alt="User Image">
                                         </div>
                                         <h6 class="text-center mb-0 long">Larysa Chernenko
-                                            <i class="fas fa-chevron-right"></i></h6>
+                                            <i class="fas fa-chevron-right"></i>
+                                        </h6>
                                     </a>
                                 </div>
                             </div>
                             <div id="content2" class="carousel-item">
                                 <div class="m-0 pb-3 user-menu border-bottom">
                                     <ul class="menu-links list-group me-4">
-                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu" data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i> <span>Back</span></a></li>
+                                        <li class="back"><a href="#" type="button" data-bs-target="#carouselMenu"
+                                                data-bs-slide="prev"><i class="fas fa-arrow-left opacity-100"></i>
+                                                <span>Back</span></a></li>
                                     </ul>
                                 </div>
                                 <div class="m-0 pb-3 pt-3 user-menu ">
                                     <ul class="menu-links list-group me-4">
-                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal Information</span></a></li>
-                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work Hours</span></a></li>
-                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred Regions</span></a></li>
-                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i> <span>Agreements</span></a></li>
+                                        <li><a href="pers_info.html"><i class="far fa-user"></i> <span>Personal
+                                                    Information</span></a></li>
+                                        <li><a href="work_hours.html"><i class="far fa-clock"></i> <span>Work
+                                                    Hours</span></a></li>
+                                        <li><a href="pref_reg.html"><i class="far fa-map"></i> <span>Preferred
+                                                    Regions</span></a></li>
+                                        <li><a href="agr.html"><i class="fas fa-file-contract"></i>
+                                                <span>Agreements</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -116,8 +147,11 @@
             <div class="p-0 w-100" id="content">
                 <div class="p-4 p-md-5 pb-2 pb-md-4 pr-100" id="infoJob" style="">
                     <div class="row m-0 mt-5 mt-md-0 header-wrapper">
-                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i class="far fa-money-bill-alt sec-color fs-30 me-4"></i>Payments report</h1>
-                        <button class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0" data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
+                        <h1 class="fs-2 fw-bold p-0 mb-4 sec-color col-auto"><i
+                                class="far fa-money-bill-alt sec-color fs-30 me-4"></i>Payments report</h1>
+                        <button
+                            class="bg-transparent btn-outline-sec d-inline-block ms-auto rouded-3 fs-18 fw-bold col-auto filter-btn border-0"
+                            data-bs-toggle="modal" data-bs-target="#formModal" type="button">Filter</button>
                         <div class="col-auto ms-auto">
                             <select class="form-select mb-4 selectpicker" id="lang">
                                 <option selected>English</option>
@@ -125,41 +159,59 @@
                                 <option value="2">Hebrew</option>
                                 <option value="3">HebrewHebrewHebrewHebrew Hebrew</option>
                                 <option value="4">HebrewHebrew</option>
-                            </select></div>
+                            </select>
+                        </div>
                     </div>
                     <div class="content-wrapper m-0 p-0">
                         <ul class="nav nav-tabs d-flex d-md-none blue-scroll" id="reportTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="detailed-tab" data-bs-toggle="tab" data-bs-target="#detailed" type="button" role="tab" aria-controls="detailed" aria-selected="true">Detailed report</a>
+                                <a class="nav-link active" id="detailed-tab" data-bs-toggle="tab"
+                                    data-bs-target="#detailed" type="button" role="tab" aria-controls="detailed"
+                                    aria-selected="true">Detailed report</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="flowProject-tab" data-bs-toggle="tab" data-bs-target="#flowProject" type="button" role="tab" aria-controls="flowProject" aria-selected="false">Group by flow & project types</a>
+                                <a class="nav-link" id="flowProject-tab" data-bs-toggle="tab"
+                                    data-bs-target="#flowProject" type="button" role="tab" aria-controls="flowProject"
+                                    aria-selected="false">Group by flow & project types</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab" aria-controls="summary" aria-selected="false">Summary report</a>
+                                <a class="nav-link" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary"
+                                    type="button" role="tab" aria-controls="summary" aria-selected="false">Summary
+                                    report</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="flow-tab" data-bs-toggle="tab" data-bs-target="#flow" type="button" role="tab" aria-controls="flow" aria-selected="false"> Group by flow type</a>
+                                <a class="nav-link" id="flow-tab" data-bs-toggle="tab" data-bs-target="#flow"
+                                    type="button" role="tab" aria-controls="flow" aria-selected="false"> Group by flow
+                                    type</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="shoppers-tab" data-bs-toggle="tab" data-bs-target="#shoppers" type="button" role="tab" aria-controls="shoppers" aria-selected="false"> Group by shoppers</a>
+                                <a class="nav-link" id="shoppers-tab" data-bs-toggle="tab" data-bs-target="#shoppers"
+                                    type="button" role="tab" aria-controls="shoppers" aria-selected="false"> Group by
+                                    shoppers</a>
                             </li>
                         </ul>
                         <div class="tab-content row m-0" id="tabReportContent">
-                            <div class="m-0 p-0 bg-white rounded-6 detailed-report-block tab-pane fade show active" id="detailed" role="tabpanel" aria-labelledby="detailed-tab">
+                            <div class="m-0 p-0 bg-white rounded-6 detailed-report-block tab-pane fade show active"
+                                id="detailed" role="tabpanel" aria-labelledby="detailed-tab">
                                 <div class="row block-header m-0 pt-3 px-4 d-none d-md-flex">
-                                    <h5 class="fw-bold main-color p-0 col-auto mb-0"><i class="far fa-money-bill-alt me-2"></i>Detailed Report </h5>
-                                    <a href="#" data-next="detailed" class="tab ms-auto col-auto pe-0"><i class=" open-arr"></i></a>
-                                    <a href="#" data-next="detailed" class="backtotab"><i class="fas fa-times sec-color fs-5 pe-0"></i></a>
+                                    <h5 class="fw-bold main-color p-0 col-auto mb-0"><i
+                                            class="far fa-money-bill-alt me-2"></i>Detailed Report </h5>
+                                    <a href="#" data-next="detailed" class="tab ms-auto col-auto pe-0"><i
+                                            class=" open-arr"></i></a>
+                                    <a href="#" data-next="detailed" class="backtotab"><i
+                                            class="fas fa-times sec-color fs-5 pe-0"></i></a>
                                 </div>
                                 <div class="report-body m-0 p-0 blue-grey-scroll">
                                     <div class="row bg-white d-flex align-items-center m-0  mb-0">
                                         <div class="row m-0 p-0 col mx-0 info-record">
-                                            <div class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
+                                            <div
+                                                class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
                                                 <div class="sec-bg rounded-circle bg-coin"></div>
                                             </div>
-                                            <div class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
-                                                <div class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
+                                            <div
+                                                class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
+                                                <div
+                                                    class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
                                                     <div class="sec-bg rounded-circle bg-coin"></div>
                                                 </div>
                                                 <div class="col-3 col-lg-1 p-0 ps-2 ps-md-0 ms-0">
@@ -195,18 +247,30 @@
                                                     <div class="color-lgrey">Payment issued</div>
                                                     <div class="fs-18 dd-grey">-</div>
                                                 </div>
-                                                <div class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
-                                                    <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec1" aria-expanded="false" aria-controls="collapseRec1">
+                                                <div
+                                                    class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
+                                                    <button
+                                                        class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                        type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseRec1" aria-expanded="false"
+                                                        aria-controls="collapseRec1">
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
-                                                <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec1" aria-expanded="false" aria-controls="collapseRec1">
+                                            <div
+                                                class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
+                                                <button
+                                                    class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                    type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRec1" aria-expanded="false"
+                                                    aria-controls="collapseRec1">
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec1" style="">
-                                            <div class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
+                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec1"
+                                            style="">
+                                            <div
+                                                class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
                                                 <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                                     <div class="color-lgrey">Approved</div>
                                                     <div class="fs-18 dd-grey">Yes</div>
@@ -278,11 +342,14 @@
                                     </div>
                                     <div class="row bg-white d-flex align-items-center m-0  mb-0">
                                         <div class="row m-0 p-0 col mx-0 info-record">
-                                            <div class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
+                                            <div
+                                                class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
                                                 <div class="sec-bg rounded-circle bg-coin"></div>
                                             </div>
-                                            <div class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
-                                                <div class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
+                                            <div
+                                                class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
+                                                <div
+                                                    class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
                                                     <div class="sec-bg rounded-circle bg-coin"></div>
                                                 </div>
                                                 <div class="col-3 col-lg-1 p-0 ps-2 ps-md-0 ms-0">
@@ -318,18 +385,168 @@
                                                     <div class="color-lgrey">Payment issued</div>
                                                     <div class="fs-18 dd-grey">-</div>
                                                 </div>
-                                                <div class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
-                                                    <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec2" aria-expanded="false" aria-controls="collapseRec2">
+                                                <div
+                                                    class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
+                                                    <button
+                                                        class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                        type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseRec1" aria-expanded="false"
+                                                        aria-controls="collapseRec1">
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
-                                                <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec2" aria-expanded="false" aria-controls="collapseRec2">
+                                            <div
+                                                class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
+                                                <button
+                                                    class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                    type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRec1" aria-expanded="false"
+                                                    aria-controls="collapseRec1">
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec2" style="">
-                                            <div class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
+                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec1"
+                                            style="">
+                                            <div
+                                                class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Approved</div>
+                                                    <div class="fs-18 dd-grey">Yes</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Time of appruval</div>
+                                                    <div class="fs-18 dd-grey">26.05.2021</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Payment Issue</div>
+                                                    <div class="fs-18 dd-grey">-</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Paid</div>
+                                                    <div class="fs-18 dd-grey">No</div>
+                                                </div>
+                                            </div>
+                                            <div class="row m-0 p-2 px-0 px-md-3 border-0 autoflow">
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">VAT</div>
+                                                    <div class="fs-18 dd-grey">20.00</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Branch Code</div>
+                                                    <div class="fs-18 dd-grey">MD</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Short Branch Name</div>
+                                                    <div class="fs-18 dd-grey">Test 123</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Invoise Number</div>
+                                                    <div class="fs-18 dd-grey">256487</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Survey Status</div>
+                                                    <div class="fs-18 dd-grey">Approved</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">linked review</div>
+                                                    <div class="fs-18 dd-grey">256855</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">City</div>
+                                                    <div class="fs-18 dd-grey">New Delhi</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Region</div>
+                                                    <div class="fs-18 dd-grey">Moti Nagar</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Adress</div>
+                                                    <div class="fs-18 dd-grey">New Delhi, 27 B, Shivaji Marg</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Description</div>
+                                                    <div class="fs-18 dd-grey">Finished</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Project Name</div>
+                                                    <div class="fs-18 dd-grey">-</div>
+                                                </div>
+                                                <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
+                                                    <div class="color-lgrey">Package Copmleted</div>
+                                                    <div class="fs-18 dd-grey">-</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-white d-flex align-items-center m-0  mb-0">
+                                        <div class="row m-0 p-0 col mx-0 info-record">
+                                            <div
+                                                class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
+                                                <div class="sec-bg rounded-circle bg-coin"></div>
+                                            </div>
+                                            <div
+                                                class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
+                                                <div
+                                                    class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
+                                                    <div class="sec-bg rounded-circle bg-coin"></div>
+                                                </div>
+                                                <div class="col-3 col-lg-1 p-0 ps-2 ps-md-0 ms-0">
+                                                    <div class="color-lgrey">Value</div>
+                                                    <h4 class="sec-color fw-bold mb-0">$12.22</h4>
+                                                </div>
+                                                <div class="col p-0">
+                                                    <div class="color-lgrey">Name</div>
+                                                    <div class="fs-18 dd-grey">All. Pant Limited</div>
+                                                </div>
+                                                <hr class="d-block d-lg-none col-10 mt-2 mx-auto mb-1 offset-1">
+                                                <div class="col-4 col-md p-0 offset-1 offset-md-0">
+                                                    <div class="color-lgrey">Start at 08:00</div>
+                                                    <div class="fs-18 dd-grey">26.05.2021</div>
+                                                </div>
+                                                <div class="d-none d-lg-block col-6 col-lg-1  p-0">
+                                                    <div class="color-lgrey">Appruved</div>
+                                                    <div class="fs-18 dd-grey">Yes</div>
+                                                </div>
+                                                <div class="col p-0 d-none d-lg-block ">
+                                                    <div class="color-lgrey">Time of appruval</div>
+                                                    <div class="fs-18 dd-grey">26.05.2021</div>
+                                                </div>
+                                                <div class="col-6 col-lg-1 d-none d-lg-block  p-0">
+                                                    <div class="color-lgrey">Paid</div>
+                                                    <div class="fs-18 dd-grey">No</div>
+                                                </div>
+                                                <div class=" col-5 col-md  p-0">
+                                                    <div class="color-lgrey">Flow Type</div>
+                                                    <div class="fs-18 dd-grey">Survey Payment</div>
+                                                </div>
+                                                <div class="col d-none d-lg-block  p-0">
+                                                    <div class="color-lgrey">Payment issued</div>
+                                                    <div class="fs-18 dd-grey">-</div>
+                                                </div>
+                                                <div
+                                                    class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
+                                                    <button
+                                                        class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                        type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseRec2" aria-expanded="false"
+                                                        aria-controls="collapseRec2">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
+                                                <button
+                                                    class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                    type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRec2" aria-expanded="false"
+                                                    aria-controls="collapseRec2">
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec2"
+                                            style="">
+                                            <div
+                                                class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
                                                 <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                                     <div class="color-lgrey">Approved</div>
                                                     <div class="fs-18 dd-grey">Yes</div>
@@ -430,11 +647,14 @@
                                     </div>
                                     <div class="row bg-white d-flex align-items-center m-0  mb-0">
                                         <div class="row m-0 p-0 col mx-0 info-record">
-                                            <div class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
+                                            <div
+                                                class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
                                                 <div class="sec-bg rounded-circle bg-coin"></div>
                                             </div>
-                                            <div class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
-                                                <div class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
+                                            <div
+                                                class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
+                                                <div
+                                                    class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
                                                     <div class="sec-bg rounded-circle bg-coin"></div>
                                                 </div>
                                                 <div class="col-3 col-lg-1 p-0 ps-2 ps-md-0 ms-0">
@@ -470,19 +690,31 @@
                                                     <div class="color-lgrey">Payment issued</div>
                                                     <div class="fs-18 dd-grey">-</div>
                                                 </div>
-                                                <div class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
-                                                    <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec3" aria-expanded="false" aria-controls="collapseRec3">
+                                                <div
+                                                    class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
+                                                    <button
+                                                        class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                        type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseRec3" aria-expanded="false"
+                                                        aria-controls="collapseRec3">
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
-                                                <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec3" aria-expanded="false" aria-controls="collapseRec3">
+                                            <div
+                                                class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
+                                                <button
+                                                    class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                    type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRec3" aria-expanded="false"
+                                                    aria-controls="collapseRec3">
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec3" style="">
-                                            
-                                            <div class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
+                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec3"
+                                            style="">
+
+                                            <div
+                                                class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
                                                 <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                                     <div class="color-lgrey">Approved</div>
                                                     <div class="fs-18 dd-grey">Yes</div>
@@ -554,11 +786,14 @@
                                     </div>
                                     <div class="row bg-white d-flex align-items-center m-0  mb-0">
                                         <div class="row m-0 p-0 col mx-0 info-record">
-                                            <div class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
+                                            <div
+                                                class="col-2 col-lg-auto p-0 ms-3 align-items-center d-none d-md-flex mx-3">
                                                 <div class="sec-bg rounded-circle bg-coin"></div>
                                             </div>
-                                            <div class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
-                                                <div class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
+                                            <div
+                                                class="row m-0 tel-elem-info col-12 col-md d-flex align-items-center p-lg-2 ps-lg-0 px-0 pb-0 ps-0">
+                                                <div
+                                                    class="col-2 col-lg-1 p-0 ms-0 d-flex align-items-center d-md-none">
                                                     <div class="sec-bg rounded-circle bg-coin"></div>
                                                 </div>
                                                 <div class="col-3 col-lg-1 p-0 ps-2 ps-md-0 ms-0">
@@ -594,18 +829,30 @@
                                                     <div class="color-lgrey">Payment issued</div>
                                                     <div class="fs-18 dd-grey">-</div>
                                                 </div>
-                                                <div class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
-                                                    <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec4" aria-expanded="false" aria-controls="collapseRec4">
+                                                <div
+                                                    class="col col-md-1 d-flex align-items-center bg-grey p-0 button-show d-block d-md-none w-auto">
+                                                    <button
+                                                        class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                        type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseRec4" aria-expanded="false"
+                                                        aria-controls="collapseRec4">
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
-                                                <button class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed" type="button" data-parent="#rec-wrap" data-bs-toggle="collapse" data-bs-target="#collapseRec4" aria-expanded="false" aria-controls="collapseRec4">
+                                            <div
+                                                class="col-1 d-flex align-items-center bg-grey p-0 button-show d-none d-md-block">
+                                                <button
+                                                    class="border-0 bg-transparent d-flex align-items-center p-0 h-100 w-100 sec-color fs-18 toggleTel accordion-button collapsed"
+                                                    type="button" data-parent="#rec-wrap" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseRec4" aria-expanded="false"
+                                                    aria-controls="collapseRec4">
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec4" style="">
-                                            <div class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
+                                        <div class="row m-0 tel-elem-info p-0 bg-grey collapse" id="collapseRec4"
+                                            style="">
+                                            <div
+                                                class="row m-0 p-2 pb-0 px-0 px-md-3 border-0 d-flex d-lg-none autoflow">
                                                 <div class="col-6 col-lg-auto p-0 pe-2 ps-2 ps-lg-0">
                                                     <div class="color-lgrey">Approved</div>
                                                     <div class="fs-18 dd-grey">Yes</div>
@@ -677,7 +924,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="m-0 p-0 bg-white rounded-6 detailed-report-block col-12 col-xl-7 mb-3 mb-xl-0 tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+                            <!-- <div class="m-0 p-0 bg-white rounded-6 detailed-report-block col-12 col-xl-7 mb-3 mb-xl-0 tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
                                 <div class="row block-header m-0 pt-3 px-4 pe-0 d-none d-md-flex">
                                     <h5 class="fw-bold main-color p-0 col-auto mb-0"><i class="far fa-money-bill-alt me-2"></i>Summary grouped by flow type and project </h5>
                                     <a href="#" data-next="summary" class="tab ms-auto col-auto"><i class=" open-arr"></i></a>
@@ -974,7 +1221,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -988,16 +1235,19 @@
             <div class="modal-content p-0 py-0 p-md-3 py-md-2 pb-md-3">
                 <div class="modal-body row m-0 p-0">
                     <div class=" row m-0 py-4 py-lg-0">
-                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close opacity-1 align-top align-self-start ms-auto col-auto"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                         <div>
                             <form class="row">
                                 <div class="col-12 my-0">
                                     <label for="pick-date" class="dd-grey fs-12 mb-0">Date range</label>
-                                    <input type="text" class="form-control pick-date" name="filter[from]" placeholder="DD-MM-YYYY" id="pick-date">
+                                    <input type="text" class="form-control pick-date" name="filter[from]"
+                                        placeholder="DD-MM-YYYY" id="pick-date">
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticApproved" class="dd-grey fs-12 mb-0">Approved</label>
-                                    <select class="form-select selectpicker" aria-label="Approved" id="staticApproved" placeholder="(All)">
+                                    <select class="form-select selectpicker" aria-label="Approved" id="staticApproved"
+                                        placeholder="(All)">
                                         <option value="1">(All)</option>
                                         <option value="2">Yes</option>
                                         <option value="3">No</option>
@@ -1005,7 +1255,8 @@
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticPaid" class="dd-grey fs-12 mb-0">Paid</label>
-                                    <select class="form-select selectpicker" aria-label="Paid" id="staticPaid" title="Choose Paid" placeholder="(All)">
+                                    <select class="form-select selectpicker" aria-label="Paid" id="staticPaid"
+                                        title="Choose Paid" placeholder="(All)">
                                         <option value="1">(All)</option>
                                         <option value="2">Yes</option>
                                         <option value="3">No</option>
@@ -1013,14 +1264,17 @@
                                 </div>
                                 <div class="col-12 my-0 mt-2">
                                     <label for="staticFlow" class="dd-grey fs-12 mb-0">Flow Type</label>
-                                    <select class="form-select selectpicker" data-actions-box="true" data-live-search="true" aria-label="Flow" id="staticFlow" title="Choose Flow" placeholder="Acquisition throught review">
+                                    <select class="form-select selectpicker" data-actions-box="true"
+                                        data-live-search="true" aria-label="Flow" id="staticFlow" title="Choose Flow"
+                                        placeholder="Acquisition throught review">
                                         <option value="1">Acquisition throught review</option>
                                         <option value="2">Choose Flow Name2</option>
                                         <option value="3">Choose Flow Name3</option>
                                     </select>
                                 </div>
                                 <div class="col-12 row m-0 mt-4">
-                                    <button type="submit" class="btn btn-primary sec-bg border-0 col-auto fs-18">Show</button>
+                                    <button type="submit"
+                                        class="btn btn-primary sec-bg border-0 col-auto fs-18">Show</button>
                                 </div>
                             </form>
                         </div>
@@ -1030,7 +1284,7 @@
         </div>
     </div>
     <script src="js/jquery.min.js"></script>
-	
+
     <script src="js/imask.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/picker.js"></script>
@@ -1041,7 +1295,7 @@
     <script src="js/bootstrap-table.min.js"></script>
     <script src="js/bootstrap-table-filter-control.min.js"></script>
     <script src="js/my.js"></script>
- 
+
 </body>
 
 </html>
