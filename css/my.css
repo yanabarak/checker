@@ -4051,7 +4051,7 @@ body.locations .header-wrapper > h1 + button + div {
   height: 50px;
   margin: 0 auto;
   border: 3px solid #eeeeee;
-  background-image: url('../img/icon/coins_grow.svg');
+  background-image: url('../img/coins.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 29px auto;
