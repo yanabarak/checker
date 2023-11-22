@@ -9,6 +9,15 @@ jQuery(document).ready(function ($) {
     });
   }
 
+  if ($('[data-action-message]').length) {
+    $('[data-action-message]').each(function () {
+      let resLine = $(this)
+        .attr('data-action-message')
+        .replace(/<\/?font[^>]*>/g, '');
+      $(this).attr('data-action-message', resLine);
+    });
+  }
+
   if ($('table[data-tree-enable]').length) {
     $('table[data-tree-enable]').each(function () {
       if ($(this).hasClass('add-height')) {
@@ -96,6 +105,7 @@ jQuery(document).ready(function ($) {
     if (haveRows.length) return filteredRows;
     else return [];
   }
+
   // initial for swaping menu
   var myCarousel = document.querySelector('#carouselMenu');
   if ($(myCarousel).find('li.active').length) {
@@ -219,14 +229,11 @@ jQuery(document).ready(function ($) {
     let datawork = $('#donut1 .donut').attr('data-work').split(',');
     if (datawork[0] == 0 && datawork[1] == 0) {
       $('#donut1 svg').addClass('d-none');
-      $('#donut1').closest('.bg-white.block').addClass('no-job');
-      $('#donut1')
-        .closest('.bg-white.block')
-        .find('h5.title')
-        .after(
-          '<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
-        );
       $('#legenddonut1').addClass('hidden');
+      let legend = $('#donut1 h5').addClass('fs-4');
+      $('#donut1').append(
+        '<img src="images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
+      );
     } else {
       if (datawork[0] == 0) {
         $('#donut1 .donut-segment-white').addClass('d-none');
@@ -263,14 +270,11 @@ jQuery(document).ready(function ($) {
     let datawork = $('#donut2 .donut').attr('data-work').split(',');
     if (datawork[0] == 0 && datawork[1] == 0) {
       $('#donut2 svg').addClass('d-none');
-      $('#donut2').closest('.bg-white.block').addClass('no-job');
-      $('#donut2')
-        .closest('.bg-white.block')
-        .find('h5.title')
-        .after(
-          '<img src="checker-files/media/68/css/images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
-        );
       $('#legenddonut2').addClass('hidden');
+      let legend = $('#donut2 h5').addClass('fs-4');
+      $('#donut2').append(
+        '<img src="images/no_jobs.png" alt="No jobs image" class="no-job"><h5>Sorry, you have no jobs</h5>'
+      );
     } else {
       if (datawork[0] == 0) {
         $('#donut2 .donut-segment-white').addClass('d-none');
@@ -349,7 +353,6 @@ jQuery(document).ready(function ($) {
           $('.form-applied').attr('style', `width: ${$('.listWrap').innerWidth()}px`);
         }
       });
-
       document.querySelector('#maptoggler').addEventListener('click', function () {
         $('.offcanvas-collapse').toggleClass('open-w100');
         $('.listWrap').toggleClass('w-100');
@@ -439,39 +442,42 @@ jQuery(document).ready(function ($) {
             cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
         }
       });
-      document.querySelector('#maptoggler').addEventListener('click', function () {
-        $('#map').removeClass('overflow-hidden');
-        $('#map').addClass('overflow-visible');
-        $('#map').attr('style', 'height:' + ($(window).height() - 100) + 'px;');
-        $('.form-applied').attr('style', `width: 0px`);
-        $('.button-open').attr('id', 'navbarSideCollapse');
-        $('#navbarSideCollapse').toggleClass('button-open');
-        $('.offcanvas-collapse').toggleClass('open-w100');
-        $('.listWrap').toggleClass('w-100');
-        $('.offcanvas-collapse').toggleClass('open');
-        $('.offcanvas-collapse').toggleClass('w-100');
-        $('#maptoggler').attr(
-          'style',
-          `right: ${$('#map').innerWidth() - $('#maptoggler').innerWidth() / 2}px`
-        );
-        $('#maptoggler').toggleClass('show');
+      let showMap;
+      if (showMap) {
+        document.querySelector('#maptoggler').addEventListener('click', function () {
+          $('#map').removeClass('overflow-hidden');
+          $('#map').addClass('overflow-visible');
+          $('#map').attr('style', 'height:' + ($(window).height() - 100) + 'px;');
+          $('.form-applied').attr('style', `width: 0px`);
+          $('.button-open').attr('id', 'navbarSideCollapse');
+          $('#navbarSideCollapse').toggleClass('button-open');
+          $('.offcanvas-collapse').toggleClass('open-w100');
+          $('.listWrap').toggleClass('w-100');
+          $('.offcanvas-collapse').toggleClass('open');
+          $('.offcanvas-collapse').toggleClass('w-100');
+          $('#maptoggler').attr(
+            'style',
+            `right: ${$('#map').innerWidth() - $('#maptoggler').innerWidth() / 2}px`
+          );
+          $('#maptoggler').toggleClass('show');
 
-        $('#hideshow').toggleClass('d-none');
-        cookieValue = 0;
-        document.cookie =
-          cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
+          $('#hideshow').toggleClass('d-none');
+          cookieValue = 0;
+          document.cookie =
+            cookieName + '=' + cookieValue + ';samesite=strict; expires=' + daysToExpire;
 
-        if ($('.emptyList') != 0) {
-          $('#map').removeClass('emptyList');
-        }
-      });
+          if ($('.emptyList') != 0) {
+            $('#map').removeClass('emptyList');
+          }
+        });
+      }
 
       document.querySelector('#navbarSideCollapseClose').addEventListener('click', function () {
         $('#map').attr('style', 'height:' + ($(window).height() - 100) + 'px;');
-        // $('#job-map').attr(
-        //   'style',
-        //   `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
-        // );
+        $('#job-map').attr(
+          'style',
+          `height: ${$(window).height() - 70 - $('#infoJobMenu').height()}px`
+        );
 
         // console.log(4)
         $('#navbarSideCollapseClose').addClass('visually-hidden');
@@ -695,9 +701,17 @@ jQuery(document).ready(function ($) {
     if ($('#map #navbarsListJob div').length == 0) {
       $('#map').addClass('emptyList');
       $('body').addClass('overflow-hidden');
-      $('#map .offcanvas-collapse').html(
-        '<img src="img/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
-      );
+      // $("#map").attr('style', `max-height: ${ $(window).innerHeight() - ($("#infoJob").innerHeight())}px`);
+      if (jobBoardMsg) {
+        $('#map .offcanvas-collapse').html(
+          '<img src="images/no_jobs.png" alt="No jobs image" class="no-job">' + jobBoardMsg + ''
+        );
+      } else {
+        $('#map .offcanvas-collapse').html(
+          '<img src="images/no_jobs.png" alt="No jobs image" class="no-job"><h1>Sorry, you have no jobs</h1>'
+        );
+      }
+
       $('#navbarsListJob').attr(
         'style',
         `height: ${$(window).innerHeight() - $('#infoJobMenu').innerHeight()}px`
@@ -739,10 +753,7 @@ jQuery(document).ready(function ($) {
         $('div#infoJobMenu').addClass('d-flex');
         $('#infoJobMenu .block.rounded-3').addClass('visually-hidden');
         if ($(window).innerWidth() > 767) {
-          $('#navbarsListJob').attr('style', `height:${$('#map').innerHeight()}px`);
-          // $('#navbarsListJobPack').attr('style', `height:${$('#map').innerHeight()}px`);
           $('#navbarsListJobPack').attr('style', `${$('#navbarsListJobPack')[0].scrollHeight}px`);
-          // $('#job-map').attr('style', `height:${$('#map').innerHeight()}px`);
           if ($(window).scrollTop() > 10) {
             $(window).scrollTop('11');
           }
@@ -757,7 +768,6 @@ jQuery(document).ready(function ($) {
         $('.form-applied .show-pack').removeClass('visually-hidden');
 
         // $('#navbarsListJobPack').attr("style", `transform:translateY(-${(($('#navbarsListJob').innerHeight()-$(window).scrollTop())/$('#navbarsListJobPack').innerHeight())*100}%)`);
-
         $(document).on('click', '.accordion-header', function (e) {
           console.log($($(e.currentTarget).closest('#navbarsListJobPack'))[0].scrollLeftMax);
           $($(e.currentTarget).closest('#navbarsListJobPack'))[0].scrollHeight;
@@ -772,6 +782,7 @@ jQuery(document).ready(function ($) {
       .off('click touchstart', '.form-applied .show-pack #back')
       .on('click touchstart', '.form-applied .show-pack #back', function () {
         let scroll = $(window).scrollTop();
+
         $('#navbarsListJob').removeClass('show-pack-list');
         setTimeout(function () {
           $('#navbarsListJob').removeClass('d-none');
@@ -870,21 +881,22 @@ jQuery(document).ready(function ($) {
       $('.showdatefrom').html(newDate);
       let order_id = target.closest('form').find('input[name="order_id"]').val();
       $('input[name="change_date_order_id"]').val(order_id);
-      $.ajax({
-        url: '?Controller=Jobs&Action=ajaxGetAvailableDays',
-        method: 'POST',
-        data: { order_id: order_id },
-        success: function (response) {
-          let data = JSON.parse(response);
-          if (typeof data.errors !== 'undefined' && data.errors.length == 0) {
-            let DateSet = window.SETTINGS ? window.SETTINGS : {};
-            data.dates.unshift(true);
-            DateSet.disable = data.dates;
-            $('.pick-date-disabled').pickadate(DateSet);
-            $('#pick-date-modal').modal('show');
-          }
-        },
-      });
+      $('#pick-date-modal').modal('show');
+      // $.ajax({
+      //   url: '?Controller=Jobs&Action=ajaxGetAvailableDays',
+      //   method: 'POST',
+      //   data: { order_id: order_id },
+      //   success: function (response) {
+      //     let data = JSON.parse(response);
+      //     if (typeof data.errors !== 'undefined' && data.errors.length == 0) {
+      //       let DateSet = window.SETTINGS ? window.SETTINGS : {};
+      //       data.dates.unshift(true);
+      //       DateSet.disable = data.dates;
+      //       $('.pick-date-disabled').pickadate(DateSet);
+      //       $('#pick-date-modal').modal('show');
+      //     }
+      //   },
+      // });
     });
     // document.querySelector('#savedatefrom').addEventListener('click', function() {
     //     let newDate = formatDate($("#pick-date-modal .pick-date").val());
@@ -953,6 +965,7 @@ jQuery(document).ready(function ($) {
           .find('button.dropdown-toggle')
           .addClass('sel')
           .attr('data-name', sel);
+
         // $(".btn:first-child").text($(this).attr("data-name"));
         //  $(".btn:first-child").val($(this).text());
       });
@@ -1011,29 +1024,6 @@ jQuery(document).ready(function ($) {
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl);
   });
-
-  $('.box.image')
-    .popover({
-      trigger: 'manual',
-      html: true,
-      animation: false,
-      sanitize: false,
-    })
-    .on('mouseenter', function () {
-      var _this = this;
-      $(this).popover('show');
-      $('.popover').on('mouseleave', function () {
-        $(_this).popover('hide');
-      });
-    })
-    .on('mouseleave', function () {
-      var _this = this;
-      setTimeout(function () {
-        if (!$('.popover:hover').length) {
-          $(_this).popover('hide');
-        }
-      }, 300);
-    });
   // page files library, function open iner folders
   function openInnF() {
     $('table').on('all.bs.table', function () {
@@ -1380,11 +1370,12 @@ jQuery(document).ready(function ($) {
 
     let heightEl = full / 3;
 
+    // $("#detailed .report-body").attr("style", `max-height:${heightEl}px`);
+    // $("#summary .report-body").attr("style", `max-height:${heightEl}px`);
+    // $("#flowProject .report-body").attr("style", `max-height:${heightEl}px`);
+    // $("#flow .report-body").attr("style", `max-height:${heightEl}px`);
+    // $("#shoppers .report-body").attr("style", `max-height:${heightEl}px`);
     $('#detailed .report-body').attr('style', `max-height:${allHeight - headerHeight - 140}px`);
-    // $('#summary .report-body').attr('style', `max-height:${heightEl}px`);
-    // $('#flowProject .report-body').attr('style', `max-height:${heightEl}px`);
-    // $('#flow .report-body').attr('style', `max-height:${heightEl}px`);
-    // $('#shoppers .report-body').attr('style', `max-height:${heightEl}px`);
   }
 
   // show info in popup
@@ -1461,42 +1452,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  function offcanvasBrief() {
-    $('[aria-controls="offcanvasBrief"]').click(function (e) {
-      let info = $(e.target).closest('.bg-grey').find('.toast').html();
-      let elem = $(e.target).attr('data-bs-target');
-      let rsz = `<div id="rsz"></div>`;
-      $(elem).html(rsz + info);
-      var doc = document,
-        wd = $(elem).width(),
-        main = document.querySelector('#offcanvasBrief'),
-        x,
-        dx;
-
-      var startResize = function (evt) {
-        x = evt.screenX;
-      };
-
-      var resize = function (evt) {
-        dx = evt.screenX - x;
-        x = evt.screenX;
-        wd -= dx;
-        main.style.width = wd + 'px';
-      };
-
-      $(document)
-        .off('mousedown', '#rsz')
-        .on('mousedown', '#rsz', function (evt) {
-          startResize(evt);
-          doc.body.addEventListener('mousemove', resize);
-          doc.body.addEventListener('mouseup', function () {
-            doc.body.removeEventListener('mousemove', resize);
-          });
-        });
-    });
-  }
-  offcanvasBrief();
-
   // editDate in pickdate input
 
   function editDate(dateFormat) {
@@ -1504,6 +1459,12 @@ jQuery(document).ready(function ($) {
     var triggerTabList = [].slice.call(document.querySelectorAll('.pick-date'));
 
     triggerTabList.forEach(function (element) {
+      let sevY = 1900;
+      let hundY = 9999;
+      if ($(element).hasClass('pick-date-birth')) {
+        hundY = new Date(new Date().setFullYear(new Date().getFullYear() - 7)).getFullYear();
+        sevY = new Date(new Date().setFullYear(new Date().getFullYear() - 120)).getFullYear();
+      }
       var dateMask = IMask(element, {
         mask: dateFormat, // enable date mask
 
@@ -1525,8 +1486,8 @@ jQuery(document).ready(function ($) {
           },
           yyyy: {
             mask: IMask.MaskedRange,
-            from: 1900,
-            to: 9999,
+            from: sevY,
+            to: hundY,
           },
         },
         // define date -> str convertion
@@ -1579,16 +1540,35 @@ jQuery(document).ready(function ($) {
         : $(this).closest('th').removeClass('show');
     });
 
-  // $(document)
-  // .off('changed.bs.select', '.select-lang')
-  // .on('changed.bs.select', '.select-lang', function (e) {
-  //   $(this).val()
-  //     ? $(this)
-  //         .siblings('.dropdown-toggle')
-  //         .find('.filter-option-inner-inner')
-  //         .html($(this).val())
-  //     : false;
-  // });
+  $(document)
+    .off('changed.bs.select', '.select-lang')
+    .on('changed.bs.select', '.select-lang', function (e) {
+      $(this).val()
+        ? $(this)
+            .siblings('.dropdown-toggle')
+            .find('.filter-option-inner-inner')
+            .html($(this).val())
+        : false;
+
+      let hrefValue = $(this)
+        .closest('.start-lang.start-job')
+        .find('.start-job-link')
+        .attr('data-href');
+
+      let langId = $(this).find(`option:selected`).attr('lang-id');
+
+      $(this)
+        .closest('.start-lang.start-job')
+        .find('.start-job-link')
+        .attr('href', hrefValue + '&AltLangID=' + langId);
+
+      $(this).val()
+        ? $(this)
+            .closest('.start-lang.start-job')
+            .find('.start-job-link')
+            .attr('href', hrefValue + '&AltLangID=' + langId)
+        : false;
+    });
 
   function hexToHsl(hex) {
     // Convert hex to RGB
@@ -1941,7 +1921,6 @@ jQuery(document).ready(function ($) {
     }
     cookieValue = JSON.parse(cookieValue);
     $('body').addClass(cookieValue.theme);
-
     if ($('.themeSettingsCSS').length) {
       $('.themeSettingsCSS').remove();
     }
@@ -1951,7 +1930,7 @@ jQuery(document).ready(function ($) {
     }
     if (cookieValue.theme == 'dark') {
       $('body').append(
-        '<link class="themeSettingsCSS" rel="stylesheet" href="./css/dark_theme.css" type="text/css" />'
+        '<link class="themeSettingsCSS" rel="stylesheet" href="css/shopper/dark_theme.css" type="text/css" />'
       );
     } else {
       $('head').append(`<style class="themeSettingsCSS">
@@ -1961,8 +1940,8 @@ jQuery(document).ready(function ($) {
                     </style>`);
     }
   }
-  //initial all function on load page
 
+  //initial all function on load page
   $(window).resize(function () {
     drawStuff();
     if ($('#accordionFormJob').length) {
@@ -2036,6 +2015,7 @@ jQuery(document).ready(function ($) {
         }
       });
     }
+
     changeTheme();
     setTimeout(() => spinerOff(), 400);
 
@@ -2046,6 +2026,11 @@ jQuery(document).ready(function ($) {
     if ($('#donut2').length) {
       drawDonut2();
     }
+    if ($('#Password').length) {
+      setTimeout(function () {
+        $('#Password')[0].value = '';
+      }, 500);
+    }
     if ($('.pick-date').length) {
       let DateSet = window.SETTINGS
         ? window.SETTINGS
@@ -2053,8 +2038,21 @@ jQuery(document).ready(function ($) {
       DateSet['editable'] = true;
       DateSet['today'] = '';
       DateSet['selectYears'] = true;
+      //DateSet.format='dd-mm-yyyy';
       DateSet.format = typeof dateFormat == 'undefined' ? 'dd-mm-yyyy' : dateFormat.toLowerCase();
-      $('.pick-date').pickadate(DateSet);
+      $('.pick-date').each(function (key, value) {
+        if ($(value).hasClass('pick-date-birth')) {
+          let sevY = new Date(new Date().setFullYear(new Date().getFullYear() - 7));
+          let hundY = new Date(new Date().setFullYear(new Date().getFullYear() - 120));
+          const firstDateArray = [sevY.getFullYear(), sevY.getMonth() + 1, sevY.getDate()];
+          const secDateArray = [hundY.getFullYear(), hundY.getMonth() + 1, hundY.getDate()];
+          DateSet['selectYears'] = 100;
+          DateSet['max'] = true;
+          DateSet['disable'] = [true, { from: secDateArray, to: firstDateArray }];
+        }
+        $(value).pickadate(DateSet);
+      });
+
       editDate(DateSet.format);
       pickDate2();
       pickBranch();
@@ -2113,6 +2111,33 @@ jQuery(document).ready(function ($) {
       );
       Sel();
     }
+    if ($(".cert-elem[data-bs-toggle='popover']").length && $(window).width() < 768) {
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('.cert-elem[data-bs-toggle="popover"]')
+      );
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+      popoverList[0].show();
+      popoverList.forEach(element => element.disable());
+    }
+    if ($('#field_AvailabilityRadious')) {
+      var max = $('#field_AvailabilityRadious').attr('max')
+        ? $('#field_AvailabilityRadious').attr('max')
+        : 1000;
+      $('#field_AvailabilityRadious').on('keypress', function (evt) {
+        evt = evt ? evt : window.event;
+        var charCode = evt.which ? evt.which : evt.keyCode;
+        if (
+          (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 46) ||
+          evt.target.value + String.fromCharCode(charCode) > +max
+        ) {
+          evt.preventDefault();
+        } else {
+          return true;
+        }
+      });
+    }
     if ($('#tabReportContent').length) {
       $(document).on('shown.bs.tab', '#reportTab a', function (e) {
         var element = document.querySelector('#reportTab a.active');
@@ -2131,16 +2156,6 @@ jQuery(document).ready(function ($) {
       }
       setTab();
     }
-    if ($('tbody.blue-grey-scroll>tr').length) {
-      // $("tbody.blue-grey-scroll>tr").closest('table').find("thead>tr").attr("style",`width:${$("tbody.blue-grey-scroll>tr").innerWidth()}px`)
-    }
-    if ($('#file-chosen').length) {
-      const actualBtn = document.getElementById('actual-btn');
-      const fileChosen = document.getElementById('file-chosen');
-      actualBtn.addEventListener('change', function () {
-        fileChosen.textContent = this.files[0].name;
-      });
-    }
 
     var popoverTriggerList = [].slice.call(document.querySelectorAll('.set-link'));
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
@@ -2154,6 +2169,7 @@ jQuery(document).ready(function ($) {
             return;
           }
           cookieValue = JSON.parse(cookieValue);
+
           if (cookieValue.theme == 'dark') {
             $('.popover #darkTheme').prop('checked', true);
           } else if (cookieValue.theme == 'custom') {
@@ -2184,24 +2200,6 @@ jQuery(document).ready(function ($) {
       });
     });
 
-    if ($('.cert-elem').length && $(window).width() < 768) {
-      var exampleTriggerEl = $('.cert-elem')[0];
-      var popover = bootstrap.Popover.getInstance(exampleTriggerEl);
-      popover.show();
-      $(document).on('click touchstart', function (e) {
-        popover.hide();
-        popover.disable();
-
-        // // init popover
-        // var popoverTriggerList = [].slice.call(
-        //   document.querySelectorAll('[data-bs-toggle="popover"]')
-        // );
-        // var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-        //   return new bootstrap.Popover(popoverTriggerEl);
-        // });
-      });
-    }
-
     $(document)
       .off('click touchstart', '.btn[data-title="Facebook"]')
       .on('click touchstart', '.btn[data-title="Facebook"]', function () {
@@ -2212,45 +2210,47 @@ jQuery(document).ready(function ($) {
       $(document)
         .off('click touchstart', '#job-map')
         .on('click touchstart', '#job-map', function () {
-          $('.selectpicker').selectpicker({ selectedTextFormat: 'count > 3', actionsBox: true });
+          $('.selectpicker').selectpicker({
+            selectedTextFormat: 'count > 3',
+            actionsBox: true,
+          });
           var popoverTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="popover"]')
           );
           var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl);
           });
+        });
+      $(document)
+        .off('click touchstart', '#job-map .show-list-pack')
+        .on('click touchstart', '#job-map .show-list-pack', function (e) {
+          e.preventDefault();
+          if ($('#navbarsListJob.show-pack-list').length) {
+            let scroll = $(window).scrollTop();
+            $('#navbarsListJob').removeClass('show-pack-list');
+            setTimeout(function () {
+              $('#navbarsListJob').removeClass('d-none');
+            }, 500);
+            $('#navbarsListJobPack').attr('style', ``);
+            $('#navbarsListJob').attr('style', ``);
+            $('h1.fs-2 span').text(titledef);
+            $('#navbarsListJobPack').removeClass('show-job-pack');
+            $('#navbarsListJobPack').addClass('visually-hidden');
+            $('div#infoJobMenu').removeClass('d-flex');
+            $('#infoJobMenu .block.rounded-3').removeClass('visually-hidden');
+            $(window).scrollTop(scroll);
 
-          $(document)
-            .off('click touchstart', '#job-map .show-list-pack')
-            .on('click touchstart', '#job-map .show-list-pack', function () {
-              if ($('#navbarsListJob.show-pack-list').length) {
-                let scroll = $(window).scrollTop();
-                $('#navbarsListJob').removeClass('show-pack-list');
-                setTimeout(function () {
-                  $('#navbarsListJob').removeClass('d-none');
-                }, 500);
-                $('#navbarsListJobPack').attr('style', ``);
-                $('#navbarsListJob').attr('style', ``);
-                $('h1.fs-2 span').text(titledef);
+            $('.form-applied .show-main').removeClass('visually-hidden');
+            $('.form-applied .show-pack').addClass('visually-hidden');
 
-                $('#navbarsListJobPack').removeClass('show-job-pack');
-                $('#navbarsListJobPack').addClass('visually-hidden');
-                $('div#infoJobMenu').removeClass('d-flex');
-                $('#infoJobMenu .block.rounded-3').removeClass('visually-hidden');
-                $(window).scrollTop(scroll);
-
-                $('.form-applied .show-main').removeClass('visually-hidden');
-                $('.form-applied .show-pack').addClass('visually-hidden');
-
-                if ($(window).width() < 768) {
-                  $('#map .navbar-toggler.button-open').trigger('click');
-                }
-              } else {
-                if ($(window).width() < 768) {
-                  $('#map .navbar-toggler.button-open').trigger('click');
-                } else $('#navbarSideCollapse').trigger('click');
-              }
-            });
+            if ($(window).width() < 768) {
+              $('#map .navbar-toggler.button-open').trigger('click');
+            }
+          } else {
+            if ($(window).width() < 768) {
+              $('#map .navbar-toggler.button-open').trigger('click');
+            } else $('#navbarSideCollapse').trigger('click');
+          }
         });
     }
 
@@ -2312,7 +2312,6 @@ jQuery(document).ready(function ($) {
         var files = dt.files;
         handleFiles(files);
       }
-
       function previewFile(file, url) {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -2396,14 +2395,7 @@ jQuery(document).ready(function ($) {
         modalImg.src = imageSrc;
       });
     }
-
     // change theme on click
-
-    // $(document)
-    //   .off('change', '.settings-popover input')
-    //   .on('change', '.settings-popover input', function () {
-
-    //});
     $(document)
       .off('click', '#saveTheme')
       .on('click', '#saveTheme', function () {
@@ -2479,3 +2471,24 @@ jQuery(document).ready(function ($) {
       });
   });
 });
+function ShowHideOtherAddition(fieldNameToCheck, valueToFind, fieldNameToShowHide) {
+  var blockElement = $('#' + fieldNameToShowHide);
+  if (blockElement.length > 0) {
+    if (check_if_value_selected1(fieldNameToCheck, valueToFind)) {
+      blockElement.css('display', 'flex');
+    } else {
+      blockElement.css('display', 'none');
+    }
+  }
+}
+
+function check_if_value_selected1(fieldNameToCheck, valueToFind) {
+  var selectedValues = $(
+    '#' + fieldNameToCheck.replace(/\[/g, '\\[').replace(/\]/g, '\\]') + ' option:selected'
+  )
+    .map(function () {
+      return this.value;
+    })
+    .get();
+  return selectedValues.indexOf('-1') !== -1;
+}
