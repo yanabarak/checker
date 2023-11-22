@@ -912,25 +912,25 @@ jQuery(document).ready(function ($) {
     $('.pick-branch-modal').on('click', function (e) {
       target = $(this);
       let order_id = target.closest('form').find('input[name="order_id"]').val();
-      $.ajax({
-        url: '?Controller=Jobs&Action=ajaxGetAlternativeOrders',
-        method: 'POST',
-        data: { order_id: order_id },
-        success: function (response) {
-          let data = JSON.parse(response);
-          if (typeof data.errors !== 'undefined' && data.errors.length === 0) {
-            $('select[name="orderBranchChange"]').empty();
-            for (const [id, order] of Object.entries(data.altOrders)) {
-              $('select[name="orderBranchChange"]').append(
-                '<option value="' + id + '">' + order + '</option>'
-              );
-            }
-            $('input[name="change_branch_order_id"]').val(order_id);
-            $('select[name="orderBranchChange"]').selectpicker('refresh');
-            $('#pick-branch-modal').modal('show');
-          }
-        },
-      });
+      $('#pick-branch-modal').modal('show');
+      // $.ajax({
+      //   url: '?Controller=Jobs&Action=ajaxGetAlternativeOrders',
+      //   method: 'POST',
+      //   data: { order_id: order_id },
+      //   success: function (response) {
+      //     let data = JSON.parse(response);
+      //     if (typeof data.errors !== 'undefined' && data.errors.length === 0) {
+      //       $('select[name="orderBranchChange"]').empty();
+      //       for (const [id, order] of Object.entries(data.altOrders)) {
+      //         $('select[name="orderBranchChange"]').append(
+      //           '<option value="' + id + '">' + order + '</option>'
+      //         );
+      //       }
+      //       $('input[name="change_branch_order_id"]').val(order_id);
+      //       $('select[name="orderBranchChange"]').selectpicker('refresh');
+      //     }
+      //   },
+      // });
       let newBranch = $(this).html();
       $('.showBranchfrom').html(newBranch);
     });
